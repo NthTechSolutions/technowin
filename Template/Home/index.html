@@ -44,31 +44,25 @@
     </section>
 
     <nav>
-        
         <div class="logo-menu">
             <div class="logo">
-                <img src="{% static 'office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 250px;">
+                <img src="{% static 'office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 400px;">
             </div>
             <button id="menuToggle" class="menu-icon">
                 <img src="{% static 'menu.gif' %}" alt="Menu Icon" style="height: 30px; width: 30px;">
             </button>
         </div>
         <ul id="navLinks" class="hidden">
-            <li style="margin-top:2%"><a href="home">Home</a></li>
+            <li style="margin-top:2%"><a href="index.html">Home</a></li>
             <li style="margin-top:2%"><a href="about_us">About Us</a></li>
             <li style="margin-top:2%"><a href="services">Services</a></li>
             <li style="margin-top:2%"><a href="projects">Projects</a></li>
-            <li>
-                <img class="certificateRoundImg" src="{% static 'iso1.png' %}" alt="ISO Certification">&nbsp;
-            
-                <img class="certificateImg"  src="{% static 'iso.png' %}" alt="ISO Certification">&nbsp;&nbsp;
-            
-                <img class="certificateImg"  src="{% static 'cmmi.png' %}" alt="CMMI Certification">
-            </li>
+        </ul>
+        <ul>
             <li>
                 <div class="language-dropdown">
                     <br>
-                    <select id="language" name="language">
+                    <select id="language" name="language" style=" margin-left: 220px;">
                         <option value="en">English</option>
                         <option value="fr">Français</option>
                         <option value="es">Español</option>
@@ -78,10 +72,16 @@
                     </select>
                 </div>
             </li>
+<!-- Contact Us Button -->
+<li style="margin-top: 2%; margin-left: 30px;">
+    <a href="#technoWinContactSection" id="contactButton" class="contact-btn">
+        Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+    </a>
+</li>
+
         </ul>
     </nav>
     
-
     <!-- Slider Section -->
     <section>
         <div class="slider-container">
@@ -104,83 +104,645 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="serviceview" >
-        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;"><u>Our Services</u></h2>
-
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-            <!-- Service Boxes -->
-            <div class="service-box">
-                <img src="{% static 'service1.png' %}" alt="Service 1">
-                <h3>Web Development</h3>
-                <p>TechnoWin IT Infra Pvt Ltd offers innovative web development solutions tailored to businesses’ needs. We create dynamic, responsive websites and web applications, ensuring a seamless user experience across all devices. Using the latest technologies, we help businesses enhance their online presence and achieve their goals effectively.</p>
+    <section class="why-techno">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
+            <u>Why TechnoWin IT Infra Stands Out</u>
+        </h2>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-content">
+                    <img src="{% static 'innovation.png' %}" alt="Innovative Solutions">
+                    <h3>Innovative Solutions</h3>
+                    <p>We provide cutting-edge IT solutions that empower businesses to grow and thrive in the digital age and  offer a wide range of IT services, from infrastructure design to software deployment and ongoing support, ensuring businesses have effective and reliable technology solutions. </p>
+                </div>
             </div>
-            <div class="service-box">
-                <img src="{% static 'service2.png' %}" alt="Service 2">
-                <h3>Data Management</h3>
-                <p>TechnoWin IT Infra Pvt Ltd provides comprehensive data management solutions to help businesses organize, store, and analyze their data effectively. Our services ensure data accuracy, security, and easy access, enabling businesses to make informed decisions and streamline operations.</p>
+            <div class="card">
+                <div class="card-content">
+                    <img src="{% static 'care.png' %}" alt="Expert Team">
+                    <h3> Skilled IT Manpower</h3>
+                    <p>Our team consists of highly skilled professionals with years of experience in IT infrastructure management and our trained IT professionals manage your IT operations, offering everything from staff augmentation to full-time support, ensuring smooth business operations.</p>
+                </div>
             </div>
-            <div class="service-box">
-                <img src="{% static 'service3.png' %}" alt="Service 3">
-                <h3>Program Management</h3>
-                <p>TechnoWin IT Infra Pvt Ltd offers expert program management services to help businesses plan, execute, and monitor projects successfully. We ensure alignment with business goals, optimize resources, and deliver results on time, helping organizations achieve their objectives efficiently.</p>
-            </div>
-            <div class="service-box">
-                <img src="{% static 'service4.png' %}" alt="Service 4">
-                <h3>App Development</h3>
-                <p>TechnoWin IT Infra Pvt Ltd specializes in creating custom mobile and web applications tailored to business needs. Our team focuses on building user-friendly, high-performance apps that enhance customer engagement and drive business growth.</p>
-            </div>
-            <div class="service-box">
-                <img src="{% static 'service5.png' %}" alt="Service 5">
-                <h3>Hardware Networking</h3>
-                <p>TechnoWin IT Infra Pvt Ltd delivers robust hardware networking solutions to ensure seamless communication and connectivity within your business. From network setup to maintenance, we provide reliable and secure networking infrastructure that supports business operations and enhances overall efficiency.</p>
-            </div>
-            <div class="service-box">
-                <img src="{% static 'service6.png' %}" alt="Service 6">
-                <h3>Cloud Computing</h3>
-                <p>TechnoWin IT Infra Pvt Ltd offers scalable and secure cloud computing solutions that help businesses manage their data and applications efficiently. Our services provide flexibility, cost savings, and improved performance, enabling businesses to focus on growth while we handle their cloud infrastructure.</p>
+            <div class="card">
+                <div class="card-content">
+                    <img src="{% static 'leader.png' %}" alt="Customer-Centric Approach">
+                    <h3>Customer-Centric Approach</h3>
+                    <p>We prioritize customer satisfaction by offering personalized and responsive service at every step. Even we listen to your unique needs and deliver customized IT solutions that drive business efficiency and growth, always focusing on customer satisfaction and long-term relationships.</p>
+                </div>
             </div>
         </div>
     </section>
-    <section  >
+    
+    <section class="why-techno-section">
+        {% comment %} <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
+            <u>Why TechnoWin IT Infra Stands Out</u>
+        </h2> {% endcomment %}
+        
+        <div class="why-techno-cards">
+            <!-- Counter 1: Years of Experience -->
+            <div class="why-techno-card">
+                <div class="why-techno-card-content">
+                    <h3>Years of Experience</h3>
+                    <img src="{% static 'evolution.gif' %}" alt="Years of Experience">
+                    <div class="counter" data-count="25">0</div>
+                    <p>We bring over 15 years of expertise in providing innovative IT solutions to our clients.</p>
+                </div>
+            </div>
+    
+            <!-- Counter 2: Customer Satisfaction -->
+            <div class="why-techno-card">
+                <div class="why-techno-card-content">
+                    <h3>Customer Satisfaction</h3>
+                    <img src="{% static 'customer-experience.gif' %}" alt="Customer Satisfaction">
+                    <div class="counter" data-count="98">0</div>
+                    <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
+                </div>
+            </div>
+    
+            <!-- Counter 3: Number of Clients -->
+            <div class="why-techno-card">
+                <div class="why-techno-card-content">
+                    <h3>Our Clients</h3>
+                    <img src="{% static 'customer-care.gif' %}" alt="Our Clients">
+                    <div class="counter" data-count="50">0</div>
+                    <p>Over 200 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
+                </div>
+            </div>
+    
+            <!-- Counter 4: Number of Projects -->
+            <div class="why-techno-card">
+                <div class="why-techno-card-content">
+                    <h3>Our Projects</h3>
+                    <img src="{% static 'project1.gif' %}" alt="Our Projects">
+                    <div class="counter" data-count="100">0</div>
+                    <p>We've successfully completed over 350 IT infrastructure and support projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+<section class="serviceview">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;"><u>Our Services</u></h2>
+  
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+      <!-- Service Boxes -->
+      <div class="service-box">
+        <img src="{% static 'service1.png' %}" alt="Service 1">
+        <h3>Web Development</h3>
+        <p>TechnoWin IT Infra Pvt Ltd offers innovative web development solutions tailored to businesses’ needs. We create dynamic, responsive websites and web applications, ensuring a seamless user experience across all devices. Using the latest technologies, we help businesses enhance their online presence and achieve their goals effectively.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'service2.png' %}" alt="Service 2">
+        <h3>Data Management</h3>
+        <p>TechnoWin IT Infra Pvt Ltd provides comprehensive data management solutions to help businesses organize, store, and analyze their data effectively. Our services ensure data accuracy, security, and easy access, enabling businesses to make informed decisions and streamline operations.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'service3.png' %}" alt="Service 3">
+        <h3>Program Management</h3>
+        <p>TechnoWin IT Infra Pvt Ltd offers expert program management services to help businesses plan, execute, and monitor projects successfully. We ensure alignment with business goals, optimize resources, and deliver results on time, helping organizations achieve their objectives efficiently.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'service4.png' %}" alt="Service 4">
+        <h3>App Development</h3>
+        <p>TechnoWin IT Infra Pvt Ltd specializes in creating custom mobile and web applications tailored to business needs. Our team focuses on building user-friendly, high-performance apps that enhance customer engagement and drive business growth.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'service5.png' %}" alt="Service 5">
+        <h3>Hardware Networking</h3>
+        <p>TechnoWin IT Infra Pvt Ltd delivers robust hardware networking solutions to ensure seamless communication and connectivity within your business. From network setup to maintenance, we provide reliable and secure networking infrastructure that supports business operations and enhances overall efficiency.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'service6.png' %}" alt="Service 6">
+        <h3>Cloud Computing</h3>
+        <p>TechnoWin IT Infra Pvt Ltd offers scalable and secure cloud computing solutions that help businesses manage their data and applications efficiently. Our services provide flexibility, cost savings, and improved performance, enabling businesses to focus on growth while we handle their cloud infrastructure.</p>
+        <a href="#" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  
+
+    <section>
         <div class="social-links" id="socialIcons">
-            <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank"><img src="{% static 'facebook1.png' %}" alt="Facebook"></a>
-            <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank"><img src="{% static 'twitter.png' %}" alt="Twitter"></a>
-            <a href="#" class="social-icon linkedin" target="_blank"><img src="{% static 'linkedin.png' %}" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank"><img src="{% static 'instagram.png' %}" alt="Instagram"></a>
-            <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank"><img src="{% static 'whatsapp.png' %}" alt="Whatsapp"></a>
+            <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
+                <img src="{% static 'facebook1.png' %}" alt="Facebook">
+            </a>
+            <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
+                <img src="{% static 'twitter.png' %}" alt="Twitter">
+            </a>
+            <a href="#" class="social-icon linkedin" target="_blank">
+                <img src="{% static 'linkedin.png' %}" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
+                <img src="{% static 'instagram.png' %}" alt="Instagram">
+            </a>
+            <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
+                <img src="{% static 'whatsapp.png' %}" alt="Whatsapp">
+            </a>
+            <!-- Brochure Download -->
+            <a href="{% static 'Technowin_Brochure.pdf' %}" class="social-icon brochure" download>
+                <img src="{% static 'download.png' %}" alt="Download Brochure">
+            </a>
+        </div>
+    </section>
+    
+    
+   
+    <section id="project-videos">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
+            <u>Project Videos</u>
+        </h2>
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <h3>Web Development</h3>
+                <video controls>
+                    <source src="{% static 'web_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>TechnoWin IT Infra Pvt Ltd has created a user-friendly, responsive web development project 🌐💻. Focused on innovative designs, seamless performance, and secure solutions 🔒, it caters to diverse business needs. Perfect for boosting online presence! 🚀✨</p>
+                <a href="project.html" class="read-more">
+                    <i class="fas fa-arrow-right"></i> Read More
+                </a>
+            </div>
+    
+            <!-- Card 2 -->
+            <div class="card">
+                <h3>App Development</h3>
+                <video controls>
+                    <source src="{% static 'app_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>TechnoWin IT Infra Pvt Ltd has developed an intuitive, high-performance app 🌟📱. With a focus on sleek design, smooth functionality, and robust security 🔐, it meets the unique needs of businesses. Ideal for enhancing mobile engagement! 🚀📲</p>
+                <a href="project.html" class="read-more">
+                    <i class="fas fa-arrow-right"></i> Read More
+                </a>
+            </div>
+    
+            <!-- Card 3 -->
+            <div class="card">
+                <h3>Cloud Service Project</h3>
+                <video controls>
+                    <source src="{% static 'cloud_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>TechnoWin IT Infra Pvt Ltd offers reliable and scalable cloud services ☁️💼. With seamless integration, high security 🔐, and flexible solutions, it helps businesses optimize their operations and enhance efficiency 🌟. Perfect for driving growth and innovation! 🚀</p>
+                <a href="project.html" class="read-more">
+                    <i class="fas fa-arrow-right"></i> Read More
+                </a>
+            </div>
+    
+            <!-- Card 4 -->
+            <div class="card">
+                <h3>Hardware Project</h3>
+                <video controls>
+                    <source src="{% static 'web_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>TechnoWin IT Infra Pvt Ltd provides high-quality, durable hardware solutions 🖥️🔧. Designed for optimal performance and reliability, it supports businesses with cutting-edge technology 💡. Perfect for enhancing infrastructure and boosting productivity! 🚀</p>
+                <a href="project.html" class="read-more">
+                    <i class="fas fa-arrow-right"></i> Read More
+                </a>
+            </div>
+        </div>
+    
+        <!-- View More Button -->
+        <div class="view-more-container">
+            <a href="all-projects.html" class="view-more-btn">
+                <i class="fas fa-eye"></i> View More
+            </a>
+        </div>
+    </section>
+    
+
+<section class="certificate-slider-section">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(12, 76, 209, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Our Certificates</h2>
+    <div class="certificate-slider">
+        <!-- Navigation Buttons -->
+        <button class="prev-btn" onclick="navigateSlider(-1)">❮</button>
+        <button class="next-btn" onclick="navigateSlider(1)">❯</button>
+
+        <!-- Certificate Cards -->
+        <div class="certificate-track">
+            <div class="certificate-card">
+                <img src="{% static 'certificate1.png' %}" alt="Certificate 1">
+                <h3 class="certificate-title">ISO 9001:2015</h3>
+                <p class="certificate-description">Certified for Quality Management Systems.</p>
+            </div>
+            <div class="certificate-card">
+                <img src="{% static 'certificate2.png' %}" alt="Certificate 2">
+                <h3 class="certificate-title">ISO/IEC 27001:2013</h3>
+                <p class="certificate-description">Certified for Information Security Management Systems.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="client-carousel-section">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
+        <u>Our Clients</u>
+    </h2>
+
+    <div class="client-slider">
+        <!-- Client Logo 1 -->
+        <div class="client-logo-item">
+            <img src="{% static 'tata.png' %}" alt="Client 1" class="client-logo">
             
         </div>
-    </section>
+        <!-- Client Logo 2 -->
+        <div class="client-logo-item">
+            <img src="{% static 'lkn.png' %}" alt="Client 2" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="client-logo-item">
+            <img src="{% static 'accenture.png' %}" alt="Client 3" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="client-logo-item">
+            <img src="{% static 'amazon.png' %}" alt="Client 4" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 5 -->
+        <div class="client-logo-item">
+            <img src="{% static 'microsoft.png' %}" alt="Client 5" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 1 -->
+        <div class="client-logo-item">
+            <img src="{% static 'tata.png' %}" alt="Client 1" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 2 -->
+        <div class="client-logo-item">
+            <img src="{% static 'lkn.png' %}" alt="Client 2" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="client-logo-item">
+            <img src="{% static 'accenture.png' %}" alt="Client 3" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="client-logo-item">
+            <img src="{% static 'amazon.png' %}" alt="Client 4" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 5 -->
+        <div class="client-logo-item">
+            <img src="{% static 'microsoft.png' %}" alt="Client 5" class="client-logo">
+           
+        </div>
+         <!-- Client Logo 1 -->
+         <div class="client-logo-item">
+            <img src="{% static 'tata.png' %}" alt="Client 1" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 2 -->
+        <div class="client-logo-item">
+            <img src="{% static 'lkn.png' %}" alt="Client 2" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="client-logo-item">
+            <img src="{% static 'accenture.png' %}" alt="Client 3" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="client-logo-item">
+            <img src="{% static 'amazon.png' %}" alt="Client 4" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 5 -->
+        <div class="client-logo-item">
+            <img src="{% static 'microsoft.png' %}" alt="Client 5" class="client-logo">
+           
+        </div>
+         <!-- Client Logo 1 -->
+         <div class="client-logo-item">
+            <img src="{% static 'tata.png' %}" alt="Client 1" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 2 -->
+        <div class="client-logo-item">
+            <img src="{% static 'lkn.png' %}" alt="Client 2" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="client-logo-item">
+            <img src="{% static 'accenture.png' %}" alt="Client 3" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="client-logo-item">
+            <img src="{% static 'amazon.png' %}" alt="Client 4" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 5 -->
+        <div class="client-logo-item">
+            <img src="{% static 'microsoft.png' %}" alt="Client 5" class="client-logo">
+           
+        </div>
+         <!-- Client Logo 1 -->
+         <div class="client-logo-item">
+            <img src="{% static 'tata.png' %}" alt="Client 1" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 2 -->
+        <div class="client-logo-item">
+            <img src="{% static 'lkn.png' %}" alt="Client 2" class="client-logo">
+            
+        </div>
+        <!-- Client Logo 3 -->
+        <div class="client-logo-item">
+            <img src="{% static 'accenture.png' %}" alt="Client 3" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 4 -->
+        <div class="client-logo-item">
+            <img src="{% static 'amazon.png' %}" alt="Client 4" class="client-logo">
+           
+        </div>
+        <!-- Client Logo 5 -->
+        <div class="client-logo-item">
+            <img src="{% static 'microsoft.png' %}" alt="Client 5" class="client-logo">
+            
+        </div>
+    </div>
+</section>
+
+
+<section class="feedback-section">
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>
+    <div class="feedback-container">
+        <!-- Feedback Card 1 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'cgst.png' %}" alt="Feedback 1">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">John Doe</h3>
+                <p class="feedback-post">CEO at Example Inc.</p>
+                <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 2 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'lkn.png' %}" alt="Feedback 2">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Jane Smith</h3>
+                <p class="feedback-post">Founder at Tech Innovators</p>
+                <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 3 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'cidco.png' %}" alt="Feedback 3">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Alice Johnson</h3>
+                <p class="feedback-post">CTO at Future Tech</p>
+                <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 4 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'navi_mumbai.png'  %}" alt="Feedback 4" >
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Mark Williams</h3>
+                <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="feedback-container">
+        <!-- Feedback Card 1 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'tata1.png' %}" alt="Feedback 1">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">John Doe</h3>
+                <p class="feedback-post">CEO at Example Inc.</p>
+                <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 2 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'svl.png' %}" alt="Feedback 2">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Jane Smith</h3>
+                <p class="feedback-post">Founder at Tech Innovators</p>
+                <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 3 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'tata.png' %}" alt="Feedback 3">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Alice Johnson</h3>
+                <p class="feedback-post">CTO at Future Tech</p>
+                <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        <!-- Feedback Card 4 -->
+        <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'accenture.png'  %}" alt="Feedback 4">
+            </div>
+            <div class="feedback-content">
+                <h3 class="feedback-name">Mark Williams</h3>
+                <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section id="technoWinContactSection">
+    <div class="heading-with-logo">
+        <h2>Get in Touch With</h2>
+    </div>
     
-    <footer >
-        <div class="footer-container">
-            <div class="footer-logo">
-                    <img src="{% static 'office_logo.png' %}" alt="Company Logo" style="height: 60px; width: auto;">
+    <!-- Contact Form -->
+    <div class="contact-form-container">
+        <form action="/submit_form" method="post" class="contact-form">
+            <div class="form-field">
+                <label for="name">Full Name: <span class="required">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
             </div>
-            <div class="footer-links" >
-                <ul>
-                    <li><a href="about_us">About Us</a></li>
-                    <li><a href="services">Services</a></li>
-                    <li><a href="projects">Projects</a></li>
-                    <li><a href="contact">Contact Us</a></li>
-                </ul>
+            <div class="form-field">
+                <label for="email">Email Address: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
             </div>
-            <div class="footer-contact" >
-                <p></p>
-                <!-- Back to Top Button -->
-                <button class="back-to-top" title="Go to top">
-                    <i class="fa fa-arrow-up"></i> <!-- FontAwesome arrow-up icon -->
+            <div class="form-field">
+                <label for="subject">Subject: <span class="required">*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+            </div>
+            <div class="form-field">
+                <label for="message">Message: <span class="required">*</span></label>
+                <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+            </div>
+            <div class="form-button-container">
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Send Message
                 </button>
             </div>
+            
+        </form>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-links">
+            <ul>
+                <li><a href="about_us">About</a></li>
+                <li><a href="services">Services</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="contact">Contact</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
+        <div class="footer-cer">
+            <img src="{% static 'technowin_certificate.jpg' %}" alt="Company Certificate">
         </div>
-    </footer>
+        <div class="footer-cer1">
+            <img class="certificateRoundImg" src="{% static 'iso1.png' %}" alt="ISO Certification">
+        </div>
+        <div class="footer-cer2">
+            <img class="certificateImg" src="{% static 'iso.png' %}" alt="ISO Certification">
+        </div>
+        <div class="footer-cer3">
+            <img class="certificateImg" src="{% static 'cmmi.png' %}" alt="CMMI Certification">
+        </div>
+        <div class="footer-contact">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
+                        <img src="{% static 'location.png' %}" alt="Location">
+                        Goregaon, Mumbai
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="mailto:technowinitinfra@gmail.com" target="_blank">
+                        <img src="{% static 'gmail.png' %}" alt="Email">
+                        technowinitinfra@gmail.com
+                    </a>
+                </div>
+                <div class="contact-item">
+                    <a href="tel:+917738019120" target="_blank">
+                        <img src="{% static 'mobile.png' %}" alt="Call">
+                        +91 7738019120
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     
-      
- 
+
+ <!-- Back to Top Button -->
+ <button class="back-to-top" title="Go to top">
+    <i class="fa fa-arrow-up"></i> <!-- FontAwesome arrow-up icon -->
+</button>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
+    </div>
+</footer>
+
 </body>
 
 <!-- Include the slider script -->
@@ -245,5 +807,87 @@
             }
         });
     </script>    
+
+<!-- JavaScript to update slider value based on percentage -->
+<script>
+    // Function to update the slider value when the page loads
+    function setSliderValue(sliderId, spanId, value) {
+        const slider = document.getElementById(sliderId);
+        const span = document.getElementById(spanId);
+        slider.value = value;  // Set the slider's value
+        span.textContent = value + '%';  // Set the text next to the slider
+    }
+
+    // Set slider values and update the percentages
+    window.onload = function() {
+        setSliderValue("itConsultant", "itConsultantValue", 75);
+        setSliderValue("cloudSolutions", "cloudSolutionsValue", 80);
+        setSliderValue("itService", "itServiceValue", 90);
+        setSliderValue("hardware", "hardwareValue", 60);
+        setSliderValue("manpower", "manpowerValue", 70);
+    };
+</script>
+
+<script>
+    let currentIndex = 0; // Initial index of the first certificate card
+
+// Function to navigate through the certificates
+function navigateSlider(direction) {
+    const certificates = document.querySelectorAll('.certificate-card');
+    const totalCertificates = certificates.length;
+
+    // Update currentIndex based on the direction (prev or next)
+    currentIndex += direction;
+
+    // Loop through the certificates if the index goes out of bounds
+    if (currentIndex < 0) {
+        currentIndex = totalCertificates - 1; // Move to the last certificate
+    } else if (currentIndex >= totalCertificates) {
+        currentIndex = 0; // Move to the first certificate
+    }
+
+    // Move the certificate track to the correct position
+    const track = document.querySelector('.certificate-track');
+    const offset = -currentIndex * 100; // Move the track by 100% for each certificate
+    track.style.transform = `translateX(${offset}%)`;
+}
+</script>
+
+<script>
+// Function to animate the counter
+function animateCounter(counterElement) {
+    const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+    let currentValue = 0;
+
+    // Increment the counter
+    const interval = setInterval(() => {
+        counterElement.innerText = currentValue;
+        if (currentValue >= targetValue) {
+            clearInterval(interval);
+        } else {
+            currentValue++;
+        }
+    }, 30); // Adjust speed by changing the interval
+}
+
+// Detect when the counters are visible
+function startCounters() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        const counterPosition = counter.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (counterPosition < windowHeight) {
+            animateCounter(counter);
+        }
+    });
+}
+
+// Trigger the counter animation when the page loads or scrolls
+window.addEventListener('scroll', startCounters);
+window.addEventListener('load', startCounters);
+
+</script>
+
 
 </html>
