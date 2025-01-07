@@ -1122,7 +1122,7 @@ html {
 }
 
 .read-more i {
-    margin-left: 8px;
+    margin-left: 18px;
 }
 
 .read-more:hover {
@@ -1207,6 +1207,127 @@ html {
     }
 }
 
+
+/* Our technologies styling */
+#technologies {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.section-title {
+    font-size: 40px;
+    color: #1c1c1c;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.technology-domains {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.domain {
+    width: 22%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.domain:hover {
+    transform: translateY(-10px);
+}
+
+.domain-title {
+    font-size: 28px;
+    color: rgb(8, 55, 116);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgb(110, 166, 230);
+}
+
+.sub-domain {
+    background-color: #c2cceb;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+.sub-domain h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.sub-domain p {
+    font-size: 16px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.sub-domain:hover h4,
+.sub-domain:hover p {
+    color: #f50f0f;
+}
+
+.sub-domain:hover {
+    transform: translateX(10px);
+}
+
+.read-more1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(8, 55, 116);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.read-more1 i {
+    margin-left: 18px;
+}
+
+.read-more1:hover {
+    background-color: #b81111;
+}
+
+
+/* Styling for the image */
+.sub-domain img {
+    width: 60%;
+    max-width: 90px; /* Limit the image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sub-domain img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+@media (max-width: 768px) {
+    .domain {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .domain {
+        width: 90%;
+    }
+}
 
 /* Social Media Links pinned to the right side */
 .social-links {
