@@ -46,7 +46,7 @@
     <nav>
         <div class="logo-menu">
             <div class="logo">
-                <img src="{% static 'office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 400px;">
+                <img src="{% static 'office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 300px;">
             </div>
             <button id="menuToggle" class="menu-icon">
                 <img src="{% static 'menu.gif' %}" alt="Menu Icon" style="height: 30px; width: 30px;">
@@ -57,12 +57,13 @@
             <li style="margin-top:2%"><a href="about_us">About Us</a></li>
             <li style="margin-top:2%"><a href="services">Services</a></li>
             <li style="margin-top:2%"><a href="projects">Projects</a></li>
-        </ul>
-        <ul>
+            <li style="margin-top:2%"><a href="projects">feedback</a></li>
+        {% comment %} </ul>
+        <ul> {% endcomment %}
             <li>
                 <div class="language-dropdown">
                     <br>
-                    <select id="language" name="language" style=" margin-left: 220px;">
+                    <select id="language" name="language" style="">
                         <option value="en">English</option>
                         <option value="fr">Français</option>
                         <option value="es">Español</option>
@@ -72,28 +73,52 @@
                     </select>
                 </div>
             </li>
-<!-- Contact Us Button -->
-<li style="margin-top: 2%; margin-left: 30px;">
-    <a href="#technoWinContactSection" id="contactButton" class="contact-btn">
-        Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
-    </a>
-</li>
-
+            <!-- Contact Us Button -->
+            <li style="">
+                <a href="#technoWinContactSection" id="contactButton" class="contact-btn">
+                    Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+                </a>
+            </li>
         </ul>
     </nav>
-    
-    <!-- Slider Section -->
+
+
+<!-- Slider Section --> 
     <section>
         <div class="slider-container">
             <div class="slider">
-                <div class="slide active" style="background-image: url('{% static 'app1.png' %}')"></div>
-                <div class="slide" style="background-image: url('{% static 'cloud1.png' %}')"></div>
-                <div class="slide" style="background-image: url('{% static 'web1.png' %}')"></div>
-                <div class="slide" style="background-image: url('{% static 'hardware.png' %}')"></div>
-                <div class="slide" style="background-image: url('{% static 'manpower1.png' %}')"></div>
+                <div class="slide active" style="background-image: url('{% static 'App.png' %}')">
+                    <div class="slide-text">
+                        <h1>App Development</h1>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('{% static 'Cloud.png' %}')">
+                    <div class="slide-text">
+                        <h1>Cloud Computing</h1>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('{% static 'Web.png' %}')">
+                    <div class="slide-text">
+                        <h1>Web Development</h1>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('{% static 'Hardware.png' %}')">
+                    <div class="slide-text">
+                        <h1>Hardware</h1>
+                    </div>
+                </div>
+                <div class="slide" style="background-image: url('{% static 'Manpower.png' %}')">
+                    <div class="slide-text">
+                        <h1>Manpower</h1>
+                    </div>
+                </div>
             </div>
+    
+            <!-- Navigation buttons -->
             <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
             <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    
+            <!-- Dots for navigation -->
             <div class="dots-container">
                 <span class="dot active" onclick="currentSlide(0)"></span>
                 <span class="dot" onclick="currentSlide(1)"></span>
@@ -103,7 +128,9 @@
             </div>
         </div>
     </section>
+    
 
+<!-- why-techno Section --> 
     <section class="why-techno">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
             <u>Why TechnoWin IT Infra Stands Out</u>
@@ -133,7 +160,8 @@
             </div>
         </div>
     </section>
-    
+
+<!-- why-techno-section Section --> 
     <section class="why-techno-section">
         {% comment %} <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
             <u>Why TechnoWin IT Infra Stands Out</u>
@@ -245,35 +273,35 @@
     </div>
   </section>
   
-
-    <section>
-        <div class="social-links" id="socialIcons">
-            <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
-                <img src="{% static 'facebook1.png' %}" alt="Facebook">
-            </a>
-            <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
-                <img src="{% static 'twitter.png' %}" alt="Twitter">
-            </a>
-            <a href="#" class="social-icon linkedin" target="_blank">
-                <img src="{% static 'linkedin.png' %}" alt="LinkedIn">
-            </a>
-            <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
-                <img src="{% static 'instagram.png' %}" alt="Instagram">
-            </a>
-            <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
-                <img src="{% static 'whatsapp.png' %}" alt="Whatsapp">
-            </a>
-            <!-- Brochure Download -->
-            <a href="{% static 'TechnoWin_Brochure.pdf' %}" class="social-icon brochure" download>
-                <img src="{% static 'download.png' %}" alt="Download Brochure">
-            </a>
-        </div>
-    </section>
-    
-
-    
-    
-   
+<!-- social Media Section --> 
+   <!-- Social Media Section -->
+<section>
+    <div class="social-links" id="socialIcons">
+        <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
+            <img src="{% static 'facebook1.png' %}" alt="Facebook">
+        </a>
+        <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
+            <img src="{% static 'twitter.png' %}" alt="Twitter">
+        </a>
+        <a href="#" class="social-icon linkedin" target="_blank">
+            <img src="{% static 'linkedin.png' %}" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
+            <img src="{% static 'instagram.png' %}" alt="Instagram">
+        </a>
+        <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
+            <img src="{% static 'whatsapp.png' %}" alt="Whatsapp">
+        </a>
+        <!-- Brochure Download -->
+        <a href="{% static 'TechnoWin_Brochure.pdf' %}" class="social-icon brochure" download>
+            <img src="{% static 'download.png' %}" alt="Download Brochure">
+        </a>
+        <!-- Chatbot Icon -->
+     
+    </div>
+</section>
+  
+<!-- project video section -->
     <section id="project-videos">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
             <u>Project Videos</u>
@@ -687,6 +715,38 @@
 
 <footer>
     <div class="footer-container">
+        <div class="chatbot-footer">
+            <a href="javascript:void(0);"  id="chatbotIcon" onclick="toggleChatbot()">
+                <img class="chatBot" src="{% static 'robot.png' %}" alt="Chatbot">
+            </a>
+        </div>
+          <!-- Chatbot Container -->
+<div id="chatbot">
+    <!-- Chatbot header -->
+    <div class="chatbot-header">
+        <img src="{% static 'robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif" style="width:30px;height:30px;">
+        TechnoWin Chatbot
+        <button onclick="toggleChatbot()">×</button>
+    </div>
+
+    <!-- Chat messages area -->
+    <div id="chatMessages">
+        <!-- Welcome message (Bot) -->
+        <div class="message bot-message">
+            <div class="bot-icon">
+                <img src="{% static 'businessman.png' %}" alt="Bot Icon" />
+            </div>
+            <div class="message-text">Welcome! How can we assist you today?</div>
+        </div>
+    </div>
+
+    <!-- Input container -->
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
         <div class="footer-links">
             <ul>
                 <li><a href="about_us">About</a></li>
@@ -727,11 +787,14 @@
                         +91 7738019120
                     </a>
                 </div>
+                <div class="contact-item">
+                    <p>You Are Visitor No.</p>
+                </div>
+                
             </div>
         </div>
     </div>
-    
-
+  
  <!-- Back to Top Button -->
  <button class="back-to-top" title="Go to top">
     <i class="fa fa-arrow-up"></i> <!-- FontAwesome arrow-up icon -->
@@ -745,35 +808,56 @@
     </div>
 </footer>
 
+
 </body>
 
-<!-- Include the slider script -->
+
 <script>
-    let currentSlideIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let autoSlideInterval; // Variable to store the interval
 
-    function showSlide(index) {
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+// Function to show a specific slide
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
 
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-    }
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
 
-    function changeSlide(direction) {
-        currentSlideIndex += direction;
-        if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-        if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-        showSlide(currentSlideIndex);
-    }
-
-    function currentSlide(index) {
-        currentSlideIndex = index;
-        showSlide(currentSlideIndex);
-    }
-
+// Function to change the slide
+function changeSlide(direction) {
+    currentSlideIndex += direction;
+    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
+    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
     showSlide(currentSlideIndex);
+    resetAutoSlide(); // Reset the auto-slide timer
+}
+
+// Function to go to a specific slide
+function currentSlide(index) {
+    currentSlideIndex = index;
+    showSlide(currentSlideIndex);
+    resetAutoSlide(); // Reset the auto-slide timer
+}
+
+// Auto-slide function
+function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+        changeSlide(1); // Move to the next slide
+    }, 5000); // Change slides every 5 seconds
+}
+
+// Function to reset auto-slide when manual navigation occurs
+function resetAutoSlide() {
+    clearInterval(autoSlideInterval); // Clear the current interval
+    startAutoSlide(); // Restart the auto-slide
+}
+
+// Initialize the slider
+showSlide
 </script>
 
 <script>
@@ -890,6 +974,166 @@ window.addEventListener('scroll', startCounters);
 window.addEventListener('load', startCounters);
 
 </script>
+
+
+<!-- JavaScript for Chatbot -->
+<script>
+    let typingTimeout;  // To manage the typing indicator timeout for the user
+
+// Toggle chat window visibility
+function toggleChatbot() {
+    const chatContainer = document.getElementById('chatbot');
+    const chatIcon = document.getElementById('chat-icon');
+    
+    if (chatContainer.style.display === 'block') {
+        chatContainer.style.display = 'none';
+        chatIcon.style.display = 'block';
+    } else {
+        chatContainer.style.display = 'block';
+        chatIcon.style.display = 'none';
+    }
+}
+
+// Function to send message
+function sendMessage() {
+    const userMessage = document.getElementById('userInput').value;
+    if (userMessage) {
+        // Display user message immediately with "You: "
+        displayMessage('user', userMessage);
+        document.getElementById('userInput').value = ''; // Clear input field
+
+        // Simulate bot typing
+        displayTypingIndicator('bot');
+
+        // Simulate bot response after a delay
+        setTimeout(() => {
+            removeTypingIndicator('bot');
+            displayMessage('bot', getBotResponse(userMessage)); // Display bot response
+        }, 1500);
+    }
+}
+
+// Function to get bot response
+function getBotResponse(userMessage) {
+    const lowerCaseMessage = userMessage.toLowerCase();
+    if (lowerCaseMessage.includes('hello')) {
+        return 'Hello! How can I assist you today?';
+    } else if (lowerCaseMessage.includes('how are you')) {
+        return 'I am doing great, thanks for asking!';
+    } else if (lowerCaseMessage.includes('what is your name')) {
+        return 'I am a chatbot created by Technowin IT Infra.';
+    } else if (lowerCaseMessage.includes('help')) {
+        return 'Sure! How can I assist you with your needs?';
+    } else {
+        return 'Sorry, I didn\'t understand that. Can you ask something else?';
+    }
+}
+
+// Function to display messages in the chat window
+function displayMessage(sender, message) {
+    const chatMessages = document.getElementById('chatMessages');
+    
+    // Create icon and text
+    const iconDiv = document.createElement('div');
+    iconDiv.classList.add(sender + '-icon');
+    const img = document.createElement('img');
+    img.src = sender === 'user' ? '{% static "user.png" %}' : '{% static "businessman.png" %}';  // Adjust the paths for your images
+    iconDiv.appendChild(img);
+    
+    // Create a new div for the message
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message', sender + '-message');
+    
+    const messageTextDiv = document.createElement('div');
+    messageTextDiv.classList.add('message-text');
+    messageTextDiv.textContent = message;
+    
+    // Append icon first, then message text to the message div
+    messageDiv.appendChild(iconDiv);
+    messageDiv.appendChild(messageTextDiv);
+    
+    // Append the message div to the chat messages container
+    chatMessages.appendChild(messageDiv);
+    
+    // Scroll to the bottom of the chat
+    scrollToBottom();
+}
+
+
+
+// Function to display typing indicator
+function displayTypingIndicator(sender) {
+    // Only show typing indicator if it's for the bot
+    if (sender === 'bot') {
+        const typingIndicator = document.createElement('div');
+        typingIndicator.classList.add('typing-indicator');
+        typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+        document.getElementById('chatMessages').appendChild(typingIndicator);
+    } else if (sender === 'user') {
+        // Show user icon and the text they are typing while typing
+        const iconDiv = document.createElement('div');
+        iconDiv.classList.add('user-icon');
+        const img = document.createElement('img');
+        img.src = '{% static "user.png" %}';  // Path for user icon
+        iconDiv.appendChild(img);
+        
+        const chatMessages = document.getElementById('chatMessages');
+        const typingMessage = document.createElement('div');
+        typingMessage.classList.add('message', 'user-message');
+        
+        
+        
+        const messageTextDiv = document.createElement('div');
+        messageTextDiv.classList.add('message-text');
+        messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
+        
+        // Append the icon first and then the message text
+        typingMessage.appendChild(iconDiv); // User image first
+        typingMessage.appendChild(messageTextDiv); // Then the message text
+        
+        chatMessages.appendChild(typingMessage);
+        scrollToBottom(); // Ensure chat scrolls to bottom
+    }
+}
+
+
+// Function to remove typing indicator
+function removeTypingIndicator(sender) {
+    if (sender === 'bot') {
+        const typingIndicator = document.querySelector('.typing-indicator');
+        if (typingIndicator) {
+            typingIndicator.remove();
+        }
+    } else if (sender === 'user') {
+        const typingMessages = document.querySelectorAll('.user-message');
+        typingMessages.forEach(msg => msg.remove()); // Remove user typing message
+    }
+}
+
+// Function to handle user typing in the input box
+function handleTyping(event) {
+    const userMessage = document.getElementById('userInput').value;
+
+    // Display typing indicator for the user while they are typing
+    if (userMessage && !typingTimeout) {
+        displayTypingIndicator('user');
+    }
+
+    // Remove the typing indicator after the user stops typing
+    clearTimeout(typingTimeout);
+    typingTimeout = setTimeout(() => {
+        removeTypingIndicator('user');
+    }, 1000); // After 1 second of inactivity
+}
+
+// Function to scroll the chat window to the bottom
+function scrollToBottom() {
+    const chatboxMessages = document.getElementById('chatMessages');
+    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+}
+
+    </script>
+    
 
 
 </html>

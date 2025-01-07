@@ -44,7 +44,7 @@
 
 
 .menu-icon{
-    margin-left: 15%;
+    margin-left: 5%;
 }
 
 /* Default styles */
@@ -76,6 +76,18 @@
         height: 100px;
         width:100px;
     }
+
+    #language{
+        margin-left: 120px;
+    }
+    
+    #contactButton{
+        margin-top: 14%;
+        margin-left: 30px;
+    }
+    nav {
+        top:40px
+    }
    
 }
 
@@ -83,7 +95,7 @@
 @media (max-width: 768px) {
     #navLinks {
         flex-direction: column;
-        position: fixed;
+        /* position: fixed; */
         right: 0;
         width: 100%;
         padding: 5px;  
@@ -112,6 +124,12 @@
     .certificateRoundImg{
         height: 80px;
         width:80px;
+    }
+    #language{
+        margin-left: 10%;
+    }
+    nav{
+        top:0px;
     }
 }
 
@@ -150,16 +168,16 @@ nav {
     border-bottom: 2px solid black;
     flex-wrap: wrap;
     position: fixed;
-    top: 50px;
+    /* top: 40px; */
     width: 100%;
     z-index: 999;
 }
 
 /* Styling for the company logo */
 .logo img {
-    height: 60px;
-    width: 60px;
-    margin-right: 15px;
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
 }
 .logo img:hover {
     transform: scale(1.1);
@@ -172,7 +190,6 @@ nav ul {
     justify-content: flex-start; /* Align items to the left */
     padding: 0;
     flex-wrap: wrap;
-   
     margin: 0;
     flex-grow: 1; /* Allows the list to take available space */
 }
@@ -212,16 +229,16 @@ nav ul img:hover {
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align items to the extreme right */
-    gap: 15px;
+    gap: 5px;
     margin-left: auto; /* Pushes this section to the extreme right */
 }
 
 /* Styling for the language dropdown */
 .language-dropdown select {
     font-size: 17px;
-    padding: 5px 10px;
-    width: 150px;
-    border: 1px solid #ccc;
+    padding: 5px 5px;
+    width: 110px;
+    border: 3px solid rgb(20, 76, 150);
     border-radius: 5px;
 }
 
@@ -232,10 +249,11 @@ nav ul img:hover {
     color: white;
     font-size: 15px;
     font-weight: bold;
+    /* margin-top: 10px; */
     text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 25px;
-    border: 2px solid transparent;
+    padding: 6px 5px;
+    border-radius: 5px;
+    border:  3px solid  transparent;
     transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
@@ -274,51 +292,105 @@ nav ul img:hover {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+
+/* For tablets and smaller screens (1024px and below) */
+@media (max-width: 1024px) {
     nav {
-        flex-wrap: wrap;
+        flex-wrap: wrap; /* Allows wrapping of elements */
     }
 
     .logo img {
-        height: 50px;
+        height: 50px; /* Adjust logo size */
         width: 50px;
     }
 
     nav ul {
-        justify-content: center; /* Center aligns nav items on smaller screens */
+        justify-content: center; /* Center align nav items */
     }
 
     .nav-right {
         flex-direction: column; /* Stack items vertically */
         gap: 10px;
         margin-top: 10px;
+        margin-left: 0;
     }
 
     .language-dropdown select {
-        width: 100%; /* Full width on small screens */
+        width: 100%; /* Make dropdown full width */
     }
 
     .contact-btn {
-        width: 100%; /* Full width for better visibility */
+        width: 100%; /* Make the contact button full width */
         text-align: center;
     }
 }
 
-@media (max-width: 480px) {
+/* For mobile devices (768px and below) */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap; /* Wrap the nav items */
+        padding: 15px 10px; /* Increase padding for better touch targets */
+    }
+
+    .logo img {
+        height: 45px; /* Resize logo for mobile */
+        width: 45px;
+    }
+
+    nav ul {
+        justify-content: center; /* Center the nav items */
+        width: 100%;
+    }
+
+    .nav-right {
+        flex-direction: column; /* Stack right-aligned items vertically */
+        gap: 15px;
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
     nav ul li a {
-        font-size: 16px;
+        font-size: 16px; /* Reduce font size for smaller screens */
     }
 
     .language-dropdown select {
-        font-size: 15px;
+        width: 100%; /* Full width for dropdown */
+        font-size: 15px; /* Adjust font size for mobile */
     }
 
     .contact-btn {
-        font-size: 14px;
-        padding: 8px 15px;
+        font-size: 14px; /* Reduce button font size */
+        padding: 8px 15px; /* Adjust padding for mobile */
+        width: 100%; /* Full width button */
+        text-align: center; /* Center-align the text */
     }
 }
 
+/* For very small screens (480px and below) */
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 5px; /* Adjust padding for very small screens */
+    }
+
+    .logo img {
+        height: 40px; /* Further reduce logo size */
+        width: 40px;
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Reduce font size for very small screens */
+    }
+
+    .language-dropdown select {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .contact-btn {
+        font-size: 12px; /* Make button text smaller */
+        padding: 6px 12px; /* Reduce padding */
+        margin-left: 7%;
+    }
+}
 
 /* Smooth Scrolling Animation */
 html {
@@ -326,12 +398,13 @@ html {
 }
 
 
-  /* Slider styling */
-  .slider-container {
+
+/* Slider container */
+.slider-container {
     position: relative;
     width: 100%;
-    max-width: 1400px;
-    height: 800px;
+    max-width: 100%;
+    height: 700px; /* Default height for large screens */
     margin: 20px auto;
     overflow: hidden;
     margin-bottom: 70px;
@@ -340,14 +413,16 @@ html {
     z-index: 1;
 }
 
+/* The slider itself */
 .slider {
     position: relative;
     display: flex;
 }
 
+/* Each individual slide */
 .slide {
     min-width: 100%;
-    height: 800px;
+    height: 700px; /* Default height for large screens */
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -357,43 +432,86 @@ html {
     transform: scale(0.9);
     z-index: 1;
     transition: all 1s ease-in-out;
+    overflow: hidden;
 }
 
+/* Active slide */
 .slide.active {
     opacity: 1;
     transform: scale(1);
     z-index: 2;
 }
 
-/* Navigation Arrows */
+/* Slide text */
+.slide-text {
+    position: absolute;
+    top: 330px; /* Position of the text */
+    left: 660px;
+    font-weight: bold;
+    color: rgb(20, 76, 150);
+    z-index: 3;
+    opacity: 0; /* Text hidden initially */
+    transform: translateY(15px); /* Initially below */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for text */
+}
+
+.slide:hover .slide-text {
+    opacity: 1;
+    transform: translateY(0); /* Text moves up */
+}
+
+.slide-text .h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(20, 76, 150);
+    /* Adjusting text-shadow for better visibility */
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6),  /* Darker and more blurred shadow */
+                 2px 2px 10px rgba(0, 0, 0, 0.3), /* Slightly smaller shadow for depth */
+                 0px 0px 15px rgba(0, 0, 0, 0.2); /* Soft glow around text */
+}
+
+
+
+/* Hide navigation buttons by default */
+.prev, .next {
+    opacity: 0;
+    visibility: hidden;
+    transition:  visibility 0.3s ease;
+}
+
+/* Show navigation buttons on hover */
+.slider-container:hover .prev,
+.slider-container:hover .next {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Positioning and styling for navigation buttons */
 .prev, .next {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.7); /* Base color */
-    color: white;
-    padding: 10px;
+    background-color:rgb(20, 76, 150);
+    color:rgb(255, 255, 255);
+    padding: 10px 20px;
     cursor: pointer;
     font-size: 30px;
     border: none;
     border-radius: 50%;
     z-index: 10;
-    transition: all 0.3s ease; /* Smooth transition */
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.9); /* Darker background on hover */
-    color: rgb(207, 34, 21); /* Change text color on hover */
-    transform: scale(1.2); /* Slightly increase the size */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+    background-color:rgb(72, 134, 216);
+    color:rgb(32, 32, 32);
 }
 
 .prev {
-    left: 20px;
+    left: 40px;
 }
 
 .next {
-    right: 20px;
+    right: 50px;
 }
 
 /* Slider dots */
@@ -403,6 +521,7 @@ html {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
+    justify-content: center;
 }
 
 .dot {
@@ -419,6 +538,96 @@ html {
     background-color: #f4a261;
     transform: scale(1.3);
 }
+
+
+/* Media Queries for Mobile Responsiveness */
+
+/* For tablets and smaller screens (1024px and below) */
+@media (max-width: 1024px) {
+    .slider-container {
+        height: 500px; /* Adjust height for tablets */
+    }
+
+    .slide {
+        height: 500px; /* Adjust slide height for tablets */
+    }
+
+    .slide-text {
+        top: 50%; /* Center text vertically for tablets */
+        left: 50%; /* Center text horizontally for tablets */
+        font-size: 18px; /* Adjust text size */
+        transform: translate(-50%, -50%); /* Center the text */
+    }
+
+    .prev, .next {
+        font-size: 24px; /* Smaller arrows */
+        padding: 8px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}
+
+/* For mobile devices (768px and below) */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 400px; /* Adjust height for mobile */
+    }
+
+    .slide {
+        height: 400px; /* Adjust slide height for mobile */
+    }
+
+    .slide-text {
+        top: 45%; /* Center text vertically on very small screens */
+        left: 20%; /* Center text horizontally */
+        font-size: 12px;
+        width: 90%; /* Make the text container more responsive */
+        transform: translate(-50%, -50%); /* Center the text */
+    }
+
+    .prev, .next {
+        font-size: 20px; /* Smaller arrows */
+        padding: 6px;
+    }
+
+    .dot {
+        height: 8px;
+        width: 8px;
+    }
+}
+
+/* For very small screens (480px and below) */
+@media (max-width: 480px) {
+    .slider-container {
+        height: 300px; /* Adjust height for very small screens */
+    }
+
+    .slide {
+        height: 300px; /* Adjust slide height for very small screens */
+    }
+
+    .slide-text {
+        top: 45%; /* Center text vertically on very small screens */
+        left: 20%; /* Center text horizontally */
+        font-size: 12px; /* Smaller text size */
+        width: 90%; /* Make the text container more responsive */
+        transform: translate(-50%, -50%); /* Center the text */
+    }
+
+    .prev, .next {
+        font-size: 18px; /* Even smaller arrows */
+        padding: 5px;
+    }
+
+    .dot {
+        height: 6px;
+        width: 6px;
+    }
+}
+
 
 /* why to choose us Styling */
 .why-techno .card-container {
@@ -999,16 +1208,15 @@ html {
 }
 
 
-
 /* Social Media Links pinned to the right side */
 .social-links {
     position: fixed;
-    right: 20px; /* Distance from the right edge */
+    right: 5px; /* Distance from the right edge */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Ensure it stays vertically centered */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
     z-index: 1000; /* Ensure it stays on top of other elements */
     transition: all 0.3s ease;
 }
@@ -1019,7 +1227,7 @@ html {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    padding: 5px;
+    padding: 10px;
     box-sizing: content-box;
     transition: all 0.3s ease;
 }
@@ -1054,7 +1262,6 @@ html {
     }
 }
 
-
 /* Apply the slide-in animation to the social media icons */
 .social-links {
     animation: slideIn 1s ease-out;
@@ -1080,6 +1287,48 @@ html {
 /* Add WhatsApp hover effect */
 .social-icon.whatsapp:hover {
     background-color: #25D366; /* WhatsApp green color */
+}
+
+
+/* Styling for the question section */
+#question {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Space between questions */
+    padding:0;
+    overflow-y: auto;
+    animation: fadeInUp 1s ease-out; /* Animation for questions */
+}
+
+/* Individual question button styling */
+.questionButton {
+    background-color: rgb(8, 55, 116);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Add hover transition */
+}
+
+/* Hover effect for question buttons */
+.questionButton:hover {
+    background-color: rgb(8, 55, 116);
+    transform: scale(1.05); /* Slightly enlarge the question button */
+}
+
+/* Animation for the question buttons */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -1785,6 +2034,7 @@ footer {
     font-size: 16px;
     position: relative;
     overflow: hidden;
+    z-index: 1; /* Ensuring footer stays on top */
 }
 
 /* Footer Container */
@@ -1933,7 +2183,7 @@ footer {
 }
 
 .back-to-top:hover {
-    background-color: rgb(43, 27, 179);
+    background-color: rgb(8, 55, 116);
     transform: scale(1.1);
 }
 
@@ -1945,58 +2195,447 @@ footer {
     transform: rotate(360deg);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
-        justify-content: center;
-        gap: 15px;
-    }
+/* Chatbot Styling within Footer */
+#chatbot-footer {
+    bottom: 50px; /* Just above the footer */
+    top: 150px;
+    width: 20px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    animation: chatbotSlideIn 0.5s ease-out forwards;
+}
 
-    .footer-links ul {
-        flex-direction: column;
-        gap: 10px;
+/* Animations */
+@keyframes chatbotSlideIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
     }
-
-    .footer-certificates {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .footer-contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-        text-align: center;
+    100% {
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
-@media (max-width: 480px) {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* General Chatbot Style */
+#chatbot {
+    position: fixed;
+    bottom: 220px;
+    left: 30px;
+    width: 350px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    transform: scale(0.5);
+    z-index: 1000;
+    animation: chatbotSlideIn 0.5s ease-out forwards;
+}
+
+.chatBot{
+    width: 40px;
+    height:40px;
+}
+
+
+/* Chatbot Header */
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: linear-gradient(to bottom right, #7a96f1, #f362f3);
+    color: white;
+    border-radius: 10px 10px 0 0;
+    font-weight: bold;
+    font-size: 16px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.chatbot-header img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.chatbot-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.chatbot-header button:hover {
+    color: #000000;
+    background: linear-gradient(to bottom right, #f362f3, #7a96f1);
+}
+
+/* Message Area */
+#chatMessages {
+    overflow-y: auto;
+    padding: 5px;
+    background-color: #f4f4f4;
+    border-radius: 0 0 10px 10px;
+    animation: fadeIn 0.3s ease-out;
+    max-height: 350px; /* Set a fixed height */
+}
+
+
+/* Messages */
+.message {
+    display: flex;
+    margin-bottom: 5px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Chatbot Message Alignment */
+.user-icon {
+    justify-content: flex-start; /* Left align for user */
+}
+
+.user-message {
+    margin-right: 10px; /* Right align for bot */
+    
+}
+
+.bot-message {
+    justify-content: flex-end; /* Right align for bot */
+}
+
+/* Align icons */
+
+.message .bot-icon {
+    order: 1; /* Bot image comes before message */
+}
+
+
+.message .message-text {
+    max-width: 70%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(188, 194, 212);
+    padding: 10px;
+    border-radius: 15%;
+    margin-bottom: 5px;
+}
+
+.message .user-message .message-text {
+    background-color: rgb(8, 55, 116);
+    color: white;
+    padding: 10px;
+}
+
+.message .bot-message .message-text {
+    background-color: #e0f2f1;
+    color: rgb(8, 55, 116);
+    padding: 10px;
+}
+.message .bot-icon{
+    margin-right: 10px;
+}
+
+.message .user-icon{
+    margin-right: 10px;
+}
+
+.message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    font-size: 14px;
+    color: rgb(8, 55, 116);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.typing-indicator .dot {
+    animation: typingDots 1.5s infinite;
+}
+
+.typing-indicator .dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator .dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Input Area */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e0f2f1;
+    border-radius: 0 0 10px 10px;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    margin-right: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-container input:focus {
+    border: 1px solid rgb(8, 55, 116);
+}
+
+.input-container button {
+    background-color: rgb(8, 55, 116);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+    background-color: #00796b;
+}
+
+/* Keyframes for Animations */
+@keyframes chatbotSlideIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes userMessage {
+    0% {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes botMessage {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes typingDots {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design for Mobile and Small Screens */
+
+/* Footer container */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: row; /* Align items in a row */
+        justify-content: space-between; /* Spread out the items */
+        align-items: center; /* Vertically align items */
+        gap: 15px; /* Provide space between elements */
+        padding: 20px; /* Add padding for better spacing */
+        flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+    }
+
+    /* Footer Links */
+    .footer-links ul {
+        display: flex; /* Align links in a row */
+        gap: 20px; /* Space between links */
+        
+    }
+
+    .footer-links li a {
+        font-size: 16px; /* Increase font size for readability */
+        margin-left: 10px;
+    }
+
+    /* Footer Certificates */
+    .footer-certificates {
+        display: flex; /* Align certificates in a row */
+        gap: 20px; /* Space between certificates */
+    }
+
     .footer-cer img {
-        height: 60px; /* Smaller certificates for mobile */
+        height: 80px; /* Set the height for certificates */
+        width: auto; /* Keep aspect ratio intact */
+    }
+
+    /* Contact Section */
+    .footer-contact {
+        display: flex; /* Align contact items in a row */
+        gap: 20px; /* Space between contact items */
+        align-items: center; /* Center items vertically */
     }
 
     .contact-item {
-        font-size: 14px;
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    /* Back to Top Button */
+    .back-to-top {
+        position: fixed; /* Keep the button fixed on the screen */
+        bottom: 10px;
+        right: 10px;
+        padding: 12px; /* Slightly larger button for easy touch */
+        font-size: 24px; /* Increase button size */
+        width: 50px;
+        height: 50px;
+        border-radius: 50%; /* Make button round */
+    }
+
+    /* Chatbot */
+    #chatbot-footer {
+        bottom: 100px; /* Position the chatbot button */
+        width: 60px; /* Adjust the chatbot button size */
+        height: 60px;
+        gap: 15px; 
+    }
+
+    #chatbot {
+        bottom: 450px; /* Adjust position of chatbot */
+        left: 10px;
+        width: 320px; /* Adjust width */
+        height: 360px;
+    }
+
+    .chatbot-header {
+        font-size: 16px; /* Adjust chatbot header font size */
+        padding: 12px;
+    }
+
+    .input-container input {
+        font-size: 14px; /* Adjust input field font size */
+        width: 75%; /* Adjust input field width */
+        padding: 10px; /* Add padding */
+    }
+
+    .input-container button {
+        font-size: 16px; /* Adjust button font size */
+        padding: 10px 15px; /* Increase button padding */
+    }
+}
+
+/* Additional Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+    .footer-container {
+        flex-direction: row; /* Keep items in a row on smaller screens */
+        justify-content: space-between; /* Distribute elements evenly */
+        gap: 15px; /* Space between elements */
     }
 
     .footer-links ul {
-        gap: 5px;
-        font-size: 16px;
+        display: flex; /* Align links in a row */
+        gap: 10px; /* Adjust space between links */
     }
 
-    .footer-contact p {
-        font-size: 14px;
+    .footer-links li a {
+        font-size: 14px; /* Slightly smaller font for smaller screens */
+    }
+
+    .footer-cer img {
+        height: 60px; /* Reduce certificate size for small screens */
+        width: auto;
+    }
+
+    .contact-item {
+        font-size: 14px; /* Smaller font for contact items */
     }
 
     .back-to-top {
+        padding: 10px; /* Increase button size for better tap */
+        font-size: 22px; /* Adjust button font size */
+        width: 50px;
+        height: 50px;
+    }
+
+    #chatbot {
+        width: 280px; /* Adjust chatbot width */
+        height: 320px;
+    }
+
+    .chatbot-header {
+        font-size: 14px; /* Smaller font size */
         padding: 10px;
-        font-size: 20px;
+    }
+
+    .input-container input {
+        font-size: 12px; /* Smaller input font size */
+        width: 70%; /* Adjust input width */
+        padding: 8px; /* Add padding */
+    }
+
+    .input-container button {
+        font-size: 14px; /* Slightly smaller button size */
+        padding: 8px 12px; /* Adjust padding */
     }
 }
 
 
-/* Responsive styles */
+/* Nav Responsive styles */
 @media screen and (max-width: 768px) {
     /* Navigation */
     nav {
