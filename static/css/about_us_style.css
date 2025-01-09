@@ -1,0 +1,286 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+ /* Company Section Styling */
+.company-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  background-color: #9ba1b3;
+  padding: 10px; /* Add some padding around the section */
+}
+
+/* Card styling */
+.company-card {
+  width: 1000px; /* Reduce the width of the card for better mobile responsiveness */
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateY(60px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards;
+  transition: transform 0.3s ease;
+  padding: 5px; /* Add padding inside the card */
+}
+
+.company-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Image styling */
+.company-image {
+  width: 70%; /* Reduce image width */
+  height: 40%; /* Maintain aspect ratio */
+  margin-left: 120px;
+  transform: scale(1); /* Remove zoom effect */
+}
+
+/* Company name styling */
+.company-name {
+  font-family: 'Arial', sans-serif;
+  font-size: 22px; /* Reduce font size for better compactness */
+  color: rgb(8, 55, 116);
+  text-align: center;
+  font-weight: bold;
+  margin: 5px 5px; /* Reduce margin between image and title */
+  text-shadow: 1px 1px 5px rgb(243, 57, 57);
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+.company-name:hover {
+  color: rgb(243, 57, 57);
+  text-shadow: 1px 1px 5px rgb(8, 55, 116);
+}
+
+/* Description styling */
+.company-description {
+  font-family: 'Arial', sans-serif;
+  font-size: 13px; /* Reduce font size for better compactness */
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 5px;
+  animation: fadeInRight 1s ease-out forwards;
+  margin: 0 0 10px 0; /* Reduce margin between description and other elements */
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Go Back Button Styling */
+.go-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: slideInFromLeft 1s ease-in-out forwards;
+}
+
+.go-back:hover {
+  transform: scale(1.2) rotate(-10deg);
+  opacity: 0.8;
+}
+
+/* Go Back Image Styling */
+.go-back-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(8, 55, 116);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.go-back-image:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Keyframe Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Styling for Mobile Devices */
+@media only screen and (max-width: 768px) {
+
+  /* Company Section Styling */
+  .company-section {
+    flex-direction: column; /* Stack elements vertically */
+    padding: 10px;
+    height: auto; /* Adjust height for smaller screens */
+  }
+
+  /* Company Card Styling */
+  .company-card {
+    width: 100%; /* Make card take full width */
+    padding: 15px;
+    margin: 0 auto; /* Center the card */
+  }
+
+  /* Image Styling */
+  .company-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto 15px auto; /* Center the image and reduce bottom margin */
+  }
+
+  /* Company Name Styling */
+  .company-name {
+    font-size: 20px; /* Reduce font size for mobile */
+    margin: 10px 0;
+    text-align: center;
+    text-shadow: none; /* Remove text shadow on small screens */
+  }
+
+  /* Description Styling */
+  .company-description {
+    font-size: 14px; /* Smaller font size for better readability */
+    padding: 10px;
+    text-align: left; /* Left-align text for better readability */
+  }
+
+  /* Go Back Button Styling */
+  .go-back {
+    top: 10px;
+    left: 10px;
+    width: 50px; /* Reduce size of the go back button */
+    height: 50px; /* Adjust size for mobile */
+  }
+
+  /* Go Back Image Styling */
+  .go-back-image {
+    width: 50px; /* Make the go back image smaller */
+    height: 50px; /* Adjust the image size */
+  }
+
+}
+
+
+/* Journey Section Styling */
+/* General Styling for Section */
+.journey-section {
+  position: relative;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.journey-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.journey-header p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Styling for Mobile Items */
+.journey-mobiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.mobile-wrapper {
+  display: flex;
+  justify-content: space-between;
+  animation: rotateCarousel 10s infinite linear;
+}
+
+.mobile-item {
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 15px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 123, 255, 0.6);
+}
+
+/* Date Styling */
+.mobile-date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Description Styling */
+.mobile-description {
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Animation for carousel effect */
+@keyframes rotateCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+

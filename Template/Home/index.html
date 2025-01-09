@@ -5,11 +5,10 @@
     <link rel="stylesheet" href="{% static 'css/main_style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
@@ -53,11 +52,12 @@
             </button>
         </div>
         <ul id="navLinks" class="hidden">
-            <li style="margin-top:2%"><a href="index.html">Home</a></li>
-            <li style="margin-top:2%"><a href="about_us">About Us</a></li>
+            <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
+
+            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
             <li style="margin-top:2%"><a href="services">Services</a></li>
             <li style="margin-top:2%"><a href="projects">Projects</a></li>
-            <li style="margin-top:2%"><a href="projects">feedback</a></li>
+            <li style="margin-top:2%"><a href="projects">Feedback</a></li>
         {% comment %} </ul>
         <ul> {% endcomment %}
             <li>
@@ -83,52 +83,57 @@
     </nav>
 
 
-<!-- Slider Section --> 
-    <section>
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide active" style="background-image: url('{% static 'App.png' %}')">
-                    <div class="slide-text">
-                        <h1>App Development</h1>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('{% static 'Cloud.png' %}')">
-                    <div class="slide-text">
-                        <h1>Cloud Computing</h1>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('{% static 'Web.png' %}')">
-                    <div class="slide-text">
-                        <h1>Web Development</h1>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('{% static 'Hardware.png' %}')">
-                    <div class="slide-text">
-                        <h1>Hardware</h1>
-                    </div>
-                </div>
-                <div class="slide" style="background-image: url('{% static 'Manpower.png' %}')">
-                    <div class="slide-text">
-                        <h1>Manpower</h1>
-                    </div>
+<!-- Slider Section -->
+<section>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="{% static 'app.gif' %}" alt="App Development">
+                <div class="slide-text">
+                    <h1>App Development</h1>
                 </div>
             </div>
-    
-            <!-- Navigation buttons -->
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    
-            <!-- Dots for navigation -->
-            <div class="dots-container">
-                <span class="dot active" onclick="currentSlide(0)"></span>
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
+            <div class="slide">
+                <img src="{% static 'cloud.gif' %}" alt="Cloud Computing">
+                <div class="slide-text">
+                    <h1>Cloud Computing</h1>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="{% static 'web.gif' %}" alt="Web Development">
+                <div class="slide-text">
+                    <h1>Web Development</h1>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="{% static 'hardware_icon.gif' %}" alt="Hardware">
+                <div class="slide-text">
+                    <h1>Hardware</h1>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="{% static 'manpower.gif' %}" alt="Manpower">
+                <div class="slide-text">
+                    <h1>Manpower</h1>
+                </div>
             </div>
         </div>
-    </section>
-    
+
+        <!-- Navigation buttons -->
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+
+        <!-- Dots for navigation -->
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+</section>
+
 
 <!-- why-techno Section --> 
     <section class="why-techno">
@@ -368,187 +373,127 @@
         </div>
     </section>
 
-
-<!-- Our technologies section --> 
+ <!-- Our Technologies Section -->
     <section id="technologies">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
             <u>Our Technologies</u>
         </h2>
-        <div class="technology-domains">
-            <!-- First Domain -->
-            <div class="domain" id="domain-one">
-                <h3 class="domain-title">Framework</h3>
-                <div class="sub-domain" id="ai-subdomain1">
-                    <h4>Django</h4>
-                    <img src="{% static 'django.png' %}" alt="ai-technologies 1">
-                    <p>Building neural networks that learn from vast amounts of data.</p>
-                    <a href="project.html" class="read-more1">
-                        Read More
-                    </a>
+        <div class="flower-row">
+            <!-- Flower 1 -->
+            <div class="flower">
+                <div class="petal petal-1">
+                   DJANGO
                 </div>
-                <div class="sub-domain" id="ai-subdomain2">
-                    <h4>MVC</h4>
-                    <img src="{% static 'mvc.png' %}" alt="ai-technologies 2">
-                    <p>Enabling computers to understand and interpret human language.</p>
-                    <a href="project.html" class="read-more1">
-                        Read More
-                    </a>
+                <div class="petal petal-2">
+                    MVC
                 </div>
-                <div class="sub-domain" id="ai-subdomain3">
-                    <h4>Computer Vision</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="ai-technologies 2">
-                    <p>Creating models that can interpret and understand visual data.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
+                <div class="petal petal-3">
+                    CODEIGNITER
                 </div>
-                <div class="sub-domain" id="ai-subdomain4">
-                    <h4>Robotics</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="ai-technologies 4">
-                    <p>Developing autonomous systems with AI to perform real-world tasks.</p>
-                    <a href="project.html" class="read-more1">
-                        Read More
-                    </a>
+                <div class="petal petal-4">
+                    LARAVEL
+                </div>
+                <div class="center">
+                    <img src="{% static 'framework_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
+                    <h4>Framework</h4>
+                    </div>
+            </div>
+            <!-- Flower 2 -->
+            <div class="flower">
+                <div class="petal petal-1">
+                    PYTHON <br> PHP
+                </div>
+                <div class="petal petal-2">
+                    DART <br> KOTLIN
+                </div>
+                <div class="petal petal-3">
+                    REACTJS <br> ANGULARJS
+                </div>
+                <div class="petal petal-4">
+                    C# <br> NODEJS
+                </div>
+                <div class="center">
+                    <img src="{% static 'languages_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
+                    <h4>Languages</h4>  
+                    </div>
+            </div>
+        </div>
+        <div class="flower-row">
+            <!-- Flower 3 -->
+            <div class="flower">
+                <div class="petal petal-1">
+                    AWS EC2 <br> LIGHTSAIL
+                </div>
+                <div class="petal petal-2">
+                    WEB <br> WERKS
+                </div>
+                <div class="petal petal-3">
+                    AZURE
+                </div>
+                <div class="petal petal-4">
+                    GODADDY
+                </div>
+                <div class="center">
+                    <img src="{% static 'cloud_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
+                   <h4> Cloud</h4>
                 </div>
             </div>
-    
-            <!-- Second Domain -->
-            <div class="domain" id="domain-two">
-                <h3 class="domain-title">Cloud Computing</h3>
-                <div class="sub-domain" id="cloud-subdomain1">
-                    <h4>Cloud Infrastructure</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="cloud-technologies 1">
-                    <p>Scalable and flexible cloud infrastructure solutions.</p>
-                    <a href="project.html" class="read-more1">
-                       Read More
-                    </a>
+            <!-- Flower 4 -->
+            <div class="flower">
+                <div class="petal petal-1">
+                    IIS SERVER
                 </div>
-                <div class="sub-domain" id="cloud-subdomain2">
-                    <h4>Data Storage</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="cloud-technologies 2">
-                    <p>Secure and reliable storage solutions for data management.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
+                <div class="petal petal-2">
+                    NGINX
                 </div>
-                <div class="sub-domain" id="cloud-subdomain3">
-                    <h4>Serverless Computing</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="cloud-technologies 3">
-                    <p>Optimized cloud solutions with zero infrastructure management.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
+                <div class="petal petal-3">
+                    APACHE
                 </div>
-                <div class="sub-domain" id="cloud-subdomain4">
-                    <h4>Cloud Security</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="cloud-technologies 4">
-                    <p>Protecting your cloud data and applications from cyber threats.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
+                <div class="petal petal-4">
+                    XAMPP <br> LAMPP
                 </div>
-            </div>
-    
-            <!-- Third Domain -->
-            <div class="domain" id="domain-three">
-                <h3 class="domain-title">Web Development</h3>
-                <div class="sub-domain" id="web-subdomain1">
-                    <h4>Frontend Development</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="web-technologies 1">
-                    <p>Crafting responsive and interactive user interfaces.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="web-subdomain2">
-                    <h4>Backend Development</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="web-technologies 2">
-                    <p>Developing robust and scalable backend systems.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="web-subdomain3">
-                    <h4>Web Security</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="web-technologies 3">
-                    <p>Ensuring the safety and integrity of web applications.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="web-subdomain4">
-                    <h4>Performance Optimization</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="web-technologies 4">
-                    <p>Improving the speed and efficiency of web applications.</p>
-                    <a href="project.html" class="read-more1">
-                        Read More
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Fourth Domain -->
-            <div class="domain" id="domain-four">
-                <h3 class="domain-title">Blockchain Technology</h3>
-                <div class="sub-domain" id="blockchain-subdomain1">
-                    <h4>Smart Contracts</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="blockchain-technologies 1">
-                    <p>Automating and securing agreements through blockchain.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="blockchain-subdomain2">
-                    <h4>Cryptocurrency</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="blockchain-technologies 2">
-                    <p>Building decentralized currencies for financial independence.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="blockchain-subdomain3">
-                    <h4>Decentralized Applications</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="blockchain-technologies 3">
-                    <p>Creating apps that run on a decentralized network.</p>
-                    <a href="project.html" class="read-more1">
-                         Read More
-                    </a>
-                </div>
-                <div class="sub-domain" id="blockchain-subdomain4">
-                    <h4>Blockchain Security</h4>
-                    <img src="{% static 'certificate1.png' %}" alt="blockchain-technologies 4">
-                    <p>Ensuring data privacy and integrity with blockchain technology.</p>
-                    <a href="project.html" class="read-more1">
-                        Read More
-                    </a>
+                <div class="center">
+                    <img src="{% static 'web_server.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
+                    <h4>Web Server</h4>
                 </div>
             </div>
         </div>
     </section>
+    
 
 
-<!-- Certificate Section -->
-<section class="certificate-slider-section">
-    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(12, 76, 209, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Our Certificates</h2>
-    <div class="certificate-slider">
-        <!-- Navigation Buttons -->
-        <button class="prev-btn" onclick="navigateSlider(-1)">❮</button>
-        <button class="next-btn" onclick="navigateSlider(1)">❯</button>
-
-        <!-- Certificate Cards -->
-        <div class="certificate-track">
-            <div class="certificate-card">
-                <img src="{% static 'certificate1.png' %}" alt="Certificate 1">
-                <h3 class="certificate-title">ISO 9001:2015</h3>
-                <p class="certificate-description">Certified for Quality Management Systems.</p>
-            </div>
-            <div class="certificate-card">
-                <img src="{% static 'certificate2.png' %}" alt="Certificate 2">
-                <h3 class="certificate-title">ISO/IEC 27001:2013</h3>
-                <p class="certificate-description">Certified for Information Security Management Systems.</p>
+    <section class="achievements-section">
+        <div class="achievements-text">
+            <h2 class="achievements-title">Our Achievements</h2>
+            <p class="achievements-description">
+                TechnoWin IT Infra Pvt. Ltd. is a leader in providing innovative IT infrastructure solutions. We take pride in our industry-leading certifications and dedication to quality, security, and performance. Our team consistently strives for excellence to meet the growing demands of the global technology landscape.
+            </p>
+        </div>
+    
+        <div class="certificate-slider-section">
+            <h2 class="slider-title">Our Certificates</h2>
+            <div class="certificate-slider">
+                <!-- Navigation Buttons -->
+                <button class="prev-btn" onclick="navigateSlider(-1)">❮</button>
+                <button class="next-btn" onclick="navigateSlider(1)">❯</button>
+    
+                <!-- Certificate Cards -->
+                <div class="certificate-track">
+                    <div class="certificate-card">
+                        <img src="{% static 'certificate1.png' %}" alt="Certificate 1">
+                        <h3 class="certificate-title">ISO 9001:2015</h3>
+                        <p class="certificate-description">Certified for Quality Management Systems.</p>
+                    </div>
+                    <div class="certificate-card">
+                        <img src="{% static 'certificate2.png' %}" alt="Certificate 2">
+                        <h3 class="certificate-title">ISO/IEC 27001:2013</h3>
+                        <p class="certificate-description">Certified for Information Security Management Systems.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    
 
 <section class="client-carousel-section">
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
@@ -969,54 +914,57 @@
 
 </body>
 
-
 <script>
-let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-let autoSlideInterval; // Variable to store the interval
+    // Initialize the slide index
+    let slideIndex = 0;
 
-// Function to show a specific slide
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
+    // Function to show the current slide
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
 
-    slides[index].classList.add('active');
-    dots[index].classList.add('active');
-}
+        // Ensure the slideIndex is within bounds
+        if (index >= slides.length) slideIndex = 0;
+        if (index < 0) slideIndex = slides.length - 1;
 
-// Function to change the slide
-function changeSlide(direction) {
-    currentSlideIndex += direction;
-    if (currentSlideIndex < 0) currentSlideIndex = slides.length - 1;
-    if (currentSlideIndex >= slides.length) currentSlideIndex = 0;
-    showSlide(currentSlideIndex);
-    resetAutoSlide(); // Reset the auto-slide timer
-}
+        // Hide all slides and reset dots
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+        });
 
-// Function to go to a specific slide
-function currentSlide(index) {
-    currentSlideIndex = index;
-    showSlide(currentSlideIndex);
-    resetAutoSlide(); // Reset the auto-slide timer
-}
+        // Show the active slide and corresponding dot
+        slides[slideIndex].classList.add('active');
+        dots[slideIndex].classList.add('active');
+    }
 
-// Auto-slide function
-function startAutoSlide() {
-    autoSlideInterval = setInterval(() => {
-        changeSlide(1); // Move to the next slide
-    }, 5000); // Change slides every 5 seconds
-}
+    // Function to change the slide manually (previous or next)
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlide(slideIndex);
+    }
 
-// Function to reset auto-slide when manual navigation occurs
-function resetAutoSlide() {
-    clearInterval(autoSlideInterval); // Clear the current interval
-    startAutoSlide(); // Restart the auto-slide
-}
+    // Function to change to a specific slide by clicking on a dot
+    function currentSlide(n) {
+        slideIndex = n;
+        showSlide(slideIndex);
+    }
 
-// Initialize the slider
-showSlide
+    // Automatic slide change every 5 seconds
+    function autoSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+        setTimeout(autoSlide, 5000); // 5000ms = 5 seconds
+    }
+
+    // Initialize the slider and start the automatic sliding
+    window.onload = function() {
+        showSlide(slideIndex); // Show the first slide initially
+        autoSlide(); // Start the automatic slide transition
+    };
 </script>
+
+
 
 <script>
     // Get the button element
