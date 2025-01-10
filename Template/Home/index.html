@@ -217,7 +217,7 @@
     
     <!-- Services Section -->
 <section class="serviceview">
-    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;"><u>Our Services</u></h2>
+    <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;"><u>Services We Provide</u></h2>
   
     <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
       <!-- Service Boxes -->
@@ -309,7 +309,7 @@
 <!-- project video section -->
     <section id="project-videos">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
-            <u>Project Videos</u>
+            <u>Projects Developed By Us</u>
         </h2>
         <div class="card-container">
             <!-- Card 1 -->
@@ -376,7 +376,7 @@
  <!-- Our Technologies Section -->
     <section id="technologies">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
-            <u>Our Technologies</u>
+            <u>Technologies  Stack</u>
         </h2>
         <div class="flower-row">
             <!-- Flower 1 -->
@@ -497,7 +497,7 @@
 
 <section class="client-carousel-section">
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
-        <u>Our Clients</u>
+        <u> Clients & Collaboration</u>
     </h2>
 
     <div class="client-slider">
@@ -629,7 +629,7 @@
     </div>
 </section>
 
-
+{% comment %} 
 <section class="feedback-section">
     <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>
     <div class="feedback-container">
@@ -780,8 +780,280 @@
                 </div>
             </div>
         </div>
-</section>
+</section> {% endcomment %}
 
+<style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: "Work Sans", sans-serif;
+        font-weight: 400;
+        height: 100vh;
+      }
+      
+      .wrapper {
+        background-color: #08BDBD;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .carousel__item {
+        width: 100%;
+        max-width: 300px;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        opacity: 0;
+        -webkit-animation: carousel-animate-horizontal 20s linear forwards infinite;
+                animation: carousel-animate-horizontal 20s linear forwards infinite;
+      }
+      @media screen and (min-width: 650px) {
+        .carousel__item {
+          max-width: 500px;
+        }
+      }
+      
+      .carousel__item:nth-child(1) {
+        -webkit-animation-delay: calc(3.3333333333s * 0);
+                animation-delay: calc(3.3333333333s * 0);
+      }
+      
+      .carousel__item:nth-child(2) {
+        -webkit-animation-delay: calc(3.3333333333s * 1);
+                animation-delay: calc(3.3333333333s * 1);
+      }
+      
+      .carousel__item:nth-child(3) {
+        -webkit-animation-delay: calc(3.3333333333s * 2);
+                animation-delay: calc(3.3333333333s * 2);
+      }
+      
+      .carousel__item:nth-child(4) {
+        -webkit-animation-delay: calc(3.3333333333s * 3);
+                animation-delay: calc(3.3333333333s * 3);
+      }
+      
+      .carousel__item:nth-child(5) {
+        -webkit-animation-delay: calc(3.3333333333s * 4);
+                animation-delay: calc(3.3333333333s * 4);
+      }
+      
+      .carousel__item:nth-child(6) {
+        -webkit-animation-delay: calc(3.3333333333s * 5);
+                animation-delay: calc(3.3333333333s * 5);
+      }
+      
+      .carousel__item-head {
+        border-radius: 50%;
+        background-color: #dcdee1;
+        width: 84px;
+        height: 84px;
+        margin-bottom: -42px;
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      
+      .carousel__item-body {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 50px 30px 20px 30px;
+        text-align: center;
+      }
+      
+      @-webkit-keyframes carousel-animate-horizontal {
+        0% {
+          transform: translateX(-200%);
+          opacity: 0;
+        }
+        2%, 16.6666666667% {
+          transform: translateX(-100%);
+          opacity: 0.4;
+        }
+        18.6666666667%, 33.3333333333% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        35.3333333333%, 50% {
+          transform: translateX(100%);
+          opacity: 0.4;
+        }
+        52% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes carousel-animate-horizontal {
+        0% {
+          transform: translateX(-200%);
+          opacity: 0;
+        }
+        2%, 16.6666666667% {
+          transform: translateX(-100%);
+          opacity: 0.4;
+        }
+        18.6666666667%, 33.3333333333% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        35.3333333333%, 50% {
+          transform: translateX(100%);
+          opacity: 0.4;
+        }
+        52% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+      }
+</style>
+
+  <section class='wrapper'>
+    <div class='carousel'>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'cgst.png' %}" alt="Feedback 1">
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">John Doe</h3>
+            <p class="feedback-post">CEO at Example Inc.</p>
+            <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'lkn.png' %}" alt="Feedback 2">
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">Jane Smith</h3>
+            <p class="feedback-post">Founder at Tech Innovators</p>
+            <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'cidco.png' %}" alt="Feedback 3">
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">Alice Johnson</h3>
+                <p class="feedback-post">CTO at Future Tech</p>
+                <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'navi_mumbai.png'  %}" alt="Feedback 4" >
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">Mark Williams</h3>
+            <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+            <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'tata1.png' %}" alt="Feedback 1">
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">John Doe</h3>
+            <p class="feedback-post">CEO at Example Inc.</p>
+            <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            <div class="feedback-image">
+                <img src="{% static 'accenture.png'  %}" alt="Feedback 4">
+            </div>
+        </div>
+        <div class='carousel__item-body'>
+            <h3 class="feedback-name">Mark Williams</h3>
+                <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+          <div class="feedback-stars">
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">★</span>
+            <span class="star">☆</span>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 <section id="technoWinContactSection">
     <div class="heading-with-logo">
         <h2>Get in Touch With</h2>
@@ -815,6 +1087,7 @@
         </form>
     </div>
 </section>
+
 
 <footer>
     <div class="footer-container">
@@ -1239,7 +1512,8 @@ function scrollToBottom() {
 }
 
     </script>
-    
+
+
 
 
 </html>

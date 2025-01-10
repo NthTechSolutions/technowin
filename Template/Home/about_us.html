@@ -14,81 +14,572 @@
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <title>About Us</title>  
 </head>
 <body>
   
-    <section class="company-section">
-      <div class="go-back">
-        <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
-      </div>      
-        <div class="company-card">
-          <img  src="{% static 'about_us_background.gif' %}" alt="Company Image" class="company-image" />
-          <h2 class="company-name">Tech Innovators-TechnoWin IT Infra Pvt Ltd 🚀</h2>
-          <p class="company-description">
-            Empowering businesses with innovative apps 📱, smart IT solutions 💻, and future-ready infrastructures 🔧. <br>
-            We blend technology with creativity to drive growth, spark innovation 💡, 
-            and build seamless digital experiences. Let’s shape the future—together! 🌐
-          </p>
-        </div>
-      </section>
-      
-      <section class="journey-section">
-        <div class="journey-header">
-            <h2>Our Incredible Journey 🚀</h2>
-            <p>Experience the moments that have defined our success, shaped our culture, and revolutionized our industry.</p>
-        </div>
-    
-        <div class="journey-mobiles">
-            <div class="mobile-wrapper">
-                <div class="mobile-item" style="background-image: url('{% static 'sticker_icon.png' %}');">
-                    <span class="mobile-date">2015</span>
-                    <p class="mobile-description">We've rented a small office in Gorai – Borivali to deliver data entry projects for EC Bank, MCGM – Estate Department, and Octroi</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2017</span>
-                    <p class="mobile-description">We purchased our inaugural office in Malad - Orbit Industrial Estate, expanded to 100+ staff, and began providing hardware supply and maintenance.</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2018</span>
-                    <p class="mobile-description">Expanding data entry projects to various Government Bodies, securing our first AMC contract with MCGM – Octroi. Our team grew to 400+.</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2020</span>
-                    <p class="mobile-description">Started Software Division in Malad on Nov 14, 2016. By Jan 2017, developed software, handled hardware, and performed data entry for CIDCO.</p>
-                </div>
-            </div>
-            <div class="mobile-wrapper">
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2021</span>
-                    <p class="mobile-description">In Dec 2018, we secured 'Gram Panchayat Development and Planning' project integrated with a fellowship program under Mr. Devendra Fadnavis.</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2022</span>
-                    <p class="mobile-description">Survived post-Covid with customer support. Developed 'Knowledge Resource Center' with SVT College. Created CM Apprenticeship Management System for GHRDC, Goa. Awarded HRMS projects.</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2023</span>
-                    <p class="mobile-description">Established educational software for Government Law College, Mumbai, Audit Utility for CGST Thane, Citizen Scheme Portal for Navi Mumbai Municipal Corporation. Ventured into Labour Law Compliance.</p>
-                </div>
-                <div class="mobile-item" style="background-image: url('{% static 'cloud_about_icon.png' %}');">
-                    <span class="mobile-date">2024</span>
-                    <p class="mobile-description">Continuing ..</p>
-                </div>
-            </div>
-        </div>
+  <section class="company-section">
+    <div class="go-back">
+      <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+    </div>      
+      <div class="company-card">
+        <img  src="{% static 'about_us_background.gif' %}" alt="Company Image" class="company-image" />
+        <h2 class="company-name">Tech Innovators-TechnoWin IT Infra Pvt Ltd 🚀</h2>
+        <p class="company-description">
+          Empowering businesses with innovative apps 📱, smart IT solutions 💻, and future-ready infrastructures 🔧. <br>
+          We blend technology with creativity to drive growth, spark innovation 💡, 
+          and build seamless digital experiences. Let’s shape the future—together! 🌐
+        </p>
+      </div>
     </section>
-    
-    
-    
+
+
+{% comment %} <section class="journey-section">
+  <div class="journey-header">
+    <h2>Our Incredible Journey 🚀</h2>
+    <p>Experience the moments that have defined our success, shaped our culture, and revolutionized our industry.</p>
+  </div>
+
+  <div class="journey-mobiles">
+    <div class="journey-grid">
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2015</span>
+        <p class="journey-description">We've rented a small office in Gorai – Borivali to deliver data entry projects for EC Bank, MCGM – Estate Department, and Octroi</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2017</span>
+        <p class="journey-description">We purchased our inaugural office in Malad - Orbit Industrial Estate, expanded to 100+ staff, and began providing hardware supply and maintenance.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2018</span>
+        <p class="journey-description">Expanding data entry projects to various Government Bodies, securing our first AMC contract with MCGM – Octroi. Our team grew to 400+.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2020</span>
+        <p class="journey-description">Started Software Division in Malad on Nov 14, 2016. By Jan 2017, developed software, handled hardware, and performed data entry for CIDCO.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2021</span>
+        <p class="journey-description">In Dec 2018, we secured 'Gram Panchayat Development and Planning' project integrated with a fellowship program under Mr. Devendra Fadnavis.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2022</span>
+        <p class="journey-description">Survived post-Covid with customer support. Developed 'Knowledge Resource Center' with SVT College. Created CM Apprenticeship Management System for GHRDC, Goa. Awarded HRMS projects.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2023</span>
+        <p class="journey-description">Established educational software for Government Law College, Mumbai, Audit Utility for CGST Thane, Citizen Scheme Portal for Navi Mumbai Municipal Corporation. Ventured into Labour Law Compliance.</p>
+      </div>
+      <div class="journey-item">
+        <i class="fa fa-calendar journey-icon"></i>
+        <span class="journey-date">2024</span>
+        <p class="journey-description">Continuing ..</p>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+<section >
+ 
+  <div class="row">
+    <div class="col-lg-12">
+        <head>
+          <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        </head>
+        
+        <div class="book-wrapper">
+          <div class="books-border">
+            <book style="--total-pages:7; --book-offset:6deg;">
+        
+              <section class="page cover" style="--page-number:0;  ">
+                <h1>History Of Technowin</h1><img src="{% static 'office_logo.png' %}">
+              </section>
+        
+              <section class="page " style="--page-number:1; ">
+                <div class="flex-container">
+                  <blockquote>
+                    <p>We've rented a small office in Gorai – Borivali to deliver data entry projects for EC Bank, MCGM – Estate Department, and Octroi.</p>
+                    <footer>-2003</footer>
+                  </blockquote>
+                </div>
+        
+              </section>
+        
+              <section class="page" style="--page-number:2; ">
+                <blockquote>
+                  <p>We purchased our inaugural office in Malad - Orbit Industrial Estate, expanded to 100+ staff, and began providing hardware supply and maintenance.</p>
+                  <footer>-2004</footer>
+                </blockquote>
+              </section>
+        
+              <section class="page" style="--page-number:3; ">
+                <blockquote>
+                  <p>Expanding data entry projects to various Government Bodies, securing our first AMC contract with MCGM – Octroi. Our team grew to 400+.</p>
+                  <footer>-2008</footer>
+                </blockquote>
+              </section>
+        
+              <section class="page" style="--page-number:4; ">
+                <blockquote>
+                  <p>Started Software Division in Malad on Nov 14, 2016. By Jan 2017, developed software, handled hardware, and performed data entry for CIDCO.</p>
+                  <footer>-2016</footer>
+                </blockquote>
+              </section>
+        
+              <section class="page" style="--page-number:5; ">
+                <blockquote>
+                  <p>In Dec 2018, we secured 'Gram Panchayat Development and Planning' project integrated with a fellowship program under Mr. Devendra Fadnavis.</p>
+                  <footer>-2018</footer>
+                </blockquote>
+              </section>
+              <section class="page" style="--page-number:6; ">
+                <blockquote>
+                  <p>Survived post-Covid with customer support. Developed 'Knowledge Resource Center' with SVT College. Created CM Apprenticeship Management System for GHRDC, Goa. Awarded HRMS projects.</p>
+                  <footer>-2021</footer>
+                </blockquote>
+              </section>
+              <section class="page" style="--page-number:7; ">
+                <blockquote>
+                  <p>Established educational software for Government Law College, Mumbai, Audit Utility for CGST Thane, Citizen Scheme Portal for Navi Mumbai Municipal Corporation. Ventured into Labour Law Compliance</p>
+                  <footer>-2023</footer>
+                </blockquote>
+              </section>
+              <section class="page" style="--page-number:8; ">
+                <blockquote>
+                  <p>Continuing ..</p>
+                  <footer>-2024</footer>
+                </blockquote>
+              </section>
+              <div class="book-spine">
+                <h3>The Free Book Buggie</h3>
+              </div>
+            </book>
+          </div>
+        </div>
+      </div>
+</div>
+
+</section>
+
+
+<section class="testimonial-section" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Meet The Team</h2>
+    <div class="swiper testimonial-wrapper grid-col-3">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-1">
+            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
+            expertise skyrocketed my online
+            presence and credibility.
+            Highly recommended 
+          </p>
+          <p class="testimonial-title">Mrs. Anjali Narvekar</p>
+          <div class="review-stars">
+            
+
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-2">
+            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
+            transformed how others perceive me. Their tailored strategies
+            are a must for anyone looking to stand out!</p>
+          <p class="testimonial-title">Mr. Mahesh Narvekar</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-3">
+            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
+            I've made. Their dedication resulted in a brand identity
+            that truly resonates with my audience. Invest in your personal brand with them – you
+            won't regret it!</p>
+          <p class="testimonial-title">Mr. Umesh Narvekar</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-4">
+            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
+            expertise skyrocketed my online
+            presence and credibility.
+            Highly recommended</p>
+          <p class="testimonial-title">Mr. Shridhar Belamkar</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-5">
+            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
+            transformed how others perceive me. Their tailored strategies
+            are a must for anyone looking to stand out!</p>
+          <p class="testimonial-title">Mr. Prashant Naik</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-6">
+            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
+            I've made. Their dedication resulted in a brand identity
+            that truly resonates with my audience. Invest in your personal brand with them – you
+            won't regret it!</p>
+          <p class="testimonial-title">Mr. Giridhari Yadav</p>
+          <div class="review-stars">
+           
+          </div>
+        </div>
+
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-7">
+            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
+            expertise skyrocketed my online
+            presence and credibility.
+            Highly recommended</p>
+          <p class="testimonial-title">Mr. Imran Shaikh</p>
+          <div class="review-stars">
+           
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-8">
+            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
+            transformed how others perceive me. Their tailored strategies
+            are a must for anyone looking to stand out!</p>
+          <p class="testimonial-title">Ms. Riya Patil</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+        <div class="swiper-slide testimonial-items">
+          <div class="testimonial-img tm-img-9">
+            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+          </div>
+          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
+            I've made. Their dedication resulted in a brand identity
+            that truly resonates with my audience. Invest in your personal brand with them – you
+            won't regret it!</p>
+          <p class="testimonial-title">Mr. Pruthvi Hajare</p>
+          <div class="review-stars">
+           
+
+          </div>
+        </div>
+        
+      </div>
+      <!--     <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div> -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+   
+  <!-- Swiper JS -->
+
+
+{% comment %} 
+  <style>
+    *, *::before, *::after {
+        box-sizing: border-box;
+      }
       
+      body {
+        font-family: "Work Sans", sans-serif;
+        font-weight: 400;
+        height: 100vh;
+      }
       
+      .wrapper {
+        background-color: #08BDBD;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      
+      .carousel {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .carousel__item {
+        width: 100%;
+        max-width: 300px;
+        padding: 0 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        opacity: 0;
+        -webkit-animation: carousel-animate-horizontal 20s linear forwards infinite;
+                animation: carousel-animate-horizontal 20s linear forwards infinite;
+      }
+      @media screen and (min-width: 650px) {
+        .carousel__item {
+          max-width: 500px;
+        }
+      }
+      
+      .carousel__item:nth-child(1) {
+        -webkit-animation-delay: calc(3.3333333333s * 0);
+                animation-delay: calc(3.3333333333s * 0);
+      }
+      
+      .carousel__item:nth-child(2) {
+        -webkit-animation-delay: calc(3.3333333333s * 1);
+                animation-delay: calc(3.3333333333s * 1);
+      }
+      
+      .carousel__item:nth-child(3) {
+        -webkit-animation-delay: calc(3.3333333333s * 2);
+                animation-delay: calc(3.3333333333s * 2);
+      }
+      
+      .carousel__item:nth-child(4) {
+        -webkit-animation-delay: calc(3.3333333333s * 3);
+                animation-delay: calc(3.3333333333s * 3);
+      }
+      
+      .carousel__item:nth-child(5) {
+        -webkit-animation-delay: calc(3.3333333333s * 4);
+                animation-delay: calc(3.3333333333s * 4);
+      }
+      
+      .carousel__item:nth-child(6) {
+        -webkit-animation-delay: calc(3.3333333333s * 5);
+                animation-delay: calc(3.3333333333s * 5);
+      }
+      
+      .carousel__item-head {
+        border-radius: 50%;
+        background-color: #dcdee1;
+        width: 84px;
+        height: 84px;
+        margin-bottom: -42px;
+        position: relative;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+      }
+      
+      .carousel__item-body {
+        width: 100%;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 50px 30px 20px 30px;
+        text-align: center;
+      }
+      
+      @-webkit-keyframes carousel-animate-horizontal {
+        0% {
+          transform: translateX(-200%);
+          opacity: 0;
+        }
+        2%, 16.6666666667% {
+          transform: translateX(-100%);
+          opacity: 0.4;
+        }
+        18.6666666667%, 33.3333333333% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        35.3333333333%, 50% {
+          transform: translateX(100%);
+          opacity: 0.4;
+        }
+        52% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+      }
+      
+      @keyframes carousel-animate-horizontal {
+        0% {
+          transform: translateX(-200%);
+          opacity: 0;
+        }
+        2%, 16.6666666667% {
+          transform: translateX(-100%);
+          opacity: 0.4;
+        }
+        18.6666666667%, 33.3333333333% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        35.3333333333%, 50% {
+          transform: translateX(100%);
+          opacity: 0.4;
+        }
+        52% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(200%);
+          opacity: 0;
+        }
+      }
+</style>
 
-
-
-
-
-
+  <div class='wrapper'>
+    <div class='carousel'>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          1
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 1</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          2
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 2</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          3
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 3</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          4
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 4</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          5
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 5</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+          6
+        </div>
+        <div class='carousel__item-body'>
+          <p>Carousel item 6</p>
+          <p>Eiusmod tempor incididunt ut labore et dolore</p>
+        </div>
+      </div>
+    </div>
+  </div>
+   {% endcomment %}
+    
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  jQuery(document).ready(function($) {
+      // Auto-flip the pages every 3 seconds (adjust as needed)
+      var pageInterval = setInterval(function() {
+          // Find the next page that isn't marked as 'past'
+          var nextPage = $("book .page:not(.past)").first();
+          
+          // If we found a page, mark it as 'past' (flip it)
+          if (nextPage.length) {
+              nextPage.addClass('past');
+          } else {
+              // If no more pages are left to flip, reset to the first page
+              $("book .page").removeClass('past');
+          }
+      }, 3000); // 3000ms = 3 seconds, adjust this as needed
+
+      // Optional: Manually flip the page when clicked (this is still available)
+      $("book").on('click', '.page', function() {
+          $(this).addClass('past');
+      });
+
+      $("book").on('click', '.page.past', function() {
+          $(this).removeClass('past');
+      });
+  });
+</script>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".testimonial-wrapper", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 30,
+      loop: true,
+      speed: 1300,
+      autoplay: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          slidesPerGroup: 3
+        },
+        480: {
+          slidesPerView: 2,
+          slidesPerGroup: 1
+        }
+      }
+    });
+</script>
+
+
 </html>
