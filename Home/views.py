@@ -7,3 +7,7 @@ def Home(request):
 # Create your views here.
 def AboutUs(request):
     return render(request,'Home/about_us.html') 
+
+# Create your views here.
+def Services(request):
+    return render(request,'Home/service.html') 

@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-4 text-center">
                 <a href="tel:+917738019120" target="_blank">
-                    <img src="{% static 'mobile.png' %}" alt="Call">
+                    <img src="{% static 'call_icon.png' %}" alt="Call">
                     +91 7738019120
                 </a>
             </div>
@@ -55,9 +55,9 @@
             <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
 
             <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
-            <li style="margin-top:2%"><a href="services">Services</a></li>
-            <li style="margin-top:2%"><a href="projects">Projects</a></li>
-            <li style="margin-top:2%"><a href="projects">Feedback</a></li>
+            <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
+            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Projects</a></li>
+            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Feedback</a></li>
         {% comment %} </ul>
         <ul> {% endcomment %}
             <li>
@@ -196,7 +196,7 @@
             <!-- Counter 1: Years of Experience -->
             <div class="why-techno-card">
                 <div class="why-techno-card-content">
-                    <h3>Years of Experience</h3>
+                    <h3>Years of<br> Experience</h3>
                     <img src="{% static 'evolution.gif' %}" alt="Years of Experience">
                     <div class="counter" data-count="25">0</div>
                     <p>We bring over 15 years of expertise in providing innovative IT solutions to our clients.</p>
@@ -206,7 +206,7 @@
             <!-- Counter 2: Customer Satisfaction -->
             <div class="why-techno-card">
                 <div class="why-techno-card-content">
-                    <h3>Customer Satisfaction</h3>
+                    <h3>Customer <br>Satisfaction</h3>
                     <img src="{% static 'customer-experience.gif' %}" alt="Customer Satisfaction">
                     <div class="counter" data-count="98">0</div>
                     <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
@@ -245,7 +245,7 @@
         <img src="{% static 'service1.png' %}" alt="Service 1">
         <h3>Web Development</h3>
         <p>TechnoWin IT Infra Pvt Ltd offers innovative web development solutions tailored to businesses’ needs. We create dynamic, responsive websites and web applications, ensuring a seamless user experience across all devices. Using the latest technologies, we help businesses enhance their online presence and achieve their goals effectively.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -254,7 +254,7 @@
         <img src="{% static 'service2.png' %}" alt="Service 2">
         <h3>Data Management</h3>
         <p>TechnoWin IT Infra Pvt Ltd provides comprehensive data management solutions to help businesses organize, store, and analyze their data effectively. Our services ensure data accuracy, security, and easy access, enabling businesses to make informed decisions and streamline operations.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -263,7 +263,7 @@
         <img src="{% static 'service3.png' %}" alt="Service 3">
         <h3>Program Management</h3>
         <p>TechnoWin IT Infra Pvt Ltd offers expert program management services to help businesses plan, execute, and monitor projects successfully. We ensure alignment with business goals, optimize resources, and deliver results on time, helping organizations achieve their objectives efficiently.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -272,7 +272,7 @@
         <img src="{% static 'service4.png' %}" alt="Service 4">
         <h3>App Development</h3>
         <p>TechnoWin IT Infra Pvt Ltd specializes in creating custom mobile and web applications tailored to business needs. Our team focuses on building user-friendly, high-performance apps that enhance customer engagement and drive business growth.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -281,7 +281,7 @@
         <img src="{% static 'service5.png' %}" alt="Service 5">
         <h3>Hardware Networking</h3>
         <p>TechnoWin IT Infra Pvt Ltd delivers robust hardware networking solutions to ensure seamless communication and connectivity within your business. From network setup to maintenance, we provide reliable and secure networking infrastructure that supports business operations and enhances overall efficiency.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -290,7 +290,7 @@
         <img src="{% static 'service6.png' %}" alt="Service 6">
         <h3>Cloud Computing</h3>
         <p>TechnoWin IT Infra Pvt Ltd offers scalable and secure cloud computing solutions that help businesses manage their data and applications efficiently. Our services provide flexibility, cost savings, and improved performance, enabling businesses to focus on growth while we handle their cloud infrastructure.</p>
-        <a href="#" class="read-more">
+        <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -1152,7 +1152,7 @@
                 </div>
                 <div class="contact-item">
                     <a href="tel:+917738019120" target="_blank">
-                        <img src="{% static 'mobile.png' %}" alt="Call">
+                        <img src="{% static 'call_icon.png' %}" alt="Call">
                         +91 7738019120
                     </a>
                 </div>

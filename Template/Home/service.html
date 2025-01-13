@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/service_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Services</title>  
+</head>
+<body>
+  
+    <section class="services-section">
+        <div class="go-back">
+            <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+        </div>
+        
+        <!-- Card with image -->
+        <div class="image-card">
+            <img src="{% static 'services_background.gif' %}" alt="Image Card" class="card-image" />
+        </div>
+    </section>
+
+    
+    
+    <section class="cards-section">
+        <div class="container">
+            <div class="row">
+                <!-- Row 1 -->
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Web Development</h3>
+                        <p class="card-description">
+                            At TechnoWin IT Infra Pvt. Ltd., we specialize in delivering cutting-edge web development solutions that help businesses build a strong online presence. 💻✨ Our team of expert developers uses the latest technologies and innovative design strategies to create responsive, user-friendly websites tailored to meet your unique needs. 📱🔧 From seamless e-commerce platforms 🛒 to dynamic corporate websites 🌟, we ensure high-performance, scalability, and exceptional user experience. Partner with us to bring your digital vision to life and elevate your business in the digital world. 🌍💼
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'web.gif' %}" alt="Card Image 1" class="card-img" />
+                    </div>
+                </div>
+            </div>
+    <br>
+            <div class="row">
+                <!-- Row 2 -->
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'cloud.gif' %}" alt="Card Image 2" class="card-img" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Cloud Computing</h3>
+                        <p class="card-description">
+                            TechnoWin IT Infra Pvt Ltd offers cutting-edge cloud computing solutions 🌥️ designed to boost business efficiency and scalability 🚀. Our secure, flexible, and cost-effective services 💼 are tailored to meet the unique needs of each client. With seamless data management 📊, enhanced collaboration 🤝, and increased business agility, we empower organizations to scale operations and drive innovation with confidence 💡.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!-- Row 3 -->
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">App Development</h3>
+                        <p class="card-description">
+                            TechnoWin IT Infra Pvt Ltd delivers innovative app development services 📱 tailored to transform your ideas into powerful digital solutions 🌟. Our user-friendly, scalable, and efficient applications ⚙️ help businesses thrive in the digital age 💻, ensuring seamless functionality and superior performance 🚀.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'app.gif' %}" alt="Card Image 3" class="card-img" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <!-- Row 4 -->
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'manpower.gif' %}" alt="Card Image 4" class="card-img" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Manpower</h3>
+                        <p class="card-description">
+                            TechnoWin IT Infra Pvt Ltd provides exceptional manpower solutions 👷‍♂️🤝, connecting businesses with skilled professionals 🧑‍💼 to drive productivity and success. We focus on delivering the right talent 💡 at the right time ⏰ to meet your organizational goals efficiently 📈.
+
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+            
+            <div class="row">
+                <!-- Row 5 -->
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Hardware</h3>
+                        <p class="card-description">
+                            TechnoWin IT Infra Pvt Ltd offers reliable hardware solutions 💻⚡ that ensure seamless integration and performance for businesses of all sizes 🏢. From advanced devices to cutting-edge infrastructure 🖥️, our solutions are designed to enhance productivity and operational efficiency 🔧📊.
+                        </p>
+                    </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'hardware_icon.gif' %}" alt="Card Image 4" class="card-img" />
+                    </div>
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <!-- Row 5 -->
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'data_management.gif' %}" alt="Card Image 4" class="card-img" />
+                    </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Data Management</h3>
+                        <p class="card-description">
+                            At Technowin IT Infra Pvt Ltd, we provide comprehensive data management solutions 📊🔒 that ensure your data is organized, secure, and easily accessible. From data storage 🗄️ to backup and recovery 🔄, we help businesses optimize their data operations efficiently.
+                        </p>
+                    </div> 
+                </div>
+            </div>
+            <br>
+
+            <div class="row">
+                <!-- Row 5 -->
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title">Program Management</h3>
+                        <p class="card-description">
+                            Our program management services 📅🛠 help streamline and oversee multiple projects to ensure timely and cost-effective delivery. Technowin IT Infra Pvt Ltd uses strategic planning 📊, risk management ⚖️, and cross-team collaboration 🤝 to achieve your business goals with precision.
+                        </p>
+                    </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-image">
+                        <img src="{% static 'program_management.gif' %}" alt="Card Image 4" class="card-img" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+</body>
+
+
+</html>

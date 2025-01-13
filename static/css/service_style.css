@@ -1,0 +1,365 @@
+
+/* Go Back Button Styling */
+.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+  }
+  
+  .go-back:hover {
+    transform: scale(1.2) rotate(-10deg);
+    opacity: 0.8;
+  }
+  
+  /* Go Back Image Styling */
+  .go-back-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(8, 55, 116);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .go-back-image:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+
+  /* Styling for the Image Card */
+.image-card {
+    width: 1300px; /* Set width of the card */
+    height: 700px; /* Set height of the card */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Hide overflowing content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+    margin: 30px auto; /* Center the card */
+    border: 3px solid rgb(20, 76, 150);
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
+}
+
+.image-card:hover {
+    transform: translateY(-10px) translateX(-10px);
+    box-shadow: 0 8px 16px rgba(250, 0, 0, 0.5); /* Apply text shadow effect */
+    transition: all 0.3s ease-in-out; /* Smooth transition for transform and text-shadow */
+}
+
+/* Image inside the card */
+.card-image {
+    width: 100%; /* Make the image fill the card */
+    height: 100%; /* Make the image fill the card */
+    object-fit: cover; /* Ensure the image covers the area of the card */
+    
+}
+
+/* Responsive Styling for Go Back Button and Image Card */
+@media (max-width: 767px) {
+  
+  /* Go Back Button Styling */
+  .go-back {
+    top: 10px;
+    left: 10px;
+    width: 50px; /* Reduce size of the go back button */
+    height: 50px; /* Adjust size for mobile */
+  }
+
+  /* Go Back Image Styling */
+  .go-back-image {
+    width: 50px; /* Make the go back image smaller */
+    height: 50px; /* Adjust the image size */
+  }
+
+  
+    .go-back:hover {
+      transform: scale(1.2) rotate(-10deg);
+      opacity: 0.8;
+    }
+
+  
+    .go-back-image:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transform: scale(1.1);
+    }
+  
+    /* Image Card */
+    .image-card {
+      width: 90%; /* Make the card full width on mobile */
+      height: auto; /* Adjust height to auto for better responsiveness */
+      max-width: 500px; /* Set a maximum width to avoid overly stretched cards */
+      margin: 20px auto; /* Center the card */
+      border: 3px solid rgb(20, 76, 150);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .image-card:hover {
+      transform: translateY(-10px) translateX(-10px);
+      box-shadow: 0 8px 16px rgba(250, 0, 0, 0.5);
+      transition: all 0.3s ease-in-out;
+    }
+  
+    /* Image inside the card */
+    .card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+
+/* service explanation styling */
+.cards-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    width: 100%; /* Make the image fill the card */
+    height: 200%; /* Make the image fill the card */
+    object-fit: cover; /* Ensure the image covers the area of the card */
+}
+
+/* Card Text Styling */
+.card-text {
+    background-color: #ffffff;  /* Initial background color */
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(50px);
+    position: relative;
+    overflow: hidden;
+    transition: background 0.6s ease, color 0.3s ease; /* Smooth background and color transition */
+}
+
+/* Card Image Styling */
+.card-image {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Hover Effect for Card Image */
+.card-image:hover .card-img {
+    transform: scale(1.1);
+}
+
+/* Fade-In Animation for Text Cards */
+.card-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounceIn 1s ease-out forwards, colorTransition 1s ease 0.5s forwards;
+}
+
+/* Bounce In Animation for Card Text */
+@keyframes bounceIn {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Slide Up and Fade-In Animation for Card Title */
+@keyframes slideUpFadeIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Apply to card title */
+.card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000000;  /* Initial text color */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: slideUpFadeIn 1s ease-out forwards;
+}
+
+/* Scale-Up Animation for Card Description */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Apply to card description */
+.card-description {
+    font-size: 16px;
+    color: #000000;  /* Initial text color */
+    line-height: 1.5;
+    animation: scaleUp 0.8s ease-out forwards;
+}
+
+/* Text Color Change with Delay */
+@keyframes colorTransition {
+    0% {
+        color: #000;  /* Initial color */
+    }
+    100% {
+        color: #fff;  /* White text color */
+    }
+}
+
+/* Hover Effect for Card Text, Card Title, and Card Description */
+.card-text:hover {
+    background-color: rgb(8, 55, 116);  /* Dark blue background */
+    color: #fff;  /* White text color for the entire card */
+}
+
+/* Hover Effect for Card Title */
+.card-text:hover .card-title {
+    color: #fff;  /* Change text color to white on hover */
+}
+
+/* Hover Effect for Card Description */
+.card-text:hover .card-description {
+    color: #fff;  /* Change text color to white on hover */
+}
+
+/* Hover Glowing Text Shadow for Card Title */
+.card-text:hover .card-title {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Hover Glowing Text Shadow for Card Description */
+.card-text:hover .card-description {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Card Image Styling */
+.card-image {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease-in-out;
+}
+
+/* Hover Effect for Card Image */
+.card-image:hover .card-img {
+    transform: scale(1.1);
+}
+
+/* Apply Animation on Load */
+.card-text {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Animation for Cards Section */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 767px) {
+    .cards-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 0;  /* Adjust padding for mobile */
+    }
+
+    .card {
+        width: 100%;
+        margin: 0 15px 30px;  /* Adjust margins for better spacing */
+        height: auto;  /* Adjust card height */
+    }
+
+    .card-text {
+        padding: 20px;  /* Reduce padding for mobile view */
+    }
+
+    .card-title {
+        font-size: 20px;  /* Reduce font size */
+    }
+
+    .card-description {
+        font-size: 14px;  /* Reduce font size */
+    }
+
+    .card-img {
+        max-height: 250px;  /* Adjust image size for mobile */
+        object-fit: cover;  /* Ensure image fills container */
+    }
+
+    .card-image {
+        text-align: center;
+    }
+
+    /* Card Hover Effect Adjustments */
+    .card-text:hover {
+        background-color: rgb(8, 55, 116);  /* Dark background on hover */
+        color: #fff;  /* White text on hover */
+    }
+
+    .card-text:hover .card-title,
+    .card-text:hover .card-description {
+        color: #fff;  /* White text on hover */
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glowing effect */
+    }
+}
