@@ -146,22 +146,42 @@
                 <div class="card-content">
                     <img src="{% static 'innovation.png' %}" alt="Innovative Solutions">
                     <h3>Innovative Solutions</h3>
-                    <p>We provide cutting-edge IT solutions that empower businesses to grow and thrive in the digital age and  offer a wide range of IT services, from infrastructure design to software deployment and ongoing support, ensuring businesses have effective and reliable technology solutions. </p>
+                    <p>Workflow System – Define Level, Role, Action, and Timeline for a service or Document – Workflow is generated<br>
+                        Form Generation System – Create fields and their validations and Map to create a Form<br>
+                        Audit Utility…
+                         </p><br>
+                         <a href="#" class="read-more">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right"></i>
+                          </a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <img src="{% static 'care.png' %}" alt="Expert Team">
                     <h3> Skilled IT Manpower</h3>
-                    <p>Our team consists of highly skilled professionals with years of experience in IT infrastructure management and our trained IT professionals manage your IT operations, offering everything from staff augmentation to full-time support, ensuring smooth business operations.</p>
+                    <p>Multi-stack developers building projects/ products across many disciplines, apps, architectures and languages.<br>
+                        Project Coordinators at Large Client Sites<br>
+                        Business/ System Analyst/ Tester…’
+                        </p><br><br>
+                        <a href="AboutUs#testimonials" class="read-more">
+                            <span>Read More</span>
+                            <i class="fas fa-arrow-right"></i>
+                          </a>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
                     <img src="{% static 'leader.png' %}" alt="Customer-Centric Approach">
                     <h3>Customer-Centric Approach</h3>
-                    <p>We prioritize customer satisfaction by offering personalized and responsive service at every step. Even we listen to your unique needs and deliver customized IT solutions that drive business efficiency and growth, always focusing on customer satisfaction and long-term relationships.</p>
-                </div>
+                    <p>Audit Utility – Customized for CGST Commissionerate, Labour Law Consultant<br>
+                        Payroll System – for Municipal Corporation, Daily Salary payment for Supply Chain Company<br>
+                        Customized Software for Labour Law Consultants…
+                        </p>
+                    <a href="#" class="read-more">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </a></div>
             </div>
         </div>
     </section>
@@ -196,7 +216,7 @@
             <!-- Counter 3: Number of Clients -->
             <div class="why-techno-card">
                 <div class="why-techno-card-content">
-                    <h3>Our Clients</h3>
+                    <h3>Our <br> Clients</h3>
                     <img src="{% static 'customer-care.gif' %}" alt="Our Clients">
                     <div class="counter" data-count="50">0</div>
                     <p>Over 200 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
@@ -206,7 +226,7 @@
             <!-- Counter 4: Number of Projects -->
             <div class="why-techno-card">
                 <div class="why-techno-card-content">
-                    <h3>Our Projects</h3>
+                    <h3>Our <br> Projects</h3>
                     <img src="{% static 'project1.gif' %}" alt="Our Projects">
                     <div class="counter" data-count="100">0</div>
                     <p>We've successfully completed over 350 IT infrastructure and support projects.</p>
@@ -373,92 +393,65 @@
         </div>
     </section>
 
- <!-- Our Technologies Section -->
-    <section id="technologies">
-        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
-            <u>Technologies  Stack</u>
-        </h2>
-        <div class="flower-row">
-            <!-- Flower 1 -->
-            <div class="flower">
-                <div class="petal petal-1">
-                   DJANGO
-                </div>
-                <div class="petal petal-2">
-                    MVC
-                </div>
-                <div class="petal petal-3">
-                    CODEIGNITER
-                </div>
-                <div class="petal petal-4">
-                    LARAVEL
-                </div>
-                <div class="center">
-                    <img src="{% static 'framework_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
-                    <h4>Framework</h4>
+<!-- Technologies Stack Section -->   
+    <section id="tech-section">
+        <h2 class="tech-section-title">Technologies Stack</h2>
+        <div class="tech-cards">
+            <!-- Card 1: Slider -->
+            <div class="tech-card tech-slider-card">
+                <div class="tech-slider">
+                    <div class="tech-slides">
+                        <!-- Slide 1 -->
+                        <div class="tech-slide">
+                            <h3>Framework</h3>
+                            <p>DJANGO | MVC | CODEIGNITER | LARAVEL</p>
+                            <img src="{% static 'framework_icon.gif' %}" alt="Framework Icon">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="tech-slide">
+                            <h3>Languages</h3>
+                            <p>PYTHON | PHP | DART | KOTLIN | REACTJS | ANGULARJS</p>
+                            <img src="{% static 'languages_icon.gif' %}" alt="Languages Icon">
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="tech-slide">
+                            <h3>Cloud</h3>
+                            <p>AWS EC2 | LIGHTSAIL | WEB WERKS | AZURE | GODADDY</p>
+                            <img src="{% static 'cloud_icon.gif' %}" alt="Cloud Icon">
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="tech-slide">
+                            <h3>Web Server</h3>
+                            <p>IIS SERVER | NGINX | APACHE | XAMPP | LAMPP</p>
+                            <img src="{% static 'web_server_icon.gif' %}" alt="Web Server Icon">
+                        </div>
                     </div>
-            </div>
-            <!-- Flower 2 -->
-            <div class="flower">
-                <div class="petal petal-1">
-                    PYTHON <br> PHP
-                </div>
-                <div class="petal petal-2">
-                    DART <br> KOTLIN
-                </div>
-                <div class="petal petal-3">
-                    REACTJS <br> ANGULARJS
-                </div>
-                <div class="petal petal-4">
-                    C# <br> NODEJS
-                </div>
-                <div class="center">
-                    <img src="{% static 'languages_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
-                    <h4>Languages</h4>  
+                    <div class="tech-slider-controls">
+                        <button class="tech-prev">❮</button>
+                        <button class="tech-next">❯</button>
                     </div>
-            </div>
-        </div>
-        <div class="flower-row">
-            <!-- Flower 3 -->
-            <div class="flower">
-                <div class="petal petal-1">
-                    AWS EC2 <br> LIGHTSAIL
-                </div>
-                <div class="petal petal-2">
-                    WEB <br> WERKS
-                </div>
-                <div class="petal petal-3">
-                    AZURE
-                </div>
-                <div class="petal petal-4">
-                    GODADDY
-                </div>
-                <div class="center">
-                    <img src="{% static 'cloud_icon.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
-                   <h4> Cloud</h4>
                 </div>
             </div>
-            <!-- Flower 4 -->
-            <div class="flower">
-                <div class="petal petal-1">
-                    IIS SERVER
-                </div>
-                <div class="petal petal-2">
-                    NGINX
-                </div>
-                <div class="petal petal-3">
-                    APACHE
-                </div>
-                <div class="petal petal-4">
-                    XAMPP <br> LAMPP
-                </div>
-                <div class="center">
-                    <img src="{% static 'web_server.png' %}" alt="Django" style="width: 50%; height: 50%; object-fit: cover;">
-                    <h4>Web Server</h4>
-                </div>
+            <!-- Card 2: Title, Description, Read More -->
+            <div class="tech-card tech-content-card">
+                <h3 class="tech-card-title">Explore Our Technology Stack</h3>
+                <p class="tech-card-description">
+                    <u>Frameworks</u> 🖥️: Frameworks like Django, Laravel, and CodeIgniter provide pre-built structures for building web applications, helping developers streamline the development process. 🚀
+<br> <br>
+                    <u>Languages</u> 💻: Programming languages such as Python, PHP, Dart, Kotlin, ReactJS, and AngularJS are essential tools for creating dynamic websites and apps, offering flexibility and scalability. 🌐
+                    <br> <br>                   
+                    <u>Cloud</u> ☁️: Cloud services like AWS, Azure, and GoDaddy provide scalable infrastructure for hosting, data storage, and computing, ensuring seamless access to applications and data anywhere. 🔒
+                    <br>  <br>                 
+                    <u>Web Servers</u> 🌐: Web servers like IIS, Nginx, and Apache are responsible for delivering website content to users by handling HTTP requests, ensuring fast and reliable website performance. ⚡
+                </p>
+                <a href="project.html" class="read-more">
+                    Read More
+                 </a>
             </div>
         </div>
     </section>
+    
+
     
 
 
@@ -471,7 +464,7 @@
         </div>
     
         <div class="certificate-slider-section">
-            <h2 class="slider-title">Our Certificates</h2>
+            {% comment %} <h2 class="slider-title">Our Certificates</h2> {% endcomment %}
             <div class="certificate-slider">
                 <!-- Navigation Buttons -->
                 <button class="prev-btn" onclick="navigateSlider(-1)">❮</button>
@@ -1513,7 +1506,31 @@ function scrollToBottom() {
 
     </script>
 
+<script>
+    const techSlides = document.querySelector('.tech-slides');
+const techPrevButton = document.querySelector('.tech-prev');
+const techNextButton = document.querySelector('.tech-next');
+let currentTechSlide = 0;
 
+techPrevButton.addEventListener('click', () => {
+    currentTechSlide = (currentTechSlide > 0) 
+        ? currentTechSlide - 1 
+        : techSlides.children.length - 1;
+    updateTechSlider();
+});
+
+techNextButton.addEventListener('click', () => {
+    currentTechSlide = (currentTechSlide < techSlides.children.length - 1) 
+        ? currentTechSlide + 1 
+        : 0;
+    updateTechSlider();
+});
+
+function updateTechSlider() {
+    const techSlideWidth = techSlides.children[0].offsetWidth;
+    techSlides.style.transform = `translateX(-${currentTechSlide * techSlideWidth}px)`;
+}
+</script>
 
 
 </html>
