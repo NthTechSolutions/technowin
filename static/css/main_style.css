@@ -913,28 +913,32 @@ html {
 /* Default state for the image */
 /* Default state for the image */
 .service-box img {
-    transition: transform 0.3s ease; /* Smooth transition */
-    transform: translateX(0) scale(1); /* Initial position and size */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: rotate(0deg);
+    opacity: 1;
 }
 
-/* Hover state: apply the animation when the card is hovered */
+/* Hover state: Apply the animation */
 .service-box:hover img {
-    animation: moveSidewaysZoom 1.2s ease-in-out infinite; /* Horizontal movement with zoom */
-    transform-origin: center; /* Smooth animation */
+    animation: rotateFadeIn 1.2s ease-in-out 1; /* Runs animation only once */
 }
 
 /* Define the keyframe animation */
-@keyframes moveSidewaysZoom {
+@keyframes rotateFadeIn {
     0% {
-        transform: translateX(0) scale(1); /* Original position and size */
+        transform: rotate(0deg);
+        opacity: 1;
     }
     50% {
-        transform: translateX(15px) scale(1.1); /* Move to the right and zoom */
+        transform: rotate(15deg);
+        opacity: 0.7;
     }
     100% {
-        transform: translateX(0) scale(1); /* Return to the original position and size */
+        transform: rotate(0deg);
+        opacity: 1;
     }
 }
+
 
 
 

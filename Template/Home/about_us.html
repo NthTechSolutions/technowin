@@ -17,17 +17,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Swiper CSS -->
       <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
-
     <title>About Us</title>  
 </head>
 <body>
   
   <section class="company-section">
     <div class="go-back">
-      <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+      <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
     </div>      
       <div class="company-card">
-        <img  src="{% static 'about_us_background.gif' %}" alt="Company Image" class="company-image" />
+        <img  src="{% static 'images/about_us_background.gif' %}" alt="Company Image" class="company-image" />
         <h2 class="company-name">Tech Innovators-TechnoWin IT Infra Pvt Ltd 🚀</h2>
         <p class="company-description">
           Empowering businesses with innovative apps 📱, smart IT solutions 💻, and future-ready infrastructures 🔧. <br>
@@ -49,7 +48,7 @@
             <book style="--total-pages:7; --book-offset:6deg;">
         
               <section class="page cover" style="--page-number:0;  ">
-                <h1>History Of Technowin</h1><img src="{% static 'office_logo.png' %}">
+                <h1>History Of Technowin</h1><img src="{% static 'images/office_logo.png' %}">
               </section>
         
               <section class="page " style="--page-number:1; ">
@@ -341,7 +340,7 @@
     <div class="content-item vision">
       <div class="icon-container">
         <h3 class="about_us_title">Our Vision</h3> <!-- Added Heading Here -->
-        <img src="{% static 'vision.png' %}" alt="Vision Icon">
+        <img src="{% static 'images/vision.png' %}" alt="Vision Icon">
         <br><br>
         <p>To be a global leader in technology solutions, empowering businesses with innovative IT strategies for sustained growth.</p>
       </div>
@@ -351,7 +350,7 @@
     <div class="content-item mission">
       <div class="icon-container">
         <h3 class="about_us_title">Our Mission</h3> <!-- Added Heading Here -->
-        <img src="{% static 'mission.png' %}" alt="Mission Icon"><br><br>
+        <img src="{% static 'images/mission.png' %}" alt="Mission Icon"><br><br>
         <p>Our mission is to deliver cutting-edge, customer-centric IT solutions that drive business success, create value, and foster long-term relationships.</p>
       </div>
     </div>
@@ -360,7 +359,7 @@
     <div class="content-item objectives">
       <div class="icon-container">
         <h3 class="about_us_title">Our Objectives</h3> <!-- Added Heading Here -->
-        <img src="{% static 'objective.png' %}" alt="Objectives Icon"><br><br>
+        <img src="{% static 'images/objective.png' %}" alt="Objectives Icon"><br><br>
         <ul>
           <li>Provide reliable and secure tech solutions that meet client needs.</li>
           <li>Continuously innovate to stay ahead in the fast-evolving tech industry.</li>
@@ -372,44 +371,6 @@
   </div>
 </section>
 
-<section id="careers">
-  <h2>Careers at Our Company</h2>
-  <ul>
-      <li>
-          <span>Position 1: Software Developer</span>
-          <img src="{% static 'apply.png' %}" alt="Apply" class="apply-btn" data-position="Software Developer">
-      </li>
-      <li>
-          <span>Position 2: Marketing Manager</span>
-          <img src="{% static 'apply.png' %}" alt="Apply" class="apply-btn" data-position="Marketing Manager">
-      </li>
-      <li>
-          <span>Position 3: Data Analyst</span>
-          <img src="{% static 'apply.png' %}" alt="Apply" class="apply-btn" data-position="Data Analyst">
-      </li>
-      <!-- Add more positions as needed -->
-  </ul>
-</section>
-
-<!-- Popup Form -->
-<div id="apply-popup" class="popup">
-  <div class="popup-content">
-      <span id="close-popup" class="close-btn">&times;</span>
-      <h3>Apply for <span id="position-name"></span></h3>
-      <form id="apply-form">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required><br><br>
-          
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required><br><br>
-          
-          <label for="resume">Upload Resume:</label>
-          <input type="file" id="resume" name="resume" required><br><br>
-          
-          <button type="submit">Submit Application</button>
-      </form>
-  </div>
-</div>
 
     
 </body>
@@ -442,7 +403,6 @@
 </script>
 
 <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-
 <script>
   var swiper = new Swiper(".testimonial-wrapper", {
       slidesPerView: 1,
@@ -468,43 +428,5 @@
     });
 </script>
 
-<script>
-// Get the apply buttons and the popup elements
-const applyButtons = document.querySelectorAll('.apply-btn');
-const popup = document.getElementById('apply-popup');
-const closePopup = document.getElementById('close-popup');
-const positionName = document.getElementById('position-name');
-const form = document.getElementById('apply-form');
-
-// Open the popup and set the position name
-applyButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const position = this.getAttribute('data-position');
-        positionName.textContent = position; // Set the position name in the popup
-        popup.style.display = 'block'; // Show the popup
-    });
-});
-
-// Close the popup when the close button is clicked
-closePopup.addEventListener('click', function() {
-    popup.style.display = 'none';
-});
-
-// Close the popup if the user clicks outside the popup content
-window.addEventListener('click', function(event) {
-    if (event.target === popup) {
-        popup.style.display = 'none';
-    }
-});
-
-// Handle form submission (for now, we'll just log the data to the console)
-form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
-    const formData = new FormData(form);
-    console.log("Form Submitted:", formData);
-    popup.style.display = 'none'; // Close the popup after submission
-});
-
-</script>
 
 </html>
