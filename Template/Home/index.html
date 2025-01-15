@@ -15,7 +15,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technowin Website</title>
-   
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
 </head>
 <body>
     
@@ -55,9 +55,9 @@
             <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
 
             <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
+            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Software</a></li>
             <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Projects</a></li>
-            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Feedback</a></li>
+            <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
         {% comment %} </ul>
         <ul> {% endcomment %}
             <li>
@@ -75,7 +75,7 @@
             </li>
             <!-- Contact Us Button -->
             <li style="">
-                <a href="#technoWinContactSection" id="contactButton" class="contact-btn">
+                <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
                     Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                 </a>
             </li>
@@ -84,53 +84,53 @@
 
 
 <!-- Slider Section -->
-<section>
+<section class="pc-view">
     <div class="slider-container">
         <div class="slider">
             <div class="slide active">
-                <img src="{% static 'app.gif' %}" alt="App Development">
-                <div class="slide-text">
-                    <h1>App Development</h1>
-                </div>
+                <img src="{% static 'appDevelopment.png' %}" alt="App Development">
             </div>
             <div class="slide">
-                <img src="{% static 'cloud.gif' %}" alt="Cloud Computing">
-                <div class="slide-text">
-                    <h1>Cloud Computing</h1>
-                </div>
+                <img src="{% static 'webDevelopment.png' %}" alt="Cloud Computing">
             </div>
             <div class="slide">
-                <img src="{% static 'web.gif' %}" alt="Web Development">
-                <div class="slide-text">
-                    <h1>Web Development</h1>
-                </div>
+                <img src="{% static 'projectManagent.png' %}" alt="Web Development">
             </div>
             <div class="slide">
-                <img src="{% static 'hardware_icon.gif' %}" alt="Hardware">
-                <div class="slide-text">
-                    <h1>Hardware</h1>
-                </div>
+                <img src="{% static 'cloudComputing.png' %}" alt="Hardware">
             </div>
             <div class="slide">
-                <img src="{% static 'manpower.gif' %}" alt="Manpower">
-                <div class="slide-text">
-                    <h1>Manpower</h1>
-                </div>
+                <img src="{% static 'dataManagement.png' %}" alt="Manpower">
             </div>
         </div>
 
-        <!-- Navigation buttons -->
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+</section>
 
-        <!-- Dots for navigation -->
-        <div class="dots-container">
-            <span class="dot active" onclick="currentSlide(0)"></span>
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
+<section class="mobile-view">
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide active">
+                <img src="{% static 'appDevelopmentMobile.png' %}" alt="App Development">
+            </div>
+            <div class="slide">
+                <img src="{% static 'webDevelopmentMobile.png' %}" alt="Cloud Computing">
+            </div>
+            <div class="slide">
+                <img src="{% static 'cloudComputing_mobile.png' %}" alt="Web Development">
+            </div>
+            <div class="slide">
+                <img src="{% static 'data_management_Mobile.png' %}" alt="Hardware">
+            </div>
+            <div class="slide">
+                <img src="{% static 'programManagementMobile.png' %}" alt="Manpower">
+            </div>
         </div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 </section>
 
@@ -245,16 +245,16 @@
         <img src="{% static 'service1.png' %}" alt="Service 1">
         <h3>Web Development</h3>
         <p>TechnoWin IT Infra Pvt Ltd offers innovative web development solutions tailored to businesses’ needs. We create dynamic, responsive websites and web applications, ensuring a seamless user experience across all devices. Using the latest technologies, we help businesses enhance their online presence and achieve their goals effectively.</p>
-        <a href="Services" class="read-more">
+        <a href="Project" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
       </div>
       <div class="service-box">
-        <img src="{% static 'service2.png' %}" alt="Service 2">
-        <h3>Data Management</h3>
+        <img src="{% static 'service4.png' %}" alt="Service 2">
+        <h3>App Development</h3>
         <p>TechnoWin IT Infra Pvt Ltd provides comprehensive data management solutions to help businesses organize, store, and analyze their data effectively. Our services ensure data accuracy, security, and easy access, enabling businesses to make informed decisions and streamline operations.</p>
-        <a href="Services" class="read-more">
+        <a href="Project" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -269,16 +269,7 @@
         </a>
       </div>
       <div class="service-box">
-        <img src="{% static 'service4.png' %}" alt="Service 4">
-        <h3>App Development</h3>
-        <p>TechnoWin IT Infra Pvt Ltd specializes in creating custom mobile and web applications tailored to business needs. Our team focuses on building user-friendly, high-performance apps that enhance customer engagement and drive business growth.</p>
-        <a href="Services" class="read-more">
-          <span>Read More</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-      <div class="service-box">
-        <img src="{% static 'service5.png' %}" alt="Service 5">
+        <img src="{% static 'service5.png' %}" alt="Service 4">
         <h3>Hardware Networking</h3>
         <p>TechnoWin IT Infra Pvt Ltd delivers robust hardware networking solutions to ensure seamless communication and connectivity within your business. From network setup to maintenance, we provide reliable and secure networking infrastructure that supports business operations and enhances overall efficiency.</p>
         <a href="Services" class="read-more">
@@ -287,9 +278,18 @@
         </a>
       </div>
       <div class="service-box">
-        <img src="{% static 'service6.png' %}" alt="Service 6">
+        <img src="{% static 'service6.png' %}" alt="Service 5">
         <h3>Cloud Computing</h3>
         <p>TechnoWin IT Infra Pvt Ltd offers scalable and secure cloud computing solutions that help businesses manage their data and applications efficiently. Our services provide flexibility, cost savings, and improved performance, enabling businesses to focus on growth while we handle their cloud infrastructure.</p>
+        <a href="Services" class="read-more">
+          <span>Read More</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+      <div class="service-box">
+        <img src="{% static 'staff.png' %}" alt="Service 6">
+        <h3>Manpower</h3>
+        <p>TechnoWin IT Infra Pvt Ltd provides highly skilled and reliable manpower solutions, offering businesses access to top-tier professionals for their specific needs. Our expert teams are equipped to handle diverse projects, ensuring efficiency and quality while reducing operational costs. We help businesses scale their workforce quickly and effectively, allowing them to focus on their core operations and growth.</p>
         <a href="Services" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
@@ -802,11 +802,16 @@
         justify-content: center;
         align-items: center;
       }
-      
+      .carousel__item-head .feedback-image img {
+        width: 100%;  /* Adjust width as per your need */
+        height: 100px;  /* Maintain aspect ratio */
+        object-fit: contain;  /* Ensure the image scales properly within the container */
+    }
+    
       .carousel__item {
         width: 100%;
         max-width: 300px;
-        padding: 0 12px;
+        padding: 0 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -865,6 +870,27 @@
         font-size: 20px;
       }
       
+      /* Feedback Stars */
+.feedback-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    color: rgb(194, 166, 10);
+    transition: transform 0.4s ease, color 0.4s ease;
+    cursor: pointer;
+    animation: twinkle 2s infinite;
+}
+
+.star:hover {
+    transform: scale(1.5) rotate(20deg);
+    color: orange;
+}
+
       .carousel__item-body {
         width: 100%;
         background-color: #fff;
@@ -1047,9 +1073,10 @@
     </div>
   </section>
   
+
 <section id="technoWinContactSection">
     <div class="heading-with-logo">
-        <h2>Get in Touch With</h2>
+        <h2>!! <u>We Power Technology, You Drive Growth </u>!!</h2>
     </div>
     
     <!-- Contact Form -->
@@ -1064,12 +1091,12 @@
                 <input type="email" id="email" name="email" placeholder="Enter your email address" required>
             </div>
             <div class="form-field">
-                <label for="subject">Subject: <span class="required">*</span></label>
-                <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                <label for="subject">Budget: <span class="required">*</span></label>
+                <input type="text" id="subject" name="subject" placeholder="Enter Budget" required>
             </div>
             <div class="form-field">
-                <label for="message">Message: <span class="required">*</span></label>
-                <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+                <label for="requirement">Requirement: <span class="required">*</span></label>
+                <textarea id="requirement" name="requirement" placeholder="Enter Requirement" rows="5" required></textarea>
             </div>
             <div class="form-button-container">
                 <button type="submit" class="submit-btn">
@@ -1118,10 +1145,10 @@
 
         <div class="footer-links">
             <ul>
-                <li><a href="about_us">About</a></li>
-                <li><a href="services">Services</a></li>
-                <li><a href="projects">Projects</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="{% url 'AboutUs' %}">About</a>
+                    <li><a href="{% url 'Services' %}">Services</a></li>
+                    <li><a href="{% url 'AboutUs' %}">Projects</a></li>
+                    <li><a href="{% url 'ContactUs' %}">Contact </a></li>
             </ul>
         </div>
         <div class="footer-cer">
@@ -1181,7 +1208,31 @@
 </body>
 
 <script>
-    // Initialize the slide index
+    let slideIndex = 0;
+
+    function showSlide(index) {
+        const slides = document.querySelectorAll('.slide');
+        
+        if (index >= slides.length) slideIndex = 0; // Loop back to the first slide
+        if (index < 0) slideIndex = slides.length - 1; // Go to the last slide
+
+        slides.forEach((slide) => {
+            slide.classList.remove('active');  // Remove active class from all slides
+        });
+
+        slides[slideIndex].classList.add('active');  // Add active class to the current slide
+    }
+
+    function changeSlide(n) {
+        slideIndex += n;
+        showSlide(slideIndex);
+    }
+
+    // Initialize the first slide when the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        showSlide(slideIndex);
+    });
+    {% comment %} // Initialize the slide index
     let slideIndex = 0;
 
     // Function to show the current slide
@@ -1227,7 +1278,7 @@
     window.onload = function() {
         showSlide(slideIndex); // Show the first slide initially
         autoSlide(); // Start the automatic slide transition
-    };
+    }; {% endcomment %}
 </script>
 
 

@@ -363,3 +363,124 @@
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);  /* Glowing effect */
     }
 }
+
+
+#faq-section {
+    padding: 50px;
+    background-color: #f7f7f7;
+    font-family: "Work Sans", sans-serif;
+  }
+
+  #faq-section h2 {
+    padding: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 30px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 50px;
+  
+
+}
+
+#faq-section h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+    /* padding: 10px;
+    text-align: center;
+    background-color: #f7f7f7;
+    margin-bottom: 30px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 24px;
+    color: rgb(8, 55, 116);
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideInFromLeft 1s forwards;
+  }
+   */
+  @keyframes slideInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  
+  .faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .faq-item {
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color:rgb(8, 55, 116);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  
+  .faq-question h3 {
+    color: white;
+    font-weight: bold;
+    margin-left: 40px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .faq-answer {
+    padding: 20px;
+    background-color: #f9f9f9;
+    display: none;
+  }
+  
+  .faq-item.open .faq-answer {
+    display: block;
+  }
+  
+  .faq-arrow {
+    width: 24px; /* Adjust the width of your image */
+    height: 24px; /* Adjust the height of your image */
+    transition: transform 0.3s ease;
+  }
+  
+  .faq-item.open .faq-arrow {
+    transform: rotate(180deg);
+  }
+  
+  /* Animation for smooth transition */
+  .faq-item {
+    max-height: 50px; /* Collapsed state */
+    overflow: hidden;
+  }
+  
+  .faq-item.open {
+    max-height: 300px; /* Expanded state */
+  }
+  
+

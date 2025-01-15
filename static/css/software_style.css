@@ -1,0 +1,43 @@
+
+/* Go Back Button Styling */
+.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+  }
+  
+  .go-back:hover {
+    transform: scale(1.2) rotate(-10deg);
+    opacity: 0.8;
+  }
+  
+  /* Go Back Image Styling */
+  .go-back-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(8, 55, 116);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .go-back-image:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }

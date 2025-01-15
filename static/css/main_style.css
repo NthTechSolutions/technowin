@@ -747,9 +747,12 @@ html {
 
 /* Hover effect for counters */
 .why-techno-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+    transform: translateY(-5px);
+    transform: translateX(5px);
+    box-shadow: 0 36px 36px rgb(20, 76, 150);
+    opacity: 1;
+  }
+
 
 /* Image styling */
 .why-techno-card img {
@@ -1830,8 +1833,8 @@ html {
     line-height: 1.6;
     color: rgb(8, 55, 116);
     font-weight: bold;
-    text-align: left;
     margin-bottom: 0;
+    margin-left: 60px;
     animation: fadeInLeft 1.2s ease-out, slideUp 1.5s ease-out 0.5s;
     /* Multiple animations: fade-in and slide-up */
 }
@@ -2068,7 +2071,8 @@ html {
     }
 
     .certificate-slider-section {
-        width: 150%;
+       /* width: 150%; */
+        width: 100%;
     }
 
     /* Adjust navigation buttons */
@@ -2089,158 +2093,6 @@ html {
 }
 
 
-
-/* Feedback section styling */
-.feedback-section {
-    padding: 20px;
-    background-color:rgb(163, 159, 159); /* Light grey background */
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.feedback-section h2 {
-    font-size: 40px;
-    color: #333;
-    text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-}
-
-/* Feedback container grid layout */
-.feedback-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Four cards per row */
-    gap: 20px; /* Space between cards */
-    margin: 0 auto;
-    max-width: 1200px; /* Centered and limited width */
-}
-
-.feedback-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-/* Feedback Card Styling */
-.feedback-card {
-    background: linear-gradient(to bottom right, #f8f3f3, #f2f2f2);
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    flex: 1 1 calc(25% - 40px);
-    max-width: 300px;
-    position: relative;
-    overflow: hidden;
-}
-
-.feedback-card:hover {
-    transform: scale(1.08) translateY(-10px);
-    background: linear-gradient(135deg, rgb(207, 217, 243), rgb(179, 183, 247));
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-.feedback-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out;
-    border-radius: 50%;
-    z-index: 0;
-}
-
-.feedback-card:hover::before {
-    transform: scale(1);
-}
-
-/* Feedback Image */
-.feedback-image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 30%;
-    margin-bottom: 15px;
-}
-
-
-/* Feedback Content */
-.feedback-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 5px;
-    z-index: 1;
-    position: relative;
-}
-
-.feedback-post {
-    font-size: 14px;
-    color: #030303;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-}
-
-.feedback-description {
-    font-size: 14px;
-    color: #000000;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
-}
-
-/* Feedback Stars */
-.feedback-stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
-}
-
-.star {
-    font-size: 24px;
-    color: rgb(194, 166, 10);
-    transition: transform 0.4s ease, color 0.4s ease;
-    cursor: pointer;
-    animation: twinkle 2s infinite;
-}
-
-.star:hover {
-    transform: scale(1.5) rotate(20deg);
-    color: orange;
-}
-
-@keyframes twinkle {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .feedback-card {
-        flex: 1 1 calc(50% - 40px);
-    }
-}
-
-@media (max-width: 480px) {
-    .feedback-card {
-        flex: 1 1 100%;
-    }
-}
 
 /* Contact Us  section Styling*/
 #technoWinContactSection {
@@ -2298,13 +2150,17 @@ html {
 }
 
 .heading-with-logo h2 {
-    margin: 0; /* Remove default margin */
-    font-size: 40px; /* Heading size */
-    margin-top: 30px;
-    color: rgb(0, 0, 0); /* Text color */
-    text-shadow: 2px 2px 8px rgba(17, 73, 177, 0.4); /* Shadow effect */
-    font-family: 'Arial', sans-serif; /* Font family */
-    letter-spacing: 2px; /* Letter spacing */
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.heading-with-logo h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Style for the heading */

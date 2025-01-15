@@ -11,3 +11,10 @@ def AboutUs(request):
 # Create your views here.
 def Services(request):
     return render(request,'Home/service.html') 
+
+# Create your views here.
+def ContactUs(request):
+    return render(request,'Home/contact_us.html') 
+
+def Software(request):
+    return render(request,'Home/contact_us.html') 

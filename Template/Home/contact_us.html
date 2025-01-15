@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/contact_us_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>  
+</head>
+<body>
+
+    <section class="company-section">
+        <div class="go-back">
+          <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+        </div> 
+    </section>
+
+
+    <section id="social-media-section">
+        <!-- Image at the top -->
+        <div class="section-image">
+            <img src="{% static 'contact_background.gif' %}" alt="Your Image Description">
+        </div>
+        
+        <div class="social-media-container">
+           <h2><u>Follow Us</h2></u>
+            <div class="social-media-icons">
+                <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
+                    <img src="{% static 'facebook1.png' %}" alt="Facebook">
+                </a>
+                <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
+                    <img src="{% static 'twitter.png' %}" alt="Twitter">
+                </a>
+                <a href="#" class="social-icon linkedin" target="_blank">
+                    <img src="{% static 'linkedin.png' %}" alt="LinkedIn">
+                </a>
+                <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
+                    <img src="{% static 'instagram.png' %}" alt="Instagram">
+                </a>
+                <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
+                    <img src="{% static 'whatsapp.png' %}" alt="Whatsapp">
+                </a>
+                <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" class="social-icon location" target="_blank">
+                    <img src="{% static 'location.png'  %}" alt="Location">
+                </a>
+                <a href="mailto:technowinitinfra@gmail.com" class="social-icon email" target="_blank">
+                    <img src="{% static 'gmail.png' %}" alt="Email">
+                </a>
+                <a href="tel:+917738019120" class="social-icon call" target="_blank">
+                    <img src="{% static 'call_icon.png' %}" alt="Call">
+                </a>
+            </div>
+            <div class="contact-button">
+                <a href="{% url 'ContactUs' %}#technoWinContactSection" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="feedback-section">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>
+        <div class="feedback-container">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'cgst.png' %}" alt="Feedback 1">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">John Doe</h3>
+                    <p class="feedback-post">CEO at Example Inc.</p>
+                    <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'lkn.png' %}" alt="Feedback 2">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Jane Smith</h3>
+                    <p class="feedback-post">Founder at Tech Innovators</p>
+                    <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'cidco.png' %}" alt="Feedback 3">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Alice Johnson</h3>
+                    <p class="feedback-post">CTO at Future Tech</p>
+                    <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 4 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'navi_mumbai.png'  %}" alt="Feedback 4" >
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Mark Williams</h3>
+                    <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                    <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="feedback-container">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'tata1.png' %}" alt="Feedback 1">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">John Doe</h3>
+                    <p class="feedback-post">CEO at Example Inc.</p>
+                    <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'svl.png' %}" alt="Feedback 2">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Jane Smith</h3>
+                    <p class="feedback-post">Founder at Tech Innovators</p>
+                    <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'tata.png' %}" alt="Feedback 3">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Alice Johnson</h3>
+                    <p class="feedback-post">CTO at Future Tech</p>
+                    <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 4 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'accenture.png'  %}" alt="Feedback 4">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Mark Williams</h3>
+                    <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                    <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="feedback-container">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'cgst.png' %}" alt="Feedback 1">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">John Doe</h3>
+                    <p class="feedback-post">CEO at Example Inc.</p>
+                    <p class="feedback-description">"Amazing service! The team exceeded our expectations. Highly recommend for anyone in need of tech solutions."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'lkn.png' %}" alt="Feedback 2">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Jane Smith</h3>
+                    <p class="feedback-post">Founder at Tech Innovators</p>
+                    <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'cidco.png' %}" alt="Feedback 3">
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Alice Johnson</h3>
+                    <p class="feedback-post">CTO at Future Tech</p>
+                    <p class="feedback-description">"The team was highly professional and delivered outstanding results."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 4 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'navi_mumbai.png'  %}" alt="Feedback 4" >
+                </div>
+                <div class="feedback-content">
+                    <h3 class="feedback-name">Mark Williams</h3>
+                    <p class="feedback-post">Product Manager at Innovations Ltd.</p>
+                    <p class="feedback-description">"Exceptional service! Would absolutely recommend their expertise."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="technoWinContactSection">
+        <div class="heading-with-logo">
+            <h2><u>Get in Touch With - Innovators</u></h2>
+        </div>
+        
+        <!-- Contact Form -->
+        <div class="contact-form-container">
+            <form action="/submit_form" method="post" class="contact-form">
+                <div class="form-field">
+                    <label for="name">Full Name: <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email Address: <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-field">
+                    <label for="subject">Subject: <span class="required">*</span></label>
+                    <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Message: <span class="required">*</span></label>
+                    <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
+                </div>
+                <div class="form-button-container">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+                
+            </form>
+        </div>
+    </section>
+
+
+
+    <section id="gallery-section">
+        <h2>----- Our Gallery ------</h2>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="{% static 'team_img1.jpeg' %}" alt="Gallery Image 1">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img2.jpeg' %}" alt="Gallery Image 2">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img3.jpeg' %}" alt="Gallery Image 3">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img4.jpeg' %}" alt="Gallery Image 4">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img5.jpeg' %}" alt="Gallery Image 5">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img6.jpg' %}" alt="Gallery Image 6">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img7.jpeg' %}" alt="Gallery Image 7">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img8.jpg' %}" alt="Gallery Image 8">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img9.jpeg' %}" alt="Gallery Image 9">
+            </div>
+            <div class="gallery-item">
+                <img src="{% static 'team_img10.jpg' %}" alt="Gallery Image 610">
+            </div>
+        </div>
+    </section>
+    
+
+</body>
+</html>

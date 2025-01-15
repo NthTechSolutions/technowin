@@ -1,0 +1,759 @@
+/* Go Back Button Styling */
+.go-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: slideInFromLeft 1s ease-in-out forwards;
+  }
+  
+  .go-back:hover {
+    transform: scale(1.2) rotate(-10deg);
+    opacity: 0.8;
+  }
+  
+  /* Go Back Image Styling */
+  .go-back-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgb(8, 55, 116);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .go-back-image:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+  }
+  
+  /* Keyframe Animations */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+
+/* Styling for the Image */
+#social-media-section .section-image {
+    text-align: center;  /* Centers the image */
+    margin-bottom: 10px;  /* Space between the image and the content */
+}
+
+#social-media-section .section-image img {
+    width: 100%;  /* Make the image full width */
+    max-width: 1000px;  /* Limit the max width to 800px or adjust as needed */
+    border-radius: 12px;  /* Rounded corners for the image */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Shadow around the image */
+}
+
+/* Social Media Section Styling */
+#social-media-section {
+    background-color: #a5b4c7;
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 15px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    transition: transform 0.3s ease-out;
+}
+
+.social-media-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-media-container h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.social-media-container h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Social Media Icons & New Contact Icons */
+.social-media-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.social-icon:hover img {
+    transform: scale(1.1);
+}
+
+
+
+/* Contact Us Button Styling */
+.contact-button .btn {
+    background-color: #f39c12;
+    color: rgb(0, 0, 0);
+    padding: 16px 40px;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: bounceIn 1s ease-out;
+}
+
+.contact-button .btn:hover {
+    background-color: #f39c12;
+    color: rgb(3, 3, 3);
+    transform: translateY(-5px);
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 16px 16px rgba(250, 7, 7, 0.5);
+    cursor: pointer;
+}
+
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Feedback section styling */
+.feedback-section {
+    padding: 20px;
+    background-color:rgb(163, 159, 159); /* Light grey background */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-section h2 {
+    font-size: 40px;
+    color: #333;
+    text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+/* Feedback container grid layout */
+.feedback-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four cards per row */
+    gap: 20px; /* Space between cards */
+    margin: 0 auto;
+    max-width: 1200px; /* Centered and limited width */
+}
+
+.feedback-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Feedback Card Styling */
+.feedback-card {
+    background: linear-gradient(to bottom right, #f8f3f3, #f2f2f2);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    flex: 1 1 calc(25% - 40px);
+    max-width: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-card:hover {
+    transform: scale(1.08) translateY(-10px);
+    background: linear-gradient(135deg, rgb(207, 217, 243), rgb(179, 183, 247));
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.feedback-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease-in-out;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.feedback-card:hover::before {
+    transform: scale(1);
+}
+
+/* Feedback Image */
+.feedback-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 30%;
+    margin-bottom: 15px;
+}
+
+
+/* Feedback Content */
+.feedback-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 5px;
+    z-index: 1;
+    position: relative;
+}
+
+.feedback-post {
+    font-size: 14px;
+    color: #030303;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.feedback-description {
+    font-size: 14px;
+    color: #000000;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Feedback Stars */
+.feedback-stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 24px;
+    color: rgb(194, 166, 10);
+    transition: transform 0.4s ease, color 0.4s ease;
+    cursor: pointer;
+    animation: twinkle 2s infinite;
+}
+
+.star:hover {
+    transform: scale(1.5) rotate(20deg);
+    color: orange;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feedback-card {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .feedback-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* Styling for Gallery Section */
+#gallery-section {
+    background-color: #b8c1e0;
+    padding: 50px 20px;
+    text-align: center;
+    color: #333;
+    position: relative;
+    animation: fadeIn 1.5s ease-out;
+}
+
+#gallery-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+#gallery-section h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Gallery Container Grid Layout */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+    justify-items: center;
+    opacity: 0;
+    animation: fadeInUp 2s ease-out forwards;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    width: 100%;
+    overflow: hidden; /* Crop images */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    animation: fadeInItem 0.6s ease-out forwards;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 12px;
+}
+
+/* Hover Effects for Images */
+.gallery-item:hover {
+    transform: scale(1.05); /* Enlarge image */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom in image on hover */
+    filter: brightness(1.2); /* Slightly brighten image on hover */
+}
+
+/* Keyframe Animations */
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInItem {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+    #gallery-section h2 {
+        font-size: 2.5rem; /* Slightly smaller font size for tablet */
+        margin-bottom: 30px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column size for medium screens */
+        gap: 20px;
+    }
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    #gallery-section h2 {
+        font-size: 2rem; /* Smaller heading font */
+        margin-bottom: 20px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Make columns more compact */
+        gap: 15px;
+    }
+
+    .gallery-item {
+        width: 100%;
+    }
+
+    /* Smaller text for mobile screens */
+    #gallery-section h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stacking images on smaller screens */
+    .gallery-container {
+        grid-template-columns: 1fr; /* Stack images on mobile */
+        gap: 10px;
+    }
+
+    .gallery-item {
+        margin-bottom: 10px; /* Space between items */
+    }
+
+    #gallery-section h2 {
+        font-size: 1.5rem; /* Further reduce heading size */
+        margin-top: 20px;
+    }
+}
+
+
+/* Contact Us  section Styling*/
+#technoWinContactSection {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styling for the heading and logo in a single row */
+.heading-with-logo {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    gap: 15px; /* Space between the logo and heading */
+    text-align: center; /* Center aligns text */
+    margin-bottom: 30px; /* Space below the container */
+}
+
+.heading-with-logo .company-logo {
+    width: 350px; /* Adjust logo size */
+    height: 80px; /* Maintain aspect ratio */
+}
+
+/* Animation keyframes for zoom-in effect */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5); /* Start smaller */
+        opacity: 0; /* Start invisible */
+    }
+    100% {
+        transform: scale(1); /* End at normal size */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Animation keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Apply animation to the logo */
+.heading-with-logo .company-logo {
+    width: 350px; /* Adjust logo size */
+    height: 80px; /* Maintain aspect ratio */
+    animation: zoomIn 1.5s ease-in-out, fadeIn 2s ease-in-out; /* Combine zoom and fade animations */
+    transform-origin: center; /* Zoom from the center */
+}
+
+.heading-with-logo h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 50px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.heading-with-logo h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Style for the heading */
+#technoWinContactSection h2 {
+    font-size: 36px;
+    color: rgb(8, 55, 116);
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Contact form container styling */
+.contact-form-container {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1.5s ease-out;
+    transform: scale(0.9);
+    animation: scaleIn 1s ease-out forwards; /* Added scale-in effect */
+}
+
+/* Form field styling */
+.contact-form .form-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Labels */
+.contact-form .form-field label {
+    font-size: 16px;
+    font-weight: bold;
+    color:rgb(8, 55, 116);
+    display: block;
+    margin-bottom: 5px;
+}
+.required {
+    color: red;  /* This will change the color of the star to red */
+}
+
+/* Input fields */
+.contact-form .form-field input, 
+.contact-form .form-field textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Focus animations */
+.contact-form .form-field input:focus,
+.contact-form .form-field textarea:focus {
+    border-color: #0c71e4;
+    box-shadow: 0 0 5px rgba(13, 45, 190, 0.5);
+    outline: none;
+    animation: focusAnimation 0.3s ease-in-out; /* Added focus animation */
+}
+
+/* Textarea styling */
+.contact-form .form-field textarea {
+    resize: vertical;
+}
+
+/* Submit button styling */
+.contact-form .form-button-container {
+    text-align: center;
+}
+
+.contact-form .submit-btn {
+    padding: 12px 30px;
+    background-color: rgb(8, 55, 116);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Button hover effect */
+.contact-form .submit-btn:hover {
+    transform: translateY(-5px);
+    background-color: #6ba2eb;
+    color:#000000;
+    font-weight: bold;
+    animation: buttonHoverEffect 0.3s ease-in-out;
+}
+
+/* Form field animations */
+@keyframes focusAnimation {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+}
+
+/* Animations for form elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    #technoWinContactSection h2 {
+        font-size: 32px; /* Slightly smaller font for larger tablets */
+    }
+    .contact-form-container {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 992px) {
+    #technoWinContactSection h2 {
+        font-size: 30px; /* Reduce font size for tablets */
+    }
+    .contact-form-container {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #technoWinContactSection h2 {
+        font-size: 26px; /* Smaller font for mobile screens */
+    }
+    .contact-form-container {
+        padding: 15px; /* Less padding on mobile */
+    }
+
+    .contact-form .form-field input, 
+    .contact-form .form-field textarea {
+        font-size: 15px; /* Increase font size slightly for better readability */
+    }
+
+    .contact-form .submit-btn {
+        font-size: 14px; /* Adjust button size for mobile */
+        padding: 10px 20px; /* Adjust button padding for mobile */
+    }
+}
+
+/* For very small screens (less than 480px width) */
+@media (max-width: 480px) {
+    #technoWinContactSection h2 {
+        font-size: 24px; /* Very small font size for small devices */
+        margin-bottom: 20px;
+    }
+    .contact-form-container {
+        padding: 10px; /* Minimal padding for very small devices */
+        width: 100%; /* Ensure full width for small screens */
+    }
+
+    .contact-form .form-field input, 
+    .contact-form .form-field textarea {
+        font-size: 14px; /* Smaller text for smaller devices */
+    }
+
+    .contact-form .submit-btn {
+        font-size: 13px; /* Even smaller button size */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+}
