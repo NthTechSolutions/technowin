@@ -267,6 +267,17 @@
     position: relative;
 }
 
+/* Feedback Content */
+.project-feedback-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    margin-bottom: 5px;
+    z-index: 1;
+    position: relative;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans font */
+}
+
 .feedback-post {
     font-size: 14px;
     color: #030303;

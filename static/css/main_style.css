@@ -621,19 +621,34 @@ html {
 
 }
 
+
 .why-techno .card {
-    background-color: #fff;
+    background: linear-gradient(45deg,rgb(116, 197, 230), #fffefe); /* Initial gradient */
+    background-size: 200% 200%; /* Make the gradient larger than the element */
+    background-position: 0% 50%; /* Initial position of the gradient */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 30%;  /* Adjust the width to ensure all 3 cards fit in one row */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease; /* Add transition for background position */
+    perspective: 1500px; /* Add perspective for 3D effect */
 }
 
 .why-techno .card:hover {
+    transform: translateY(-10px) rotateY(10deg) rotateX(10deg); /* Apply 3D effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Enhance the shadow for depth */
+    background-position: 100% 50%; /* Move the gradient background during hover */
+    box-shadow: 0 25px 25px rgb(50, 100, 167);
+    opacity: 1;
+}
+
+
+
+
+/* .why-techno .card:hover {
     transform: translateY(-10px);
     background-color:rgb(186, 186, 194);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .why-techno .card-content {
     padding: 20px;
@@ -656,6 +671,7 @@ html {
 
 .why-techno .card p {
     font-size: 16px;
+    font-weight: bold;
     color: #000000;
 }
 
@@ -747,9 +763,9 @@ html {
 
 /* Hover effect for counters */
 .why-techno-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(5px);
     transform: translateX(5px);
-    box-shadow: 0 36px 36px rgb(20, 76, 150);
+    box-shadow: 0 25px 25px rgb(50, 100, 167);
     opacity: 1;
   }
 
@@ -773,7 +789,7 @@ html {
 /* Counter description styling */
 .why-techno-card-content p {
     font-size: 16px;
-    color: #555;
+    color: #000000;
 }
 
 /* Animation for card fade-in and bounce */
@@ -1271,8 +1287,10 @@ html {
 
 
 .tech-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(5px);
+    transform: translateX(5px);
+    box-shadow: 0 25px 25px rgb(50, 100, 167);
+    opacity: 1;
 }
 
 /* Slider Card */
@@ -1300,6 +1318,18 @@ html {
     object-fit: cover;
     margin: 10px 0;
 }
+
+/* Image Style */
+.tech-card-img {
+    width: 100%;
+    height: 300px; /* Adjust the height based on your design */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    margin-bottom: 15px;
+    border: 2px solid black;
+}
+
 
 .tech-slide h3 {
     font-size: 24px;
@@ -1357,9 +1387,8 @@ html {
 
 .tech-card-title {
     font-size: 24px;
-    margin-bottom: 5px;
+    margin-top: 5px;
     font-weight: bold;
-    margin-bottom: 30px;
     color: rgb(8, 55, 116);
     text-shadow: 1px 1px 5px rgba(238, 199, 27, 0.5);
     position: relative;
@@ -1370,7 +1399,7 @@ html {
 .tech-card-title::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: 2px;
     left: 0;
     width: 0;
     height: 3px;
@@ -1605,6 +1634,29 @@ html {
     }
 }
 
+ /* Hidden text initially */
+ .social-icon .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
+    transform: translateX(-50%);
+    background-color: rgb(56, 55, 55);
+    color: white;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Show the tooltip when hovering */
+.social-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
 /* Apply the slide-in animation to the social media icons */
 .social-links {
     animation: slideIn 1s ease-out;
@@ -1821,7 +1873,7 @@ html {
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-left: 90px;
+    margin-left: 180px;
     text-shadow: 1px 1px 5px rgba(255, 46, 46, 0.5);
     animation: fadeInLeft 1s ease-out, scaleUp 1.2s ease-in-out 0.5s, colorChange 2s infinite alternate;
     /* Multiple animations: fade-in, scale-up, and color change */
@@ -1838,7 +1890,7 @@ html {
     color: rgb(8, 55, 116);
     font-weight: bold;
     margin-bottom: 0;
-    margin-left: 60px;
+    margin-left: 110px;
     animation: fadeInLeft 1.2s ease-out, slideUp 1.5s ease-out 0.5s;
     /* Multiple animations: fade-in and slide-up */
 }
@@ -2515,7 +2567,7 @@ footer {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 30%;
     padding: 10px;
     font-size: 20px;
     cursor: pointer;

@@ -1,0 +1,41 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slideshow</title>
+  <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/auto_slideshow.css' %}" />
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="arrow arrow-left"><i class="fas fa-chevron-circle-left"></i></div>
+    <img src="https://images.unsplash.com/photo-1518640027989-a30d5d7e498e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=f9575732a498c98486879d7000ab1d47" alt="">
+    <img src="https://images.unsplash.com/photo-1505843378597-b96befae716e?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=9e69634f39ec7c08514fef902cfc85ac" alt="">
+    <img src="https://images.unsplash.com/photo-1471138406156-7a89e687a062?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=7820fc816715b37942a793360b785c60" alt="">
+    <div class="arrow arrow-right"><i class="fas fa-chevron-circle-right"></i>
+    </div>
+    <div class="dots">
+      <div class="dot">
+        <i class="far fa-dot-circle"></i>
+      </div>
+      <div class="dot">
+        <i class="far fa-circle"></i>
+      </div>
+      <div class="dot">
+        <i class="far fa-circle"></i>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/auto_slideshow.js' %}"></script>
+
+</body>
+
+
+</html>
