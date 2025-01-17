@@ -176,6 +176,28 @@
     }
 }
 
+/* Hidden text initially */
+.social-icon .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 110%;
+    right: 10%;
+    transform: translateX(-50%);
+    background-color: rgb(56, 55, 55);
+    color: white;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Show the tooltip when hovering */
+.social-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
 
 /* Feedback section styling */
 .feedback-section {
@@ -768,3 +790,165 @@
         padding: 8px 15px; /* Adjust button padding */
     }
 }
+
+
+/* Basic styling */
+#video-section {
+    width: 100%;
+    padding: 50px 20px;
+    background: linear-gradient(45deg,rgb(89, 90, 94), #a8a8ad); /* Initial gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInSection 1s forwards 0.5s;
+    perspective: 1200px; /* Adds a more pronounced perspective for 3D effects */
+  }
+  
+  /* Video container with 3D rotation */
+  .video-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    transform: scale(0.9);
+    animation: zoomIn 1s ease-out forwards, rotateIn 2s ease-in-out;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Video title with 3D flip */
+  .video-title {
+    font-size: 28px;
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateY(50px) rotateY(90deg); /* Starts with 3D rotation */
+    animation: slideIn 1s forwards, flipIn 1s forwards;
+  }
+  
+  /* Video wrapper */
+  .video-wrapper {
+    width: 100%;
+    height: 450px;
+  }
+  
+  /* Video element */
+  .video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px; /* Add rounded corners for smoothness */
+  }
+  
+  /* 3D Animation for fading in the section */
+  @keyframes fadeInSection {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* 3D zoom-in effect on video container */
+  @keyframes zoomIn {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* 3D rotation animation for video container */
+  @keyframes rotateIn {
+    0% {
+      transform: rotateY(-180deg);
+    }
+    100% {
+      transform: rotateY(0deg);
+    }
+  }
+  
+  /* Slide-in animation for the title */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Flip-in animation for the title */
+  @keyframes flipIn {
+    0% {
+      opacity: 0;
+      transform: rotateY(90deg); /* Start with a flipped title */
+    }
+    100% {
+      opacity: 1;
+      transform: rotateY(0deg); /* End with title in normal position */
+    }
+  }
+  
+  /* Hover animation */
+  .video-container:hover .video-title {
+    color: rgb(50, 100, 167);
+    transform: translateY(0) scale(1.05) rotateY(0deg);
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect on video container */
+  .video-container:hover {
+    transform: scale(1.05) rotateY(10deg); /* Slight 3D tilt on hover */
+    box-shadow: 0 25px 36px rgb(50, 100, 167);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Parallax effect for video when scrolling */
+  @keyframes parallaxEffect {
+    0% {
+      transform: translateY(0px);
+    }
+    100% {
+      transform: translateY(-30px); /* Move up slightly for parallax */
+    }
+  }
+  
+  /* Animation on scroll */
+  @keyframes fadeInFromBottom {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scroll animation trigger class (if you want to use it when the section is visible on scroll) */
+  .scroll-animation {
+    animation: fadeInFromBottom 1s forwards;
+    opacity: 0;
+  }
+  
+  /* Trigger 3D scroll animation */
+  .scroll-trigger {
+    animation: fadeInFromBottom 1s forwards, parallaxEffect 1s forwards;
+    opacity: 0;
+  }
+  
+  /* Use Intersection Observer or a similar script to add the .scroll-trigger class when the section enters the viewport */
+  
+
+  

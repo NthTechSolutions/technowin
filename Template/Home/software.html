@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/service_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/software_style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link
@@ -16,11 +16,405 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Services</title>  
+    <title>Software</title>  
 </head>
 <body>
   
     <section class="services-section">
         <div class="go-back">
-            <img src="{% static 'back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+            <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
         </div>
+
+        <section class="background-section">
+            <!-- Video background -->
+            <video autoplay loop muted class="background-video">
+                <source src="{% static 'images/software_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        
+            <!-- Content -->
+            <div class="software-content">
+                <div class="content-card">
+                    <h1>Technowin IT Infra</h1>
+                    <p>Technowin IT Infra offers cutting-edge technology solutions for seamless connectivity, reliable networks, and secure data management. We specialize in cloud services ☁️, network infrastructure 🌐, and cybersecurity 🔒, ensuring your business runs smoothly and safely. 🚀 #TechInnovation #ITInfrastructure #Security</p>
+                </div>
+            </div>
+        </section>        
+            
+       
+        
+
+        <section id="app-development">
+            <h2>App Development</h2>
+        
+            <!-- Individual App Projects -->
+            <div class="projects-container">
+                <!-- Project 1: Technowin App -->
+                <div class="project-card">
+                    <h3>Project 1: Technowin App</h3>
+                    <!-- Display video or image for Project 1 -->
+                    <div class="media-display">
+                        <video controls>
+                            <source src="{% static 'project_data/technowin_app_video.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Project Description -->
+                    <p>This project involves the creation of the Technowin mobile application, designed to provide seamless integration of technology solutions.</p>
+                    <!-- Download Links for Project 1 with Images -->
+                    <div class="file-downloads">
+                        <h4>Download Resources for Technowin App</h4>
+                        <ul>
+                            <!-- Video Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_app_video.mp4' %}" download="Technowin-Video.mp4">
+                                    <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                                </a>
+                            </li>
+                            <!-- Image Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/app1.png' %}" download="Technowin-Image.jpg">
+                                    <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                                </a>
+                            </li>
+                            <!-- PPT Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_app_video.pptx' %}" download="Technowin-Presentation.pptx">
+                                    <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                                </a>
+                            </li>
+                            <!-- Excel Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_app_video.pptx' %}" download="Technowin-Data.xlsx">
+                                    <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Project 2: InnovApp -->
+                <div class="project-card">
+                    <h3>Project 2: InnovApp</h3>
+                    <!-- Display video or image for Project 2 -->
+                    <div class="media-display">
+                        <video controls>
+                            <source src="{% static 'project_data/app_video.mp4' %}"  type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <!-- Project Description -->
+                    <p>The InnovApp project focuses on creating an innovative app to streamline business operations and customer engagement.</p>
+                    <!-- Download Links for Project 2 with Images -->
+                    <div class="file-downloads">
+                        <h4>Download Resources for InnovApp</h4><br><br>
+                        <ul>
+                             <!-- Video Download Image -->
+                             <li>
+                                <a href="{% static 'project_data/technowin_video.mp4' %}" download="Technowin-Video.mp4">
+                                    <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                                </a>
+                            </li>
+                            <!-- Image Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_image.jpg' %}" download="Technowin-Image.jpg">
+                                    <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                                </a>
+                            </li>
+                            <!-- PPT Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_presentation.pptx' %}" download="Technowin-Presentation.pptx">
+                                    <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                                </a>
+                            </li>
+                            <!-- Excel Download Image -->
+                            <li>
+                                <a href="{% static 'project_data/technowin_data.xlsx' %}" download="Technowin-Data.xlsx">
+                                    <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Project 1: Technowin App -->
+            <div class="project-card">
+                <h3>Project 1: Technowin App</h3>
+                <!-- Display video or image for Project 1 -->
+                <div class="media-display">
+                    <video controls>
+                        <source src="{% static 'project_data/cloud_video.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Project Description -->
+                <p>This project involves the creation of the Technowin mobile application, designed to provide seamless integration of technology solutions.</p>
+                <!-- Download Links for Project 1 with Images -->
+                <div class="file-downloads">
+                    <h4>Download Resources for Technowin App</h4>
+                    <ul>
+                        <!-- Video Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_video.mp4' %}" download="Technowin-Video.mp4">
+                                <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                            </a>
+                        </li>
+                        <!-- Image Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_image.jpg' %}" download="Technowin-Image.jpg">
+                                <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                            </a>
+                        </li>
+                        <!-- PPT Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_presentation.pptx' %}" download="Technowin-Presentation.pptx">
+                                <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                            </a>
+                        </li>
+                        <!-- Excel Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_data.xlsx' %}" download="Technowin-Data.xlsx">
+                                <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2: InnovApp -->
+            <div class="project-card">
+                <h3>Project 2: InnovApp</h3>
+                <!-- Display video or image for Project 2 -->
+                <div class="media-display">
+                    <video controls>
+                        <source src="{% static 'project_data/app_video.mp4' %}"  type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Project Description -->
+                <p>The InnovApp project focuses on creating an innovative app to streamline business operations and customer engagement.</p>
+                <!-- Download Links for Project 2 with Images -->
+                <div class="file-downloads">
+                    <h4>Download Resources for InnovApp</h4><br><br>
+                    <ul>
+                         <!-- Video Download Image -->
+                         <li>
+                            <a href="{% static 'project_data/technowin_video.mp4' %}" download="Technowin-Video.mp4">
+                                <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                            </a>
+                        </li>
+                        <!-- Image Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_image.jpg' %}" download="Technowin-Image.jpg">
+                                <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                            </a>
+                        </li>
+                        <!-- PPT Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_presentation.pptx' %}" download="Technowin-Presentation.pptx">
+                                <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                            </a>
+                        </li>
+                        <!-- Excel Download Image -->
+                        <li>
+                            <a href="{% static 'project_data/technowin_data.xlsx' %}" download="Technowin-Data.xlsx">
+                                <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+        
+
+        <section id="web-development">
+            <h2>Web Development</h2>
+          
+            <!-- Individual Web Development Projects -->
+            <div class="projects-container-web">
+              <!-- Project 1: WebTech App -->
+              <div class="web-project-card">
+                <h3>Project 1: WebTech App</h3>
+                <!-- Display video or image for Project 1 -->
+                <div class="media-display-web">
+                  <video controls>
+                    <source src="{% static 'project_data/webtech_app_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <!-- Project Description -->
+                <p>This project involves the development of the WebTech mobile application, aimed at providing advanced web-based technology solutions.</p>
+                <!-- Download Links for Project 1 with Images -->
+                <div class="file-downloads-web">
+                  <h4>Download Resources for WebTech App</h4>
+                  <ul>
+                    <!-- Video Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/webtech_app_video.mp4' %}" download="WebTech-Video.mp4">
+                        <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                      </a>
+                    </li>
+                    <!-- Image Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/webtech_image.jpg' %}" download="WebTech-Image.jpg">
+                        <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                      </a>
+                    </li>
+                    <!-- PPT Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/webtech_app_presentation.pptx' %}" download="WebTech-Presentation.pptx">
+                        <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                      </a>
+                    </li>
+                    <!-- Excel Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/webtech_app_data.xlsx' %}" download="WebTech-Data.xlsx">
+                        <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          
+              <!-- Project 2: InnovWeb App -->
+              <div class="web-project-card">
+                <h3>Project 2: InnovWeb App</h3>
+                <!-- Display video or image for Project 2 -->
+                <div class="media-display-web">
+                  <video controls>
+                    <source src="{% static 'project_data/innovweb_app_video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+                <!-- Project Description -->
+                <p>The InnovWeb project aims to revolutionize web development by streamlining business operations and enhancing customer engagement.</p>
+                <!-- Download Links for Project 2 with Images -->
+                <div class="file-downloads-web">
+                  <h4>Download Resources for InnovWeb App</h4>
+                  <ul>
+                    <!-- Video Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/innovweb_app_video.mp4' %}" download="InnovWeb-Video.mp4">
+                        <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                      </a>
+                    </li>
+                    <!-- Image Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/innovweb_image.jpg' %}" download="InnovWeb-Image.jpg">
+                        <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                      </a>
+                    </li>
+                    <!-- PPT Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/innovweb_app_presentation.pptx' %}" download="InnovWeb-Presentation.pptx">
+                        <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                      </a>
+                    </li>
+                    <!-- Excel Download Image -->
+                    <li>
+                      <a href="{% static 'project_data/innovweb_app_data.xlsx' %}" download="InnovWeb-Data.xlsx">
+                        <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+                 <!-- Project 2: InnovWeb App -->
+                 <div class="web-project-card">
+                    <h3>Project 2: InnovWeb App</h3>
+                    <!-- Display video or image for Project 2 -->
+                    <div class="media-display-web">
+                      <video controls>
+                        <source src="{% static 'project_data/innovweb_app_video.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                    <!-- Project Description -->
+                    <p>The InnovWeb project aims to revolutionize web development by streamlining business operations and enhancing customer engagement.</p>
+                    <!-- Download Links for Project 2 with Images -->
+                    <div class="file-downloads-web">
+                      <h4>Download Resources for InnovWeb App</h4>
+                      <ul>
+                        <!-- Video Download Image -->
+                        <li>
+                          <a href="{% static 'project_data/innovweb_app_video.mp4' %}" download="InnovWeb-Video.mp4">
+                            <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+                          </a>
+                        </li>
+                        <!-- Image Download Image -->
+                        <li>
+                          <a href="{% static 'project_data/innovweb_image.jpg' %}" download="InnovWeb-Image.jpg">
+                            <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+                          </a>
+                        </li>
+                        <!-- PPT Download Image -->
+                        <li>
+                          <a href="{% static 'project_data/innovweb_app_presentation.pptx' %}" download="InnovWeb-Presentation.pptx">
+                            <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+                          </a>
+                        </li>
+                        <!-- Excel Download Image -->
+                        <li>
+                          <a href="{% static 'project_data/innovweb_app_data.xlsx' %}" download="InnovWeb-Data.xlsx">
+                            <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+  <!-- Project 1: WebTech App -->
+  <div class="web-project-card">
+    <h3>Project 1: WebTech App</h3>
+    <!-- Display video or image for Project 1 -->
+    <div class="media-display-web">
+      <video controls>
+        <source src="{% static 'project_data/webtech_app_video.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <!-- Project Description -->
+    <p>This project involves the development of the WebTech mobile application, aimed at providing advanced web-based technology solutions.</p>
+    <!-- Download Links for Project 1 with Images -->
+    <div class="file-downloads-web">
+      <h4>Download Resources for WebTech App</h4>
+      <ul>
+        <!-- Video Download Image -->
+        <li>
+          <a href="{% static 'project_data/webtech_app_video.mp4' %}" download="WebTech-Video.mp4">
+            <img src="{% static 'images/video_icon.gif' %}" alt="Download Video" title="Download Video">
+          </a>
+        </li>
+        <!-- Image Download Image -->
+        <li>
+          <a href="{% static 'project_data/webtech_image.jpg' %}" download="WebTech-Image.jpg">
+            <img src="{% static 'images/image_icon.gif' %}" alt="Download Image" title="Download Image">
+          </a>
+        </li>
+        <!-- PPT Download Image -->
+        <li>
+          <a href="{% static 'project_data/webtech_app_presentation.pptx' %}" download="WebTech-Presentation.pptx">
+            <img src="{% static 'images/powerpoint.gif' %}" alt="Download PPT" title="Download PPT">
+          </a>
+        </li>
+        <!-- Excel Download Image -->
+        <li>
+          <a href="{% static 'project_data/webtech_app_data.xlsx' %}" download="WebTech-Data.xlsx">
+            <img src="{% static 'images/excel.gif' %}" alt="Download Excel" title="Download Excel">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+            </div>
+          </section>
+          
+        
+        
+    </body>
+
+    </html>

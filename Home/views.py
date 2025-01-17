@@ -17,4 +17,4 @@ def ContactUs(request):
     return render(request,'Home/contact_us.html') 
 
 def Software(request):
-    return render(request,'Home/contact_us.html') 
+    return render(request,'Home/software.html') 

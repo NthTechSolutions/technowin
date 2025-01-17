@@ -55,7 +55,7 @@
             <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
 
             <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
-            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">Software</a></li>
+            <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
             <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
             <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
         {% comment %} </ul>
@@ -82,8 +82,15 @@
         </ul>
     </nav>
 
+    <section class="video-section">
+        <video class="auto-video" autoplay muted loop>
+          <source src="{% static 'slider/slider_video.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </section>
+      
 
-<!-- Slider Section -->
+{% comment %} <!-- Slider Section -->
 <section class="pc-view">
     <div class="slider-container">
         <div class="slider">
@@ -107,9 +114,9 @@
         <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
-</section>
+</section> {% endcomment %}
 
-<section class="mobile-view">
+{% comment %} <section class="mobile-view">
     <div class="slider-container">
         <div class="slider">
             <div class="slide active">
@@ -133,7 +140,7 @@
         <button class="next" onclick="changeSlide(1)">&#10095;</button>
     </div>
 </section>
-
+ {% endcomment %}
 
 <!-- why-techno Section --> 
     <section class="why-techno">
@@ -186,18 +193,7 @@
         </div>
     </section>
 
-    <section id="video-section">
-        <div class="video-container">
-          <h2 class="video-title">💾 Creating Memories|Technowin IT Infra Pvt Ltd 🌟</h2>
-          <div class="video-wrapper">
-            <video class="video" controls>
-              <source src="{% static 'images/life_in_technowin_video.mp4' %}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </section>
-      
+  
       
 
 
@@ -260,7 +256,7 @@
         <img src="{% static 'images/service1.png' %}" alt="Service 1">
         <h3>Web Development</h3>
         <p>Technowin develops websites, web applications, E-Commerce Sites, Content Management Systems, Databases, Server and Network Security Systems etc. as per Customer Requirement.</p>
-        <a href="Project" class="read-more">
+        <a href="{% url 'Software' %}#web-development" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -270,7 +266,7 @@
         <h3>App Development</h3>
         <p>Apps for Mobile Devices like Cell Phones, Tablets etc. for both Android and IOS devices are developed by Technowin.  </p>
         <br><br>
-        <a href="Project" class="read-more">
+        <a href="{% url 'Software' %}#app-development" class="read-more">
           <span>Read More</span>
           <i class="fas fa-arrow-right"></i>
         </a>
@@ -359,7 +355,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <p>TechnoWin IT Infra Pvt Ltd has created a user-friendly, responsive web development project 🌐💻. Focused on innovative designs, seamless performance, and secure solutions 🔒, it caters to diverse business needs. Perfect for boosting online presence! 🚀✨</p>
-                <a href="project.html" class="read-more">
+                <a href="{% url 'Software' %}#web-development" class="read-more">
                      Read More
                 </a>
             </div>
@@ -372,7 +368,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <p>TechnoWin IT Infra Pvt Ltd has developed an intuitive, high-performance app 🌟📱. With a focus on sleek design, smooth functionality, and robust security 🔐, it meets the unique needs of businesses. Ideal for enhancing mobile engagement! 🚀📲</p>
-                <a href="project.html" class="read-more">
+                <a href="{% url 'Software' %}#app-development" class="read-more">
                      Read More
                 </a>
             </div>
@@ -406,7 +402,7 @@
     
         <!-- View More Button -->
         <div class="view-more-container">
-            <a href="all-projects.html" class="view-more-btn">
+            <a href="{% url 'Software' %}" class="view-more-btn">
                 <i class="fas fa-eye"></i> View More
             </a>
         </div>

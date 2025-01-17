@@ -41,3 +41,537 @@
       opacity: 1;
     }
   }
+
+
+
+/* Ensure full page background video */
+.background-section {
+  position: relative;
+  width: 70%;
+  height: 70vh;  /* Full viewport height */
+  overflow: hidden;
+}
+
+/* Video background styling */
+.background-video {
+  /* position: absolute; */
+  top: 100px;
+  left: 0px;
+  width: 50%;
+  height: 50%;
+  object-fit: cover;  /* Ensures the video covers the entire section */
+  z-index: 1;  /* Ensure the video stays behind the content */
+}
+
+/* Center content with a card and semi-transparent background */
+.software-content {
+  position: relative;
+  z-index: 1;  /* Ensures content stays above the video */
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 20px;
+}
+
+.content-card {
+  top: 150px;
+  left: 150px;
+  background: rgba(0, 0, 0, 0.6);  /* Semi-transparent black background */
+  color: #fff;  /* White text for better contrast */
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 600px;
+  animation: fadeIn 2s ease-out;  /* Adding fade-in animation */
+}
+
+.content-card h1 {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.content-card p {
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* Animation for fading in content */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .background-video {
+    padding: 5px;
+    max-width: 100%;  /* Reduce card width for mobile */
+    margin: 0 auto;  /* Center card on mobile */
+  }
+  .content-card {
+    padding: 10px;
+    bottom: 50px;
+    max-width: 100%;  /* Reduce card width for mobile */
+    margin: 0 auto;  /* Center card on mobile */
+  }
+
+  .content-card h1 {
+    font-size: 2em;  /* Smaller font size for mobile */
+  }
+
+  .content-card p {
+    font-size: 1em;  /* Adjust font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .content-card h1 {
+    font-size: 1.6em;  /* Even smaller font for very small screens */
+  }
+
+  .content-card p {
+    font-size: 0.9em;  /* Adjust text size for very small screens */
+  }
+}
+
+ 
+
+/* app development Styling */
+#app-development {
+  padding: 60px 20px;
+  background-color: #c3c9db;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  animation: fadeIn 1.2s ease-out;
+
+}
+
+#app-development h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeInScale 1s ease-out;
+  transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+#app-development h2:hover {
+  transform: scale(1.1); /* Slightly scale the text */
+  color: #007bff; /* Change text color on hover */
+  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
+  letter-spacing: 2px; /* Slightly increase letter-spacing */
+}
+
+/* Keyframe animation for fade-in and scale */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Projects Container */
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  
+  margin-top: 40px;
+}
+
+/* Individual Project Card */
+.project-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px; /* Add perspective to create the 3D effect */
+}
+
+.project-card:hover h3,
+.project-card:hover p,
+.project-card:hover .file-downloads h4 {
+  color: #6b36e7; /* Change text color on hover */
+  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
+  transform: translateY(-5px); /* Slight movement upwards */
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotateY(10deg) rotateX(10deg); /* 3D rotation on hover */
+  box-shadow: 0 25px 36px rgb(50, 100, 167); /* Stronger shadow on hover */
+}
+
+.project-card h3 {
+  font-size: 1.8em;
+  color: #ff0000;
+  padding: 15px;
+  margin: 0;
+  text-align: left;
+}
+
+.project-card h3:hover {
+  color: #6b36e7; /* Change text color on hover */
+  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
+  letter-spacing: 1px; /* Slightly increase letter-spacing */
+}
+
+
+.media-display {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.media-display video {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.media-display video:hover {
+  transform: scale(1.05);
+}
+
+/* Project Description */
+.project-card p {
+  font-size: 1.1em;
+  color: #000000;
+  padding: 15px;
+  font-weight: bold;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/* Download Links */
+.file-downloads {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.file-downloads h4 {
+  font-size: 1.4em;
+  color: #000000;
+  margin-bottom: 15px;
+}
+
+/* Download Image Styling */
+.file-downloads ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-downloads li {
+  margin: 15px 0;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.file-downloads a {
+  display: inline-block;
+}
+
+.file-downloads img {
+  width: 60px; /* Control the size of images */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-downloads img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgb(255, 1, 1); /* Stronger shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #app-development h2 {
+    font-size: 2em;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-downloads a {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+
+  .file-downloads img {
+    width: 80px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* Web Development Styling */
+#web-development {
+  padding: 60px 20px;
+  background-color: #f4f8fc;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  animation: fadeIn 1.2s ease-out;
+}
+
+#web-development h2 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: fadeInScale 1s ease-out;
+  transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+#web-development h2:hover {
+  transform: scale(1.1); /* Slightly scale the text */
+  color: #0056b3; /* Change text color on hover */
+  text-shadow: 1px 1px 2px rgba(0, 56, 255, 0.6);
+  letter-spacing: 2px; /* Slightly increase letter-spacing */
+}
+
+/* Keyframe animation for fade-in and scale */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Projects Container */
+.projects-container-web {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Individual Web Project Card */
+.web-project-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  perspective: 1000px; /* Add perspective to create the 3D effect */
+}
+
+.web-project-card:hover h3,
+.web-project-card:hover p,
+.web-project-card:hover .file-downloads-web h4 {
+  color: #ff7a00; /* Change text color on hover */
+  text-shadow: 1px 1px 2px rgba(255, 120, 0, 0.6);
+  transform: translateY(-5px); /* Slight movement upwards */
+  transition: transform 0.3s ease;
+}
+
+.web-project-card:hover {
+  transform: translateX(-10px) rotateX(10deg) rotateY(10deg); /* 3D rotation on hover */
+  box-shadow: 0 25px 36px rgba(255, 120, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.web-project-card h3 {
+  font-size: 1.8em;
+  color: #28a745;
+  padding: 15px;
+  margin: 0;
+  text-align: left;
+}
+
+.web-project-card h3:hover {
+  color: #ff7a00; /* Change text color on hover */
+  text-shadow: 1px 1px 2px rgba(255, 120, 0, 0.6);
+  letter-spacing: 1px; /* Slightly increase letter-spacing */
+}
+
+/* Media Display */
+.media-display-web {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.media-display-web video {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.media-display-web video:hover {
+  transform: scale(1.05);
+}
+
+/* Web Project Description */
+.web-project-card p {
+  font-size: 1.1em;
+  color: #333;
+  padding: 15px;
+  font-weight: bold;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+}
+
+/* File Download Links */
+.file-downloads-web {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.file-downloads-web h4 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Download Image Styling */
+.file-downloads-web ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.file-downloads-web li {
+  margin: 15px 0;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.file-downloads-web a {
+  display: inline-block;
+}
+
+.file-downloads-web img {
+  width: 60px; /* Control the size of images */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-downloads-web img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 20px rgb(50, 100, 167); /* Stronger shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #web-development h2 {
+    font-size: 2em;
+  }
+
+  .projects-container-web {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-downloads-web a {
+    font-size: 1em;
+    padding: 10px 15px;
+  }
+
+  .file-downloads-web img {
+    width: 80px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

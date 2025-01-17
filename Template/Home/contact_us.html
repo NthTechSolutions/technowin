@@ -52,13 +52,13 @@
                     <img src="{% static 'social_media/whatsapp.png' %}" alt="Whatsapp">
                 </a>
                 <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" class="social-icon location" target="_blank">
-                    <img src="{% static 'social_media/location.png'  %}" alt="Location">
+                    <img src="{% static 'social_media/location.png'  %}" alt="Location"><span class="tooltip">Location</span>
                 </a>
                 <a href="mailto:technowinitinfra@gmail.com" class="social-icon email" target="_blank">
-                    <img src="{% static 'social_media/gmail.png' %}" alt="Email">
+                    <img src="{% static 'social_media/gmail.png' %}" alt="Email"><span class="tooltip">Email</span>
                 </a>
                 <a href="tel:+917738019120" class="social-icon call" target="_blank">
-                    <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
+                    <img src="{% static 'social_media/call_icon.png' %}" alt="Call"><span class="tooltip">Call</span>
                 </a>
             </div>
             <div class="contact-button">
@@ -67,6 +67,7 @@
         </div>
     </section>
     
+
     <section class="feedback-section">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>
         <div class="feedback-container">
@@ -380,7 +381,19 @@
 
 
 
-    <section id="gallery-section">
+    <section id="video-section">
+        <div class="video-container">
+          <h2 class="video-title">💾 Creating Memories| Our Gallery🌟</h2>
+          <div class="video-wrapper">
+            <video class="video" controls>
+              <source src="{% static 'images/life_in_technowin_video.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
+      
+    {% comment %} <section id="gallery-section">
         <h2>----- Our Gallery ------</h2>
         <div class="gallery-container">
             <div class="gallery-item">
@@ -414,7 +427,7 @@
                 <img src="{% static 'gallery/team_img10.jpg' %}" alt="Gallery Image 610">
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
     
 
 </body>

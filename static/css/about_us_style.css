@@ -254,7 +254,7 @@
 
   book {
     display: block;
-    margin-left:250px;
+    margin-left:420px;
     position: relative;
     height: 82vmin;
     width: 70vmin;
@@ -437,11 +437,11 @@
 
   .books-border p{
     color:red;
-    font-size:130%;
+    font-size:190%;
   }
 
   .books-border footer{
-    font-size:150%;
+    font-size:180%;
     text-align:center;
   }
 
