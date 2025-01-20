@@ -293,7 +293,7 @@
 .project-feedback-name {
     font-size: 18px;
     font-weight: bold;
-    color: #ff0000;
+    color:  rgb(8, 55, 116);
     margin-bottom: 5px;
     z-index: 1;
     position: relative;

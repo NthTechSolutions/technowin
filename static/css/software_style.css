@@ -42,23 +42,48 @@
     }
   }
 
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .go-back {
+      top: 15px;
+      left: 15px;
+  }
+
+  .go-back-image {
+      width: 50px;
+      height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .go-back {
+      top: 10px;
+      left: 10px;
+  }
+
+  .go-back-image {
+      width: 45px;
+      height: 45px;
+  }
+}
 
 
 /* Ensure full page background video */
 .background-section {
   position: relative;
-  width: 70%;
-  height: 70vh;  /* Full viewport height */
+  width: 100%;  /* Full width */
+  height: 100vh;  /* Full viewport height */
   overflow: hidden;
 }
 
 /* Video background styling */
 .background-video {
-  /* position: absolute; */
-  top: 100px;
-  left: 0px;
-  width: 50%;
-  height: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Center the video horizontally */
+  width: 100%;
+  height: 100%;
   object-fit: cover;  /* Ensures the video covers the entire section */
   z-index: 1;  /* Ensure the video stays behind the content */
 }
@@ -66,34 +91,42 @@
 /* Center content with a card and semi-transparent background */
 .software-content {
   position: relative;
-  z-index: 1;  /* Ensures content stays above the video */
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 20px;
+  z-index: 2;  /* Ensures content stays above the video */
+  /* display: flex; */
+  margin-left: 40px;
+  margin-top: 150px;
+  justify-content: center; /* Horizontally center the content */
+  align-items: center; /* Vertically center the content */
+  height: 100%;  /* Full height */
+  padding: 5px;
 }
 
+/* Content card styling */
 .content-card {
-  top: 150px;
-  left: 150px;
-  background: rgba(0, 0, 0, 0.6);  /* Semi-transparent black background */
-  color: #fff;  /* White text for better contrast */
-  padding: 15px;
-  border-radius: 10px;
-  max-width: 600px;
+  background: rgba(227, 228, 230, 0.6);  /* Semi-transparent black background */
+  color: #000000;  /* White text for better contrast */
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 600px;  /* Set a max width for the card */
+  width: 90%;  /* Ensure the card takes up most of the space */
+  box-sizing: border-box;  /* Ensure padding is inside the element */
   animation: fadeIn 2s ease-out;  /* Adding fade-in animation */
+  text-align: center;  /* Center-align text inside the card */
 }
 
+/* Card title styling */
 .content-card h1 {
   font-size: 3em;
-  color: #fff;
+  color: rgb(8, 55, 116);  /* White text for better contrast */
   margin-bottom: 20px;
   font-weight: bold;
 }
 
+/* Card text styling */
 .content-card p {
-  color: #fff;
-  font-size: 1.2em;
+  font-size: 1em;
+  color: #000000;  /* White text for better contrast */
+  font-weight: bold;
   line-height: 1.6;
 }
 
@@ -109,45 +142,69 @@
   }
 }
 
-/* Responsive styles for mobile */
-@media (max-width: 768px) {
+/* Mobile Responsiveness - Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  /* Video should still cover the entire background */
   .background-video {
-    padding: 5px;
-    max-width: 100%;  /* Reduce card width for mobile */
-    margin: 0 auto;  /* Center card on mobile */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
+
+  /* Adjusting the video container's size and margin for smaller screens */
+  .software-content {
+    margin-top: 250px;  /* Reduced margin for better placement */
+    margin-left: 10px;  /* Reduced left margin */
+  }
+
   .content-card {
-    padding: 10px;
-    bottom: 50px;
-    max-width: 100%;  /* Reduce card width for mobile */
-    margin: 0 auto;  /* Center card on mobile */
+    padding: 15px;  /* Reduced padding for smaller screens */
+    max-width: 90%;  /* Allow the card to take more width on smaller screens */
   }
 
   .content-card h1 {
-    font-size: 2em;  /* Smaller font size for mobile */
+    font-size: 2.5em;  /* Smaller font size for mobile */
   }
 
   .content-card p {
-    font-size: 1em;  /* Adjust font size for mobile */
+    font-size: 0.9em;  /* Slightly smaller text for better readability on mobile */
   }
 }
 
-@media (max-width: 480px) {
+/* Further adjustments for very small mobile devices (Portrait and below 480px) */
+@media screen and (max-width: 480px) {
+  /* Video should still cover the entire background */
+  .background-video {
+    margin-top: 1px;
+    height: 33%;
+    width: 101%;
+    object-fit: cover;
+  }
+
+  .software-content {
+    margin-top: 250px;  /* Adjust margin for even smaller devices */
+    margin-left: 26px;  /* Adjust margin for even smaller devices */
+  }
+
+  .content-card {
+    padding: 10px;  /* Reduce padding even more on very small screens */
+    max-width: 95%;  /* Increase the width to 95% */
+  }
+
   .content-card h1 {
-    font-size: 1.6em;  /* Even smaller font for very small screens */
+    font-size: 2em;  /* Further reduce font size */
   }
 
   .content-card p {
-    font-size: 0.9em;  /* Adjust text size for very small screens */
+    font-size: 1em;  /* Further reduce text size */
   }
 }
-
  
 
 /* app development Styling */
 #app-development {
   padding: 60px 20px;
-  background-color: #c3c9db;
+  background-color: #dadeeb;
   text-align: center;
   font-family: 'Arial', sans-serif;
   color: #333;
@@ -157,7 +214,7 @@
 
 #app-development h2 {
   font-size: 2.5em;
-  color: #333;
+  color: #000000;
   margin-bottom: 40px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -167,7 +224,7 @@
 
 #app-development h2:hover {
   transform: scale(1.1); /* Slightly scale the text */
-  color: #007bff; /* Change text color on hover */
+  color: rgb(50, 100, 167); /* Change text color on hover */
   text-shadow: 1px 1px 2px  rgb(50, 100, 167);
   letter-spacing: 2px; /* Slightly increase letter-spacing */
 }
@@ -188,11 +245,10 @@
 /* Projects Container */
 .projects-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
-  
+  justify-content: space-between;  /* Spread out the cards in one row */
+  gap: 10px;  /* Space between the cards */
   margin-top: 40px;
+  flex-wrap: nowrap;  /* Prevent wrapping, ensure all cards are in one row */
 }
 
 /* Individual Project Card */
@@ -201,17 +257,17 @@
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 22%; /* Adjust width to ensure 4 cards fit in one row */
+  margin: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   perspective: 1000px; /* Add perspective to create the 3D effect */
 }
 
+
 .project-card:hover h3,
 .project-card:hover p,
 .project-card:hover .file-downloads h4 {
-  color: #6b36e7; /* Change text color on hover */
+  color:rgb(50, 100, 167); /* Change text color on hover */
   text-shadow: 1px 1px 2px  rgb(50, 100, 167);
   transform: translateY(-5px); /* Slight movement upwards */
   transition: transform 0.3s ease;
@@ -223,19 +279,13 @@
 }
 
 .project-card h3 {
-  font-size: 1.8em;
+  font-size: 1.2em;
   color: #ff0000;
   padding: 15px;
   margin: 0;
+  font-weight: bold;
   text-align: left;
 }
-
-.project-card h3:hover {
-  color: #6b36e7; /* Change text color on hover */
-  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
-  letter-spacing: 1px; /* Slightly increase letter-spacing */
-}
-
 
 .media-display {
   position: relative;
@@ -255,7 +305,7 @@
 
 /* Project Description */
 .project-card p {
-  font-size: 1.1em;
+  font-size: 1em;
   color: #000000;
   padding: 15px;
   font-weight: bold;
@@ -271,8 +321,9 @@
 }
 
 .file-downloads h4 {
-  font-size: 1.4em;
+  font-size: 1em;
   color: #000000;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
@@ -294,7 +345,7 @@
 }
 
 .file-downloads img {
-  width: 60px; /* Control the size of images */
+  width: 30px; /* Control the size of images */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -306,7 +357,23 @@
   box-shadow: 0 12px 20px rgb(255, 1, 1); /* Stronger shadow on hover */
 }
 
-/* Responsive Design */
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .projects-container {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .project-card {
+    width: 45%; /* Two cards per row */
+    margin: 10px 0;
+  }
+
+  #app-development h2 {
+    font-size: 2.2em;
+  }
+}
+
 @media (max-width: 768px) {
   #app-development h2 {
     font-size: 2em;
@@ -317,13 +384,42 @@
     align-items: center;
   }
 
+  .project-card {
+    width: 80%; /* Single column layout on mobile */
+    margin-bottom: 20px;
+  }
+
   .file-downloads a {
     font-size: 1em;
-    padding: 10px 15px;
+    padding: 10px 10px;
   }
 
   .file-downloads img {
     width: 80px;
+  }
+
+  .file-downloads li {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #app-development h2 {
+    font-size: 1.8em;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%; /* Single card per row on small screens */
+    margin-bottom: 20px;
+  }
+
+  .file-downloads img {
+    width: 30px;
   }
 }
 
@@ -384,8 +480,8 @@
 
 #web-development h2:hover {
   transform: scale(1.1); /* Slightly scale the text */
-  color: #0056b3; /* Change text color on hover */
-  text-shadow: 1px 1px 2px rgba(0, 56, 255, 0.6);
+  color: rgb(50, 100, 167); /* Change text color on hover */
+  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
   letter-spacing: 2px; /* Slightly increase letter-spacing */
 }
 
@@ -405,8 +501,8 @@
 .projects-container-web {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 30px;
+  justify-content: space-between;  /* Distribute the cards evenly */
+  gap: 20px; /* Space between the cards */
   margin-top: 40px;
 }
 
@@ -416,9 +512,8 @@
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  width: 23%; /* Set the width to 23% for 4 cards in a row */
+  margin: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   perspective: 1000px; /* Add perspective to create the 3D effect */
 }
@@ -426,30 +521,26 @@
 .web-project-card:hover h3,
 .web-project-card:hover p,
 .web-project-card:hover .file-downloads-web h4 {
-  color: #ff7a00; /* Change text color on hover */
-  text-shadow: 1px 1px 2px rgba(255, 120, 0, 0.6);
+  color:rgb(50, 100, 167); /* Change text color on hover */
+  text-shadow: 1px 1px 2px  rgb(50, 100, 167);
   transform: translateY(-5px); /* Slight movement upwards */
   transition: transform 0.3s ease;
 }
 
 .web-project-card:hover {
   transform: translateX(-10px) rotateX(10deg) rotateY(10deg); /* 3D rotation on hover */
-  box-shadow: 0 25px 36px rgba(255, 120, 0, 0.4); /* Stronger shadow on hover */
+  box-shadow: 0 25px 36px  rgb(50, 100, 167); /* Stronger shadow on hover */
 }
 
 .web-project-card h3 {
-  font-size: 1.8em;
-  color: #28a745;
+  font-size: 1.3em;
+  color: #ff0000;
+  font-weight: bold;
   padding: 15px;
   margin: 0;
   text-align: left;
 }
 
-.web-project-card h3:hover {
-  color: #ff7a00; /* Change text color on hover */
-  text-shadow: 1px 1px 2px rgba(255, 120, 0, 0.6);
-  letter-spacing: 1px; /* Slightly increase letter-spacing */
-}
 
 /* Media Display */
 .media-display-web {
@@ -486,7 +577,7 @@
 }
 
 .file-downloads-web h4 {
-  font-size: 1.4em;
+  font-size: 1em;
   color: #333;
   margin-bottom: 15px;
 }
@@ -509,7 +600,7 @@
 }
 
 .file-downloads-web img {
-  width: 60px; /* Control the size of images */
+  width: 30px; /* Control the size of images */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -518,60 +609,70 @@
 
 .file-downloads-web img:hover {
   transform: scale(1.1);
-  box-shadow: 0 20px 20px rgb(50, 100, 167); /* Stronger shadow on hover */
+  box-shadow: 0 20px 20px #ff0000; /* Stronger shadow on hover */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-  #web-development h2 {
-    font-size: 2em;
+@media (max-width: 1024px) {
+  .web-project-card {
+    width: 48%; /* On medium screens, show 2 cards per row */
   }
 
   .projects-container-web {
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-around; /* Adjust for medium screens */
   }
 
-  .file-downloads-web a {
-    font-size: 1em;
-    padding: 10px 15px;
+  #web-development h2 {
+    font-size: 2.2em;
   }
 
   .file-downloads-web img {
-    width: 80px;
+    width: 50px;
   }
 }
 
-/* Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 768px) {
+  .web-project-card {
+    width: 100%; /* On smaller screens, show 1 card per row */
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  .projects-container-web {
+    justify-content: center; /* Center the cards on smaller screens */
+  }
+
+  #web-development h2 {
+    font-size: 1.8em;
+  }
+
+  .file-downloads-web img {
+    width: 40px;
+  }
+
+  .file-downloads-web h4 {
+    font-size: 0.9em;
   }
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
+@media (max-width: 480px) {
+  #web-development {
+    padding: 40px 15px;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+
+  #web-development h2 {
+    font-size: 1.5em;
+  }
+
+  .web-project-card h3 {
+    font-size: 1.1em; /* Smaller heading font size on mobile */
+  }
+
+  .file-downloads-web h4 {
+    font-size: 0.8em; /* Smaller download link font size */
+  }
+
+  .file-downloads-web img {
+    width: 35px; /* Smaller images on very small screens */
   }
 }
 
-@keyframes scaleUp {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+

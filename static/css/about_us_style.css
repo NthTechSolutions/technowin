@@ -351,7 +351,7 @@
 
   .cover h1{
     font-size: min(7.2em, 5.6vmin);
-    color: transparent;
+    color: white;
     background-color:blue;
     background-blend-mode: overlay;
     background-clip: text;
@@ -383,6 +383,13 @@
     border: 3px solid black;
     outline: solid 1px transparent;
   }
+
+  .book-spine h3{
+    font-size: 5vmin;
+    color: white;
+    outline: solid 1px transparent;
+  }
+
 
   blockquote {
     font-family: Georgia, serif;
@@ -437,7 +444,7 @@
 
   .books-border p{
     color:red;
-    font-size:190%;
+    font-size:100%;
   }
 
   .books-border footer{

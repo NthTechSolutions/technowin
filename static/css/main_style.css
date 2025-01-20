@@ -216,7 +216,7 @@ nav ul li a {
     color: black;
     font-size: 18px;
     font-weight: bold;
-    padding: 5px 10px;
+    padding: 5px 5px;
     transition: all 0.3s ease;
 }
 
@@ -1127,8 +1127,8 @@ html {
 
 #project-videos h2 {
     font-size: 40px;
-    color: black;
-    text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
+    color:rgb(8, 55, 116);;
+    /* text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); */
     font-family: 'Arial', sans-serif;
     letter-spacing: 2px;
     margin-bottom: 30px;
@@ -1296,7 +1296,7 @@ html {
 .tech-section-title {
     text-align: center;
     font-size: 36px;
-    color: #ff4757;
+    color: rgb(8, 55, 116);
     font-weight: bold;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease-in-out;
@@ -1369,6 +1369,7 @@ html {
 .tech-slider-card .tech-slider {
     position: relative;
     overflow: hidden;
+    
     height: 500px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -1381,23 +1382,24 @@ html {
 .tech-slide {
     min-width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 10px;
 }
 
 .tech-slide img {
-    width: 440px;
+    width: 500px;
     height: 280px;
     object-fit: cover;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 /* Image Style */
 .tech-card-img {
     width: 100%;
-    height: 300px; /* Adjust the height based on your design */
+    height: 320px; /* Adjust the height based on your design */
     object-fit: cover; /* Ensures the image covers the space without distortion */
     /* border-top-left-radius: 10px;
     border-top-right-radius: 10px; */
+
     margin-bottom: 15px;
     border: 2px solid black;
 }
@@ -1455,6 +1457,7 @@ html {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    /* width: 500px; */
 }
 
 .tech-card-title {
@@ -1546,18 +1549,6 @@ html {
     background: #e63946;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .tech-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tech-card {
-        width: 80%;
-    }
-}
-
 /* Responsive Design for Mobile */
 @media (max-width: 768px) {
     /* Tech Section */
@@ -1599,7 +1590,7 @@ html {
 
     .tech-slide img {
         width: 100%; /* Ensure images are responsive */
-        height: auto; /* Maintain aspect ratio */
+    height: 145px; /* Adjust the height based on your design */
     }
 
     /* Content Card */
@@ -1938,15 +1929,15 @@ html {
 }
 
 .achievements-title {
-    font-size: 36px;
+    font-size: 25px;
     color: rgb(8, 55, 116);
     text-align: left;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-left: 180px;
-    text-shadow: 1px 1px 5px rgba(255, 46, 46, 0.5);
+    margin-left: 100px;
+    text-shadow: 1px 5px 5px rgba(255, 46, 46, 0.5);
     animation: fadeInLeft 1s ease-out, scaleUp 1.2s ease-in-out 0.5s, colorChange 2s infinite alternate;
     /* Multiple animations: fade-in, scale-up, and color change */
 }
@@ -1961,8 +1952,7 @@ html {
     line-height: 1.6;
     color: rgb(8, 55, 116);
     font-weight: bold;
-    margin-bottom: 0;
-    margin-left: 110px;
+    margin-left: 50px;
     animation: fadeInLeft 1.2s ease-out, slideUp 1.5s ease-out 0.5s;
     /* Multiple animations: fade-in and slide-up */
 }
@@ -1980,13 +1970,54 @@ html {
     }
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .achievements-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .achievements-text {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .achievements-title {
+        font-size: 18px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .achievements-description {
+        font-size: 16px;
+        margin-right: 32px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .achievements-section {
+        padding: 15px;
+    }
+
+    .achievements-title {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .achievements-description {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
 /* Certificate Section Styling */
 .certificate-slider-section {
     padding: 15px;
     text-align: center;
     background-color: #ffffff;
     margin-bottom: 40px;
-    margin-left: 150px; /* Move slider a bit to the left */
+    margin-left: 120px; /* Move slider a bit to the left */
     margin-right: 70px;
     width: 880px; /* Adjusted width to make it smaller */
 }
@@ -2075,7 +2106,7 @@ html {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 15px 25px;
+    padding: 15px 15px;
     cursor: pointer;
     z-index: 1;
     border-radius: 50%;
@@ -2199,19 +2230,19 @@ html {
     }
 
     .certificate-slider-section {
-       /* width: 150%; */
-        width: 100%;
+       width: 120%; 
+        /* width: 100%; */
     }
 
     /* Adjust navigation buttons */
     .prev-btn, .next-btn {
-        padding: 10px 15px;
-        font-size: 20px;
+        padding: 10px 10px;
+        font-size: 15px;
     }
 
     /* Adjust font sizes */
     .achievements-title {
-        font-size: 25px;
+        font-size: 20px;
         margin-left: 20px;
     }
 
