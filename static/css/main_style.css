@@ -555,7 +555,20 @@ html {
     opacity: 1;
 }
 
+.why-techno h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 50px;
+  text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
 
+.why-techno h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
 
 
 /* .why-techno .card:hover {
@@ -617,32 +630,27 @@ html {
     animation-delay: 0.6s;
 }
 
-/* Responsive Design for Tablets and Small Devices */
-
-/* For screens smaller than 768px (tablets) */
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .why-techno .card {
-        width: 48%; /* Two cards per row */
+        width: 45%;  /* Two cards per row on medium-sized screens (tablets) */
     }
-
-    .why-techno .card img {
-        max-width: 150px; /* Smaller image size on tablets */
+    .why-techno h2 {
+        font-size: 24px;  /* Adjust the heading font size on mobile */
     }
 }
 
-/* For screens smaller than 480px (phones) */
 @media (max-width: 480px) {
     .why-techno .card {
-        width: 100%; /* One card per row */
+        width: 100%;  /* One card per row on small screens (mobile) */
     }
 
-    .why-techno .card-container {
-        flex-direction: column; /* Stack cards vertically on small screens */
-        align-items: center; /* Center the cards */
+    .why-techno h2 {
+        font-size: 24px;  /* Adjust the heading font size on mobile */
     }
 
     .why-techno .card img {
-        max-width: 120px; /* Smaller image size on phones */
+        max-width: 80px;  /* Adjust the image size for mobile */
     }
 }
 
@@ -960,6 +968,23 @@ html {
     color: black;
 }
 
+.serviceview h2 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(8, 55, 116);
+        margin-top: 20px;
+      text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+.serviceview h2:hover {
+        transform: translateY(-10px) translateX(-10px);
+        text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    
+
+
 .service-box {
     flex: 1 1 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);
@@ -1103,6 +1128,9 @@ html {
     .read-more {
         font-size: 14px; /* Slightly smaller font for mobile */
     }
+    .serviceview h2{
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1126,13 +1154,20 @@ html {
 }
 
 #project-videos h2 {
-    font-size: 40px;
-    color:rgb(8, 55, 116);;
-    /* text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); */
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
 }
+
+#project-videos h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
 
 .card-container {
     display: flex;
@@ -1275,6 +1310,10 @@ html {
         width: 100%; /* One card per row */
     }
 
+    #project-videos h2{
+        font-size: 24px;
+    } 
+
     /* Responsive View More button */
     .view-more-btn {
         width: 100%; /* Full width button for smaller screens */
@@ -1294,21 +1333,20 @@ html {
 }
 
 .tech-section-title {
-    text-align: center;
-    font-size: 36px;
-    color: rgb(8, 55, 116);
-    font-weight: bold;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 30px;
-    position: relative;
-}
-
-.tech-section-title:hover {
-    transform: translateY(-10px) translateX(-10px);
-    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Apply text shadow effect */
-    transition: all 0.3s ease-in-out; /* Smooth transition for transform and text-shadow */
-}
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(8, 55, 116);
+        margin-top: 20px;
+      text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .tech-section-title:hover {
+        transform: translateY(-10px) translateX(-10px);
+        text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    
 
    
 
@@ -1557,8 +1595,8 @@ html {
     }
 
     .tech-section-title {
-        font-size: 28px; /* Adjust font size for mobile */
-        margin-bottom: 20px; /* Reduce bottom margin */
+        font-size: 24px; /* Adjust font size for mobile */
+        /* margin-bottom: 20px;  */
     }
 
     /* Tech Cards */
@@ -1801,16 +1839,21 @@ html {
     background-color:#ffffff;
    
 }
-/* Add animation for Download Brochure button */
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 10px rgba(255, 223, 0, 0.8);
-    }
-    50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(255, 223, 0, 1);
-    }
+
+
+.client-carousel-section h2{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(8, 55, 116);
+    margin-top: 20px;
+  text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.client-carousel-section h2:hover {
+    transform: translateY(-10px) translateX(-10px);
+    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Styling for Download Brochure */
@@ -1836,13 +1879,16 @@ html {
 
 
 
-/* Slider Styling */
+/*Client Slider Styling */
 .client-slider {
     display: flex;
     align-items: center;
     gap: 30px; /* Space between items */
     animation: slide 50s linear infinite; /* Continuous sliding effect */
 }
+
+
+
 
 /* Individual Logo Items */
 .client-logo-item {
@@ -1905,10 +1951,13 @@ html {
 /* Responsive Design */
 @media (max-width: 768px) {
     .client-logo {
-        max-height: 40px;
+        max-height: 40px; /* Smaller logo size on smaller screens */
+    }
+
+    .client-carousel-section h2 {
+        font-size: 1.5rem; /* Adjusted title size for smaller screens */
     }
 }
-
 
 /* Achievements Section Styling */
 .achievements-section {
@@ -1922,30 +1971,30 @@ html {
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
+
+
 /* Achievements Text */
 .achievements-text {
     max-width: 45%;
     font-family: 'Arial', sans-serif;
 }
 
-.achievements-title {
-    font-size: 25px;
-    color: rgb(8, 55, 116);
-    text-align: left;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-left: 100px;
-    text-shadow: 1px 5px 5px rgba(255, 46, 46, 0.5);
-    animation: fadeInLeft 1s ease-out, scaleUp 1.2s ease-in-out 0.5s, colorChange 2s infinite alternate;
-    /* Multiple animations: fade-in, scale-up, and color change */
-}
 
-.achievements-title:hover{
-    color:rgb(243, 57, 57);
-    text-shadow: 1px 1px 5px  rgb(8, 55, 116);
-}
+.achievements-title {
+        font-size: 3rem;
+        font-weight: bold;
+        color: rgb(8, 55, 116);
+        margin-top: 50px;
+      text-align: center;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .achievements-title:hover {
+        transform: translateY(-10px) translateX(-10px);
+        text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    }
+    
 
 .achievements-description {
     font-size: 18px;
@@ -1970,46 +2019,57 @@ html {
     }
 }
 
-/* Responsive Design */
+/* Media Queries for responsiveness */
 @media (max-width: 768px) {
+    /* Adjust for tablet and smaller devices */
     .achievements-section {
         flex-direction: column;
         padding: 20px;
+        margin-bottom: 40px;
     }
 
     .achievements-text {
         max-width: 100%;
-        margin-left: 0;
+        text-align: center;
     }
 
     .achievements-title {
-        font-size: 18px;
-        margin-left: 0;
-        text-align: center;
+        font-size: 24px;
+        margin-top: 30px;
     }
 
     .achievements-description {
         font-size: 16px;
-        margin-right: 32px;
-        text-align: center;
+        margin-left: 0;
+        margin-top: 20px;
     }
 }
 
 @media (max-width: 480px) {
+    /* Adjust for mobile devices */
     .achievements-section {
         padding: 15px;
     }
 
     .achievements-title {
-        font-size: 16px;
-        text-align: center;
+        font-size: 24px;
+        margin-top: 20px;
     }
 
     .achievements-description {
         font-size: 14px;
-        line-height: 1.4;
+        margin-left: 0;
+    }
+
+    /* Optionally, reduce padding/margin or hide certain elements to improve mobile experience */
+    .achievements-text {
+        max-width: 100%;
+        padding: 10px;
+        text-align: center;
     }
 }
+
+
 
 /* Certificate Section Styling */
 .certificate-slider-section {
@@ -2242,7 +2302,7 @@ html {
 
     /* Adjust font sizes */
     .achievements-title {
-        font-size: 20px;
+        font-size: 24px;
         margin-left: 20px;
     }
 
@@ -2571,14 +2631,14 @@ footer {
 /* Certificate Images */
 .footer-certificates {
     display: flex;
-    gap: 15px;
+    gap: 5px;
     align-items: center;
     justify-content: center;
 }
 
 .footer-cer img {
     height: 100px; /* Manageable size for certificates */
-    width: auto;
+    width: 150px;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -2670,8 +2730,9 @@ footer {
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 30%;
+    border-radius: 60%;
     padding: 10px;
+    width: 50px;
     font-size: 20px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

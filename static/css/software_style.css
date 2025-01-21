@@ -1,3 +1,416 @@
+/* written by Pruthvi */
+
+.topView {
+  background-color: rgb(250, 252, 255);
+  border-bottom: 1px solid black; 
+  font-weight: bold;
+  color: black;
+  padding: 10px 0; /* Add padding for better spacing */
+  position: fixed; /* Fixes the position */
+  top: 0; /* Aligns it to the top of the viewport */
+  left: 0; /* Aligns it to the left edge */
+  width: 100%; /* Makes it span the full width of the viewport */
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+.topView img {
+  width: 20px;  /* Ensure consistent icon size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Consistent spacing between icon and text */
+  vertical-align: middle; /* Align image with text */
+}
+
+.topView a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Ensure consistent link color */
+  display: inline-flex; /* Align icon and text horizontally */
+  align-items: center; /* Vertical alignment */
+  transition: transform 0.2s, color 0.2s; /* Smooth hover effects */
+}
+
+.topView a:hover {
+  color: rgb(207, 34, 21);
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.row {
+  display: flex;
+  justify-content: space-between; /* Evenly space columns */
+  align-items: center; /* Center content vertically */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+
+.menu-icon{
+  margin-left: 5%;
+}
+
+/* Default styles */
+.hidden {
+  display: none;
+}
+
+.logo-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Desktop and tablet view */
+@media (min-width: 769px) {
+  #menuToggle {
+      display: none;
+  }
+  #navLinks {
+      display: flex;
+      flex-direction: row;
+      /* gap: 20px; */
+  }
+  .certificateImg{
+      height: 80px;
+      width:100px;
+  }
+  .certificateRoundImg{
+      height: 100px;
+      width:100px;
+  }
+
+  #language{
+      margin-left: 120px;
+  }
+  
+  #contactButton{
+      margin-top: 14%;
+      margin-left: 30px;
+  }
+  nav {
+      top:40px
+  }
+  #slide img{
+      height: 700px; /* Default height for large screens */
+      width:1200px ;
+      margin-left: 150px;
+  }
+ 
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #navLinks {
+      flex-direction: column;
+      /* position: fixed; */
+      right: 0;
+      width: 100%;
+      padding: 5px;  
+      background-color: rgb(250, 252, 255);
+      z-index: 2;
+  }
+ 
+  /* Contact icons in navbar */
+  nav ul li a img {
+      height: 15px;
+      width: auto;
+      margin-right: 10px;
+  }
+  nav ul  img:hover {
+      transform: scale(1.1);
+  }
+  
+  #topSection{
+      display: none;
+  }
+
+  .certificateImg{
+      height: 80px;
+      width:100px;
+  }
+  .certificateRoundImg{
+      height: 80px;
+      width:80px;
+  }
+  #language{
+      margin-left: 2%;
+      width: 100px;
+      margin-bottom: 10px;
+  }
+  nav{
+      top:0px;
+  }
+  #slide img{
+      height: 200px; /* Default height for large screens */
+      width:200px ;
+      margin-left: 150px;
+  }
+}
+  
+
+@media (max-width: 768px) {
+  #socialIcons {
+      display: none;
+  }
+}
+
+
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 90px; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Navigation bar styling */
+nav {
+  background-color: rgb(250, 252, 255);
+  box-shadow: 0 4px 6px rgba(160, 15, 15, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures logo and items are spaced */
+  padding: 10px 10px;
+  border-bottom: 2px solid black;
+  flex-wrap: wrap;
+  position: fixed;
+  /* top: 40px; */
+  width: 100%;
+  z-index: 999;
+}
+
+/* Styling for the company logo */
+.logo img {
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar list styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 0;
+  flex-wrap: wrap;
+  margin: 0;
+  flex-grow: 1; /* Allows the list to take available space */
+}
+
+nav ul li {
+  margin: 0 5px;
+  position: relative;
+}
+
+/* Navbar link styling */
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 5px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: rgb(207, 34, 21);
+  transform: scale(1.1);
+}
+
+/* Contact icons in navbar */
+nav ul li a img {
+  height: 15px;
+  width: 60px;
+  margin-right: 30px;
+}
+nav ul img:hover {
+  transform: scale(1.1);
+}
+
+/* Right-aligned section (Language dropdown and Contact Us button) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the extreme right */
+  gap: 5px;
+  margin-left: auto; /* Pushes this section to the extreme right */
+}
+
+/* Styling for the language dropdown */
+.language-dropdown select {
+  font-size: 17px;
+  padding: 5px 5px;
+  width: 110px;
+  border: 3px solid rgb(20, 76, 150);
+  border-radius: 5px;
+}
+
+/* Contact Us Button */
+.contact-btn {
+  display: inline-block;
+  background-color: rgb(20, 76, 150);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  /* margin-top: 10px; */
+  text-transform: uppercase;
+  padding: 6px 5px;
+  border-radius: 5px;
+  border:  3px solid  transparent;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+
+.contact-btn:hover {
+  background-color: transparent;
+  color: rgb(245, 6, 6);
+  border-color: rgb(0, 0, 0);
+}
+
+.contact-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.contact-btn:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Styles */
+
+/* For tablets and smaller screens (1024px and below) */
+@media (max-width: 1024px) {
+  nav {
+      flex-wrap: wrap; /* Allows wrapping of elements */
+  }
+
+  .logo img {
+      height: 50px; /* Adjust logo size */
+      width: 50px;
+  }
+
+  nav ul {
+      justify-content: center; /* Center align nav items */
+  }
+
+  .nav-right {
+      flex-direction: column; /* Stack items vertically */
+      gap: 10px;
+      margin-top: 10px;
+      margin-left: 0;
+  }
+
+  .language-dropdown select {
+      width: 100%; /* Make dropdown full width */
+  }
+
+  .contact-btn {
+      width: 100%; /* Make the contact button full width */
+      text-align: center;
+  }
+}
+
+/* For mobile devices (768px and below) */
+@media (max-width: 768px) {
+  nav {
+      flex-wrap: wrap; /* Wrap the nav items */
+      padding: 15px 10px; /* Increase padding for better touch targets */
+  }
+
+  .logo img {
+      height: 45px; /* Resize logo for mobile */
+      width: 45px;
+  }
+
+  nav ul {
+      justify-content: center; /* Center the nav items */
+      width: 100%;
+  }
+
+  .nav-right {
+      flex-direction: column; /* Stack right-aligned items vertically */
+      gap: 15px;
+      margin-top: 15px;
+      margin-left: 0;
+  }
+
+  nav ul li a {
+      font-size: 16px; /* Reduce font size for smaller screens */
+  }
+
+  .language-dropdown select {
+      width: 100%; /* Full width for dropdown */
+      font-size: 15px; /* Adjust font size for mobile */
+  }
+
+  .contact-btn {
+      font-size: 14px; /* Reduce button font size */
+      padding: 8px 15px; /* Adjust padding for mobile */
+      width: 100%; /* Full width button */
+      text-align: center; /* Center-align the text */
+  }
+}
+
+/* For very small screens (480px and below) */
+@media (max-width: 480px) {
+  nav {
+      padding: 10px 5px; /* Adjust padding for very small screens */
+  }
+
+  .logo img {
+      height: 40px; /* Further reduce logo size */
+      width: 40px;
+  }
+
+  nav ul li a {
+      font-size: 14px; /* Reduce font size for very small screens */
+  }
+
+  .language-dropdown select {
+      font-size: 14px; /* Adjust font size */
+  }
+
+  .contact-btn {
+      font-size: 9px; /* Make button text smaller */
+      padding: 6px 6px; /* Reduce padding */
+      margin-left: 2%;
+      width: 100px;
+  }
+}
+
+/* Smooth Scrolling Animation */
+html {
+  scroll-behavior: smooth;
+}
+
+
 
 /* Go Back Button Styling */
 .go-back {
@@ -71,6 +484,7 @@
 /* Ensure full page background video */
 .background-section {
   position: relative;
+  margin-top: 40px;
   width: 100%;  /* Full width */
   height: 100vh;  /* Full viewport height */
   overflow: hidden;
@@ -676,3 +1090,792 @@
 }
 
 
+/* Pin the section to the right side */
+#pinned-section {
+  position: fixed; /* Keeps the section fixed while scrolling */
+  top: 0;          /* Aligns to the top of the page */
+  right: 10px;     /* Adds some spacing from the right edge */
+  width: 66px;    /* Set a width for the section */
+  background-color: rgb(50, 100, 167); /* Optional: Set a background color */
+  padding: 10px;
+  margin-top: 150px;
+  z-index: 1000;   /* Ensures it appears above other elements */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+  border-radius: 10px; /* Rounds the section itself slightly */
+}
+
+/* Styling the image links */
+.image-link {
+  display: block; /* Make each image link a block element for stacking */
+  margin-bottom: 15px; /* Add space between images */
+  position: relative;
+  text-decoration: none;
+  text-align: center; /* Center-align images and names */
+}
+
+/* Styling circular images */
+.image-link img {
+  width: 50px;  /* Set fixed width for circle */
+  height: 50px; /* Set fixed height for circle */
+  object-fit: cover; /* Ensures the image fits properly */
+  border-radius: 50%; /* Makes the images circular */
+  border: 2px solid #020202; /* Add a border around the images */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for image scaling */
+.image-link:hover img {
+  transform: scale(1.1); /* Zoom effect */
+  border: 2px solid #ff0808; /* Add a border around the images */
+}
+
+/* Hover name (hidden by default) */
+.hover-name {
+  position: absolute;
+  bottom: -20px; /* Position name just below the image */
+  right: 40%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show the name on hover */
+.image-link:hover .hover-name {
+  opacity: 1;
+}
+
+
+/* MEDIA QUERIES */
+
+/* Small devices (e.g., smartphones) */
+@media (max-width: 480px) {
+  #pinned-section {
+    width: 56px; /* Adjust section width */
+    margin-top: 100px; /* Reduce top margin for smaller screens */
+    right: 5px; /* Adjust right position */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .image-link img {
+    width: 40px; /* Reduce image size for smaller screens */
+    height: 40px;
+  }
+
+  .hover-name {
+    font-size: 10px; /* Adjust font size of hover text */
+    padding: 3px 5px;
+  }
+}
+
+/* Medium devices (e.g., tablets) */
+@media (max-width: 768px) {
+  #pinned-section {
+    width: 40px; /* Slightly larger width than on small devices */
+    margin-top: 120px; /* Adjust top margin */
+    right: 8px;
+  }
+
+  .image-link img {
+    width: 40px; /* Resize images for medium screens */
+    height: 40px;
+    margin-left: -3px;
+  }
+
+  .hover-name {
+    font-size: 11px; /* Adjust hover text size for medium devices */
+  }
+}
+
+
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed; /* Keeps it at the bottom-right corner */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  width: 60px; /* Button size */
+  height: 60px;
+  background-color: rgb(50, 100, 167); /* Button background color (blue) */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Show pointer on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Hover transition */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Add the image inside the button */
+#back-to-top img {
+  width: 90%; /* Adjust image size */
+  height: 90%;
+  object-fit: contain; /* Make sure the image fits properly inside */
+  display: block;
+  margin: 0 auto; /* Center the image inside the button */
+}
+
+/* Hover effect */
+#back-to-top:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 6px 12px #ff0808;/* Add shadow on hover */
+}
+
+/* Show the button when scrolled */
+#back-to-top.show {
+  display: block; /* Show button when class 'show' is added */
+}
+
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Reduce button size on smaller screens */
+  #back-to-top {
+    width: 50px;
+    height: 50px;
+    bottom: 15px; /* Reduce the bottom margin */
+    right: 15px;  /* Reduce the right margin */
+  }
+
+  /* Adjust image inside the button for smaller screens */
+  #back-to-top img {
+    width: 80%; /* Slightly smaller image on mobile */
+    height: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce button size on very small screens */
+  #back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 10px; /* Further reduce bottom margin */
+    right: 10px;  /* Further reduce right margin */
+  }
+
+  /* Adjust image inside the button for very small screens */
+  #back-to-top img {
+    width: 90%; /* Even smaller image */
+    height: 90%;
+  }
+}
+
+
+
+/* General Footer Styling */
+footer {
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 40px 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensuring footer stays on top */
+}
+
+/* Footer Container */
+.footer-container {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: rgb(167, 4, 4);
+  transform: translateY(-5px);
+}
+
+/* Certificate Images */
+.footer-certificates {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-cer img {
+  height: 100px; /* Manageable size for certificates */
+  width: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-cer img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-cer1 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-cer2 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-cer3 img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Contact Section */
+.footer-contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item img {
+  height: 20px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover img {
+  transform: scale(1.2);
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-item a:hover {
+  color: rgb(167, 4, 4);
+  transform: translateY(-5px);
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 60%;
+  padding: 10px;
+  width: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: rgb(8, 55, 116);
+  transform: scale(1.1);
+}
+
+.back-to-top i {
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover i {
+  transform: rotate(360deg);
+}
+
+/* Chatbot Styling within Footer */
+#chatbot-footer {
+  bottom: 50px; /* Just above the footer */
+  top: 150px;
+  width: 20px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  animation: chatbotSlideIn 0.5s ease-out forwards;
+}
+
+/* Animations */
+@keyframes chatbotSlideIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+/* General Chatbot Style */
+#chatbot {
+  position: fixed;
+  bottom: 220px;
+  left: 30px;
+  width: 350px;
+  height: 350px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  transform: scale(0.5);
+  z-index: 1000;
+  animation: chatbotSlideIn 0.5s ease-out forwards;
+}
+
+.chatBot{
+  width: 40px;
+  height:40px;
+}
+
+
+/* Chatbot Header */
+.chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background: linear-gradient(to bottom right, #7a96f1, #f362f3);
+  color: white;
+  border-radius: 10px 10px 0 0;
+  font-weight: bold;
+  font-size: 16px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.chatbot-header img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.chatbot-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.chatbot-header button:hover {
+  color: #000000;
+  background: linear-gradient(to bottom right, #f362f3, #7a96f1);
+}
+
+/* Message Area */
+#chatMessages {
+  overflow-y: auto;
+  padding: 5px;
+  background-color: #f4f4f4;
+  border-radius: 0 0 10px 10px;
+  animation: fadeIn 0.3s ease-out;
+  max-height: 350px; /* Set a fixed height */
+}
+
+
+/* Messages */
+.message {
+  display: flex;
+  margin-bottom: 5px;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Chatbot Message Alignment */
+.user-icon {
+  justify-content: flex-start; /* Left align for user */
+}
+
+.user-message {
+  margin-right: 10px; /* Right align for bot */
+  
+}
+
+.bot-message {
+  justify-content: flex-end; /* Right align for bot */
+}
+
+/* Align icons */
+
+.message .bot-icon {
+  order: 1; /* Bot image comes before message */
+}
+
+
+.message .message-text {
+  max-width: 70%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(188, 194, 212);
+  padding: 10px;
+  border-radius: 15%;
+  margin-bottom: 5px;
+}
+
+.message .user-message .message-text {
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 10px;
+}
+
+.message .bot-message .message-text {
+  background-color: #e0f2f1;
+  color: rgb(8, 55, 116);
+  padding: 10px;
+}
+.message .bot-icon{
+  margin-right: 10px;
+}
+
+.message .user-icon{
+  margin-right: 10px;
+}
+
+.message img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  font-size: 14px;
+  color: rgb(8, 55, 116);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.typing-indicator .dot {
+  animation: typingDots 1.5s infinite;
+}
+
+.typing-indicator .dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator .dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Input Area */
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #e0f2f1;
+  border-radius: 0 0 10px 10px;
+}
+
+.input-container input {
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.input-container input:focus {
+  border: 1px solid rgb(8, 55, 116);
+}
+
+.input-container button {
+  background-color: rgb(8, 55, 116);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-container button:hover {
+  background-color: #00796b;
+}
+
+/* Keyframes for Animations */
+@keyframes chatbotSlideIn {
+  0% {
+      transform: scale(0.5);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(30px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes userMessage {
+  0% {
+      transform: translateX(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes botMessage {
+  0% {
+      transform: translateX(-20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes typingDots {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+/* Responsive Design for Mobile and Small Screens */
+
+/* Footer container */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: row; /* Align items in a row */
+      justify-content: space-between; /* Spread out the items */
+      align-items: center; /* Vertically align items */
+      gap: 15px; /* Provide space between elements */
+      padding: 20px; /* Add padding for better spacing */
+      flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+  }
+
+  /* Footer Links */
+  .footer-links ul {
+      display: flex; /* Align links in a row */
+      gap: 20px; /* Space between links */
+      
+  }
+
+  .footer-links li a {
+      font-size: 16px; /* Increase font size for readability */
+      margin-left: 10px;
+  }
+
+  /* Footer Certificates */
+  .footer-certificates {
+      display: flex; /* Align certificates in a row */
+      gap: 20px; /* Space between certificates */
+  }
+
+  .footer-cer img {
+      height: 80px; /* Set the height for certificates */
+      width: auto; /* Keep aspect ratio intact */
+  }
+
+  /* Contact Section */
+  .footer-contact {
+      display: flex; /* Align contact items in a row */
+      gap: 20px; /* Space between contact items */
+      align-items: center; /* Center items vertically */
+  }
+
+  .contact-item {
+      font-size: 16px; /* Increase font size for better readability */
+  }
+
+  /* Back to Top Button */
+  .back-to-top {
+      position: fixed; /* Keep the button fixed on the screen */
+      bottom: 10px;
+      right: 10px;
+      padding: 12px; /* Slightly larger button for easy touch */
+      font-size: 24px; /* Increase button size */
+      width: 50px;
+      height: 50px;
+      border-radius: 50%; /* Make button round */
+  }
+
+  /* Chatbot */
+  #chatbot-footer {
+      bottom: 100px; /* Position the chatbot button */
+      width: 60px; /* Adjust the chatbot button size */
+      height: 60px;
+      gap: 15px; 
+  }
+
+  #chatbot {
+      bottom: 450px; /* Adjust position of chatbot */
+      left: 10px;
+      width: 320px; /* Adjust width */
+      height: 360px;
+  }
+
+  .chatbot-header {
+      font-size: 16px; /* Adjust chatbot header font size */
+      padding: 12px;
+  }
+
+  .input-container input {
+      font-size: 14px; /* Adjust input field font size */
+      width: 75%; /* Adjust input field width */
+      padding: 10px; /* Add padding */
+  }
+
+  .input-container button {
+      font-size: 16px; /* Adjust button font size */
+      padding: 10px 15px; /* Increase button padding */
+  }
+}
+
+/* Additional Media Query for Extra Small Screens */
+@media (max-width: 480px) {
+  .footer-container {
+      flex-direction: row; /* Keep items in a row on smaller screens */
+      justify-content: space-between; /* Distribute elements evenly */
+      gap: 15px; /* Space between elements */
+  }
+
+  .footer-links ul {
+      display: flex; /* Align links in a row */
+      gap: 10px; /* Adjust space between links */
+  }
+
+  .footer-links li a {
+      font-size: 14px; /* Slightly smaller font for smaller screens */
+  }
+
+  .footer-cer img {
+      height: 60px; /* Reduce certificate size for small screens */
+      width: auto;
+  }
+
+  .contact-item {
+      font-size: 14px; /* Smaller font for contact items */
+  }
+
+  .back-to-top {
+      padding: 10px; /* Increase button size for better tap */
+      font-size: 22px; /* Adjust button font size */
+      width: 50px;
+      height: 50px;
+  }
+
+  #chatbot {
+      width: 280px; /* Adjust chatbot width */
+      height: 320px;
+  }
+
+  .chatbot-header {
+      font-size: 14px; /* Smaller font size */
+      padding: 10px;
+  }
+
+  .input-container input {
+      font-size: 12px; /* Smaller input font size */
+      width: 70%; /* Adjust input width */
+      padding: 8px; /* Add padding */
+  }
+
+  .input-container button {
+      font-size: 14px; /* Slightly smaller button size */
+      padding: 8px 12px; /* Adjust padding */
+  }
+}
