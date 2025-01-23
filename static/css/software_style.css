@@ -872,6 +872,8 @@ html {
 }
 
 
+
+
 /* Web Development Styling */
 #web-development {
   padding: 60px 20px;
@@ -1264,6 +1266,105 @@ html {
   #back-to-top img {
     width: 90%; /* Even smaller image */
     height: 90%;
+  }
+}
+
+
+/* General Styling for Cloud Computing Section */
+#cloud-computing {
+  background-color: #f1f8ff;
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+#cloud-computing h2 {
+  text-align: center;
+  font-size: 2.5em;
+  color: #3c6b7d;
+  margin-bottom: 30px;
+}
+
+.projects-container-cloud {
+  display: flex;
+  flex-wrap: wrap;  /* Allows the items to wrap if there is not enough space */
+  justify-content: space-between; /* Distribute space between the cards */
+  gap: 20px;
+}
+
+.cloud-project-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 22%; /* Sets the width of each card to be 22% of the container width */
+  min-width: 280px; /* Ensures the cards do not become too small */
+}
+
+.cloud-project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cloud-project-card h3 {
+  font-size: 1.8em;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.media-display-cloud video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.file-downloads-cloud ul {
+  list-style: none;
+  padding: 0;
+}
+
+.file-downloads-cloud ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.file-downloads-cloud img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.file-downloads-cloud img:hover {
+  transform: scale(1.1);
+}
+
+/* Simple Animation for Project Cards */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cloud-project-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cloud-project-card {
+    width: 48%; /* On medium screens, cards take up half the width */
+  }
+}
+
+@media (max-width: 768px) {
+  .cloud-project-card {
+    width: 100%; /* On small screens, cards take full width */
   }
 }
 

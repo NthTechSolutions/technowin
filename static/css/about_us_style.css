@@ -2244,3 +2244,61 @@ footer {
       padding: 8px 12px; /* Adjust padding */
   }
 }
+
+/* Overall Section Styling */
+#social-media-section {
+  position: relative;
+  width: 100%;
+  height: 120vh; /* Ensure it takes full viewport height */
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
+  margin-top: 40px;
+}
+
+/* Video Container Styling */
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the container spans the full width */
+  height: 100%; /* Ensure the container spans the full height */
+  z-index: -1; /* Place the video behind other content */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically */
+  width: 100%; /* Ensure the video spans the entire width */
+  height: 100%; /* Ensure the video spans the entire height */
+  object-fit: cover; /* Ensure the video covers the container fully */
+  z-index: -1; /* Ensure the video stays in the background */
+  pointer-events: none; /* Prevent user interaction with the video */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #social-media-section {
+      height: 100vh; /* Adjust for smaller screens */
+  }
+
+  .video-container video {
+      width: auto; /* Maintain aspect ratio */
+      height: 100%; /* Fit height for smaller devices */
+  }
+}
+
+@media (max-width: 480px) {
+  #social-media-section {
+      margin-top: 0px;
+      height: 33vh; /* Slight reduction for very small screens */
+      margin-bottom: 5px;
+  }
+
+  .video-container video {
+      object-fit: contain; /* Ensure the video is fully visible */
+  }
+}
+

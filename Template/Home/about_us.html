@@ -84,21 +84,14 @@
     </ul>
 </nav>
   
-  <section class="company-section">
-    <div class="go-back">
-      <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
-    </div>      
-      <div class="company-card">
-        <img  src="{% static 'images/about_us_background.gif' %}" alt="Company Image" class="company-image" />
-        <h2 class="company-name">Tech Innovators-TechnoWin IT Infra Pvt Ltd 🚀</h2>
-        <p class="company-description">
-          Empowering businesses with innovative apps 📱, smart IT solutions 💻, and future-ready infrastructures 🔧. <br>
-          We blend technology with creativity to drive growth, spark innovation 💡, 
-          and build seamless digital experiences. Let’s shape the future—together! 🌐
-        </p>
-      </div>
-    </section>
-
+<div id="social-media-section">
+  <div class="video-container">
+      <video autoplay muted loop>
+          <source src="{% static 'images/about_us_background_video.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video>
+  </div>
+</div>
 
     {% comment %} <section id="pinned-section">
       <!-- Home -->
