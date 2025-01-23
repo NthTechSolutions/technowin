@@ -16,6 +16,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technowin Website</title>
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide the "Powered by Google" text and logo */
+        .goog-logo-link,
+        .goog-te-gadget span {
+          display: none !important;
+        }
+    
+        /* Hide the top bar */
+        .goog-te-banner-frame {
+          display: none !important;
+        }
+        body {
+          top: 0 !important;
+        }
+    
+        /* Hide the Google Options dropdown (show original, etc.) */
+        .goog-te-menu-value {
+          display: none !important;
+        }
+        #google_translate_element .goog-te-gadget-simple > div {
+            display: none !important;
+          }
+        /* Adjust dropdown style */
+        #google_translate_element select {
+          padding: 5px;
+          font-size: 16px;
+          margin: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      </style>
 </head>
 <body>
     
@@ -61,7 +93,21 @@
         {% comment %} </ul>
         <ul> {% endcomment %}
             <li>
-                <div class="language-dropdown">
+                <div id="google_translate_element"></div>
+                <script>
+                    // Initialize Google Translate
+                    function googleTranslateElementInit() {
+                      new google.translate.TranslateElement(
+                        {
+                          pageLanguage: 'en', // Default language of the page
+                          includedLanguages: 'en,hi,mr', // Comma-separated language codes
+                          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+                        },
+                        'google_translate_element'
+                      );
+                    }
+                </script>
+                {% comment %} <div class="language-dropdown">
                     <br>
                     <select id="language" name="language" style="">
                         <option value="en">English</option>
@@ -71,7 +117,7 @@
                         <option value="hi">हिंदी</option>
                         <option value="zh">中文</option>
                     </select>
-                </div>
+                </div> {% endcomment %}
             </li>
             <!-- Contact Us Button -->
             <li style="">
