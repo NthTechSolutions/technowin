@@ -89,47 +89,44 @@
         </div> 
     </section>
 
-
-    <section id="social-media-section">
-        <!-- Image at the top -->
-        <div class="section-image">
-            <img src="{% static 'images/contact_background.gif' %}" alt="Your Image Description">
+    <div id="social-media-section">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="{% static 'images/contact_background_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        
-        <div class="social-media-container">
-           <h2><u>Follow Us</h2></u>
-            <div class="social-media-icons">
-                <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
-                    <img src="{% static 'social_media/facebook1.png' %}" alt="Facebook">
-                </a>
-                <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
-                    <img src="{% static 'social_media/twitter.png' %}" alt="Twitter">
-                </a>
-                <a href="#" class="social-icon linkedin" target="_blank">
-                    <img src="{% static 'social_media/linkedin.png' %}" alt="LinkedIn">
-                </a>
-                <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
-                    <img src="{% static 'social_media/instagram.png' %}" alt="Instagram">
-                </a>
-                <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
-                    <img src="{% static 'social_media/whatsapp.png' %}" alt="Whatsapp">
-                </a>
-                <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" class="social-icon location" target="_blank">
-                    <img src="{% static 'social_media/location.png'  %}" alt="Location"><span class="tooltip">Location</span>
-                </a>
-                <a href="mailto:technowinitinfra@gmail.com" class="social-icon email" target="_blank">
-                    <img src="{% static 'social_media/gmail.png' %}" alt="Email"><span class="tooltip">Email</span>
-                </a>
-                <a href="tel:+917738019120" class="social-icon call" target="_blank">
-                    <img src="{% static 'social_media/call_icon.png' %}" alt="Call"><span class="tooltip">Call</span>
-                </a>
-            </div>
-            <div class="contact-button">
-                <a href="{% url 'ContactUs' %}#technoWinContactSection" class="btn">Contact Us</a>
-            </div>
-        </div>
-    </section>
+    </div>
     
+    <!-- social Media Section --> 
+   <!-- Social Media Section -->
+<section>
+    <div class="social-links" id="socialIcons">
+        <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
+            <img src="{% static 'social_media/facebook1.png' %}" alt="Facebook">
+        </a>
+        <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
+            <img src="{% static 'social_media/twitter.png' %}" alt="Twitter">
+        </a>
+        <a href="#" class="social-icon linkedin" target="_blank">
+            <img src="{% static 'social_media/linkedin.png' %}" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
+            <img src="{% static 'social_media/instagram.png' %}" alt="Instagram">
+        </a>
+        <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
+            <img src="{% static 'social_media/whatsapp.png' %}" alt="Whatsapp">
+        </a>
+        <!-- Brochure Download -->
+        <a href="{% static 'images/technowin.pdf' %}" class="social-icon brochure" download>
+            <img src="{% static 'images/download.png' %}" alt="Download Brochure">
+            <!-- Tooltip text that will be displayed on hover -->
+            <span class="tooltip">Download Brochure</span>
+        </a>
+        <!-- Chatbot Icon -->
+     
+    </div>
+</section>
 
     <section class="feedback-section">
         <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>

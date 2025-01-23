@@ -579,26 +579,37 @@ html {
 
 .why-techno .card-content {
     padding: 20px;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .why-techno .card img {
     width: 100%;
     max-width: 100px;  /* Ensure image doesn't overflow */
     height: auto;
+    align-items: center;
     border-radius: 10px;
     margin-bottom: 15px; /* Add some space below the image */
 }
 
 .why-techno .card h3 {
-    font-size: 24px;
+    font-size: 26px;
     color: #050505;
+    text-align: center;
     margin-bottom: 15px;
 }
 
+.why-techno .card h5 {
+    font-size: 20px;
+font-weight: bold;
+    color: #050505;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+
 .why-techno .card p {
     font-size: 16px;
-    font-weight: bold;
+    text-align: left;
     color: #000000;
 }
 

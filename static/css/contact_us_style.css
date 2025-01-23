@@ -142,14 +142,32 @@
         width:200px ;
         margin-left: 150px;
     }
+    #socialIcons {
+        margin-bottom: 80px;
+        width: 20px;
+        height: 20px;
+        margin-right: 30px; /* Adjusted for better spacing */
+    }
+    #socialIcons img {
+        width: 30px; /* Match the size of the container */
+        height: 30px; /* Match the size of the container */
+    }
 }
     
 
 @media (max-width: 768px) {
     #socialIcons {
-        display: none;
+        margin-bottom: 80px;
+        width: 20px;
+        height: 20px;
+        margin-right: 30px; /* Adjusted for better spacing */
+    }
+    #socialIcons img {
+        width: 30px; /* Match the size of the container */
+        height: 30px; /* Match the size of the container */
     }
 }
+
 
 
 /* Reset margin and padding */
@@ -455,185 +473,114 @@ html {
   }
   
 
-/* Styling for the Image */
-#social-media-section .section-image {
-    text-align: center;  /* Centers the image */
-    margin-bottom: 10px;  /* Space between the image and the content */
-}
-
-#social-media-section .section-image img {
-    width: 100%;  /* Make the image full width */
-    max-width: 1000px;  /* Limit the max width to 800px or adjust as needed */
-    border-radius: 12px;  /* Rounded corners for the image */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);  /* Shadow around the image */
-}
-
-/* Social Media Section Styling */
-#social-media-section {
-    background-color: #a5b4c7;
-    padding: 50px 20px;
-    color: white;
-    text-align: center;
-    border-radius: 12px;
-    margin-top: 15px;
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.1);
-    transform: scale(0.95);
-    transition: transform 0.3s ease-out;
-}
-
-.social-media-container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.social-media-container h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgb(8, 55, 116);
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
-    margin-top: 50px;
-    margin-bottom: 40px;
+ /* Overall Section Styling */
+ #social-media-section {
     position: relative;
+    width: 100%;
+    height: 120vh; /* Ensure it takes full viewport height */
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
+    margin-top: 40px;
 }
 
-.social-media-container h2:hover {
-    transform: translateY(-10px) translateX(-10px);
-    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+/* Video Container Styling */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure the container spans the full width */
+    height: 100%; /* Ensure the container spans the full height */
+    z-index: -1; /* Place the video behind other content */
+    overflow: hidden;
 }
 
-/* Social Media Icons & New Contact Icons */
-.social-media-icons {
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center vertically */
+    width: 100%; /* Ensure the video spans the entire width */
+    height: 100%; /* Ensure the video spans the entire height */
+    object-fit: cover; /* Ensure the video covers the container fully */
+    z-index: -1; /* Ensure the video stays in the background */
+    pointer-events: none; /* Prevent user interaction with the video */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #social-media-section {
+        height: 100vh; /* Adjust for smaller screens */
+    }
+
+    .video-container video {
+        width: auto; /* Maintain aspect ratio */
+        height: 100%; /* Fit height for smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    #social-media-section {
+        margin-top: 0px;
+        height: 33vh; /* Slight reduction for very small screens */
+        margin-bottom: 5px;
+    }
+
+    .video-container video {
+        object-fit: contain; /* Ensure the video is fully visible */
+    }
+}
+
+/* Social Media Links pinned to the right side */
+.social-links {
+    position: fixed;
+    right: 5px; /* Distance from the right edge */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Ensure it stays vertically centered */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    transition: all 0.3s ease;
 }
 
+/* Style for each social icon */
 .social-icon {
-    width: 50px;
-    height: 50px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10px;
+    box-sizing: content-box;
+    transition: all 0.3s ease;
 }
 
 .social-icon img {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
+/* Hover effect to enlarge and add color */
 .social-icon:hover {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-}
-
-.social-icon:hover img {
+    background-color: rgba(0, 0, 0, 0.7);
     transform: scale(1.1);
 }
 
-/* MEDIA QUERIES */
-
-/* Small devices (smartphones, max-width: 480px) */
-@media (max-width: 480px) {
-    #social-media-section {
-        padding: 30px 10px; /* Smaller padding */
-        margin-top: 10px; /* Reduce top margin */
-    }
-
-    .social-media-container h2 {
-        font-size: 1.8rem; /* Smaller heading font */
-    }
-
-    .social-media-img{
-        width: 80%;
-        height: 80%;
-    }
-
-    .social-media-icons {
-        gap: 15px; /* Reduce gap between icons */
-    }
-
-    .social-icon {
-        width: 35px; /* Smaller icons for mobile */
-        height: 35px;
-    }
+.social-icon:hover img {
+    transform: scale(1.2); /* Make the icons slightly larger on hover */
 }
 
-/* Medium devices (tablets, max-width: 768px) */
-@media (max-width: 768px) {
-    #social-media-section {
-        padding: 40px 15px; /* Moderate padding */
-    }
-
-    
-    .social-media-img{
-        width: 80%;
-        height: 80%;
-    }
-
-    .social-media-container h2 {
-        font-size: 2rem; /* Adjust font size for medium devices */
-    }
-
-    .social-icon {
-        width: 40px; /* Slightly smaller icons */
-        height: 40px;
-    }
-}
-
-/* Contact Us Button Styling */
-.contact-button .btn {
-    background-color: #f39c12;
-    color: rgb(0, 0, 0);
-    padding: 16px 40px;
-    font-size: 1.5rem;
-    border-radius: 30px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: bounceIn 1s ease-out;
-}
-
-.contact-button .btn:hover {
-    background-color: #f39c12;
-    color: rgb(3, 3, 3);
-    transform: translateY(-5px);
-    transform: translateY(-10px) translateX(-10px);
-    text-shadow: 0 16px 16px rgba(250, 7, 7, 0.5);
-    cursor: pointer;
-}
-
-
-/* Keyframe Animations */
-@keyframes fadeInUp {
+/* Animations to make the icons appear with a sliding effect */
+@keyframes slideIn {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateX(20px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes bounceIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    50% {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
+        transform: translateX(0);
     }
 }
 
@@ -641,7 +588,7 @@ html {
 .social-icon .tooltip {
     visibility: hidden;
     position: absolute;
-    bottom: 110%;
+    bottom: 50%;
     right: 10%;
     transform: translateX(-50%);
     background-color: rgb(56, 55, 55);
@@ -658,6 +605,77 @@ html {
 .social-icon:hover .tooltip {
     visibility: visible;
     opacity: 1;
+}
+
+/* Apply the slide-in animation to the social media icons */
+.social-links {
+    animation: slideIn 1s ease-out;
+}
+
+/* Optional: You can add specific hover effects for individual icons */
+.social-icon.facebook:hover {
+    background-color:rgb(162, 179, 216); /* Facebook color */
+}
+
+.social-icon.twitter:hover {
+    background-color: #1DA1F2; /* Twitter color */
+}
+
+.social-icon.linkedin:hover {
+    background-color: #0077b5; /* LinkedIn color */
+}
+
+.social-icon.instagram:hover {
+    background-color: #E4405F; /* Instagram color */
+}
+
+/* Add WhatsApp hover effect */
+.social-icon.whatsapp:hover {
+    background-color: #25D366; /* WhatsApp green color */
+}
+
+/* Ensure the social icons are visible and properly spaced on mobile screens */
+@media (max-width: 768px) {
+    .social-links {
+        right: 10px; /* Adjust right distance on smaller screens if needed */
+        gap: 10px; /* Add some space between icons */
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .social-links {
+        right: 5px; /* Slightly increase the gap from the edge */
+        gap: 15px; /* Add more space between icons */
+    }
+
+    .social-icon {
+        width: 50px; /* Increase icon size */
+        height: 50px; /* Maintain circular shape */
+    }
+
+    /* Optional: Adjust vertical position for better visibility on smaller screens */
+    .social-links {
+        top: 30%; /* Move the icons a bit higher if needed */
+    }
+}
+
+/* Responsive for very small screens (portrait mode) */
+@media (max-width: 480px) {
+    .social-links {
+        right: 10px;
+        gap: 12px; /* Moderate gap between icons */
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px; /* Slightly smaller icon on very small screens */
+    }
 }
 
 /* Feedback section styling */
