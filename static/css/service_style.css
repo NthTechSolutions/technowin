@@ -457,33 +457,55 @@ html {
 
   /* Styling for the Image Card */
 .image-card {
-    width: 1300px; /* Set width of the card */
-    height: 700px; /* Set height of the card */
-    border-radius: 10px; /* Rounded corners for the card */
-    overflow: hidden; /* Hide overflowing content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
-    margin: 30px auto; /* Center the card */
-    border: 3px solid rgb(20, 76, 150);
-    margin-top: 60px;
-    display: flex;
-    justify-content: center; /* Center the image */
-    align-items: center; /* Center the image */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
+  width: 1200px; /* Set width of the card */
+  height: 650px; /* Set height of the card */
+  border-radius: 10px; /* Rounded corners for the card */
+  overflow: hidden; /* Hide overflowing content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+  margin: 30px auto; /* Center the card */
+  border: 3px solid rgb(20, 76, 150);
+  margin-top: 60px;
+  display: flex;
+  justify-content: center; /* Center the video */
+  align-items: center; /* Center the content */
+  position: relative; /* For stacking content on top of the video */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition effect */
 }
 
+/* Hover effect for the card */
 .image-card:hover {
-    transform: translateY(-10px) translateX(-10px);
-    box-shadow: 0 8px 16px rgba(250, 0, 0, 0.5); /* Apply text shadow effect */
-    transition: all 0.3s ease-in-out; /* Smooth transition for transform and text-shadow */
+  transform: translateY(-10px) translateX(-10px);
+  box-shadow: 0 26px 26px rgba(250, 0, 0, 0.5); /* Apply text shadow effect */
+  transition: all 0.3s ease-in-out; /* Smooth transition for transform and text-shadow */
 }
 
-/* Image inside the card */
-.card-image {
-    width: 100%; /* Make the image fill the card */
-    height: 100%; /* Make the image fill the card */
-    object-fit: cover; /* Ensure the image covers the area of the card */
-    
+/* Video background styling */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1; /* Place the video behind the content */
 }
+
+/* Optional content on top of the video */
+.card-content {
+  z-index: 1;
+  color: #fff;
+  font-size: 2rem;
+  font-family: 'Arial', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Optional: Add text content if necessary */
+.card-content h2 {
+  font-size: 3rem;
+  margin-top: 20px;
+}
+
 
 /* Responsive Styling for Go Back Button and Image Card */
 @media (max-width: 767px) {

@@ -84,16 +84,22 @@
 
 
 
-    <section class="services-section">
-        <div class="go-back">
-            <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+<section class="services-section">
+    <div class="go-back">
+        <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+    </div>
+    
+    <!-- Card with Video Background -->
+    <div class="image-card">
+        <video autoplay muted loop class="background-video">
+            <source src="{% static 'images/services_background_video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+            <!-- Add any content you want on top of the video, like text or icons -->
         </div>
-        
-        <!-- Card with image -->
-        <div class="image-card">
-            <img src="{% static 'images/services_background.png' %}" alt="Image Card" class="card-image" />
-        </div>
-    </section>
+    </div>
+</section>
 
     
     
