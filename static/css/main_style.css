@@ -527,11 +527,11 @@ html {
 /* why to choose us Styling */
 .why-techno .card-container {
     display: flex;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     justify-content: space-between;
-    gap: 20px;  /* Space between the cards */
+    gap: 10px;  /* Space between the cards */
     flex-wrap: wrap;  /* Ensures the cards wrap on smaller screens */
-    padding: 20px;
+    padding: 10px;
 
 }
 
@@ -544,7 +544,7 @@ html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 30%;  /* Adjust the width to ensure all 3 cards fit in one row */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease; /* Add transition for background position */
-    perspective: 1500px; /* Add perspective for 3D effect */
+    perspective: 1200px; /* Add perspective for 3D effect */
 }
 
 .why-techno .card:hover {
@@ -559,7 +559,7 @@ html {
     font-size: 3rem;
     font-weight: bold;
     color: rgb(8, 55, 116);
-    margin-top: 50px;
+    margin-top: 10px;
   text-align: center;
     margin-bottom: 40px;
     position: relative;
@@ -1928,7 +1928,7 @@ font-weight: bold;
 
 /* Certificate Section Styling */
 .certificate-slider-section {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
     background-color: #ffffff;
     margin-bottom: 40px;
@@ -2052,7 +2052,7 @@ font-weight: bold;
 .certificate-card {
     min-width: 100%;
     text-align: center;
-    padding: 30px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
@@ -2132,39 +2132,82 @@ font-weight: bold;
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-    .achievements-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .achievements-text {
-        max-width: 150%;
-        margin-bottom: 30px;
-    }
-
+@media screen and (max-width: 768px) {
     .certificate-slider-section {
-       width: 120%; 
-        /* width: 100%; */
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
     }
 
-    /* Adjust navigation buttons */
+    .certificate-slider {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    .certificate-track {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .certificate-card {
+        min-width: 90%;
+        padding: 15px;
+        transform: scale(1);
+    }
+
+    .certificate-card img {
+        max-width: 90%;
+    }
+
+    .certificate-title {
+        font-size: 18px;
+    }
+
+    .certificate-description {
+        font-size: 14px;
+    }
+
     .prev-btn, .next-btn {
-        padding: 10px 10px;
-        font-size: 15px;
+        padding: 10px;
+        font-size: 12px;
     }
 
-    /* Adjust font sizes */
-    .achievements-title {
-        font-size: 24px;
-        margin-left: 20px;
+    .prev-btn {
+        left: 5px;
     }
 
-    .achievements-description {
-        font-size: 16px;
+    .next-btn {
+        right: 5px;
     }
 }
+
+@media screen and (max-width: 480px) {
+    .certificate-card {
+        min-width: 100%;
+        padding: 10px;
+    }
+
+    .certificate-card img {
+        max-width: 85%;
+    }
+
+    .certificate-title {
+        font-size: 16px;
+    }
+
+    .certificate-description {
+        font-size: 12px;
+    }
+
+    .prev-btn, .next-btn {
+        padding: 8px;
+        font-size: 10px;
+    }
+}
+
 
 
 
@@ -2608,107 +2651,159 @@ footer {
 }
 
 /* Chatbot Styling within Footer */
-#chatbot-footer {
-    bottom: 50px; /* Just above the footer */
-    top: 150px;
-    width: 20px;
-    height: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    z-index: 2;
-    animation: chatbotSlideIn 0.5s ease-out forwards;
-}
-
-/* Animations */
-@keyframes chatbotSlideIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-/* General Chatbot Style */
-#chatbot {
+.chatbot-container {
     position: fixed;
-    bottom: 220px;
-    left: 30px;
-    width: 350px;
-    height: 350px;
-    background-color: #fff;
+    bottom: 120px;
+    /* bottom: 20px; */
+    left: 20px;
+    width: 300px;
+    background: rgb(8, 55, 116);
     border-radius: 10px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-    display: none;
-    flex-direction: column;
-    transform: scale(0.5);
-    z-index: 1000;
-    animation: chatbotSlideIn 0.5s ease-out forwards;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateX(-110%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 9999;
 }
 
-.chatBot{
-    width: 40px;
-    height:40px;
+.chatbot-container.active {
+    transform: translateX(0);
 }
 
-
-/* Chatbot Header */
 .chatbot-header {
+    background: rgb(8, 55, 116);
+    color: white;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
-    background: linear-gradient(to bottom right, #7a96f1, #f362f3);
-    color: white;
-    border-radius: 10px 10px 0 0;
     font-weight: bold;
-    font-size: 16px;
-    animation: fadeIn 0.3s ease-out;
 }
 
-.chatbot-header img {
+.chatbot-gif {
     width: 30px;
     height: 30px;
     margin-right: 10px;
 }
 
-.chatbot-header button {
-    background: none;
-    border: none;
-    color: white;
+.close-btn {
     font-size: 20px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    transition: color 0.3s ease;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all 0.3s ease; /* For smooth animation */
+  }
+  
+  .close-btn:hover {
+    color: #f50606;/* Change color on hover */
+    font-weight: bold;
+    transform: scale(1.2); /* Slightly enlarge the button */
+  }
+  
+  /* Add a custom animation */
+  @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  .close-btn.fade-out {
+    animation: fadeOut 0.5s forwards;
+  }
+.input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
 }
 
-.chatbot-header button:hover {
-    color: #000000;
-    background: linear-gradient(to bottom right, #f362f3, #7a96f1);
+.input-container input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* Message Area */
+.input-container button {
+    margin-left: 5px;
+    padding: 8px;
+    background: rgb(8, 55, 116);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chatbot-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+.chatBot {
+    width: 80px;
+    height: 80px;
+    background: rgb(8, 55, 116);
+    border-radius: 20px;
+    cursor: pointer;
+    animation: bounce 1.5s infinite alternate, glow 2s infinite;
+    z-index: 9999;
+    position: relative;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(-10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+    }
+}
+
+.chatBot:hover {
+    background: linear-gradient(45deg, rgb(235, 10, 10), rgb(212, 212, 212));
+    border-radius: 20px;
+}
+
+/* Ensure parent container is properly positioned */
+#chatContainer {
+    
+    width: 100%;
+}
+
+/* Chat messages container with no overlap */
 #chatMessages {
-    overflow-y: auto;
-    padding: 5px;
+    overflow-y: auto; /* Allow vertical scrolling */
+    position: relative; /* Add this if not already set */
+    padding: 25px;
     background-color: #f4f4f4;
     border-radius: 0 0 10px 10px;
     animation: fadeIn 0.3s ease-out;
-    max-height: 350px; /* Set a fixed height */
+    max-height: 400px; /* Adjust height or remove if needed */
+    z-index: 1; /* Ensure it appears above other content */
+    box-sizing: border-box; /* Prevent overflow caused by padding */
+    margin-bottom: 10px; /* Ensure some spacing at the bottom */
 }
 
+/* Optional: Adjust the fading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* Messages */
 .message {
@@ -2901,6 +2996,59 @@ footer {
 }
 
 /* Responsive Design for Mobile and Small Screens */
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 600px) {
+    /* Adjust chatbot container width and position for smaller screens */
+    .chatbot-container {
+        width: 90%; /* Make it occupy 90% of the screen */
+        left: 5%; /* Center the chatbot */
+        bottom: 80px; /* Adjust bottom spacing */
+    }
+
+    /* Adjust the chat button for smaller screens */
+    .chatBot {
+        width: 60px;
+        height: 60px;
+        animation: bounce 1.5s infinite alternate, glow 2s infinite;
+    }
+
+    /* Adjust the message area height */
+    #chatMessages {
+        max-height: 300px; /* Reduce the max-height for smaller screens */
+    }
+
+    /* Make the input area take full width */
+    .input-container input {
+        width: 75%; /* Allow input field to occupy more space */
+    }
+
+    .input-container button {
+        padding: 8px 12px; /* Adjust button padding */
+    }
+
+    /* Adjust the header and icons */
+    .chatbot-header {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .chatbot-gif {
+        width: 25px;
+        height: 25px;
+    }
+
+    .message .message-text {
+        font-size: 14px; /* Adjust message font size */
+    }
+
+    /* Adjust user and bot icons */
+    .message img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+
 
 /* Footer container */
 @media (max-width: 768px) {
@@ -2968,7 +3116,7 @@ footer {
     }
 
     #chatbot {
-        bottom: 450px; /* Adjust position of chatbot */
+        bottom: 106px; /* Adjust position of chatbot */
         left: 10px;
         width: 320px; /* Adjust width */
         height: 360px;
@@ -3280,7 +3428,7 @@ footer {
 .slider-video-section {
     position: relative;
     width: 100%;
-    height: 900px; /* Default height */
+    height: 750px; /* Default height */
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -3288,7 +3436,7 @@ footer {
 }
 
 .auto-video {
-    width: 100%;
+    width: 150%;
     height: 100%;
   
 }

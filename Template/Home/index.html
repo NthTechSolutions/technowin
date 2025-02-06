@@ -160,7 +160,7 @@
                     <p>Create fields and their validations and Map to create a Form, </p> 
                     <h5><u>File comparison using AI / ML</u></h5>
                     <h5><u>Audit Utility </u>…</h5>
-                         </p><br><br><br>
+                         </p>
                          <a href="#" class="read-more">
                             <span>Read More</span>
                             <i class="fas fa-arrow-right"></i>
@@ -175,8 +175,8 @@
                     <p>Building projects/ products / AI enabled features across many disciplines, apps, architectures and languages.<p>
                        <h5><u>Project Coordinators</u></h5>
                        <p>At Large Client Sites</p>
-                        <h5><u>Business/ System Analyst/ Tester</u>…’</h5>
-                        </p><br><br><br><br>
+                        <h5><u>Business/ System Analyst/ Tester</u>…</h5>
+                        </p>
                         <a href="AboutUs#testimonials" class="read-more">
                             <span>Read More</span>
                             <i class="fas fa-arrow-right"></i>
@@ -192,7 +192,7 @@
                     <h5><u>Payroll System</u>–</h5> 
                     <p>For Municipal Corporation, Daily Salary payment for Supply Chain Company
                         <h5><u>Customized Software for Labour Law Consultants</u>…</h5>
-                        </p><br><br><br>
+                        </p>
                     <a href="#" class="read-more">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
@@ -985,40 +985,46 @@
     </div>
 </section>
 
+<section>
+    <div class="chatbot-footer">
+        <a href="javascript:void(0);" id="chatbotIcon" onclick="toggleChatbot()">
+            <img class="chatBot" src="{% static 'images/chatbot1.gif' %}" alt="Chatbot">
+        </a>
+    </div>
+      
+    <!-- Chatbot Container -->
+    <div id="chatbot" class="chatbot-container">
+        <!-- Chatbot header -->
+        <div class="chatbot-header">
+            <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif">
+            TechnoWin Chatbot
+            <button class="close-btn" onclick="toggleChatbot()">X</button>
+
+        </div>
+
+        <!-- Chat messages area -->
+        <div id="chatMessages">
+            <!-- Welcome message (Bot) -->
+            <div class="message bot-message">
+                <div class="bot-icon">
+                    <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
+                </div>
+                <div class="message-text">Welcome! How can we assist you today?</div>
+            </div>
+        </div>
+
+        <!-- Input container -->
+        <div class="input-container">
+            <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+</section>
+
 
 <footer>
     <div class="footer-container">
-        <div class="chatbot-footer">
-            <a href="javascript:void(0);"  id="chatbotIcon" onclick="toggleChatbot()">
-                <img class="chatBot" src="{% static 'images/robot.png' %}" alt="Chatbot">
-            </a>
-        </div>
-          <!-- Chatbot Container -->
-<div id="chatbot">
-    <!-- Chatbot header -->
-    <div class="chatbot-header">
-        <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif" style="width:30px;height:30px;">
-        TechnoWin Chatbot
-        <button onclick="toggleChatbot()">×</button>
-    </div>
-
-    <!-- Chat messages area -->
-    <div id="chatMessages">
-        <!-- Welcome message (Bot) -->
-        <div class="message bot-message">
-            <div class="bot-icon">
-                <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
-            </div>
-            <div class="message-text">Welcome! How can we assist you today?</div>
-        </div>
-    </div>
-
-    <!-- Input container -->
-    <div class="input-container">
-        <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
-        <button onclick="sendMessage()">Send</button>
-    </div>
-</div>
+       
 
         <div class="footer-links">
             <ul>
@@ -1460,5 +1466,12 @@ function updateTechSlider() {
 }
 </script>
 
+<script>
+    function toggleChatbot() {
+        const chatbot = document.getElementById("chatbot");
+        chatbot.classList.toggle("active");
+    }
+    </script>
+    
 
 </html>

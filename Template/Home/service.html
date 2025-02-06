@@ -280,41 +280,45 @@
         </div>
       </section>
       
+      <section>
+        <div class="chatbot-footer">
+            <a href="javascript:void(0);" id="chatbotIcon" onclick="toggleChatbot()">
+                <img class="chatBot" src="{% static 'images/chatbot1.gif' %}" alt="Chatbot">
+            </a>
+        </div>
+          
+        <!-- Chatbot Container -->
+        <div id="chatbot" class="chatbot-container">
+            <!-- Chatbot header -->
+            <div class="chatbot-header">
+                <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif">
+                TechnoWin Chatbot
+                <button class="close-btn" onclick="toggleChatbot()">X</button>
+    
+            </div>
+    
+            <!-- Chat messages area -->
+            <div id="chatMessages">
+                <!-- Welcome message (Bot) -->
+                <div class="message bot-message">
+                    <div class="bot-icon">
+                        <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
+                    </div>
+                    <div class="message-text">Welcome! How can we assist you today?</div>
+                </div>
+            </div>
+    
+            <!-- Input container -->
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+    
     
       <footer>
         <div class="footer-container">
-            <div class="chatbot-footer">
-                <a href="javascript:void(0);"  id="chatbotIcon" onclick="toggleChatbot()">
-                    <img class="chatBot" src="{% static 'images/robot.png' %}" alt="Chatbot">
-                </a>
-            </div>
-              <!-- Chatbot Container -->
-    <div id="chatbot">
-        <!-- Chatbot header -->
-        <div class="chatbot-header">
-            <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif" style="width:30px;height:30px;">
-            TechnoWin Chatbot
-            <button onclick="toggleChatbot()">×</button>
-        </div>
-    
-        <!-- Chat messages area -->
-        <div id="chatMessages">
-            <!-- Welcome message (Bot) -->
-            <div class="message bot-message">
-                <div class="bot-icon">
-                    <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
-                </div>
-                <div class="message-text">Welcome! How can we assist you today?</div>
-            </div>
-        </div>
-    
-        <!-- Input container -->
-        <div class="input-container">
-            <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
-            <button onclick="sendMessage()">Send</button>
-        </div>
-    </div>
-    
             <div class="footer-links">
                 <ul>
                     <li><a href="{% url 'AboutUs' %}">About</a>
@@ -624,5 +628,13 @@ faqItems.forEach(item => {
     }
     
         </script>
+
+        <script>
+            function toggleChatbot() {
+                const chatbot = document.getElementById("chatbot");
+                chatbot.classList.toggle("active");
+            }
+            </script>
+        
 
 </html>

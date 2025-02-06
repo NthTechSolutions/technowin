@@ -1805,106 +1805,141 @@ footer {
   transform: rotate(360deg);
 }
 
+
 /* Chatbot Styling within Footer */
-#chatbot-footer {
-  bottom: 50px; /* Just above the footer */
-  top: 150px;
-  width: 20px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  animation: chatbotSlideIn 0.5s ease-out forwards;
-}
-
-/* Animations */
-@keyframes chatbotSlideIn {
-  0% {
-      transform: scale(0.5);
-      opacity: 0;
-  }
-  100% {
-      transform: scale(1);
-      opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-  }
-}
-
-
-/* General Chatbot Style */
-#chatbot {
+/* Chatbot Styling within Footer */
+.chatbot-container {
   position: fixed;
-  bottom: 220px;
-  left: 30px;
-  width: 350px;
-  height: 350px;
-  background-color: #fff;
+  bottom: 120px;
+  /* bottom: 20px; */
+  left: 20px;
+  width: 300px;
+  background: rgb(8, 55, 116);
   border-radius: 10px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  transform: scale(0.5);
-  z-index: 1000;
-  animation: chatbotSlideIn 0.5s ease-out forwards;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateX(-110%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 9999;
 }
 
-.chatBot{
-  width: 40px;
-  height:40px;
+.chatbot-container.active {
+  transform: translateX(0);
 }
 
-
-/* Chatbot Header */
 .chatbot-header {
+  background: rgb(8, 55, 116);
+  color: white;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  background: linear-gradient(to bottom right, #7a96f1, #f362f3);
-  color: white;
-  border-radius: 10px 10px 0 0;
   font-weight: bold;
-  font-size: 16px;
-  animation: fadeIn 0.3s ease-out;
 }
 
-.chatbot-header img {
+.chatbot-gif {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
 
-.chatbot-header button {
-  background: none;
-  border: none;
-  color: white;
+.close-btn {
   font-size: 20px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  transition: color 0.3s ease;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: all 0.3s ease; /* For smooth animation */
 }
 
-.chatbot-header button:hover {
-  color: #000000;
-  background: linear-gradient(to bottom right, #f362f3, #7a96f1);
+.close-btn:hover {
+  color: #f50606;/* Change color on hover */
+  font-weight: bold;
+  transform: scale(1.2); /* Slightly enlarge the button */
+}
+
+/* Add a custom animation */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.close-btn.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+.input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-container button {
+  margin-left: 5px;
+  padding: 8px;
+  background: rgb(8, 55, 116);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chatbot-footer {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+.chatBot {
+  width: 80px;
+  height: 80px;
+  background: rgb(8, 55, 116);
+  border-radius: 20px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite alternate, glow 2s infinite;
+  z-index: 9999;
+  position: relative;
+}
+
+@keyframes bounce {
+  0% {
+      transform: translateX(-10px);
+  }
+  100% {
+      transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0% {
+      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.chatBot:hover {
+  background: linear-gradient(45deg, rgb(235, 10, 10), rgb(212, 212, 212));
+  border-radius: 20px;
 }
 
 /* Message Area */
 #chatMessages {
-  overflow-y: auto;
-  padding: 5px;
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 25px;
   background-color: #f4f4f4;
   border-radius: 0 0 10px 10px;
   animation: fadeIn 0.3s ease-out;
-  max-height: 350px; /* Set a fixed height */
+  max-height: 400px; /* Set a fixed height */
 }
 
 
