@@ -686,6 +686,71 @@ html {
   transform: scale(1.05);
 }
 
+/* Title (h2) */
+.video-card h2 {
+  font-size: 22px;
+  color: rgb(8, 55, 116);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.video-card h4 {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Title and Description */
+.video-card:hover h4 {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
+}
+
+/* Underline Animation */
+.video-card h2::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  background: rgb(8, 55, 116);
+  margin: auto;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Hover Effect for Title and Description */
+.video-card:hover h2 {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
+}
+
+.video-card:hover h2::after {
+  width: 60%;
+}
+
+/* Description (p) */
+.video-card p {
+  font-size: 16px;
+  color: #ff0000;
+  font-weight: bold;
+  text-align: justify;
+  line-height: 1.6;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect for Title and Description */
+.video-card:hover p {
+  color: rgb(8, 55, 116);
+  text-shadow: 0 10px 10px rgb(252, 214, 2);
+}
+
+
 /* Text Card */
 .text-card {
   background: white;
@@ -701,45 +766,23 @@ html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Title (h2) */
-.text-card h2 {
-  font-size: 22px;
-  color: rgb(8, 55, 116);
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
 
-/* Underline Animation */
-.text-card h2::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 3px;
-  background: rgb(8, 55, 116);
-  margin: auto;
-  transition: width 0.4s ease-in-out;
-}
 
 /* Description (p) */
 .text-card p {
-  font-size: 16px;
+  font-size: 17px;
   color: #020202;
+  font-weight: bold;
   line-height: 1.6;
   transition: color 0.3s ease-in-out;
 }
 
 /* Hover Effect for Title and Description */
-.text-card:hover h2 {
-  transform: scale(1.1);
-  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
+.text-card:hover p {
+  text-shadow: 0 0 10px rgb(8, 55, 116);
 }
 
-.text-card:hover h2::after {
-  width: 60%;
-}
+
 
 .text-card:hover p {
   color: #020202; /* Text color changes slightly */
@@ -903,9 +946,24 @@ html {
 /* Hover Effects */
 .web-text-card:hover h2 {
   transform: scale(1.1);
-  text-shadow: 0 0 10px rgba(5, 85, 120, 0.6);
+  text-shadow: 0 10px 10px rgba(248, 214, 21, 0.6);
 }
 
+.web-text-card h4 {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Title and Description */
+.web-text-card:hover h4 {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
+}
 .web-text-card:hover p {
   color: rgb(0, 0, 0);
   font-weight: bold;
