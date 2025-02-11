@@ -664,6 +664,7 @@ html {
 /* Apply to card description */
 .card-description {
   font-size: 16px;
+  text-align: left;
   color: #000000; /* Initial text color */
   line-height: 1.5;
   animation: scaleUp 0.8s ease-out forwards;

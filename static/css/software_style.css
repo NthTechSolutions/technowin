@@ -917,7 +917,7 @@ html {
 
 /* Title */
 .web-text-card h2 {
-  font-size: 22px;
+  font-size: 20px;
   color: rgb(8, 55, 116);
   font-weight: bold;
   margin-bottom: 10px;
@@ -928,7 +928,7 @@ html {
 
 /* Hover Effects */
 .web-text-card:hover h2 {
-  transform: scale(1.1);
+  transform: scale(1.05);
   text-shadow: 0 10px 10px rgba(248, 214, 21, 0.6);
 }
 
@@ -955,7 +955,7 @@ html {
 /* Description */
 .web-text-card p {
   font-size: 16px;
-  color: #020202;
+  color: #000000;
   line-height: 1.6;
   transition: color 0.3s ease-in-out;
 }
