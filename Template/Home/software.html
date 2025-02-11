@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %} 
 <html lang="en">
 <head>
     {% load static %}
@@ -19,69 +20,6 @@
     <title>Software</title>  
 </head>
 <body>
-
-  <section class="topView" id="topSection">
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
-                <img src="{% static 'social_media/location.png' %}" alt="Location">
-                Goregaon, Mumbai
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="mailto:technowinitinfra@gmail.com" target="_blank">
-                <img src="{% static 'social_media/gmail.png' %}" alt="Email">
-                technowinitinfra@gmail.com
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="tel:+917738019120" target="_blank">
-                <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
-                +91 7738019120
-            </a>
-        </div>
-    </div>
-</section>
-
-<nav>
-    <div class="logo-menu">
-        <div class="logo">
-            <img src="{% static 'images/office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 300px;">
-        </div>
-        <button id="menuToggle" class="menu-icon">
-            <img src="{% static 'images/menu.gif' %}" alt="Menu Icon" style="height: 30px; width: 30px;">
-        </button>
-    </div>
-    <ul id="navLinks" class="hidden">
-        <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
-
-        <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
-        <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
-        <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-        <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
-    {% comment %} </ul>
-    <ul> {% endcomment %}
-        <li>
-            <div class="language-dropdown">
-                <br>
-                <select id="language" name="language" style="">
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                    <option value="hi">हिंदी</option>
-                    <option value="zh">中文</option>
-                </select>
-            </div>
-        </li>
-        <!-- Contact Us Button -->
-        <li style="">
-            <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
-                Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
   
     <section class="services-section">
         <div class="go-back">
@@ -136,14 +74,6 @@
             <span class="hover-name">Services</span>
           </a>
         </section> {% endcomment %}
-
-
-        <section>
-         <!-- Back to Top Button -->
-<button id="back-to-top">
-  <img src="{% static 'images/up_arrow.gif' %}" alt="Back to Top">
-</button>
-        </section>
         
         <section class="app-project">
         <h3>App Development</h3>
@@ -174,7 +104,7 @@
 
              <!-- Text Card -->
              <div class="text-card fadeInRight">
-                <p>PSN maintains a Pool of Employees who work when there is a requirement by PSN customers like Amazon, Flipkart etc. The customer or PSN does this by opening slots/ shifts as per their requirement, the notification of which is sent to the Pool Employee on his registered App. The Pool Employee applies for these Slots as per hi convenience. The Attendance of the Employee is captured on the Slot day and his salary for the day is calculated based on the rate card assigned to his state and designation. The salary once approved is paid out to his registered account immediately and the UTR no and the  Pay slip is sent to his App. Employee’s profile data is displayed on the App and has an option to change the same. This includes the account details, which when changed hits a gateway which validates the modified account details and saves the new details only when correct. Employee can be added or removed from the Pool to maintain the Pool Hygiene based on performance in a period. 
+                <p>
                   </p>
             </div>
 
@@ -185,11 +115,8 @@
         </video><br> <br>
         <h2>PSN Headon</h2>
         <h4>PSN Supply Chain Pvt Ltd</h4>
-        <p>Mobile App and Web Development, Deployment, Implementation, Training, Maintenance and Support. 
-            <br>
-           Server setup for development and testing.
-           <br> 
-           Technology: Flutter, Dart, Django Python, MySQL, Cloud: AWS EC2
+        <p>
+            
         </p>
     </div>
 
@@ -201,16 +128,18 @@
         </video><br> <br>
         <h2>On-Time App - Attendance Confirmation Software</h2>
         <h4>PSN Supply Chain Pvt Ltd</h4>
-        <p>Mobile App and Web Development, Deployment, Implementation, Training, Maintenance and Support. <br>
-            Server setup for development and testing
+        <p>Mobile App and Web Development, Deployment, Implementation, Training, Maintenance and Support. 
+            Server setup for development and testing            
             <br>
             Technology: Flutter, Dart, Django Python, MySQL, Cloud: AWS EC2
+
             
         </p>
     </div>
       <!-- Text Card -->
       <div class="text-card fadeInRight">
-              <p>PSN maintains a Pool of Employees who work when there is a requirement by PSN customers like Amazon, Flipkart etc. The customer or PSN does this by opening slots/ shifts as per their requirement, the notification of which is sent to the Pool Employee on his registered App. The Pool Employee applies for these Slots as per hi convenience. The Attendance of the Employee is captured on the Slot day and his salary for the day is calculated based on the rate card assigned to his state and designation. The salary once approved is paid out to his registered account immediately and the UTR no and the  Pay slip is sent to his App. Employee’s profile data is displayed on the App and has an option to change the same. This includes the account details, which when changed hits a gateway which validates the modified account details and saves the new details only when correct. Employee can be added or removed from the Pool to maintain the Pool Hygiene based on performance in a period. 
+              <p>Employees of PSN who are outsourced, Provide a daily confirmation to the outsourced Agency regarding their attendance next day based on the Roster generated for them through a Mobile App. This helps the Agency to assess the strength that will be available for work the next day. Confirmation and Attendance trend Reports are generated by the application based on this data. These Reports help PSN to assess people who do not provide confirmation, who provide confirmation but do not attend or do not comply to the time etc. The Application  also sends notices to regular defaulters on the App. The Application also captures the usage of the Mobile App alerts or notification by each user. 
+
                 </p>
           </div>
       </section>
@@ -242,20 +171,20 @@
     
             <!-- Text Card -->
             <div class="web-text-card slideInRight">
-                <h2>Scalable & Responsive Websites</h2>
+                <h2>CIDCO Services</h2>
                 <p>We specialize in designing responsive and scalable web applications, ensuring businesses have a robust online presence with modern UI/UX standards.</p>
             </div>
     
             <div class="web-video-card slideInLeft">
                 <video controls>
-                    <source src="{% static 'project_data/web_project2.mp4' %}" type="video/mp4">
+                    <source src="{% static 'project_data/cidco_services.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
     
             <div class="web-video-card slideInLeft">
                 <video controls>
-                    <source src="{% static 'project_data/web_project3.mp4' %}" type="video/mp4">
+                    <source src="{% static 'project_data/deonar_project.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -263,346 +192,57 @@
             <!-- Text Card -->
             <div class="web-text-card slideInRight">
                 <h2>Custom Web Development</h2>
-                <p>From eCommerce platforms to enterprise solutions, our web development team delivers customized projects that cater to your business needs.</p>
+                <p>Background: 
+                    The Deonar dumping ground (DDG) has been facing several incidents of fire and other rampages in the recent past. The management has brought in better security and firefighting arrangements into the site by installing surveillance booths, skilled security and firefighting personnel and latest equipment to aid in the surveillance and firefighting activities. The details of the equipment, personnel and the daily surveillance activity report, incidents are currently maintained in registers. The maintenance and distribution of the data is cumbersome and requires a lot of physical and manual interventions.
+                    <br>
+                    Need for the new system:
+                    The new system has to maintain the data and document in a digital form and make it easily accessible for the stakeholders.<br>
+                    Features:
+                    A standalone application at the DDG to maintain the staff and equipment records, daily surveillance plans and records, fire drill plans and records and the SOPs.
+                    A web based application to make available daily, periodic reports, SOP and other documents view, SOP maintenance and management with version control, Incidence management and dashboards of activities to the various stakeholders of the DDG management.
+                    </p>
             </div>
     
         </div>
     </section>
-    
-    <section>
-        <div class="chatbot-footer">
-            <a href="javascript:void(0);" id="chatbotIcon" onclick="toggleChatbot()">
-                <img class="chatBot" src="{% static 'images/chatbot1.gif' %}" alt="Chatbot">
-            </a>
-        </div>
-          
-        <!-- Chatbot Container -->
-        <div id="chatbot" class="chatbot-container">
-            <!-- Chatbot header -->
-            <div class="chatbot-header">
-                <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif">
-                TechnoWin Chatbot
-                <button class="close-btn" onclick="toggleChatbot()">X</button>
-    
-            </div>
-    
-            <!-- Chat messages area -->
-            <div id="chatMessages">
-                <!-- Welcome message (Bot) -->
-                <div class="message bot-message">
-                    <div class="bot-icon">
-                        <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
-                    </div>
-                    <div class="message-text">Welcome! How can we assist you today?</div>
-                </div>
-            </div>
-    
-            <!-- Input container -->
-            <div class="input-container">
-                <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
-                <button onclick="sendMessage()">Send</button>
-            </div>
-        </div>
-    </section>
-          
-         
-      <footer>
-        <div class="footer-container">
-            <div class="footer-links">
-                <ul>
-                    <li><a href="{% url 'AboutUs' %}">About</a>
-                        <li><a href="{% url 'Services' %}">Services</a></li>
-                        <li><a href="{% url 'AboutUs' %}">Projects</a></li>
-                        <li><a href="{% url 'ContactUs' %}">Contact </a></li>
-                </ul>
-            </div>
-            <div class="footer-cer">
-                <img src="{% static 'images/technowin_certificate.jpg' %}" alt="Company Certificate">
-            </div>
-            <div class="footer-cer1">
-                <img class="certificateRoundImg" src="{% static 'images/iso1.png' %}" alt="ISO Certification">
-            </div>
-            <div class="footer-cer2">
-                <img class="certificateImg" src="{% static 'images/iso.png' %}" alt="ISO Certification">
-            </div>
-            <div class="footer-cer3">
-                <img class="certificateImg" src="{% static 'images/cmmi.png' %}" alt="CMMI Certification">
-            </div>
-            <div class="footer-contact">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
-                            <img src="{% static 'social_media/location.png' %}" alt="Location">
-                            Goregaon, Mumbai
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="mailto:technowinitinfra@gmail.com" target="_blank">
-                            <img src="{% static 'social_media/gmail.png' %}" alt="Email">
-                            technowinitinfra@gmail.com
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <a href="tel:+917738019120" target="_blank">
-                            <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
-                            +91 7738019120
-                        </a>
-                    </div>
-                    <div class="contact-item">
-                        <p>You Are Visitor No.</p>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-      
-     <!-- Back to Top Button -->
-     <button class="back-to-top" title="Go to top">
-        <i class="fa fa-arrow-up"></i> <!-- FontAwesome arrow-up icon -->
-    </button>
-    
-            </div>
-        </div>
-    
-        <div class="footer-bottom">
-            <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
-        </div>
-    </footer>
-    
     
     </body>
 
     <script>
-// Select the Back to Top button
-const backToTopButton = document.getElementById('back-to-top');
-
-// Show the button when the user scrolls down
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) { // Show button after scrolling 200px
-    backToTopButton.classList.add('show');
-  } else {
-    backToTopButton.classList.remove('show');
-  }
-});
-
-// Scroll to the top when the button is clicked
-backToTopButton.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
-});
-
-    </script>
-
-    <script>
       // Function to animate the counter
-      function animateCounter(counterElement) {
-          const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
-          let currentValue = 0;
-      
-          // Increment the counter
-          const interval = setInterval(() => {
-              counterElement.innerText = currentValue;
-              if (currentValue >= targetValue) {
-                  clearInterval(interval);
-              } else {
-                  currentValue++;
-              }
-          }, 30); // Adjust speed by changing the interval
-      }
-      
-      // Detect when the counters are visible
-      function startCounters() {
-          const counters = document.querySelectorAll('.counter');
-          counters.forEach(counter => {
-              const counterPosition = counter.getBoundingClientRect().top;
-              const windowHeight = window.innerHeight;
-      
-              if (counterPosition < windowHeight) {
-                  animateCounter(counter);
-              }
-          });
-      }
-      
-      // Trigger the counter animation when the page loads or scrolls
-      window.addEventListener('scroll', startCounters);
-      window.addEventListener('load', startCounters);
-      
+        function animateCounter(counterElement) {
+            const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+            let currentValue = 0;
+        
+            // Increment the counter
+            const interval = setInterval(() => {
+                counterElement.innerText = currentValue;
+                if (currentValue >= targetValue) {
+                    clearInterval(interval);
+                } else {
+                    currentValue++;
+                }
+            }, 30); // Adjust speed by changing the interval
+        }
+        
+        // Detect when the counters are visible
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const counterPosition = counter.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+        
+                if (counterPosition < windowHeight) {
+                    animateCounter(counter);
+                }
+            });
+        }
+        
+        // Trigger the counter animation when the page loads or scrolls
+        window.addEventListener('scroll', startCounters);
+        window.addEventListener('load', startCounters);
+        
       </script>
-      
-      
-      <!-- JavaScript for Chatbot -->
-      <script>
-          let typingTimeout;  // To manage the typing indicator timeout for the user
-      
-      // Toggle chat window visibility
-      function toggleChatbot() {
-          const chatContainer = document.getElementById('chatbot');
-          const chatIcon = document.getElementById('chat-icon');
-          
-          if (chatContainer.style.display === 'block') {
-              chatContainer.style.display = 'none';
-              chatIcon.style.display = 'block';
-          } else {
-              chatContainer.style.display = 'block';
-              chatIcon.style.display = 'none';
-          }
-      }
-      
-      // Function to send message
-      function sendMessage() {
-          const userMessage = document.getElementById('userInput').value;
-          if (userMessage) {
-              // Display user message immediately with "You: "
-              displayMessage('user', userMessage);
-              document.getElementById('userInput').value = ''; // Clear input field
-      
-              // Simulate bot typing
-              displayTypingIndicator('bot');
-      
-              // Simulate bot response after a delay
-              setTimeout(() => {
-                  removeTypingIndicator('bot');
-                  displayMessage('bot', getBotResponse(userMessage)); // Display bot response
-              }, 1500);
-          }
-      }
-      
-      // Function to get bot response
-      function getBotResponse(userMessage) {
-          const lowerCaseMessage = userMessage.toLowerCase();
-          if (lowerCaseMessage.includes('hello')) {
-              return 'Hello! How can I assist you today?';
-          } else if (lowerCaseMessage.includes('how are you')) {
-              return 'I am doing great, thanks for asking!';
-          } else if (lowerCaseMessage.includes('what is your name')) {
-              return 'I am a chatbot created by Technowin IT Infra.';
-          } else if (lowerCaseMessage.includes('help')) {
-              return 'Sure! How can I assist you with your needs?';
-          } else {
-              return 'Sorry, I didn\'t understand that. Can you ask something else?';
-          }
-      }
-      
-      // Function to display messages in the chat window
-      function displayMessage(sender, message) {
-          const chatMessages = document.getElementById('chatMessages');
-          
-          // Create icon and text
-          const iconDiv = document.createElement('div');
-          iconDiv.classList.add(sender + '-icon');
-          const img = document.createElement('img');
-          img.src = sender === 'user' ? '{% static "images/user.png" %}' : '{% static "images/businessman.png" %}';  // Adjust the paths for your images
-          iconDiv.appendChild(img);
-          
-          // Create a new div for the message
-          const messageDiv = document.createElement('div');
-          messageDiv.classList.add('message', sender + '-message');
-          
-          const messageTextDiv = document.createElement('div');
-          messageTextDiv.classList.add('message-text');
-          messageTextDiv.textContent = message;
-          
-          // Append icon first, then message text to the message div
-          messageDiv.appendChild(iconDiv);
-          messageDiv.appendChild(messageTextDiv);
-          
-          // Append the message div to the chat messages container
-          chatMessages.appendChild(messageDiv);
-          
-          // Scroll to the bottom of the chat
-          scrollToBottom();
-      }
-      
-      
-      
-      // Function to display typing indicator
-      function displayTypingIndicator(sender) {
-          // Only show typing indicator if it's for the bot
-          if (sender === 'bot') {
-              const typingIndicator = document.createElement('div');
-              typingIndicator.classList.add('typing-indicator');
-              typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
-              document.getElementById('chatMessages').appendChild(typingIndicator);
-          } else if (sender === 'user') {
-              // Show user icon and the text they are typing while typing
-              const iconDiv = document.createElement('div');
-              iconDiv.classList.add('user-icon');
-              const img = document.createElement('img');
-              img.src = '{% static "user.png" %}';  // Path for user icon
-              iconDiv.appendChild(img);
-              
-              const chatMessages = document.getElementById('chatMessages');
-              const typingMessage = document.createElement('div');
-              typingMessage.classList.add('message', 'user-message');
-              
-              
-              
-              const messageTextDiv = document.createElement('div');
-              messageTextDiv.classList.add('message-text');
-              messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
-              
-              // Append the icon first and then the message text
-              typingMessage.appendChild(iconDiv); // User image first
-              typingMessage.appendChild(messageTextDiv); // Then the message text
-              
-              chatMessages.appendChild(typingMessage);
-              scrollToBottom(); // Ensure chat scrolls to bottom
-          }
-      }
-      
-      
-      // Function to remove typing indicator
-      function removeTypingIndicator(sender) {
-          if (sender === 'bot') {
-              const typingIndicator = document.querySelector('.typing-indicator');
-              if (typingIndicator) {
-                  typingIndicator.remove();
-              }
-          } else if (sender === 'user') {
-              const typingMessages = document.querySelectorAll('.user-message');
-              typingMessages.forEach(msg => msg.remove()); // Remove user typing message
-          }
-      }
-      
-      // Function to handle user typing in the input box
-      function handleTyping(event) {
-          const userMessage = document.getElementById('userInput').value;
-      
-          // Display typing indicator for the user while they are typing
-          if (userMessage && !typingTimeout) {
-              displayTypingIndicator('user');
-          }
-      
-          // Remove the typing indicator after the user stops typing
-          clearTimeout(typingTimeout);
-          typingTimeout = setTimeout(() => {
-              removeTypingIndicator('user');
-          }, 1000); // After 1 second of inactivity
-      }
-      
-      // Function to scroll the chat window to the bottom
-      function scrollToBottom() {
-          const chatboxMessages = document.getElementById('chatMessages');
-          chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
-      }
-      
-          </script>
-
-    <script>
-      document.getElementById('menuToggle').addEventListener('click', function () {
-          const navLinks = document.getElementById('navLinks');
-          if (navLinks.classList.contains('hidden')) {
-              navLinks.classList.remove('hidden');
-          } else {
-              navLinks.classList.add('hidden');
-          }
-      });
-  </script> 
-
-  <script>
-    function toggleChatbot() {
-        const chatbot = document.getElementById("chatbot");
-        chatbot.classList.toggle("active");
-    }
-    </script>
-
     </html>
+
+    {% endblock %}

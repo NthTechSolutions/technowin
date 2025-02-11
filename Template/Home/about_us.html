@@ -1,578 +1,449 @@
 <!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %}
 <html lang="en">
-<head>
+  <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+    <link rel="stylesheet" href="{% static 'css/about_us_style.css' %}" />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+    ></script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- Swiper CSS -->
-      <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
-    <title>About Us</title>  
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}" />
+    <title>About Us</title>
+  </head>
 
-  <section class="topView" id="topSection">
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
-                <img src="{% static 'social_media/location.png' %}" alt="Location">
-                Goregaon, Mumbai
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="mailto:technowinitinfra@gmail.com" target="_blank">
-                <img src="{% static 'social_media/gmail.png' %}" alt="Email">
-                technowinitinfra@gmail.com
-            </a>
-        </div>
-        <div class="col-md-4 text-center">
-            <a href="tel:+917738019120" target="_blank">
-                <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
-                +91 7738019120
-            </a>
-        </div>
-    </div>
-</section>
-
-<nav>
-    <div class="logo-menu">
-        <div class="logo">
-            <img src="{% static 'images/office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 300px;">
-        </div>
-        <button id="menuToggle" class="menu-icon">
-            <img src="{% static 'images/menu.gif' %}" alt="Menu Icon" style="height: 30px; width: 30px;">
-        </button>
-    </div>
-    <ul id="navLinks" class="hidden">
-        <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
-
-        <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
-        <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
-        <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-        <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
-    {% comment %} </ul>
-    <ul> {% endcomment %}
-        <li>
-            <div class="language-dropdown">
-                <br>
-                <select id="language" name="language" style="">
-                    <option value="en">English</option>
-                    <option value="fr">Français</option>
-                    <option value="es">Español</option>
-                    <option value="de">Deutsch</option>
-                    <option value="hi">हिंदी</option>
-                    <option value="zh">中文</option>
-                </select>
-            </div>
-        </li>
-        <!-- Contact Us Button -->
-        <li style="">
-            <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
-                Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
-            </a>
-        </li>
-    </ul>
-</nav>
-  
-<div id="social-media-section">
-  <div class="video-container">
-      <video autoplay muted loop>
-          <source src="{% static 'images/about_us_background_video.mp4' %}" type="video/mp4">
+  <body>
+    <div id="social-media-section">
+      <div class="video-container">
+        <video autoplay muted loop>
+          <source
+            src="{% static 'images/about_us_background_video.mp4' %}"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
-      </video>
-  </div>
-</div>
+        </video>
+      </div>
+    </div>
 
-    {% comment %} <section id="pinned-section">
+    {% comment %}
+    <section id="pinned-section">
       <!-- Home -->
       <a href="{% url 'Home' %}" class="image-link">
-        <img src="{% static 'images/home.gif' %}"  alt="Home Image">
+        <img src="{% static 'images/home.gif' %}" alt="Home Image" />
         <span class="hover-name">Home</span>
       </a>
-    
+
       <!-- Contact -->
       <a href="{% url 'ContactUs' %}" class="image-link">
-        <img src="{% static 'images/contact_us.gif' %}" alt="Contact Image">
+        <img src="{% static 'images/contact_us.gif' %}" alt="Contact Image" />
         <span class="hover-name">Contact</span>
       </a>
-    
+
       <!-- About -->
       <a href="{% url 'AboutUs' %}" class="image-link">
-        <img src="{% static 'images/info.gif' %}" alt="About Image">
+        <img src="{% static 'images/info.gif' %}" alt="About Image" />
         <span class="hover-name">About</span>
       </a>
-    
+
       <!-- Software -->
       <a href="{% url 'Software' %}" class="image-link">
-        <img src="{% static 'images/programmer.gif' %}" alt="Software Image">
+        <img src="{% static 'images/programmer.gif' %}" alt="Software Image" />
         <span class="hover-name">Software</span>
       </a>
-    
+
       <!-- Services -->
       <a href="{% url 'Services' %}" class="image-link">
-        <img src="{% static 'images/services.gif' %}" alt="Services Image">
+        <img src="{% static 'images/services.gif' %}" alt="Services Image" />
         <span class="hover-name">Services</span>
       </a>
-    </section> {% endcomment %}
-
+    </section>
+    {% endcomment %}
 
     <section>
-     <!-- Back to Top Button -->
-<button id="back-to-top">
-<img src="{% static 'images/up_arrow.gif' %}" alt="Back to Top">
-</button>
-    </section>
-    
+      <div class="row">
+        <div class="col-lg-12">
+          <head>
+            <link
+              href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+              rel="stylesheet"
+            />
+          </head>
 
+          <div class="book-wrapper">
+            <div class="books-border">
+              <book style="--total-pages: 7; --book-offset: 6deg">
+                <section class="page cover" style="--page-number: 0">
+                  <h1>History</h1>
+                  <img src="{% static 'images/office_logo.png' %}" />
+                </section>
 
+                <section class="page" style="--page-number: 1">
+                  <div class="flex-container">
+                    <blockquote>
+                      <p>
+                        We've rented a small office in Gorai – Borivali to
+                        deliver data entry projects for EC Bank, MCGM – Estate
+                        Department, and Octroi.
+                      </p>
+                      <h5>-2003</h5>
+                    </blockquote>
+                  </div>
+                </section>
 
-<section>
-  <div class="row">
-    <div class="col-lg-12">
-        <head>
-          <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-        </head>
-        
-        <div class="book-wrapper">
-          <div class="books-border">
-            <book style="--total-pages:7; --book-offset:6deg;">
-        
-              <section class="page cover" style="--page-number:0;  ">
-                <h1>History</h1><img src="{% static 'images/office_logo.png' %}">
-              </section>
-        
-              <section class="page " style="--page-number:1; ">
-                <div class="flex-container">
+                <section class="page" style="--page-number: 2">
                   <blockquote>
-                    <p>We've rented a small office in Gorai – Borivali to deliver data entry projects for EC Bank, MCGM – Estate Department, and Octroi.</p>
-                    <h5>-2003</h5>
+                    <p>
+                      We purchased our inaugural office in Malad - Orbit
+                      Industrial Estate, expanded to 100+ staff, and began
+                      providing hardware supply and maintenance.
+                    </p>
+                    <h5>-2004</h5>
                   </blockquote>
+                </section>
+
+                <section class="page" style="--page-number: 3">
+                  <blockquote>
+                    <p>
+                      Expanding data entry projects to various Government
+                      Bodies, securing our first AMC contract with MCGM –
+                      Octroi. Our team grew to 400+.
+                    </p>
+                    <h5>-2008</h5>
+                  </blockquote>
+                </section>
+
+                <section class="page" style="--page-number: 4">
+                  <blockquote>
+                    <p>
+                      Started Software Division in Malad on Nov 14, 2016. By Jan
+                      2017, developed software, handled hardware, and performed
+                      data entry for CIDCO.
+                    </p>
+                    <h5>-2016</h5>
+                  </blockquote>
+                </section>
+
+                <section class="page" style="--page-number: 5">
+                  <blockquote>
+                    <p>
+                      In Dec 2018, we secured 'Gram Panchayat Development and
+                      Planning' project integrated with a fellowship program
+                      under Mr. Devendra Fadnavis.
+                    </p>
+                    <h5>-2018</h5>
+                  </blockquote>
+                </section>
+                <section class="page" style="--page-number: 6">
+                  <blockquote>
+                    <p>
+                      Survived post-Covid with customer support. Developed
+                      'Knowledge Resource Center' with SVT College. Created CM
+                      Apprenticeship Management System for GHRDC, Goa. Awarded
+                      HRMS projects.
+                    </p>
+                    <h5>-2021</h5>
+                  </blockquote>
+                </section>
+                <section class="page" style="--page-number: 7">
+                  <blockquote>
+                    <p>
+                      Established educational software for Government Law
+                      College, Mumbai, Audit Utility for CGST Thane, Citizen
+                      Scheme Portal for Navi Mumbai Municipal Corporation.
+                      Ventured into Labour Law Compliance
+                    </p>
+                    <h5>-2023</h5>
+                  </blockquote>
+                </section>
+                <section class="page" style="--page-number: 8">
+                  <blockquote>
+                    <p>Continuing ..</p>
+                    <h5>-2024</h5>
+                  </blockquote>
+                </section>
+                <div class="book-spine">
+                  <h3>Technowin IT Infra Pvt. Ltd.</h3>
                 </div>
-        
-              </section>
-        
-              <section class="page" style="--page-number:2; ">
-                <blockquote>
-                  <p>We purchased our inaugural office in Malad - Orbit Industrial Estate, expanded to 100+ staff, and began providing hardware supply and maintenance.</p>
-                  <h5>-2004</h5>
-                </blockquote>
-              </section>
-        
-              <section class="page" style="--page-number:3; ">
-                <blockquote>
-                  <p>Expanding data entry projects to various Government Bodies, securing our first AMC contract with MCGM – Octroi. Our team grew to 400+.</p>
-                  <h5>-2008</h5>
-                </blockquote>
-              </section>
-        
-              <section class="page" style="--page-number:4; ">
-                <blockquote>
-                  <p>Started Software Division in Malad on Nov 14, 2016. By Jan 2017, developed software, handled hardware, and performed data entry for CIDCO.</p>
-                  <h5>-2016</h5>
-                </blockquote>
-              </section>
-        
-              <section class="page" style="--page-number:5; ">
-                <blockquote>
-                  <p>In Dec 2018, we secured 'Gram Panchayat Development and Planning' project integrated with a fellowship program under Mr. Devendra Fadnavis.</p>
-                  <h5>-2018</h5>
-                </blockquote>
-              </section>
-              <section class="page" style="--page-number:6; ">
-                <blockquote>
-                  <p>Survived post-Covid with customer support. Developed 'Knowledge Resource Center' with SVT College. Created CM Apprenticeship Management System for GHRDC, Goa. Awarded HRMS projects.</p>
-                  <h5>-2021</h5>
-                </blockquote>
-              </section>
-              <section class="page" style="--page-number:7; ">
-                <blockquote>
-                  <p>Established educational software for Government Law College, Mumbai, Audit Utility for CGST Thane, Citizen Scheme Portal for Navi Mumbai Municipal Corporation. Ventured into Labour Law Compliance</p>
-                  <h5>-2023</h5>
-                </blockquote>
-              </section>
-              <section class="page" style="--page-number:8; ">
-                <blockquote>
-                  <p>Continuing ..</p>
-                  <h5>-2024</h5>
-                </blockquote>
-              </section>
-              <div class="book-spine">
-                <h3>Technowin IT Infra Pvt. Ltd.</h3>
+              </book>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title">Meet The Team</h2>
+        <div class="swiper testimonial-wrapper grid-col-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-1">
+                <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
               </div>
-            </book>
-          </div>
-        </div>
-      </div>
-</div>
+              <p class="testimonial-text">
+                Discovering Be Better was a game-changer! Their unmatched
+                expertise skyrocketed my online presence and credibility. Highly
+                recommended
+              </p>
+              <p class="testimonial-title">Mrs. Anjali Narvekar</p>
+              <div class="review-stars"></div>
+            </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-2">
+                <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Thanks to Be Better, I've unlocked my true potential and
+                transformed how others perceive me. Their tailored strategies
+                are a must for anyone looking to stand out!
+              </p>
+              <p class="testimonial-title">Mr. Mahesh Narvekar</p>
+              <div class="review-stars"></div>
+            </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-3">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Umesh Narvekar</p>
+              <div class="review-stars"></div>
+            </div>
 
-</section>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-4">
+                <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Discovering Be Better was a game-changer! Their unmatched
+                expertise skyrocketed my online presence and credibility. Highly
+                recommended
+              </p>
+              <p class="testimonial-title">Mr. Shridhar Belamkar</p>
+              <div class="review-stars"></div>
+            </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-5">
+                <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Thanks to Be Better, I've unlocked my true potential and
+                transformed how others perceive me. Their tailored strategies
+                are a must for anyone looking to stand out!
+              </p>
+              <p class="testimonial-title">Mr. Prashant Naik</p>
+              <div class="review-stars"></div>
+            </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-6">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Giridhari Yadav</p>
+              <div class="review-stars"></div>
+            </div>
 
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-7">
+                <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Discovering Be Better was a game-changer! Their unmatched
+                expertise skyrocketed my online presence and credibility. Highly
+                recommended
+              </p>
+              <p class="testimonial-title">Mr. Imran Shaikh</p>
+              <div class="review-stars"></div>
+            </div>
 
-<section class="testimonial-section" id="testimonials">
-  <div class="container">
-    <h2 class="section-title">Meet The Team</h2>
-    <div class="swiper testimonial-wrapper grid-col-3">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-1">
-            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
-            expertise skyrocketed my online
-            presence and credibility.
-            Highly recommended 
-          </p>
-          <p class="testimonial-title">Mrs. Anjali Narvekar</p>
-          <div class="review-stars">
-            
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-8">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Pruthvi Hajare</p>
+              <div class="review-stars"></div>
+            </div>
 
-          </div>
-        </div>
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-2">
-            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
-            transformed how others perceive me. Their tailored strategies
-            are a must for anyone looking to stand out!</p>
-          <p class="testimonial-title">Mr. Mahesh Narvekar</p>
-          <div class="review-stars">
-           
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-9">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Yash Gharat</p>
+              <div class="review-stars"></div>
+            </div>
 
-          </div>
-        </div>
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-3">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Umesh Narvekar</p>
-          <div class="review-stars">
-           
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-10">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Vishal Mhalim</p>
+              <div class="review-stars"></div>
+            </div>
 
-          </div>
-        </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-11">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Mr. Rishikesh Raorane</p>
+              <div class="review-stars"></div>
+            </div>
 
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-4">
-            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
-            expertise skyrocketed my online
-            presence and credibility.
-            Highly recommended</p>
-          <p class="testimonial-title">Mr. Shridhar Belamkar</p>
-          <div class="review-stars">
-           
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-12">
+                <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Thanks to Be Better, I've unlocked my true potential and
+                transformed how others perceive me. Their tailored strategies
+                are a must for anyone looking to stand out!
+              </p>
+              <p class="testimonial-title">Ms. Riya Patil</p>
+              <div class="review-stars"></div>
+            </div>
 
-          </div>
-        </div>
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-5">
-            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
-            transformed how others perceive me. Their tailored strategies
-            are a must for anyone looking to stand out!</p>
-          <p class="testimonial-title">Mr. Prashant Naik</p>
-          <div class="review-stars">
-           
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-13">
+                <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Thanks to Be Better, I've unlocked my true potential and
+                transformed how others perceive me. Their tailored strategies
+                are a must for anyone looking to stand out!
+              </p>
+              <p class="testimonial-title">Ms. Shreya Tawre</p>
+              <div class="review-stars"></div>
+            </div>
 
-          </div>
-        </div>
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-6">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Giridhari Yadav</p>
-          <div class="review-stars">
-           
-          </div>
-        </div>
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-14">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Ms. Palavee Chavan</p>
+              <div class="review-stars"></div>
+            </div>
 
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-7">
-            <!-- <img src="assets/images/testimonial-profile-1.png" alt=""> -->
+            <div class="swiper-slide testimonial-items">
+              <div class="testimonial-img tm-img-15">
+                <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
+              </div>
+              <p class="testimonial-text">
+                Working with Be Better, was one of the best career decisions
+                I've made. Their dedication resulted in a brand identity that
+                truly resonates with my audience. Invest in your personal brand
+                with them – you won't regret it!
+              </p>
+              <p class="testimonial-title">Ms. Manasi Kamble</p>
+              <div class="review-stars"></div>
+            </div>
           </div>
-          <p class="testimonial-text">Discovering Be Better was a game-changer! Their unmatched
-            expertise skyrocketed my online
-            presence and credibility.
-            Highly recommended</p>
-          <p class="testimonial-title">Mr. Imran Shaikh</p>
-          <div class="review-stars">
-           
-          </div>
-        </div>
-  
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-8">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Pruthvi Hajare</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-9">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Yash Gharat</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-10">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Vishal Mhalim</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-11">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Mr. Rishikesh Raorane</p>
-          <div class="review-stars">
-          </div>
-        </div>
-        
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-12">
-            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
-            transformed how others perceive me. Their tailored strategies
-            are a must for anyone looking to stand out!</p>
-          <p class="testimonial-title">Ms. Riya Patil</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-13">
-            <!-- <img src="assets/images/testimonial-profile-2.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Thanks to Be Better, I've unlocked my true potential and
-            transformed how others perceive me. Their tailored strategies
-            are a must for anyone looking to stand out!</p>
-          <p class="testimonial-title">Ms. Shreya Tawre</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-14">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Ms. Palavee Chavan</p>
-          <div class="review-stars">
-          </div>
-        </div>
-
-        <div class="swiper-slide testimonial-items">
-          <div class="testimonial-img tm-img-15">
-            <!-- <img src="assets/images/testimonial-profile-3.png" alt=""> -->
-          </div>
-          <p class="testimonial-text">Working with Be Better, was one of the best career decisions
-            I've made. Their dedication resulted in a brand identity
-            that truly resonates with my audience. Invest in your personal brand with them – you
-            won't regret it!</p>
-          <p class="testimonial-title">Ms. Manasi Kamble</p>
-          <div class="review-stars">
-          </div>
-        </div> 
-      </div>
-      <!--     <div class="swiper-button-next"></div>
+          <!--     <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div> -->
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
-  
-<section id="mvo-video-background" class="mvo-background-wrapper">
-  <!-- Background Video -->
-  <video autoplay muted loop id="mvo-video-element">
-    <source src="{% static 'images/mvo_video.mp4' %}" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-<section>
-  <div class="chatbot-footer">
-      <a href="javascript:void(0);" id="chatbotIcon" onclick="toggleChatbot()">
-          <img class="chatBot" src="{% static 'images/chatbot1.gif' %}" alt="Chatbot">
-      </a>
-  </div>
-    
-  <!-- Chatbot Container -->
-  <div id="chatbot" class="chatbot-container">
-      <!-- Chatbot header -->
-      <div class="chatbot-header">
-          <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif">
-          TechnoWin Chatbot
-          <button class="close-btn" onclick="toggleChatbot()">X</button>
+    <section id="mvo-video-background" class="mvo-background-wrapper">
+      <!-- Background Video -->
+      <video autoplay muted loop id="mvo-video-element">
+        <source src="{% static 'images/mvo_video.mp4' %}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+  </body>
 
-      </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-      <!-- Chat messages area -->
-      <div id="chatMessages">
-          <!-- Welcome message (Bot) -->
-          <div class="message bot-message">
-              <div class="bot-icon">
-                  <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
-              </div>
-              <div class="message-text">Welcome! How can we assist you today?</div>
-          </div>
-      </div>
-
-      <!-- Input container -->
-      <div class="input-container">
-          <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
-          <button onclick="sendMessage()">Send</button>
-      </div>
-  </div>
-</section>
-
-
-<footer>
-  <div class="footer-container">
-    
-      <div class="footer-links">
-          <ul>
-              <li><a href="{% url 'AboutUs' %}">About</a>
-                  <li><a href="{% url 'Services' %}">Services</a></li>
-                  <li><a href="{% url 'AboutUs' %}">Projects</a></li>
-                  <li><a href="{% url 'ContactUs' %}">Contact </a></li>
-          </ul>
-      </div>
-      <div class="footer-cer">
-          <img src="{% static 'images/technowin_certificate.jpg' %}" alt="Company Certificate">
-      </div>
-      <div class="footer-cer1">
-          <img class="certificateRoundImg" src="{% static 'images/iso1.png' %}" alt="ISO Certification">
-      </div>
-      <div class="footer-cer2">
-          <img class="certificateImg" src="{% static 'images/iso.png' %}" alt="ISO Certification">
-      </div>
-      <div class="footer-cer3">
-          <img class="certificateImg" src="{% static 'images/cmmi.png' %}" alt="CMMI Certification">
-      </div>
-      <div class="footer-contact">
-          <div class="contact-info">
-              <div class="contact-item">
-                  <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
-                      <img src="{% static 'social_media/location.png' %}" alt="Location">
-                      Goregaon, Mumbai
-                  </a>
-              </div>
-              <div class="contact-item">
-                  <a href="mailto:technowinitinfra@gmail.com" target="_blank">
-                      <img src="{% static 'social_media/gmail.png' %}" alt="Email">
-                      technowinitinfra@gmail.com
-                  </a>
-              </div>
-              <div class="contact-item">
-                  <a href="tel:+917738019120" target="_blank">
-                      <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
-                      +91 7738019120
-                  </a>
-              </div>
-              <div class="contact-item">
-                  <p>You Are Visitor No.</p>
-              </div>
-              
-          </div>
-      </div>
-  </div>
-
-<!-- Back to Top Button -->
-<button class="back-to-top" title="Go to top">
-  <i class="fa fa-arrow-up"></i> <!-- FontAwesome arrow-up icon -->
-</button>
-
-      </div>
-  </div>
-
-  <div class="footer-bottom">
-      <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
-  </div>
-</footer>
-    
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script>
-  jQuery(document).ready(function($) {
+  <script>
+    jQuery(document).ready(function ($) {
       // Auto-flip the pages every 3 seconds (adjust as needed)
-      var pageInterval = setInterval(function() {
-          // Find the next page that isn't marked as 'past'
-          var nextPage = $("book .page:not(.past)").first();
-          
-          // If we found a page, mark it as 'past' (flip it)
-          if (nextPage.length) {
-              nextPage.addClass('past');
-          } else {
-              // If no more pages are left to flip, reset to the first page
-              $("book .page").removeClass('past');
-          }
+      var pageInterval = setInterval(function () {
+        // Find the next page that isn't marked as 'past'
+        var nextPage = $("book .page:not(.past)").first();
+
+        // If we found a page, mark it as 'past' (flip it)
+        if (nextPage.length) {
+          nextPage.addClass("past");
+        } else {
+          // If no more pages are left to flip, reset to the first page
+          $("book .page").removeClass("past");
+        }
       }, 3000); // 3000ms = 3 seconds, adjust this as needed
 
       // Optional: Manually flip the page when clicked (this is still available)
-      $("book").on('click', '.page', function() {
-          $(this).addClass('past');
+      $("book").on("click", ".page", function () {
+        $(this).addClass("past");
       });
 
-      $("book").on('click', '.page.past', function() {
-          $(this).removeClass('past');
+      $("book").on("click", ".page.past", function () {
+        $(this).removeClass("past");
       });
-  });
-</script>
+    });
+  </script>
 
-<script src="{% static 'js/swiper-bundle.min.js' %}"></script>
-<script>
-  var swiper = new Swiper(".testimonial-wrapper", {
+  <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+
+  <script>
+    var swiper = new Swiper(".testimonial-wrapper", {
       slidesPerView: 1,
       slidesPerGroup: 1,
       spaceBetween: 30,
@@ -581,254 +452,54 @@
       autoplay: true,
       pagination: {
         el: ".swiper-pagination",
-        clickable: true
+        clickable: true,
       },
       breakpoints: {
         768: {
           slidesPerView: 3,
-          slidesPerGroup: 3
+          slidesPerGroup: 3,
         },
         480: {
           slidesPerView: 2,
-          slidesPerGroup: 1
-        }
-      }
+          slidesPerGroup: 1,
+        },
+      },
     });
-</script>
+  </script>
 
-
-<script>
-  // Select the Back to Top button
-  const backToTopButton = document.getElementById('back-to-top');
-  
-  // Show the button when the user scrolls down
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) { // Show button after scrolling 200px
-      backToTopButton.classList.add('show');
-    } else {
-      backToTopButton.classList.remove('show');
+  <script>
+    // Function to animate the counter
+    function animateCounter(counterElement) {
+      const targetValue = parseInt(
+        counterElement.getAttribute("data-count"),
+        10
+      );
+      let currentValue = 0;
+      // Increment the counter
+      const interval = setInterval(() => {
+        counterElement.innerText = currentValue;
+        if (currentValue >= targetValue) {
+          clearInterval(interval);
+        } else {
+          currentValue++;
+        }
+      }, 30); // Adjust speed by changing the interval
     }
-  });
-  
-  // Scroll to the top when the button is clicked
-  backToTopButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
-  });
-  
-      </script>
-
-      <script>
-        document.getElementById('menuToggle').addEventListener('click', function () {
-            const navLinks = document.getElementById('navLinks');
-            if (navLinks.classList.contains('hidden')) {
-                navLinks.classList.remove('hidden');
-            } else {
-                navLinks.classList.add('hidden');
-            }
-        });
-    </script>
-
-    <script>
-      // Function to animate the counter
-      function animateCounter(counterElement) {
-          const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
-          let currentValue = 0;
-      
-          // Increment the counter
-          const interval = setInterval(() => {
-              counterElement.innerText = currentValue;
-              if (currentValue >= targetValue) {
-                  clearInterval(interval);
-              } else {
-                  currentValue++;
-              }
-          }, 30); // Adjust speed by changing the interval
-      }
-      
-      // Detect when the counters are visible
-      function startCounters() {
-          const counters = document.querySelectorAll('.counter');
-          counters.forEach(counter => {
-              const counterPosition = counter.getBoundingClientRect().top;
-              const windowHeight = window.innerHeight;
-      
-              if (counterPosition < windowHeight) {
-                  animateCounter(counter);
-              }
-          });
-      }
-      
-      // Trigger the counter animation when the page loads or scrolls
-      window.addEventListener('scroll', startCounters);
-      window.addEventListener('load', startCounters);
-      
-      </script>
-      
-      
-      <!-- JavaScript for Chatbot -->
-      <script>
-          let typingTimeout;  // To manage the typing indicator timeout for the user
-      
-      // Toggle chat window visibility
-      function toggleChatbot() {
-          const chatContainer = document.getElementById('chatbot');
-          const chatIcon = document.getElementById('chat-icon');
-          
-          if (chatContainer.style.display === 'block') {
-              chatContainer.style.display = 'none';
-              chatIcon.style.display = 'block';
-          } else {
-              chatContainer.style.display = 'block';
-              chatIcon.style.display = 'none';
-          }
-      }
-      
-      // Function to send message
-      function sendMessage() {
-          const userMessage = document.getElementById('userInput').value;
-          if (userMessage) {
-              // Display user message immediately with "You: "
-              displayMessage('user', userMessage);
-              document.getElementById('userInput').value = ''; // Clear input field
-      
-              // Simulate bot typing
-              displayTypingIndicator('bot');
-      
-              // Simulate bot response after a delay
-              setTimeout(() => {
-                  removeTypingIndicator('bot');
-                  displayMessage('bot', getBotResponse(userMessage)); // Display bot response
-              }, 1500);
-          }
-      }
-      
-      // Function to get bot response
-      function getBotResponse(userMessage) {
-          const lowerCaseMessage = userMessage.toLowerCase();
-          if (lowerCaseMessage.includes('hello')) {
-              return 'Hello! How can I assist you today?';
-          } else if (lowerCaseMessage.includes('how are you')) {
-              return 'I am doing great, thanks for asking!';
-          } else if (lowerCaseMessage.includes('what is your name')) {
-              return 'I am a chatbot created by Technowin IT Infra.';
-          } else if (lowerCaseMessage.includes('help')) {
-              return 'Sure! How can I assist you with your needs?';
-          } else {
-              return 'Sorry, I didn\'t understand that. Can you ask something else?';
-          }
-      }
-      
-      // Function to display messages in the chat window
-      function displayMessage(sender, message) {
-          const chatMessages = document.getElementById('chatMessages');
-          
-          // Create icon and text
-          const iconDiv = document.createElement('div');
-          iconDiv.classList.add(sender + '-icon');
-          const img = document.createElement('img');
-          img.src = sender === 'user' ? '{% static "images/user.png" %}' : '{% static "images/businessman.png" %}';  // Adjust the paths for your images
-          iconDiv.appendChild(img);
-          
-          // Create a new div for the message
-          const messageDiv = document.createElement('div');
-          messageDiv.classList.add('message', sender + '-message');
-          
-          const messageTextDiv = document.createElement('div');
-          messageTextDiv.classList.add('message-text');
-          messageTextDiv.textContent = message;
-          
-          // Append icon first, then message text to the message div
-          messageDiv.appendChild(iconDiv);
-          messageDiv.appendChild(messageTextDiv);
-          
-          // Append the message div to the chat messages container
-          chatMessages.appendChild(messageDiv);
-          
-          // Scroll to the bottom of the chat
-          scrollToBottom();
-      }
-      
-      
-      
-      // Function to display typing indicator
-      function displayTypingIndicator(sender) {
-          // Only show typing indicator if it's for the bot
-          if (sender === 'bot') {
-              const typingIndicator = document.createElement('div');
-              typingIndicator.classList.add('typing-indicator');
-              typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
-              document.getElementById('chatMessages').appendChild(typingIndicator);
-          } else if (sender === 'user') {
-              // Show user icon and the text they are typing while typing
-              const iconDiv = document.createElement('div');
-              iconDiv.classList.add('user-icon');
-              const img = document.createElement('img');
-              img.src = '{% static "user.png" %}';  // Path for user icon
-              iconDiv.appendChild(img);
-              
-              const chatMessages = document.getElementById('chatMessages');
-              const typingMessage = document.createElement('div');
-              typingMessage.classList.add('message', 'user-message');
-              
-              
-              
-              const messageTextDiv = document.createElement('div');
-              messageTextDiv.classList.add('message-text');
-              messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
-              
-              // Append the icon first and then the message text
-              typingMessage.appendChild(iconDiv); // User image first
-              typingMessage.appendChild(messageTextDiv); // Then the message text
-              
-              chatMessages.appendChild(typingMessage);
-              scrollToBottom(); // Ensure chat scrolls to bottom
-          }
-      }
-      
-      
-      // Function to remove typing indicator
-      function removeTypingIndicator(sender) {
-          if (sender === 'bot') {
-              const typingIndicator = document.querySelector('.typing-indicator');
-              if (typingIndicator) {
-                  typingIndicator.remove();
-              }
-          } else if (sender === 'user') {
-              const typingMessages = document.querySelectorAll('.user-message');
-              typingMessages.forEach(msg => msg.remove()); // Remove user typing message
-          }
-      }
-      
-      // Function to handle user typing in the input box
-      function handleTyping(event) {
-          const userMessage = document.getElementById('userInput').value;
-      
-          // Display typing indicator for the user while they are typing
-          if (userMessage && !typingTimeout) {
-              displayTypingIndicator('user');
-          }
-      
-          // Remove the typing indicator after the user stops typing
-          clearTimeout(typingTimeout);
-          typingTimeout = setTimeout(() => {
-              removeTypingIndicator('user');
-          }, 1000); // After 1 second of inactivity
-      }
-      
-      // Function to scroll the chat window to the bottom
-      function scrollToBottom() {
-          const chatboxMessages = document.getElementById('chatMessages');
-          chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
-      }
-      
-          </script>
-
-          <script>
-            function toggleChatbot() {
-                const chatbot = document.getElementById("chatbot");
-                chatbot.classList.toggle("active");
-            }
-            </script>
-        
-
+    // Detect when the counters are visible
+    function startCounters() {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const counterPosition = counter.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (counterPosition < windowHeight) {
+          animateCounter(counter);
+        }
+      });
+    }
+    // Trigger the counter animation when the page loads or scrolls
+    window.addEventListener("scroll", startCounters);
+    window.addEventListener("load", startCounters);
+  </script>
 </html>
+
+{% endblock %}

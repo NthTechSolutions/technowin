@@ -1,2151 +1,2156 @@
 /* written by Pruthvi */
 
 .topView {
-    background-color: rgb(250, 252, 255);
-    border-bottom: 1px solid black; 
-    font-weight: bold;
-    color: black;
-    padding: 10px 0; /* Add padding for better spacing */
-    position: fixed; /* Fixes the position */
-    top: 0; /* Aligns it to the top of the viewport */
-    left: 0; /* Aligns it to the left edge */
-    width: 100%; /* Makes it span the full width of the viewport */
-    z-index: 1000; /* Ensures it stays above other content */
+  background-color: rgb(250, 252, 255);
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  color: black;
+  padding: 10px 0; /* Add padding for better spacing */
+  position: fixed; /* Fixes the position */
+  top: 0; /* Aligns it to the top of the viewport */
+  left: 0; /* Aligns it to the left edge */
+  width: 100%; /* Makes it span the full width of the viewport */
+  z-index: 1000; /* Ensures it stays above other content */
 }
 
 .topView img {
-    width: 20px;  /* Ensure consistent icon size */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 8px; /* Consistent spacing between icon and text */
-    vertical-align: middle; /* Align image with text */
+  width: 20px; /* Ensure consistent icon size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 8px; /* Consistent spacing between icon and text */
+  vertical-align: middle; /* Align image with text */
 }
 
 .topView a {
-    text-decoration: none; /* Remove underline */
-    color: black; /* Ensure consistent link color */
-    display: inline-flex; /* Align icon and text horizontally */
-    align-items: center; /* Vertical alignment */
-    transition: transform 0.2s, color 0.2s; /* Smooth hover effects */
+  text-decoration: none; /* Remove underline */
+  color: black; /* Ensure consistent link color */
+  display: inline-flex; /* Align icon and text horizontally */
+  align-items: center; /* Vertical alignment */
+  transition: transform 0.2s, color 0.2s; /* Smooth hover effects */
 }
 
 .topView a:hover {
-    color: rgb(207, 34, 21);
-    transform: scale(1.1); /* Slight zoom on hover */
+  color: rgb(207, 34, 21);
+  transform: scale(1.1); /* Slight zoom on hover */
 }
 
 .row {
-    display: flex;
-    justify-content: space-between; /* Evenly space columns */
-    align-items: center; /* Center content vertically */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+  display: flex;
+  justify-content: space-between; /* Evenly space columns */
+  align-items: center; /* Center content vertically */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
 }
 
-
-.menu-icon{
-    margin-left: 5%;
+.menu-icon {
+  margin-left: 5%;
 }
 
 /* Default styles */
 .hidden {
-    display: none;
+  display: none;
 }
 
 .logo-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Desktop and tablet view */
 @media (min-width: 769px) {
-    #menuToggle {
-        display: none;
-    }
-    #navLinks {
-        display: flex;
-        flex-direction: row;
-        /* gap: 20px; */
-    }
-    .certificateImg{
-        height: 80px;
-        width:100px;
-    }
-    .certificateRoundImg{
-        height: 100px;
-        width:100px;
-    }
+  #menuToggle {
+    display: none;
+  }
+  #navLinks {
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
+  }
+  .certificateImg {
+    height: 80px;
+    width: 100px;
+  }
+  .certificateRoundImg {
+    height: 100px;
+    width: 100px;
+  }
 
-    #language{
-        margin-left: 120px;
-    }
-    
-    #contactButton{
-        margin-top: 14%;
-        margin-left: 30px;
-    }
-    nav {
-        top:40px
-    }
-    #slide img{
-        height: 700px; /* Default height for large screens */
-        width:1200px ;
-        margin-left: 150px;
-    }
-   
+  #language {
+    margin-left: 120px;
+  }
+
+  #contactButton {
+    margin-top: 14%;
+    margin-left: 30px;
+  }
+  nav {
+    top: 40px;
+  }
+  #slide img {
+    height: 700px; /* Default height for large screens */
+    width: 1200px;
+    margin-left: 150px;
+  }
 }
 
 /* Mobile view */
 @media (max-width: 768px) {
-    #navLinks {
-        flex-direction: column;
-        /* position: fixed; */
-        right: 0;
-        width: 100%;
-        padding: 5px;  
-        background-color: rgb(250, 252, 255);
-        z-index: 2;
-    }
-   
-    /* Contact icons in navbar */
-    nav ul li a img {
-        height: 15px;
-        width: auto;
-        margin-right: 10px;
-    }
-    nav ul  img:hover {
-        transform: scale(1.1);
-    }
-    
-    #topSection{
-        display: none;
-    }
+  #navLinks {
+    flex-direction: column;
+    /* position: fixed; */
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(250, 252, 255);
+    z-index: 2;
+  }
 
-    .certificateImg{
-        height: 80px;
-        width:100px;
-    }
-    .certificateRoundImg{
-        height: 80px;
-        width:80px;
-    }
-    #language{
-        margin-left: 2%;
-        width: 100px;
-        margin-bottom: 10px;
-    }
-    nav{
-        top:0px;
-    }
-    #slide img{
-        height: 200px; /* Default height for large screens */
-        width:200px ;
-        margin-left: 150px;
-    }
-    #socialIcons {
-        margin-bottom: 80px;
-        width: 20px;
-        height: 20px;
-        margin-right: 30px; /* Adjusted for better spacing */
-    }
-    #socialIcons img {
-        width: 30px; /* Match the size of the container */
-        height: 30px; /* Match the size of the container */
-    }
+  /* Contact icons in navbar */
+  nav ul li a img {
+    height: 15px;
+    width: auto;
+    margin-right: 10px;
+  }
+  nav ul img:hover {
+    transform: scale(1.1);
+  }
+
+  #topSection {
+    display: none;
+  }
+
+  .certificateImg {
+    height: 80px;
+    width: 100px;
+  }
+  .certificateRoundImg {
+    height: 80px;
+    width: 80px;
+  }
+  #language {
+    margin-left: 2%;
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  nav {
+    top: 0px;
+  }
+  #slide img {
+    height: 200px; /* Default height for large screens */
+    width: 200px;
+    margin-left: 150px;
+  }
+  #socialIcons {
+    margin-bottom: 80px;
+    width: 20px;
+    height: 20px;
+    margin-right: 30px; /* Adjusted for better spacing */
+  }
+  #socialIcons img {
+    width: 30px; /* Match the size of the container */
+    height: 30px; /* Match the size of the container */
+  }
 }
-    
 
 @media (max-width: 768px) {
-    #socialIcons {
-        margin-bottom: 80px;
-        width: 20px;
-        height: 20px;
-        margin-right: 30px; /* Adjusted for better spacing */
-    }
-    #socialIcons img {
-        width: 30px; /* Match the size of the container */
-        height: 30px; /* Match the size of the container */
-    }
+  #socialIcons {
+    margin-bottom: 80px;
+    width: 20px;
+    height: 20px;
+    margin-right: 30px; /* Adjusted for better spacing */
+  }
+  #socialIcons img {
+    width: 30px; /* Match the size of the container */
+    height: 30px; /* Match the size of the container */
+  }
 }
-
-
 
 /* Reset margin and padding */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Body styling */
 body {
-    font-family: Arial, sans-serif;
-    padding-top: 90px; 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  padding-top: 90px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Navigation bar styling */
 nav {
-    background-color: rgb(250, 252, 255);
-    box-shadow: 0 4px 6px rgba(160, 15, 15, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Ensures logo and items are spaced */
-    padding: 10px 10px;
-    border-bottom: 2px solid black;
-    flex-wrap: wrap;
-    position: fixed;
-    /* top: 40px; */
-    width: 100%;
-    z-index: 999;
+  background-color: rgb(250, 252, 255);
+  box-shadow: 0 4px 6px rgba(160, 15, 15, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures logo and items are spaced */
+  padding: 10px 10px;
+  border-bottom: 2px solid black;
+  flex-wrap: wrap;
+  position: fixed;
+  /* top: 40px; */
+  width: 100%;
+  z-index: 999;
 }
 
 /* Styling for the company logo */
 .logo img {
-    height: 50px;
-    width: 50px;
-    margin-right: 10px;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
 }
 .logo img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Navbar list styling */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: flex-start; /* Align items to the left */
-    padding: 0;
-    flex-wrap: wrap;
-    margin: 0;
-    flex-grow: 1; /* Allows the list to take available space */
+  list-style: none;
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+  padding: 0;
+  flex-wrap: wrap;
+  margin: 0;
+  flex-grow: 1; /* Allows the list to take available space */
 }
 
 nav ul li {
-    margin: 0 5px;
-    position: relative;
+  margin: 0 5px;
+  position: relative;
 }
 
 /* Navbar link styling */
 nav ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 5px 5px;
-    transition: all 0.3s ease;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 5px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: rgb(207, 34, 21);
-    transform: scale(1.1);
+  color: rgb(207, 34, 21);
+  transform: scale(1.1);
 }
 
 /* Contact icons in navbar */
 nav ul li a img {
-    height: 15px;
-    width: 60px;
-    margin-right: 30px;
+  height: 15px;
+  width: 60px;
+  margin-right: 30px;
 }
 nav ul img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Right-aligned section (Language dropdown and Contact Us button) */
 .nav-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Align items to the extreme right */
-    gap: 5px;
-    margin-left: auto; /* Pushes this section to the extreme right */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the extreme right */
+  gap: 5px;
+  margin-left: auto; /* Pushes this section to the extreme right */
 }
 
 /* Styling for the language dropdown */
 .language-dropdown select {
-    font-size: 17px;
-    padding: 5px 5px;
-    width: 110px;
-    border: 3px solid rgb(20, 76, 150);
-    border-radius: 5px;
+  font-size: 17px;
+  padding: 5px 5px;
+  width: 110px;
+  border: 3px solid rgb(20, 76, 150);
+  border-radius: 5px;
 }
 
 /* Contact Us Button */
 .contact-btn {
-    display: inline-block;
-    background-color: rgb(20, 76, 150);
-    color: white;
-    font-size: 15px;
-    font-weight: bold;
-    /* margin-top: 10px; */
-    text-transform: uppercase;
-    padding: 6px 5px;
-    border-radius: 5px;
-    border:  3px solid  transparent;
-    transition: all 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
+  display: inline-block;
+  background-color: rgb(20, 76, 150);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  /* margin-top: 10px; */
+  text-transform: uppercase;
+  padding: 6px 5px;
+  border-radius: 5px;
+  border: 3px solid transparent;
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .contact-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: scaleX(0);
-    transform-origin: left;
-    z-index: -1;
-    transition: transform 0.5s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: -1;
+  transition: transform 0.5s ease;
 }
 
 .contact-btn:hover {
-    background-color: transparent;
-    color: rgb(245, 6, 6);
-    border-color: rgb(0, 0, 0);
+  background-color: transparent;
+  color: rgb(245, 6, 6);
+  border-color: rgb(0, 0, 0);
 }
 
 .contact-btn:hover::before {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 .contact-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 /* Responsive Styles */
 
 /* For tablets and smaller screens (1024px and below) */
 @media (max-width: 1024px) {
-    nav {
-        flex-wrap: wrap; /* Allows wrapping of elements */
-    }
+  nav {
+    flex-wrap: wrap; /* Allows wrapping of elements */
+  }
 
-    .logo img {
-        height: 50px; /* Adjust logo size */
-        width: 50px;
-    }
+  .logo img {
+    height: 50px; /* Adjust logo size */
+    width: 50px;
+  }
 
-    nav ul {
-        justify-content: center; /* Center align nav items */
-    }
+  nav ul {
+    justify-content: center; /* Center align nav items */
+  }
 
-    .nav-right {
-        flex-direction: column; /* Stack items vertically */
-        gap: 10px;
-        margin-top: 10px;
-        margin-left: 0;
-    }
+  .nav-right {
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 0;
+  }
 
-    .language-dropdown select {
-        width: 100%; /* Make dropdown full width */
-    }
+  .language-dropdown select {
+    width: 100%; /* Make dropdown full width */
+  }
 
-    .contact-btn {
-        width: 100%; /* Make the contact button full width */
-        text-align: center;
-    }
+  .contact-btn {
+    width: 100%; /* Make the contact button full width */
+    text-align: center;
+  }
 }
 
 /* For mobile devices (768px and below) */
 @media (max-width: 768px) {
-    nav {
-        flex-wrap: wrap; /* Wrap the nav items */
-        padding: 15px 10px; /* Increase padding for better touch targets */
-    }
+  nav {
+    flex-wrap: wrap; /* Wrap the nav items */
+    padding: 15px 10px; /* Increase padding for better touch targets */
+  }
 
-    .logo img {
-        height: 45px; /* Resize logo for mobile */
-        width: 45px;
-    }
+  .logo img {
+    height: 45px; /* Resize logo for mobile */
+    width: 45px;
+  }
 
-    nav ul {
-        justify-content: center; /* Center the nav items */
-        width: 100%;
-    }
+  nav ul {
+    justify-content: center; /* Center the nav items */
+    width: 100%;
+  }
 
-    .nav-right {
-        flex-direction: column; /* Stack right-aligned items vertically */
-        gap: 15px;
-        margin-top: 15px;
-        margin-left: 0;
-    }
+  .nav-right {
+    flex-direction: column; /* Stack right-aligned items vertically */
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 0;
+  }
 
-    nav ul li a {
-        font-size: 16px; /* Reduce font size for smaller screens */
-    }
+  nav ul li a {
+    font-size: 16px; /* Reduce font size for smaller screens */
+  }
 
-    .language-dropdown select {
-        width: 100%; /* Full width for dropdown */
-        font-size: 15px; /* Adjust font size for mobile */
-    }
+  .language-dropdown select {
+    width: 100%; /* Full width for dropdown */
+    font-size: 15px; /* Adjust font size for mobile */
+  }
 
-    .contact-btn {
-        font-size: 14px; /* Reduce button font size */
-        padding: 8px 15px; /* Adjust padding for mobile */
-        width: 100%; /* Full width button */
-        text-align: center; /* Center-align the text */
-    }
+  .contact-btn {
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust padding for mobile */
+    width: 100%; /* Full width button */
+    text-align: center; /* Center-align the text */
+  }
 }
 
 /* For very small screens (480px and below) */
 @media (max-width: 480px) {
-    nav {
-        padding: 10px 5px; /* Adjust padding for very small screens */
-    }
+  nav {
+    padding: 10px 5px; /* Adjust padding for very small screens */
+  }
 
-    .logo img {
-        height: 40px; /* Further reduce logo size */
-        width: 40px;
-    }
+  .logo img {
+    height: 40px; /* Further reduce logo size */
+    width: 40px;
+  }
 
-    nav ul li a {
-        font-size: 14px; /* Reduce font size for very small screens */
-    }
+  nav ul li a {
+    font-size: 14px; /* Reduce font size for very small screens */
+  }
 
-    .language-dropdown select {
-        font-size: 14px; /* Adjust font size */
-    }
+  .language-dropdown select {
+    font-size: 14px; /* Adjust font size */
+  }
 
-    .contact-btn {
-        font-size: 9px; /* Make button text smaller */
-        padding: 6px 6px; /* Reduce padding */
-        margin-left: 2%;
-        width: 100px;
-    }
+  .contact-btn {
+    font-size: 9px; /* Make button text smaller */
+    padding: 6px 6px; /* Reduce padding */
+    margin-left: 2%;
+    width: 100px;
+  }
 }
 
 /* Smooth Scrolling Animation */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
-
 
 /* Go Back Button Styling */
 .go-back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    animation: slideInFromLeft 1s ease-in-out forwards;
-  }
-  
-  .go-back:hover {
-    transform: scale(1.2) rotate(-10deg);
-    opacity: 0.8;
-  }
-  
-  /* Go Back Image Styling */
-  .go-back-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgb(8, 55, 116);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  .go-back-image:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1);
-  }
-  
-  /* Keyframe Animations */
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: slideInFromLeft 1s ease-in-out forwards;
+}
 
- /* Overall Section Styling */
- #social-media-section {
-    position: relative;
-    width: 100%;
-    height: 120vh; /* Ensure it takes full viewport height */
-    overflow: hidden;
-    animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
-    margin-top: 40px;
+.go-back:hover {
+  transform: scale(1.2) rotate(-10deg);
+  opacity: 0.8;
+}
+
+/* Go Back Image Styling */
+.go-back-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(8, 55, 116);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.go-back-image:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Keyframe Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Overall Section Styling */
+#social-media-section {
+  position: relative;
+  width: 100%;
+  height: 120vh; /* Ensure it takes full viewport height */
+  overflow: hidden;
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in animation */
+  margin-top: 40px;
 }
 
 /* Video Container Styling */
 .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Ensure the container spans the full width */
-    height: 100%; /* Ensure the container spans the full height */
-    z-index: -1; /* Place the video behind other content */
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the container spans the full width */
+  height: 100%; /* Ensure the container spans the full height */
+  z-index: -1; /* Place the video behind other content */
+  overflow: hidden;
 }
 
 .video-container video {
-    position: absolute;
-    top: 50%;
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Center vertically */
-    width: 100%; /* Ensure the video spans the entire width */
-    height: 100%; /* Ensure the video spans the entire height */
-    object-fit: cover; /* Ensure the video covers the container fully */
-    z-index: -1; /* Ensure the video stays in the background */
-    pointer-events: none; /* Prevent user interaction with the video */
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center vertically */
+  width: 100%; /* Ensure the video spans the entire width */
+  height: 100%; /* Ensure the video spans the entire height */
+  object-fit: cover; /* Ensure the video covers the container fully */
+  z-index: -1; /* Ensure the video stays in the background */
+  pointer-events: none; /* Prevent user interaction with the video */
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    #social-media-section {
-        height: 100vh; /* Adjust for smaller screens */
-    }
+  #social-media-section {
+    height: 100vh; /* Adjust for smaller screens */
+  }
 
-    .video-container video {
-        width: auto; /* Maintain aspect ratio */
-        height: 100%; /* Fit height for smaller devices */
-    }
+  .video-container video {
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Fit height for smaller devices */
+  }
 }
 
 @media (max-width: 480px) {
-    #social-media-section {
-        margin-top: 0px;
-        height: 33vh; /* Slight reduction for very small screens */
-        margin-bottom: 5px;
-    }
+  #social-media-section {
+    margin-top: 0px;
+    height: 33vh; /* Slight reduction for very small screens */
+    margin-bottom: 5px;
+  }
 
-    .video-container video {
-        object-fit: contain; /* Ensure the video is fully visible */
-    }
+  .video-container video {
+    object-fit: contain; /* Ensure the video is fully visible */
+  }
 }
 
 /* Social Media Links pinned to the right side */
 .social-links {
-    position: fixed;
-    right: 5px; /* Distance from the right edge */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Ensure it stays vertically centered */
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1000; /* Ensure it stays on top of other elements */
-    transition: all 0.3s ease;
+  position: fixed;
+  right: 5px; /* Distance from the right edge */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Ensure it stays vertically centered */
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  transition: all 0.3s ease;
 }
 
 /* Style for each social icon */
 .social-icon {
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    padding: 10px;
-    box-sizing: content-box;
-    transition: all 0.3s ease;
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  box-sizing: content-box;
+  transition: all 0.3s ease;
 }
 
 .social-icon img {
-    width: 90%;
-    height: 90%;
-    object-fit: cover;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
 }
 
 /* Hover effect to enlarge and add color */
 .social-icon:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    transform: scale(1.1);
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
 }
 
 .social-icon:hover img {
-    transform: scale(1.2); /* Make the icons slightly larger on hover */
+  transform: scale(1.2); /* Make the icons slightly larger on hover */
 }
 
 /* Animations to make the icons appear with a sliding effect */
 @keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateX(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Hidden text initially */
 .social-icon .tooltip {
-    visibility: hidden;
-    position: absolute;
-    bottom: 50%;
-    right: 10%;
-    transform: translateX(-50%);
-    background-color: rgb(56, 55, 55);
-    color: white;
-    padding: 2px;
-    border-radius: 4px;
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    white-space: nowrap;
+  visibility: hidden;
+  position: absolute;
+  bottom: 50%;
+  right: 10%;
+  transform: translateX(-50%);
+  background-color: rgb(56, 55, 55);
+  color: white;
+  padding: 2px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
 }
 
 /* Show the tooltip when hovering */
 .social-icon:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Apply the slide-in animation to the social media icons */
 .social-links {
-    animation: slideIn 1s ease-out;
+  animation: slideIn 1s ease-out;
 }
 
 /* Optional: You can add specific hover effects for individual icons */
 .social-icon.facebook:hover {
-    background-color:rgb(162, 179, 216); /* Facebook color */
+  background-color: rgb(162, 179, 216); /* Facebook color */
 }
 
 .social-icon.twitter:hover {
-    background-color: #1DA1F2; /* Twitter color */
+  background-color: #1da1f2; /* Twitter color */
 }
 
 .social-icon.linkedin:hover {
-    background-color: #0077b5; /* LinkedIn color */
+  background-color: #0077b5; /* LinkedIn color */
 }
 
 .social-icon.instagram:hover {
-    background-color: #E4405F; /* Instagram color */
+  background-color: #e4405f; /* Instagram color */
 }
 
 /* Add WhatsApp hover effect */
 .social-icon.whatsapp:hover {
-    background-color: #25D366; /* WhatsApp green color */
+  background-color: #25d366; /* WhatsApp green color */
 }
 
 /* Ensure the social icons are visible and properly spaced on mobile screens */
 @media (max-width: 768px) {
-    .social-links {
-        right: 10px; /* Adjust right distance on smaller screens if needed */
-        gap: 10px; /* Add some space between icons */
-    }
+  .social-links {
+    right: 10px; /* Adjust right distance on smaller screens if needed */
+    gap: 10px; /* Add some space between icons */
+  }
 
-    .social-icon {
-        width: 50px;
-        height: 50px;
-    }
+  .social-icon {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 /* Responsive for small screens */
 @media (max-width: 768px) {
-    .social-links {
-        right: 5px; /* Slightly increase the gap from the edge */
-        gap: 15px; /* Add more space between icons */
-    }
+  .social-links {
+    right: 5px; /* Slightly increase the gap from the edge */
+    gap: 15px; /* Add more space between icons */
+  }
 
-    .social-icon {
-        width: 50px; /* Increase icon size */
-        height: 50px; /* Maintain circular shape */
-    }
+  .social-icon {
+    width: 50px; /* Increase icon size */
+    height: 50px; /* Maintain circular shape */
+  }
 
-    /* Optional: Adjust vertical position for better visibility on smaller screens */
-    .social-links {
-        top: 30%; /* Move the icons a bit higher if needed */
-    }
+  /* Optional: Adjust vertical position for better visibility on smaller screens */
+  .social-links {
+    top: 30%; /* Move the icons a bit higher if needed */
+  }
 }
 
 /* Responsive for very small screens (portrait mode) */
 @media (max-width: 480px) {
-    .social-links {
-        right: 10px;
-        gap: 12px; /* Moderate gap between icons */
-    }
+  .social-links {
+    right: 10px;
+    gap: 12px; /* Moderate gap between icons */
+  }
 
-    .social-icon {
-        width: 45px;
-        height: 45px; /* Slightly smaller icon on very small screens */
-    }
+  .social-icon {
+    width: 45px;
+    height: 45px; /* Slightly smaller icon on very small screens */
+  }
 }
 
 /* Feedback section styling */
 .feedback-section {
-    padding: 20px;
-    background-color:rgb(163, 159, 159); /* Light grey background */
-    text-align: center;
-    margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgb(163, 159, 159); /* Light grey background */
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .feedback-section h2 {
-    font-size: 40px;
-    color: #333;
-    text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 2px;
-    margin-bottom: 40px;
+  font-size: 40px;
+  color: #333;
+  text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4);
+  font-family: "Arial", sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 /* Feedback container grid layout */
 .feedback-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 /* Feedback Card Styling */
 .feedback-card {
-    background: linear-gradient(to bottom right, #f8f3f3, #f2f2f2);
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-    flex: 1 1 calc(15% - 40px);
-    max-width: 400px;
-    position: relative;
-    overflow: hidden;
-    
+  background: linear-gradient(to bottom right, #f8f3f3, #f2f2f2);
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  flex: 1 1 calc(15% - 40px);
+  max-width: 400px;
+  position: relative;
+  overflow: hidden;
 }
 
 .feedback-card:hover {
-    transform: scale(1.01) translateY(-10px);
-    background: linear-gradient(135deg, rgb(207, 217, 243), rgb(179, 183, 247));
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.01) translateY(-10px);
+  background: linear-gradient(135deg, rgb(207, 217, 243), rgb(179, 183, 247));
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .feedback-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
-    transform: scale(0);
-    transition: transform 0.5s ease-in-out;
-    border-radius: 50%;
-    z-index: 0;
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  border-radius: 50%;
+  z-index: 0;
 }
 
 .feedback-card:hover::before {
-    transform: scale(1);
+  transform: scale(1);
 }
 
 /* Feedback Image */
 .feedback-image img {
-    width: 100px;
-    height: 100px;
-    border-radius: 30%;
-    margin-bottom: 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  margin-bottom: 15px;
 }
-
 
 /* Feedback Content */
 .feedback-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #000000;
-    margin-bottom: 5px;
-    z-index: 1;
-    position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 5px;
+  z-index: 1;
+  position: relative;
 }
 
 /* Feedback Content */
 .project-feedback-name {
-    font-size: 18px;
-    font-weight: bold;
-    color:  rgb(8, 55, 116);
-    margin-bottom: 5px;
-    z-index: 1;
-    position: relative;
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Comic Sans font */
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(8, 55, 116);
+  margin-bottom: 5px;
+  z-index: 1;
+  position: relative;
+  font-family: "Comic Sans MS", cursive, sans-serif; /* Comic Sans font */
 }
 
 .feedback-post {
-    font-size: 14px;
-    color: #030303;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
+  font-size: 14px;
+  color: #030303;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
 }
 
 .feedback-description {
-    font-size: 14px;
-    color: #000000;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    z-index: 1;
-    position: relative;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
 }
 
 /* Feedback Stars */
 .feedback-stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
 }
 
 .star {
-    font-size: 24px;
-    color: rgb(194, 166, 10);
-    transition: transform 0.4s ease, color 0.4s ease;
-    cursor: pointer;
-    animation: twinkle 2s infinite;
+  font-size: 24px;
+  color: rgb(194, 166, 10);
+  transition: transform 0.4s ease, color 0.4s ease;
+  cursor: pointer;
+  animation: twinkle 2s infinite;
 }
 
 .star:hover {
-    transform: scale(1.5) rotate(20deg);
-    color: orange;
+  transform: scale(1.5) rotate(20deg);
+  color: orange;
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.8;
-        transform: scale(1.1);
-    }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.1);
+  }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .feedback-card {
-        flex: 1 1 calc(50% - 40px);
-    }
+  .feedback-card {
+    flex: 1 1 calc(50% - 40px);
+  }
 }
 
 @media (max-width: 480px) {
-    .feedback-card {
-        flex: 1 1 100%;
-    }
+  .feedback-card {
+    flex: 1 1 100%;
+  }
 }
 
 /* Styling for Gallery Section */
 #gallery-section {
-    background-color: #b8c1e0;
-    padding: 50px 20px;
-    text-align: center;
-    color: #333;
-    position: relative;
-    animation: fadeIn 1.5s ease-out;
+  background-color: #b8c1e0;
+  padding: 50px 20px;
+  text-align: center;
+  color: #333;
+  position: relative;
+  animation: fadeIn 1.5s ease-out;
 }
 
 #gallery-section h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgb(8, 55, 116);
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
-    margin-top: 50px;
-    margin-bottom: 40px;
-    position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(8, 55, 116);
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+  margin-top: 50px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 #gallery-section h2:hover {
-    transform: translateY(-10px) translateX(-10px);
-    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) translateX(-10px);
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 /* Gallery Container Grid Layout */
 .gallery-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
-    gap: 30px;
-    justify-items: center;
-    opacity: 0;
-    animation: fadeInUp 2s ease-out forwards;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 30px;
+  justify-items: center;
+  opacity: 0;
+  animation: fadeInUp 2s ease-out forwards;
 }
 
 /* Gallery Item Styling */
 .gallery-item {
-    width: 100%;
-    overflow: hidden; /* Crop images */
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    animation: fadeInItem 0.6s ease-out forwards;
+  width: 100%;
+  overflow: hidden; /* Crop images */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  animation: fadeInItem 0.6s ease-out forwards;
 }
 
 .gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform 0.3s ease, filter 0.3s ease;
-    border-radius: 12px;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 12px;
 }
 
 /* Hover Effects for Images */
 .gallery-item:hover {
-    transform: scale(1.05); /* Enlarge image */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  transform: scale(1.05); /* Enlarge image */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Darker shadow */
 }
 
 .gallery-item:hover img {
-    transform: scale(1.1); /* Zoom in image on hover */
-    filter: brightness(1.2); /* Slightly brighten image on hover */
+  transform: scale(1.1); /* Zoom in image on hover */
+  filter: brightness(1.2); /* Slightly brighten image on hover */
 }
 
 /* Keyframe Animations */
 @keyframes slideInLeft {
-    0% {
-        transform: translateX(-30px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeInItem {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 1024px) {
-    #gallery-section h2 {
-        font-size: 2.5rem; /* Slightly smaller font size for tablet */
-        margin-bottom: 30px;
-    }
+  #gallery-section h2 {
+    font-size: 2.5rem; /* Slightly smaller font size for tablet */
+    margin-bottom: 30px;
+  }
 
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column size for medium screens */
-        gap: 20px;
-    }
+  .gallery-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Adjust column size for medium screens */
+    gap: 20px;
+  }
 }
 
 /* Responsive Design for Mobile Screens */
 @media (max-width: 768px) {
-    #gallery-section h2 {
-        font-size: 2rem; /* Smaller heading font */
-        margin-bottom: 20px;
-    }
+  #gallery-section h2 {
+    font-size: 2rem; /* Smaller heading font */
+    margin-bottom: 20px;
+  }
 
-    .gallery-container {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Make columns more compact */
-        gap: 15px;
-    }
+  .gallery-container {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(180px, 1fr)
+    ); /* Make columns more compact */
+    gap: 15px;
+  }
 
-    .gallery-item {
-        width: 100%;
-    }
+  .gallery-item {
+    width: 100%;
+  }
 
-    /* Smaller text for mobile screens */
-    #gallery-section h2 {
-        font-size: 1.8rem;
-    }
+  /* Smaller text for mobile screens */
+  #gallery-section h2 {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 480px) {
-    /* Stacking images on smaller screens */
-    .gallery-container {
-        grid-template-columns: 1fr; /* Stack images on mobile */
-        gap: 10px;
-    }
+  /* Stacking images on smaller screens */
+  .gallery-container {
+    grid-template-columns: 1fr; /* Stack images on mobile */
+    gap: 10px;
+  }
 
-    .gallery-item {
-        margin-bottom: 10px; /* Space between items */
-    }
+  .gallery-item {
+    margin-bottom: 10px; /* Space between items */
+  }
 
-    #gallery-section h2 {
-        font-size: 1.5rem; /* Further reduce heading size */
-        margin-top: 20px;
-    }
+  #gallery-section h2 {
+    font-size: 1.5rem; /* Further reduce heading size */
+    margin-top: 20px;
+  }
 }
-
 
 /* Contact Us  section Styling*/
 #technoWinContactSection {
-    background-color: #f4f4f4;
-    padding: 50px 20px;
-    border-radius: 8px;
-    box-sizing: border-box; /* Ensure padding does not affect width */
-    position: relative;
-    overflow: hidden;
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  border-radius: 8px;
+  box-sizing: border-box; /* Ensure padding does not affect width */
+  position: relative;
+  overflow: hidden;
 }
 
 /* Styling for the heading and logo in a single row */
 .heading-with-logo {
-    display: flex; /* Enables flexbox layout */
-    align-items: center; /* Vertically centers content */
-    justify-content: center; /* Horizontally centers content */
-    gap: 15px; /* Space between the logo and heading */
-    text-align: center; /* Center aligns text */
-    margin-bottom: 30px; /* Space below the container */
+  display: flex; /* Enables flexbox layout */
+  align-items: center; /* Vertically centers content */
+  justify-content: center; /* Horizontally centers content */
+  gap: 15px; /* Space between the logo and heading */
+  text-align: center; /* Center aligns text */
+  margin-bottom: 30px; /* Space below the container */
 }
 
 .heading-with-logo .company-logo {
-    width: 350px; /* Adjust logo size */
-    height: 80px; /* Maintain aspect ratio */
+  width: 350px; /* Adjust logo size */
+  height: 80px; /* Maintain aspect ratio */
 }
 
 /* Animation keyframes for zoom-in effect */
 @keyframes zoomIn {
-    0% {
-        transform: scale(0.5); /* Start smaller */
-        opacity: 0; /* Start invisible */
-    }
-    100% {
-        transform: scale(1); /* End at normal size */
-        opacity: 1; /* Fully visible */
-    }
+  0% {
+    transform: scale(0.5); /* Start smaller */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: scale(1); /* End at normal size */
+    opacity: 1; /* Fully visible */
+  }
 }
 
 /* Animation keyframes for fade-in effect */
 @keyframes fadeIn {
-    0% {
-        opacity: 0; /* Fully transparent */
-    }
-    100% {
-        opacity: 1; /* Fully visible */
-    }
+  0% {
+    opacity: 0; /* Fully transparent */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+  }
 }
 
 /* Apply animation to the logo */
 .heading-with-logo .company-logo {
-    width: 350px; /* Adjust logo size */
-    height: 80px; /* Maintain aspect ratio */
-    animation: zoomIn 1.5s ease-in-out, fadeIn 2s ease-in-out; /* Combine zoom and fade animations */
-    transform-origin: center; /* Zoom from the center */
+  width: 350px; /* Adjust logo size */
+  height: 80px; /* Maintain aspect ratio */
+  animation: zoomIn 1.5s ease-in-out, fadeIn 2s ease-in-out; /* Combine zoom and fade animations */
+  transform-origin: center; /* Zoom from the center */
 }
 
 .heading-with-logo h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgb(8, 55, 116);
-    margin-top: 50px;
-    margin-bottom: 40px;
-    position: relative;
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(8, 55, 116);
+  margin-top: 50px;
+  margin-bottom: 40px;
+  position: relative;
 }
 
 .heading-with-logo h2:hover {
-    transform: translateY(-10px) translateX(-10px);
-    text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transform: translateY(-10px) translateX(-10px);
+  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
-
 
 /* Style for the heading */
 #technoWinContactSection h2 {
-    font-size: 36px;
-    color: rgb(8, 55, 116);
-    text-align: center;
-    margin-bottom: 40px;
-    font-family: 'Arial', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    animation: fadeIn 2s ease-in-out;
+  font-size: 36px;
+  color: rgb(8, 55, 116);
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: "Arial", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 /* Contact form container styling */
 .contact-form-container {
-    background-color: #ffffff;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1.5s ease-out;
-    transform: scale(0.9);
-    animation: scaleIn 1s ease-out forwards; /* Added scale-in effect */
+  background-color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideIn 1.5s ease-out;
+  transform: scale(0.9);
+  animation: scaleIn 1s ease-out forwards; /* Added scale-in effect */
 }
 
 /* Form field styling */
 .contact-form .form-field {
-    margin-bottom: 20px;
-    position: relative;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 /* Labels */
 .contact-form .form-field label {
-    font-size: 16px;
-    font-weight: bold;
-    color:rgb(8, 55, 116);
-    display: block;
-    margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(8, 55, 116);
+  display: block;
+  margin-bottom: 5px;
 }
 .required {
-    color: red;  /* This will change the color of the star to red */
+  color: red; /* This will change the color of the star to red */
 }
 
 /* Input fields */
-.contact-form .form-field input, 
+.contact-form .form-field input,
 .contact-form .form-field textarea {
-    width: 100%;
-    padding: 12px;
-    font-size: 14px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    transition: all 0.3s ease-in-out;
-    position: relative;
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease-in-out;
+  position: relative;
 }
 
 /* Focus animations */
 .contact-form .form-field input:focus,
 .contact-form .form-field textarea:focus {
-    border-color: #0c71e4;
-    box-shadow: 0 0 5px rgba(13, 45, 190, 0.5);
-    outline: none;
-    animation: focusAnimation 0.3s ease-in-out; /* Added focus animation */
+  border-color: #0c71e4;
+  box-shadow: 0 0 5px rgba(13, 45, 190, 0.5);
+  outline: none;
+  animation: focusAnimation 0.3s ease-in-out; /* Added focus animation */
 }
 
 /* Textarea styling */
 .contact-form .form-field textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 /* Submit button styling */
 .contact-form .form-button-container {
-    text-align: center;
+  text-align: center;
 }
 
 .contact-form .submit-btn {
-    padding: 12px 30px;
-    background-color: rgb(8, 55, 116);
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-    position: relative;
+  padding: 12px 30px;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
 
 /* Button hover effect */
 .contact-form .submit-btn:hover {
-    transform: translateY(-5px);
-    background-color: #6ba2eb;
-    color:#000000;
-    font-weight: bold;
-    animation: buttonHoverEffect 0.3s ease-in-out;
+  transform: translateY(-5px);
+  background-color: #6ba2eb;
+  color: #000000;
+  font-weight: bold;
+  animation: buttonHoverEffect 0.3s ease-in-out;
 }
 
 /* Form field animations */
 @keyframes focusAnimation {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-5px);
-        opacity: 1;
-    }
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
 }
 
 /* Animations for form elements */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes scaleIn {
-    from {
-        transform: scale(0.9);
-    }
-    to {
-        transform: scale(1);
-    }
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
-    #technoWinContactSection h2 {
-        font-size: 32px; /* Slightly smaller font for larger tablets */
-    }
-    .contact-form-container {
-        padding: 25px;
-    }
+  #technoWinContactSection h2 {
+    font-size: 32px; /* Slightly smaller font for larger tablets */
+  }
+  .contact-form-container {
+    padding: 25px;
+  }
 }
 
 @media (max-width: 992px) {
-    #technoWinContactSection h2 {
-        font-size: 30px; /* Reduce font size for tablets */
-    }
-    .contact-form-container {
-        padding: 20px;
-    }
+  #technoWinContactSection h2 {
+    font-size: 30px; /* Reduce font size for tablets */
+  }
+  .contact-form-container {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 768px) {
-    #technoWinContactSection h2 {
-        font-size: 26px; /* Smaller font for mobile screens */
-    }
-    .contact-form-container {
-        padding: 15px; /* Less padding on mobile */
-    }
+  #technoWinContactSection h2 {
+    font-size: 26px; /* Smaller font for mobile screens */
+  }
+  .contact-form-container {
+    padding: 15px; /* Less padding on mobile */
+  }
 
-    .contact-form .form-field input, 
-    .contact-form .form-field textarea {
-        font-size: 15px; /* Increase font size slightly for better readability */
-    }
+  .contact-form .form-field input,
+  .contact-form .form-field textarea {
+    font-size: 15px; /* Increase font size slightly for better readability */
+  }
 
-    .contact-form .submit-btn {
-        font-size: 14px; /* Adjust button size for mobile */
-        padding: 10px 20px; /* Adjust button padding for mobile */
-    }
+  .contact-form .submit-btn {
+    font-size: 14px; /* Adjust button size for mobile */
+    padding: 10px 20px; /* Adjust button padding for mobile */
+  }
 }
 
 /* For very small screens (less than 480px width) */
 @media (max-width: 480px) {
-    #technoWinContactSection h2 {
-        font-size: 24px; /* Very small font size for small devices */
-        margin-bottom: 20px;
-    }
-    .contact-form-container {
-        padding: 10px; /* Minimal padding for very small devices */
-        width: 100%; /* Ensure full width for small screens */
-    }
+  #technoWinContactSection h2 {
+    font-size: 24px; /* Very small font size for small devices */
+    margin-bottom: 20px;
+  }
+  .contact-form-container {
+    padding: 10px; /* Minimal padding for very small devices */
+    width: 100%; /* Ensure full width for small screens */
+  }
 
-    .contact-form .form-field input, 
-    .contact-form .form-field textarea {
-        font-size: 14px; /* Smaller text for smaller devices */
-    }
+  .contact-form .form-field input,
+  .contact-form .form-field textarea {
+    font-size: 14px; /* Smaller text for smaller devices */
+  }
 
-    .contact-form .submit-btn {
-        font-size: 13px; /* Even smaller button size */
-        padding: 8px 15px; /* Adjust button padding */
-    }
+  .contact-form .submit-btn {
+    font-size: 13px; /* Even smaller button size */
+    padding: 8px 15px; /* Adjust button padding */
+  }
 }
 
 /* Styles for the Background Video Section */
 
 #background-video-section {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-    margin-bottom: 60px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  margin-bottom: 60px;
 }
 
 .background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover; */
+  z-index: 1;
 }
 
 .video-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    text-align: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .video-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #f2f2f2;
-    margin-top: 480px;
-    animation: fadeIn 2s ease-in-out;
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f2f2f2;
+  margin-top: 480px;
+  animation: fadeIn 2s ease-in-out;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .video-title:hover {
-    transform: scale(1.1);
-    color: #ffcc00;
-    text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+  transform: scale(1.1);
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes glowEffect {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-    100% {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.7);
-    }
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7),
+      0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.7);
+  }
 }
 
-  
-
-  /* Pin the section to the right side */
+/* Pin the section to the right side */
 #pinned-section {
-    position: fixed; /* Keeps the section fixed while scrolling */
-    top: 0;          /* Aligns to the top of the page */
-    right: 10px;     /* Adds some spacing from the right edge */
-    width: 66px;    /* Set a width for the section */
-    background-color: rgb(50, 100, 167); /* Optional: Set a background color */
-    padding: 10px;
-    margin-top: 150px;
-    z-index: 1000;   /* Ensures it appears above other elements */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
-    border-radius: 10px; /* Rounds the section itself slightly */
+  position: fixed; /* Keeps the section fixed while scrolling */
+  top: 0; /* Aligns to the top of the page */
+  right: 10px; /* Adds some spacing from the right edge */
+  width: 66px; /* Set a width for the section */
+  background-color: rgb(50, 100, 167); /* Optional: Set a background color */
+  padding: 10px;
+  margin-top: 150px;
+  z-index: 1000; /* Ensures it appears above other elements */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+  border-radius: 10px; /* Rounds the section itself slightly */
+}
+
+/* Styling the image links */
+.image-link {
+  display: block; /* Make each image link a block element for stacking */
+  margin-bottom: 15px; /* Add space between images */
+  position: relative;
+  text-decoration: none;
+  text-align: center; /* Center-align images and names */
+}
+
+/* Styling circular images */
+.image-link img {
+  width: 50px; /* Set fixed width for circle */
+  height: 50px; /* Set fixed height for circle */
+  object-fit: cover; /* Ensures the image fits properly */
+  border-radius: 50%; /* Makes the images circular */
+  border: 2px solid #020202; /* Add a border around the images */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for image scaling */
+.image-link:hover img {
+  transform: scale(1.1); /* Zoom effect */
+  border: 2px solid #ff0808; /* Add a border around the images */
+}
+
+/* Hover name (hidden by default) */
+.hover-name {
+  position: absolute;
+  bottom: -20px; /* Position name just below the image */
+  right: 40%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Show the name on hover */
+.image-link:hover .hover-name {
+  opacity: 1;
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (e.g., smartphones) */
+@media (max-width: 480px) {
+  #pinned-section {
+    width: 56px; /* Adjust section width */
+    margin-top: 100px; /* Reduce top margin for smaller screens */
+    right: 5px; /* Adjust right position */
+    padding: 5px; /* Reduce padding */
   }
-  
-  /* Styling the image links */
-  .image-link {
-    display: block; /* Make each image link a block element for stacking */
-    margin-bottom: 15px; /* Add space between images */
-    position: relative;
-    text-decoration: none;
-    text-align: center; /* Center-align images and names */
-  }
-  
-  /* Styling circular images */
+
   .image-link img {
-    width: 50px;  /* Set fixed width for circle */
-    height: 50px; /* Set fixed height for circle */
-    object-fit: cover; /* Ensures the image fits properly */
-    border-radius: 50%; /* Makes the images circular */
-    border: 2px solid #020202; /* Add a border around the images */
-    transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover effect */
+    width: 40px; /* Reduce image size for smaller screens */
+    height: 40px;
   }
-  
-  /* Hover effect for image scaling */
-  .image-link:hover img {
-    transform: scale(1.1); /* Zoom effect */
-    border: 2px solid #ff0808; /* Add a border around the images */
-  }
-  
-  /* Hover name (hidden by default) */
+
   .hover-name {
-    position: absolute;
-    bottom: -20px; /* Position name just below the image */
-    right: 40%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 12px;
-    opacity: 0; /* Hidden by default */
-    transition: opacity 0.3s ease;
-    pointer-events: none;
+    font-size: 10px; /* Adjust font size of hover text */
+    padding: 3px 5px;
   }
-  
-  /* Show the name on hover */
-  .image-link:hover .hover-name {
-    opacity: 1;
-  }
-  
-  
-  /* MEDIA QUERIES */
-  
-  /* Small devices (e.g., smartphones) */
-  @media (max-width: 480px) {
-    #pinned-section {
-      width: 56px; /* Adjust section width */
-      margin-top: 100px; /* Reduce top margin for smaller screens */
-      right: 5px; /* Adjust right position */
-      padding: 5px; /* Reduce padding */
-    }
-  
-    .image-link img {
-      width: 40px; /* Reduce image size for smaller screens */
-      height: 40px;
-    }
-  
-    .hover-name {
-      font-size: 10px; /* Adjust font size of hover text */
-      padding: 3px 5px;
-    }
-  }
-  
-  /* Medium devices (e.g., tablets) */
-  @media (max-width: 768px) {
-    #pinned-section {
-      width: 40px; /* Slightly larger width than on small devices */
-      margin-top: 120px; /* Adjust top margin */
-      right: 8px;
-    }
-  
-    .image-link img {
-      width: 40px; /* Resize images for medium screens */
-      height: 40px;
-      margin-left: -3px;
-    }
-  
-    .hover-name {
-      font-size: 11px; /* Adjust hover text size for medium devices */
-    }
+}
+
+/* Medium devices (e.g., tablets) */
+@media (max-width: 768px) {
+  #pinned-section {
+    width: 40px; /* Slightly larger width than on small devices */
+    margin-top: 120px; /* Adjust top margin */
+    right: 8px;
   }
 
+  .image-link img {
+    width: 40px; /* Resize images for medium screens */
+    height: 40px;
+    margin-left: -3px;
+  }
 
-  
+  .hover-name {
+    font-size: 11px; /* Adjust hover text size for medium devices */
+  }
+}
+
 /* Back to Top Button */
 #back-to-top {
-    position: fixed; /* Keeps it at the bottom-right corner */
-    bottom: 20px; /* Distance from the bottom */
-    right: 20px; /* Distance from the right */
-    width: 60px; /* Button size */
-    height: 60px;
-    background-color: rgb(50, 100, 167); /* Button background color (blue) */
-    border: none; /* Remove border */
-    border-radius: 50%; /* Make it circular */
-    cursor: pointer; /* Show pointer on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Hover transition */
-    display: none; /* Initially hidden */
-    z-index: 1000; /* Ensures it stays above other content */
+  position: fixed; /* Keeps it at the bottom-right corner */
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  width: 60px; /* Button size */
+  height: 60px;
+  background-color: rgb(50, 100, 167); /* Button background color (blue) */
+  border: none; /* Remove border */
+  border-radius: 50%; /* Make it circular */
+  cursor: pointer; /* Show pointer on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Hover transition */
+  display: none; /* Initially hidden */
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Add the image inside the button */
+#back-to-top img {
+  width: 90%; /* Adjust image size */
+  height: 90%;
+  object-fit: contain; /* Make sure the image fits properly inside */
+  display: block;
+  margin: 0 auto; /* Center the image inside the button */
+}
+
+/* Hover effect */
+#back-to-top:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 6px 12px #ff0808; /* Add shadow on hover */
+}
+
+/* Show the button when scrolled */
+#back-to-top.show {
+  display: block; /* Show button when class 'show' is added */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  /* Reduce button size on smaller screens */
+  #back-to-top {
+    width: 50px;
+    height: 50px;
+    bottom: 15px; /* Reduce the bottom margin */
+    right: 15px; /* Reduce the right margin */
   }
-  
-  /* Add the image inside the button */
+
+  /* Adjust image inside the button for smaller screens */
   #back-to-top img {
-    width: 90%; /* Adjust image size */
+    width: 80%; /* Slightly smaller image on mobile */
+    height: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further reduce button size on very small screens */
+  #back-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 10px; /* Further reduce bottom margin */
+    right: 10px; /* Further reduce right margin */
+  }
+
+  /* Adjust image inside the button for very small screens */
+  #back-to-top img {
+    width: 90%; /* Even smaller image */
     height: 90%;
-    object-fit: contain; /* Make sure the image fits properly inside */
-    display: block;
-    margin: 0 auto; /* Center the image inside the button */
   }
-  
-  /* Hover effect */
-  #back-to-top:hover {
-    transform: scale(1.1); /* Slight zoom effect */
-    background-color: #0056b3; /* Darker blue on hover */
-    box-shadow: 0 6px 12px #ff0808;/* Add shadow on hover */
-  }
-  
-  /* Show the button when scrolled */
-  #back-to-top.show {
-    display: block; /* Show button when class 'show' is added */
-  }
-  
-  
-  
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    /* Reduce button size on smaller screens */
-    #back-to-top {
-      width: 50px;
-      height: 50px;
-      bottom: 15px; /* Reduce the bottom margin */
-      right: 15px;  /* Reduce the right margin */
-    }
-  
-    /* Adjust image inside the button for smaller screens */
-    #back-to-top img {
-      width: 80%; /* Slightly smaller image on mobile */
-      height: 80%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    /* Further reduce button size on very small screens */
-    #back-to-top {
-      width: 45px;
-      height: 45px;
-      bottom: 10px; /* Further reduce bottom margin */
-      right: 10px;  /* Further reduce right margin */
-    }
-  
-    /* Adjust image inside the button for very small screens */
-    #back-to-top img {
-      width: 90%; /* Even smaller image */
-      height: 90%;
-    }
-  }
-  
-  /* General Footer Styling */
+}
+
+/* General Footer Styling */
 footer {
-    background-color: rgb(8, 55, 116);
-    color: white;
-    padding: 40px 20px;
-    font-weight: bold;
-    text-align: center;
-    font-size: 16px;
-    position: relative;
-    overflow: hidden;
-    z-index: 1; /* Ensuring footer stays on top */
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 40px 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Ensuring footer stays on top */
 }
 
 /* Footer Container */
 .footer-container {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping on larger screens */
-    justify-content: space-between; /* Space items evenly */
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-    animation: fadeIn 1s ease-out;
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+  justify-content: space-between; /* Space items evenly */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  animation: fadeIn 1s ease-out;
 }
 
 /* Footer Links */
 .footer-links ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    font-size: 18px;
-    padding: 0;
-    margin: 0;
-    align-items: center;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
 }
 
 .footer-links li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-links li a:hover {
-    color: rgb(167, 4, 4);
-    transform: translateY(-5px);
+  color: rgb(167, 4, 4);
+  transform: translateY(-5px);
 }
 
 /* Certificate Images */
 .footer-certificates {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-cer img {
-    height: 100px; /* Manageable size for certificates */
-    width: auto;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100px; /* Manageable size for certificates */
+  width: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer-cer img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-cer1 img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-cer2 img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .footer-cer3 img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Contact Section */
 .footer-contact {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 20px;
 }
 
 .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: white;
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .contact-item img {
-    height: 20px;
-    width: auto;
-    transition: transform 0.3s ease;
+  height: 20px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
 .contact-item:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .contact-item a {
-    text-decoration: none;
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .contact-item a:hover {
-    color: rgb(167, 4, 4);
-    transform: translateY(-5px);
+  color: rgb(167, 4, 4);
+  transform: translateY(-5px);
 }
 
 /* Footer Bottom Section */
 .footer-bottom {
-    background-color: rgb(8, 55, 116);
-    color: white;
-    padding: 10px 0;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 20px;
-    text-align: center;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .footer-bottom p {
-    margin: 0;
+  margin: 0;
 }
 
 /* Back to Top Button */
 .back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: none;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 60%;
-    padding: 10px;
-    width: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 60%;
+  padding: 10px;
+  width: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .back-to-top:hover {
-    background-color: rgb(8, 55, 116);
-    transform: scale(1.1);
+  background-color: rgb(8, 55, 116);
+  transform: scale(1.1);
 }
 
 .back-to-top i {
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .back-to-top:hover i {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
 /* Chatbot Styling within Footer */
 /* Chatbot Styling within Footer */
 .chatbot-container {
-    position: fixed;
-    bottom: 120px;
-    /* bottom: 20px; */
-    left: 20px;
-    width: 300px;
-    background: rgb(8, 55, 116);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transform: translateX(-110%);
-    transition: transform 0.4s ease-in-out;
-    z-index: 9999;
+  position: fixed;
+  bottom: 120px;
+  /* bottom: 20px; */
+  left: 20px;
+  width: 300px;
+  background: rgb(8, 55, 116);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transform: translateX(-110%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 9999;
 }
 
 .chatbot-container.active {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .chatbot-header {
-    background: rgb(8, 55, 116);
-    color: white;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-weight: bold;
+  background: rgb(8, 55, 116);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 .chatbot-gif {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .close-btn {
-    font-size: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: rgb(255, 255, 255);
-    font-weight: bold;
-    transition: all 0.3s ease; /* For smooth animation */
+  font-size: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: all 0.3s ease; /* For smooth animation */
+}
+
+.close-btn:hover {
+  color: #f50606; /* Change color on hover */
+  font-weight: bold;
+  transform: scale(1.2); /* Slightly enlarge the button */
+}
+
+/* Add a custom animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
-  
-  .close-btn:hover {
-    color: #f50606;/* Change color on hover */
-    font-weight: bold;
-    transform: scale(1.2); /* Slightly enlarge the button */
+  100% {
+    opacity: 0;
   }
-  
-  /* Add a custom animation */
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-  
-  .close-btn.fade-out {
-    animation: fadeOut 0.5s forwards;
-  }
+}
+
+.close-btn.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
 .input-container {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
 }
 
 .input-container input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .input-container button {
-    margin-left: 5px;
-    padding: 8px;
-    background: rgb(8, 55, 116);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  margin-left: 5px;
+  padding: 8px;
+  background: rgb(8, 55, 116);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .chatbot-footer {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 9999;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
 }
 
 .chatBot {
-    width: 80px;
-    height: 80px;
-    background: rgb(8, 55, 116);
-    border-radius: 20px;
-    cursor: pointer;
-    animation: bounce 1.5s infinite alternate, glow 2s infinite;
-    z-index: 9999;
-    position: relative;
+  width: 80px;
+  height: 80px;
+  background: rgb(8, 55, 116);
+  border-radius: 20px;
+  cursor: pointer;
+  animation: bounce 1.5s infinite alternate, glow 2s infinite;
+  z-index: 9999;
+  position: relative;
 }
 
 @keyframes bounce {
-    0% {
-        transform: translateX(-10px);
-    }
-    100% {
-        transform: translateY(-10px);
-    }
+  0% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }
 
 @keyframes glow {
-    0% {
-        box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
-    }
-    100% {
-        box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
-    }
+  0% {
+    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+  }
 }
 
 .chatBot:hover {
-    background: linear-gradient(45deg, rgb(235, 10, 10), rgb(212, 212, 212));
-    border-radius: 20px;
+  background: linear-gradient(45deg, rgb(235, 10, 10), rgb(212, 212, 212));
+  border-radius: 20px;
 }
 
 /* Message Area */
 #chatMessages {
-    overflow-y: auto; /* Allow vertical scrolling */
-    padding: 25px;
-    background-color: #f4f4f4;
-    border-radius: 0 0 10px 10px;
-    animation: fadeIn 0.3s ease-out;
-    max-height: 400px; /* Set a fixed height */
+  overflow-y: auto; /* Allow vertical scrolling */
+  padding: 25px;
+  background-color: #f4f4f4;
+  border-radius: 0 0 10px 10px;
+  animation: fadeIn 0.3s ease-out;
+  max-height: 400px; /* Set a fixed height */
 }
-
 
 /* Messages */
 .message {
-    display: flex;
-    margin-bottom: 5px;
-    animation: slideIn 0.3s ease-out;
+  display: flex;
+  margin-bottom: 5px;
+  animation: slideIn 0.3s ease-out;
 }
 
 /* Chatbot Message Alignment */
 .user-icon {
-    justify-content: flex-start; /* Left align for user */
+  justify-content: flex-start; /* Left align for user */
 }
 
 .user-message {
-    margin-right: 10px; /* Right align for bot */
-    
+  margin-right: 10px; /* Right align for bot */
 }
 
 .bot-message {
-    justify-content: flex-end; /* Right align for bot */
+  justify-content: flex-end; /* Right align for bot */
 }
 
 /* Align icons */
 
 .message .bot-icon {
-    order: 1; /* Bot image comes before message */
+  order: 1; /* Bot image comes before message */
 }
 
-
 .message .message-text {
-    max-width: 70%;
-    color: rgb(0, 0, 0);
-    background-color: rgb(188, 194, 212);
-    padding: 10px;
-    border-radius: 15%;
-    margin-bottom: 5px;
+  max-width: 70%;
+  color: rgb(0, 0, 0);
+  background-color: rgb(188, 194, 212);
+  padding: 10px;
+  border-radius: 15%;
+  margin-bottom: 5px;
 }
 
 .message .user-message .message-text {
-    background-color: rgb(8, 55, 116);
-    color: white;
-    padding: 10px;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  padding: 10px;
 }
 
 .message .bot-message .message-text {
-    background-color: #e0f2f1;
-    color: rgb(8, 55, 116);
-    padding: 10px;
+  background-color: #e0f2f1;
+  color: rgb(8, 55, 116);
+  padding: 10px;
 }
-.message .bot-icon{
-    margin-right: 10px;
+.message .bot-icon {
+  margin-right: 10px;
 }
 
-.message .user-icon{
-    margin-right: 10px;
+.message .user-icon {
+  margin-right: 10px;
 }
 
 .message img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 }
 
 /* Typing Indicator */
 .typing-indicator {
-    font-size: 14px;
-    color: rgb(8, 55, 116);
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+  font-size: 14px;
+  color: rgb(8, 55, 116);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 .typing-indicator .dot {
-    animation: typingDots 1.5s infinite;
+  animation: typingDots 1.5s infinite;
 }
 
 .typing-indicator .dot:nth-child(1) {
-    animation-delay: 0s;
+  animation-delay: 0s;
 }
 
 .typing-indicator .dot:nth-child(2) {
-    animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 .typing-indicator .dot:nth-child(3) {
-    animation-delay: 0.6s;
+  animation-delay: 0.6s;
 }
 
 /* Input Area */
 .input-container {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #e0f2f1;
-    border-radius: 0 0 10px 10px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #e0f2f1;
+  border-radius: 0 0 10px 10px;
 }
 
 .input-container input {
-    width: 80%;
-    padding: 8px;
-    border: none;
-    border-radius: 15px;
-    margin-right: 10px;
-    font-size: 14px;
-    outline: none;
+  width: 80%;
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  margin-right: 10px;
+  font-size: 14px;
+  outline: none;
 }
 
 .input-container input:focus {
-    border: 1px solid rgb(8, 55, 116);
+  border: 1px solid rgb(8, 55, 116);
 }
 
 .input-container button {
-    background-color: rgb(8, 55, 116);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .input-container button:hover {
-    background-color: #00796b;
+  background-color: #00796b;
 }
 
 /* Keyframes for Animations */
 @keyframes chatbotSlideIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes slideIn {
-    0% {
-        transform: translateX(30px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes userMessage {
-    0% {
-        transform: translateX(20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes botMessage {
-    0% {
-        transform: translateX(-20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes typingDots {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Responsive Design for Mobile and Small Screens */
 
 /* Footer container */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: row; /* Align items in a row */
-        justify-content: space-between; /* Spread out the items */
-        align-items: center; /* Vertically align items */
-        gap: 15px; /* Provide space between elements */
-        padding: 20px; /* Add padding for better spacing */
-        flex-wrap: wrap; /* Allow wrapping if there's not enough space */
-    }
+  .footer-container {
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Spread out the items */
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Provide space between elements */
+    padding: 20px; /* Add padding for better spacing */
+    flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+  }
 
-    /* Footer Links */
-    .footer-links ul {
-        display: flex; /* Align links in a row */
-        gap: 20px; /* Space between links */
-        
-    }
+  /* Footer Links */
+  .footer-links ul {
+    display: flex; /* Align links in a row */
+    gap: 20px; /* Space between links */
+  }
 
-    .footer-links li a {
-        font-size: 16px; /* Increase font size for readability */
-        margin-left: 10px;
-    }
+  .footer-links li a {
+    font-size: 16px; /* Increase font size for readability */
+    margin-left: 10px;
+  }
 
-    /* Footer Certificates */
-    .footer-certificates {
-        display: flex; /* Align certificates in a row */
-        gap: 20px; /* Space between certificates */
-    }
+  /* Footer Certificates */
+  .footer-certificates {
+    display: flex; /* Align certificates in a row */
+    gap: 20px; /* Space between certificates */
+  }
 
-    .footer-cer img {
-        height: 80px; /* Set the height for certificates */
-        width: auto; /* Keep aspect ratio intact */
-    }
+  .footer-cer img {
+    height: 80px; /* Set the height for certificates */
+    width: auto; /* Keep aspect ratio intact */
+  }
 
-    /* Contact Section */
-    .footer-contact {
-        display: flex; /* Align contact items in a row */
-        gap: 20px; /* Space between contact items */
-        align-items: center; /* Center items vertically */
-    }
+  /* Contact Section */
+  .footer-contact {
+    display: flex; /* Align contact items in a row */
+    gap: 20px; /* Space between contact items */
+    align-items: center; /* Center items vertically */
+  }
 
-    .contact-item {
-        font-size: 16px; /* Increase font size for better readability */
-    }
+  .contact-item {
+    font-size: 16px; /* Increase font size for better readability */
+  }
 
-    /* Back to Top Button */
-    .back-to-top {
-        position: fixed; /* Keep the button fixed on the screen */
-        bottom: 10px;
-        right: 10px;
-        padding: 12px; /* Slightly larger button for easy touch */
-        font-size: 24px; /* Increase button size */
-        width: 50px;
-        height: 50px;
-        border-radius: 50%; /* Make button round */
-    }
+  /* Back to Top Button */
+  .back-to-top {
+    position: fixed; /* Keep the button fixed on the screen */
+    bottom: 10px;
+    right: 10px;
+    padding: 12px; /* Slightly larger button for easy touch */
+    font-size: 24px; /* Increase button size */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make button round */
+  }
 
-    /* Chatbot */
-    #chatbot-footer {
-        bottom: 100px; /* Position the chatbot button */
-        width: 60px; /* Adjust the chatbot button size */
-        height: 60px;
-        gap: 15px; 
-    }
+  /* Chatbot */
+  #chatbot-footer {
+    bottom: 100px; /* Position the chatbot button */
+    width: 60px; /* Adjust the chatbot button size */
+    height: 60px;
+    gap: 15px;
+  }
 
+  /* PC view */
+  #chatbot {
+    bottom: 450px;
+    left: 10px;
+    width: 320px;
+    height: 360px;
+  }
+
+  /* Mobile view */
+  @media (max-width: 768px) {
     #chatbot {
-        bottom: 450px; /* Adjust position of chatbot */
-        left: 10px;
-        width: 320px; /* Adjust width */
-        height: 360px;
+      bottom: 150px;
+      left: 10px;
+      width: 320px;
+      height: 360px;
     }
+  }
 
-    .chatbot-header {
-        font-size: 16px; /* Adjust chatbot header font size */
-        padding: 12px;
-    }
+  .chatbot-header {
+    font-size: 16px; /* Adjust chatbot header font size */
+    padding: 12px;
+  }
 
-    .input-container input {
-        font-size: 14px; /* Adjust input field font size */
-        width: 75%; /* Adjust input field width */
-        padding: 10px; /* Add padding */
-    }
+  .input-container input {
+    font-size: 14px; /* Adjust input field font size */
+    width: 75%; /* Adjust input field width */
+    padding: 10px; /* Add padding */
+  }
 
-    .input-container button {
-        font-size: 16px; /* Adjust button font size */
-        padding: 10px 15px; /* Increase button padding */
-    }
+  .input-container button {
+    font-size: 16px; /* Adjust button font size */
+    padding: 10px 15px; /* Increase button padding */
+  }
 }
 
 /* Additional Media Query for Extra Small Screens */
 @media (max-width: 480px) {
-    .footer-container {
-        flex-direction: row; /* Keep items in a row on smaller screens */
-        justify-content: space-between; /* Distribute elements evenly */
-        gap: 15px; /* Space between elements */
-    }
+  .footer-container {
+    flex-direction: row; /* Keep items in a row on smaller screens */
+    justify-content: space-between; /* Distribute elements evenly */
+    gap: 15px; /* Space between elements */
+  }
 
-    .footer-links ul {
-        display: flex; /* Align links in a row */
-        gap: 10px; /* Adjust space between links */
-    }
+  .footer-links ul {
+    display: flex; /* Align links in a row */
+    gap: 10px; /* Adjust space between links */
+  }
 
-    .footer-links li a {
-        font-size: 14px; /* Slightly smaller font for smaller screens */
-    }
+  .footer-links li a {
+    font-size: 14px; /* Slightly smaller font for smaller screens */
+  }
 
-    .footer-cer img {
-        height: 60px; /* Reduce certificate size for small screens */
-        width: auto;
-    }
+  .footer-cer img {
+    height: 60px; /* Reduce certificate size for small screens */
+    width: auto;
+  }
 
-    .contact-item {
-        font-size: 14px; /* Smaller font for contact items */
-    }
+  .contact-item {
+    font-size: 14px; /* Smaller font for contact items */
+  }
 
-    .back-to-top {
-        padding: 10px; /* Increase button size for better tap */
-        font-size: 22px; /* Adjust button font size */
-        width: 50px;
-        height: 50px;
-    }
+  .back-to-top {
+    padding: 10px; /* Increase button size for better tap */
+    font-size: 22px; /* Adjust button font size */
+    width: 50px;
+    height: 50px;
+  }
 
-    #chatbot {
-        width: 280px; /* Adjust chatbot width */
-        height: 320px;
-    }
+  #chatbot {
+    width: 280px; /* Adjust chatbot width */
+    height: 320px;
+  }
 
-    .chatbot-header {
-        font-size: 14px; /* Smaller font size */
-        padding: 10px;
-    }
+  .chatbot-header {
+    font-size: 14px; /* Smaller font size */
+    padding: 10px;
+  }
 
-    .input-container input {
-        font-size: 12px; /* Smaller input font size */
-        width: 70%; /* Adjust input width */
-        padding: 8px; /* Add padding */
-    }
+  .input-container input {
+    font-size: 12px; /* Smaller input font size */
+    width: 70%; /* Adjust input width */
+    padding: 8px; /* Add padding */
+  }
 
-    .input-container button {
-        font-size: 14px; /* Slightly smaller button size */
-        padding: 8px 12px; /* Adjust padding */
-    }
+  .input-container button {
+    font-size: 14px; /* Slightly smaller button size */
+    padding: 8px 12px; /* Adjust padding */
+  }
 }

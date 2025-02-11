@@ -2,7 +2,7 @@
 
 .topView {
   background-color: rgb(250, 252, 255);
-  border-bottom: 1px solid black; 
+  border-bottom: 1px solid black;
   font-weight: bold;
   color: black;
   padding: 10px 0; /* Add padding for better spacing */
@@ -14,7 +14,7 @@
 }
 
 .topView img {
-  width: 20px;  /* Ensure consistent icon size */
+  width: 20px; /* Ensure consistent icon size */
   height: auto; /* Maintain aspect ratio */
   margin-right: 8px; /* Consistent spacing between icon and text */
   vertical-align: middle; /* Align image with text */
@@ -41,8 +41,7 @@
   padding: 0; /* Remove default padding */
 }
 
-
-.menu-icon{
+.menu-icon {
   margin-left: 5%;
 }
 
@@ -60,97 +59,94 @@
 /* Desktop and tablet view */
 @media (min-width: 769px) {
   #menuToggle {
-      display: none;
+    display: none;
   }
   #navLinks {
-      display: flex;
-      flex-direction: row;
-      /* gap: 20px; */
+    display: flex;
+    flex-direction: row;
+    /* gap: 20px; */
   }
-  .certificateImg{
-      height: 80px;
-      width:100px;
+  .certificateImg {
+    height: 80px;
+    width: 100px;
   }
-  .certificateRoundImg{
-      height: 100px;
-      width:100px;
+  .certificateRoundImg {
+    height: 100px;
+    width: 100px;
   }
 
-  #language{
-      margin-left: 120px;
+  #language {
+    margin-left: 120px;
   }
-  
-  #contactButton{
-      margin-top: 14%;
-      margin-left: 30px;
+
+  #contactButton {
+    margin-top: 14%;
+    margin-left: 30px;
   }
   nav {
-      top:40px
+    top: 40px;
   }
-  #slide img{
-      height: 700px; /* Default height for large screens */
-      width:1200px ;
-      margin-left: 150px;
+  #slide img {
+    height: 700px; /* Default height for large screens */
+    width: 1200px;
+    margin-left: 150px;
   }
- 
 }
 
 /* Mobile view */
 @media (max-width: 768px) {
   #navLinks {
-      flex-direction: column;
-      /* position: fixed; */
-      right: 0;
-      width: 100%;
-      padding: 5px;  
-      background-color: rgb(250, 252, 255);
-      z-index: 2;
-  }
- 
-  /* Contact icons in navbar */
-  nav ul li a img {
-      height: 15px;
-      width: auto;
-      margin-right: 10px;
-  }
-  nav ul  img:hover {
-      transform: scale(1.1);
-  }
-  
-  #topSection{
-      display: none;
+    flex-direction: column;
+    /* position: fixed; */
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(250, 252, 255);
+    z-index: 2;
   }
 
-  .certificateImg{
-      height: 80px;
-      width:100px;
+  /* Contact icons in navbar */
+  nav ul li a img {
+    height: 15px;
+    width: auto;
+    margin-right: 10px;
   }
-  .certificateRoundImg{
-      height: 80px;
-      width:80px;
+  nav ul img:hover {
+    transform: scale(1.1);
   }
-  #language{
-      margin-left: 2%;
-      width: 100px;
-      margin-bottom: 10px;
+
+  #topSection {
+    display: none;
   }
-  nav{
-      top:0px;
+
+  .certificateImg {
+    height: 80px;
+    width: 100px;
   }
-  #slide img{
-      height: 200px; /* Default height for large screens */
-      width:200px ;
-      margin-left: 150px;
+  .certificateRoundImg {
+    height: 80px;
+    width: 80px;
+  }
+  #language {
+    margin-left: 2%;
+    width: 100px;
+    margin-bottom: 10px;
+  }
+  nav {
+    top: 0px;
+  }
+  #slide img {
+    height: 200px; /* Default height for large screens */
+    width: 200px;
+    margin-left: 150px;
   }
 }
-  
 
 @media (max-width: 768px) {
   #socialIcons {
-      display: none;
+    display: none;
   }
 }
-
 
 /* Reset margin and padding */
 * {
@@ -162,7 +158,7 @@
 /* Body styling */
 body {
   font-family: Arial, sans-serif;
-  padding-top: 90px; 
+  padding-top: 90px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -265,7 +261,7 @@ nav ul img:hover {
   text-transform: uppercase;
   padding: 6px 5px;
   border-radius: 5px;
-  border:  3px solid  transparent;
+  border: 3px solid transparent;
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
@@ -308,100 +304,100 @@ nav ul img:hover {
 /* For tablets and smaller screens (1024px and below) */
 @media (max-width: 1024px) {
   nav {
-      flex-wrap: wrap; /* Allows wrapping of elements */
+    flex-wrap: wrap; /* Allows wrapping of elements */
   }
 
   .logo img {
-      height: 50px; /* Adjust logo size */
-      width: 50px;
+    height: 50px; /* Adjust logo size */
+    width: 50px;
   }
 
   nav ul {
-      justify-content: center; /* Center align nav items */
+    justify-content: center; /* Center align nav items */
   }
 
   .nav-right {
-      flex-direction: column; /* Stack items vertically */
-      gap: 10px;
-      margin-top: 10px;
-      margin-left: 0;
+    flex-direction: column; /* Stack items vertically */
+    gap: 10px;
+    margin-top: 10px;
+    margin-left: 0;
   }
 
   .language-dropdown select {
-      width: 100%; /* Make dropdown full width */
+    width: 100%; /* Make dropdown full width */
   }
 
   .contact-btn {
-      width: 100%; /* Make the contact button full width */
-      text-align: center;
+    width: 100%; /* Make the contact button full width */
+    text-align: center;
   }
 }
 
 /* For mobile devices (768px and below) */
 @media (max-width: 768px) {
   nav {
-      flex-wrap: wrap; /* Wrap the nav items */
-      padding: 15px 10px; /* Increase padding for better touch targets */
+    flex-wrap: wrap; /* Wrap the nav items */
+    padding: 15px 10px; /* Increase padding for better touch targets */
   }
 
   .logo img {
-      height: 45px; /* Resize logo for mobile */
-      width: 45px;
+    height: 45px; /* Resize logo for mobile */
+    width: 45px;
   }
 
   nav ul {
-      justify-content: center; /* Center the nav items */
-      width: 100%;
+    justify-content: center; /* Center the nav items */
+    width: 100%;
   }
 
   .nav-right {
-      flex-direction: column; /* Stack right-aligned items vertically */
-      gap: 15px;
-      margin-top: 15px;
-      margin-left: 0;
+    flex-direction: column; /* Stack right-aligned items vertically */
+    gap: 15px;
+    margin-top: 15px;
+    margin-left: 0;
   }
 
   nav ul li a {
-      font-size: 16px; /* Reduce font size for smaller screens */
+    font-size: 16px; /* Reduce font size for smaller screens */
   }
 
   .language-dropdown select {
-      width: 100%; /* Full width for dropdown */
-      font-size: 15px; /* Adjust font size for mobile */
+    width: 100%; /* Full width for dropdown */
+    font-size: 15px; /* Adjust font size for mobile */
   }
 
   .contact-btn {
-      font-size: 14px; /* Reduce button font size */
-      padding: 8px 15px; /* Adjust padding for mobile */
-      width: 100%; /* Full width button */
-      text-align: center; /* Center-align the text */
+    font-size: 14px; /* Reduce button font size */
+    padding: 8px 15px; /* Adjust padding for mobile */
+    width: 100%; /* Full width button */
+    text-align: center; /* Center-align the text */
   }
 }
 
 /* For very small screens (480px and below) */
 @media (max-width: 480px) {
   nav {
-      padding: 10px 5px; /* Adjust padding for very small screens */
+    padding: 10px 5px; /* Adjust padding for very small screens */
   }
 
   .logo img {
-      height: 40px; /* Further reduce logo size */
-      width: 40px;
+    height: 40px; /* Further reduce logo size */
+    width: 40px;
   }
 
   nav ul li a {
-      font-size: 14px; /* Reduce font size for very small screens */
+    font-size: 14px; /* Reduce font size for very small screens */
   }
 
   .language-dropdown select {
-      font-size: 14px; /* Adjust font size */
+    font-size: 14px; /* Adjust font size */
   }
 
   .contact-btn {
-      font-size: 9px; /* Make button text smaller */
-      padding: 6px 6px; /* Reduce padding */
-      margin-left: 2%;
-      width: 100px;
+    font-size: 9px; /* Make button text smaller */
+    padding: 6px 6px; /* Reduce padding */
+    margin-left: 2%;
+    width: 100px;
   }
 }
 
@@ -410,83 +406,80 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 /* Go Back Button Styling */
 .go-back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    z-index: 10;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    animation: slideInFromLeft 1s ease-in-out forwards;
-  }
-  
-  .go-back:hover {
-    transform: scale(1.2) rotate(-10deg);
-    opacity: 0.8;
-  }
-  
-  /* Go Back Image Styling */
-  .go-back-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: rgb(8, 55, 116);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  .go-back-image:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    transform: scale(1.1);
-  }
-  
-  /* Keyframe Animations */
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  animation: slideInFromLeft 1s ease-in-out forwards;
+}
 
-  /* Responsive Design */
+.go-back:hover {
+  transform: scale(1.2) rotate(-10deg);
+  opacity: 0.8;
+}
+
+/* Go Back Image Styling */
+.go-back-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgb(8, 55, 116);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.go-back-image:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
+}
+
+/* Keyframe Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .go-back {
-      top: 15px;
-      left: 15px;
+    top: 15px;
+    left: 15px;
   }
 
   .go-back-image {
-      width: 50px;
-      height: 50px;
+    width: 50px;
+    height: 50px;
   }
 }
 
 @media (max-width: 480px) {
   .go-back {
-      top: 10px;
-      left: 10px;
+    top: 10px;
+    left: 10px;
   }
 
   .go-back-image {
-      width: 45px;
-      height: 45px;
+    width: 45px;
+    height: 45px;
   }
 }
-
 
 /* Ensure full page background video */
 .background-section {
   position: relative;
   margin-top: 40px;
-  width: 100%;  /* Full width */
-  height: 100vh;  /* Full viewport height */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
 
@@ -498,40 +491,40 @@ html {
   transform: translateX(-50%); /* Center the video horizontally */
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Ensures the video covers the entire section */
-  z-index: 1;  /* Ensure the video stays behind the content */
+  object-fit: cover; /* Ensures the video covers the entire section */
+  z-index: 1; /* Ensure the video stays behind the content */
 }
 
 /* Center content with a card and semi-transparent background */
 .software-content {
   position: relative;
-  z-index: 2;  /* Ensures content stays above the video */
+  z-index: 2; /* Ensures content stays above the video */
   /* display: flex; */
   margin-left: 40px;
   margin-top: 150px;
   justify-content: center; /* Horizontally center the content */
   align-items: center; /* Vertically center the content */
-  height: 100%;  /* Full height */
+  height: 100%; /* Full height */
   padding: 5px;
 }
 
 /* Content card styling */
 .content-card {
-  background: rgba(227, 228, 230, 0.6);  /* Semi-transparent black background */
-  color: #000000;  /* White text for better contrast */
+  background: rgba(227, 228, 230, 0.6); /* Semi-transparent black background */
+  color: #000000; /* White text for better contrast */
   padding: 5px;
   border-radius: 5px;
-  max-width: 600px;  /* Set a max width for the card */
-  width: 90%;  /* Ensure the card takes up most of the space */
-  box-sizing: border-box;  /* Ensure padding is inside the element */
-  animation: fadeIn 2s ease-out;  /* Adding fade-in animation */
-  text-align: center;  /* Center-align text inside the card */
+  max-width: 600px; /* Set a max width for the card */
+  width: 90%; /* Ensure the card takes up most of the space */
+  box-sizing: border-box; /* Ensure padding is inside the element */
+  animation: fadeIn 2s ease-out; /* Adding fade-in animation */
+  text-align: center; /* Center-align text inside the card */
 }
 
 /* Card title styling */
 .content-card h1 {
   font-size: 3em;
-  color: rgb(8, 55, 116);  /* White text for better contrast */
+  color: rgb(8, 55, 116); /* White text for better contrast */
   margin-bottom: 20px;
   font-weight: bold;
 }
@@ -539,7 +532,7 @@ html {
 /* Card text styling */
 .content-card p {
   font-size: 1em;
-  color: #000000;  /* White text for better contrast */
+  color: #000000; /* White text for better contrast */
   font-weight: bold;
   line-height: 1.6;
 }
@@ -547,12 +540,12 @@ html {
 /* Animation for fading in content */
 @keyframes fadeIn {
   0% {
-      opacity: 0;
-      transform: translateY(50px);
+    opacity: 0;
+    transform: translateY(50px);
   }
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -567,21 +560,21 @@ html {
 
   /* Adjusting the video container's size and margin for smaller screens */
   .software-content {
-    margin-top: 250px;  /* Reduced margin for better placement */
-    margin-left: 10px;  /* Reduced left margin */
+    margin-top: 250px; /* Reduced margin for better placement */
+    margin-left: 10px; /* Reduced left margin */
   }
 
   .content-card {
-    padding: 15px;  /* Reduced padding for smaller screens */
-    max-width: 90%;  /* Allow the card to take more width on smaller screens */
+    padding: 15px; /* Reduced padding for smaller screens */
+    max-width: 90%; /* Allow the card to take more width on smaller screens */
   }
 
   .content-card h1 {
-    font-size: 2.5em;  /* Smaller font size for mobile */
+    font-size: 2.5em; /* Smaller font size for mobile */
   }
 
   .content-card p {
-    font-size: 0.9em;  /* Slightly smaller text for better readability on mobile */
+    font-size: 0.9em; /* Slightly smaller text for better readability on mobile */
   }
 }
 
@@ -596,24 +589,23 @@ html {
   }
 
   .software-content {
-    margin-top: 250px;  /* Adjust margin for even smaller devices */
-    margin-left: 26px;  /* Adjust margin for even smaller devices */
+    margin-top: 250px; /* Adjust margin for even smaller devices */
+    margin-left: 26px; /* Adjust margin for even smaller devices */
   }
 
   .content-card {
-    padding: 10px;  /* Reduce padding even more on very small screens */
-    max-width: 95%;  /* Increase the width to 95% */
+    padding: 10px; /* Reduce padding even more on very small screens */
+    max-width: 95%; /* Increase the width to 95% */
   }
 
   .content-card h1 {
-    font-size: 2em;  /* Further reduce font size */
+    font-size: 2em; /* Further reduce font size */
   }
 
   .content-card p {
-    font-size: 1em;  /* Further reduce text size */
+    font-size: 1em; /* Further reduce text size */
   }
 }
- 
 
 /* app development Styling */
 .app-project {
@@ -648,15 +640,14 @@ html {
 /* Keyframe Animations */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-
 
 /* Grid Layout for 2 Cards Per Row */
 .app-dev-container {
@@ -750,7 +741,6 @@ html {
   text-shadow: 0 10px 10px rgb(252, 214, 2);
 }
 
-
 /* Text Card */
 .text-card {
   background: white;
@@ -766,8 +756,6 @@ html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-
-
 /* Description (p) */
 .text-card p {
   font-size: 17px;
@@ -782,34 +770,31 @@ html {
   text-shadow: 0 0 10px rgb(8, 55, 116);
 }
 
-
-
 .text-card:hover p {
   color: #020202; /* Text color changes slightly */
   font-weight: bold;
 }
 
-
 /* Animations */
 @keyframes fadeInLeft {
   from {
-      opacity: 0;
-      transform: translateX(-50px);
+    opacity: 0;
+    transform: translateX(-50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes fadeInRight {
   from {
-      opacity: 0;
-      transform: translateX(50px);
+    opacity: 0;
+    transform: translateX(50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
@@ -824,11 +809,9 @@ html {
 /* Responsive Design - Stack Cards on Small Screens */
 @media (max-width: 768px) {
   .app-dev-container {
-      grid-template-columns: 1fr; /* Single column layout on mobile */
+    grid-template-columns: 1fr; /* Single column layout on mobile */
   }
 }
-
-
 
 /* Web Development Styling */
 .web-project h3 {
@@ -935,7 +918,7 @@ html {
 /* Title */
 .web-text-card h2 {
   font-size: 22px;
-  color:  rgb(8, 55, 116);
+  color: rgb(8, 55, 116);
   font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
@@ -980,48 +963,47 @@ html {
 /* Animations */
 @keyframes fadeInUp {
   from {
-      opacity: 0;
-      transform: translateY(20px);
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @keyframes slideInLeft {
   from {
-      opacity: 0;
-      transform: translateX(-50px);
+    opacity: 0;
+    transform: translateX(-50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
 @keyframes slideInRight {
   from {
-      opacity: 0;
-      transform: translateX(50px);
+    opacity: 0;
+    transform: translateX(50px);
   }
   to {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
-
 
 /* Pin the section to the right side */
 #pinned-section {
   position: fixed; /* Keeps the section fixed while scrolling */
-  top: 0;          /* Aligns to the top of the page */
-  right: 10px;     /* Adds some spacing from the right edge */
-  width: 66px;    /* Set a width for the section */
+  top: 0; /* Aligns to the top of the page */
+  right: 10px; /* Adds some spacing from the right edge */
+  width: 66px; /* Set a width for the section */
   background-color: rgb(50, 100, 167); /* Optional: Set a background color */
   padding: 10px;
   margin-top: 150px;
-  z-index: 1000;   /* Ensures it appears above other elements */
+  z-index: 1000; /* Ensures it appears above other elements */
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
   border-radius: 10px; /* Rounds the section itself slightly */
 }
@@ -1037,7 +1019,7 @@ html {
 
 /* Styling circular images */
 .image-link img {
-  width: 50px;  /* Set fixed width for circle */
+  width: 50px; /* Set fixed width for circle */
   height: 50px; /* Set fixed height for circle */
   object-fit: cover; /* Ensures the image fits properly */
   border-radius: 50%; /* Makes the images circular */
@@ -1071,7 +1053,6 @@ html {
 .image-link:hover .hover-name {
   opacity: 1;
 }
-
 
 /* MEDIA QUERIES */
 
@@ -1114,8 +1095,6 @@ html {
   }
 }
 
-
-
 /* Back to Top Button */
 #back-to-top {
   position: fixed; /* Keeps it at the bottom-right corner */
@@ -1146,15 +1125,13 @@ html {
 #back-to-top:hover {
   transform: scale(1.1); /* Slight zoom effect */
   background-color: #0056b3; /* Darker blue on hover */
-  box-shadow: 0 6px 12px #ff0808;/* Add shadow on hover */
+  box-shadow: 0 6px 12px #ff0808; /* Add shadow on hover */
 }
 
 /* Show the button when scrolled */
 #back-to-top.show {
   display: block; /* Show button when class 'show' is added */
 }
-
-
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
@@ -1163,7 +1140,7 @@ html {
     width: 50px;
     height: 50px;
     bottom: 15px; /* Reduce the bottom margin */
-    right: 15px;  /* Reduce the right margin */
+    right: 15px; /* Reduce the right margin */
   }
 
   /* Adjust image inside the button for smaller screens */
@@ -1179,7 +1156,7 @@ html {
     width: 45px;
     height: 45px;
     bottom: 10px; /* Further reduce bottom margin */
-    right: 10px;  /* Further reduce right margin */
+    right: 10px; /* Further reduce right margin */
   }
 
   /* Adjust image inside the button for very small screens */
@@ -1189,12 +1166,11 @@ html {
   }
 }
 
-
 /* General Styling for Cloud Computing Section */
 #cloud-computing {
   background-color: #f1f8ff;
   padding: 40px;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
 #cloud-computing h2 {
@@ -1206,7 +1182,7 @@ html {
 
 .projects-container-cloud {
   display: flex;
-  flex-wrap: wrap;  /* Allows the items to wrap if there is not enough space */
+  flex-wrap: wrap; /* Allows the items to wrap if there is not enough space */
   justify-content: space-between; /* Distribute space between the cards */
   gap: 20px;
 }
@@ -1287,8 +1263,6 @@ html {
     width: 100%; /* On small screens, cards take full width */
   }
 }
-
-
 
 /* General Footer Styling */
 footer {
@@ -1378,7 +1352,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  
+
   gap: 20px;
 }
 
@@ -1510,15 +1484,19 @@ footer {
 }
 
 .close-btn:hover {
-  color: #f50606;/* Change color on hover */
+  color: #f50606; /* Change color on hover */
   font-weight: bold;
   transform: scale(1.2); /* Slightly enlarge the button */
 }
 
 /* Add a custom animation */
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .close-btn.fade-out {
@@ -1567,19 +1545,19 @@ footer {
 
 @keyframes bounce {
   0% {
-      transform: translateX(-10px);
+    transform: translateX(-10px);
   }
   100% {
-      transform: translateY(-10px);
+    transform: translateY(-10px);
   }
 }
 
 @keyframes glow {
   0% {
-      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
   }
   100% {
-      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
   }
 }
 
@@ -1598,7 +1576,6 @@ footer {
   max-height: 400px; /* Set a fixed height */
 }
 
-
 /* Messages */
 .message {
   display: flex;
@@ -1613,7 +1590,6 @@ footer {
 
 .user-message {
   margin-right: 10px; /* Right align for bot */
-  
 }
 
 .bot-message {
@@ -1625,7 +1601,6 @@ footer {
 .message .bot-icon {
   order: 1; /* Bot image comes before message */
 }
-
 
 .message .message-text {
   max-width: 70%;
@@ -1647,11 +1622,11 @@ footer {
   color: rgb(8, 55, 116);
   padding: 10px;
 }
-.message .bot-icon{
+.message .bot-icon {
   margin-right: 10px;
 }
 
-.message .user-icon{
+.message .user-icon {
   margin-right: 10px;
 }
 
@@ -1726,66 +1701,66 @@ footer {
 /* Keyframes for Animations */
 @keyframes chatbotSlideIn {
   0% {
-      transform: scale(0.5);
-      opacity: 0;
+    transform: scale(0.5);
+    opacity: 0;
   }
   100% {
-      transform: scale(1);
-      opacity: 1;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes slideIn {
   0% {
-      transform: translateX(30px);
-      opacity: 0;
+    transform: translateX(30px);
+    opacity: 0;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes userMessage {
   0% {
-      transform: translateX(20px);
-      opacity: 0;
+    transform: translateX(20px);
+    opacity: 0;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes botMessage {
   0% {
-      transform: translateX(-20px);
-      opacity: 0;
+    transform: translateX(-20px);
+    opacity: 0;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes typingDots {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
   50% {
-      opacity: 1;
+    opacity: 1;
   }
   100% {
-      opacity: 0;
+    opacity: 0;
   }
 }
 
@@ -1794,143 +1769,153 @@ footer {
 /* Footer container */
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: row; /* Align items in a row */
-      justify-content: space-between; /* Spread out the items */
-      align-items: center; /* Vertically align items */
-      gap: 15px; /* Provide space between elements */
-      padding: 20px; /* Add padding for better spacing */
-      flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+    flex-direction: row; /* Align items in a row */
+    justify-content: space-between; /* Spread out the items */
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Provide space between elements */
+    padding: 20px; /* Add padding for better spacing */
+    flex-wrap: wrap; /* Allow wrapping if there's not enough space */
   }
 
   /* Footer Links */
   .footer-links ul {
-      display: flex; /* Align links in a row */
-      gap: 20px; /* Space between links */
-      
+    display: flex; /* Align links in a row */
+    gap: 20px; /* Space between links */
   }
 
   .footer-links li a {
-      font-size: 16px; /* Increase font size for readability */
-      margin-left: 10px;
+    font-size: 16px; /* Increase font size for readability */
+    margin-left: 10px;
   }
 
   /* Footer Certificates */
   .footer-certificates {
-      display: flex; /* Align certificates in a row */
-      gap: 20px; /* Space between certificates */
+    display: flex; /* Align certificates in a row */
+    gap: 20px; /* Space between certificates */
   }
 
   .footer-cer img {
-      height: 80px; /* Set the height for certificates */
-      width: auto; /* Keep aspect ratio intact */
+    height: 80px; /* Set the height for certificates */
+    width: auto; /* Keep aspect ratio intact */
   }
 
   /* Contact Section */
   .footer-contact {
-      display: flex; /* Align contact items in a row */
-      gap: 20px; /* Space between contact items */
-      align-items: center; /* Center items vertically */
+    display: flex; /* Align contact items in a row */
+    gap: 20px; /* Space between contact items */
+    align-items: center; /* Center items vertically */
   }
 
   .contact-item {
-      font-size: 16px; /* Increase font size for better readability */
+    font-size: 16px; /* Increase font size for better readability */
   }
 
   /* Back to Top Button */
   .back-to-top {
-      position: fixed; /* Keep the button fixed on the screen */
-      bottom: 10px;
-      right: 10px;
-      padding: 12px; /* Slightly larger button for easy touch */
-      font-size: 24px; /* Increase button size */
-      width: 50px;
-      height: 50px;
-      border-radius: 50%; /* Make button round */
+    position: fixed; /* Keep the button fixed on the screen */
+    bottom: 10px;
+    right: 10px;
+    padding: 12px; /* Slightly larger button for easy touch */
+    font-size: 24px; /* Increase button size */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make button round */
   }
 
   /* Chatbot */
   #chatbot-footer {
-      bottom: 100px; /* Position the chatbot button */
-      width: 60px; /* Adjust the chatbot button size */
-      height: 60px;
-      gap: 15px; 
+    bottom: 100px; /* Position the chatbot button */
+    width: 60px; /* Adjust the chatbot button size */
+    height: 60px;
+    gap: 15px;
   }
 
+  /* PC view */
   #chatbot {
-      bottom: 450px; /* Adjust position of chatbot */
+    bottom: 450px;
+    left: 10px;
+    width: 320px;
+    height: 360px;
+  }
+
+  /* Mobile view */
+  @media (max-width: 768px) {
+    #chatbot {
+      bottom: 150px;
       left: 10px;
-      width: 320px; /* Adjust width */
+      width: 320px;
       height: 360px;
+    }
   }
 
   .chatbot-header {
-      font-size: 16px; /* Adjust chatbot header font size */
-      padding: 12px;
+    font-size: 16px; /* Adjust chatbot header font size */
+    padding: 12px;
   }
 
   .input-container input {
-      font-size: 14px; /* Adjust input field font size */
-      width: 75%; /* Adjust input field width */
-      padding: 10px; /* Add padding */
+    font-size: 14px; /* Adjust input field font size */
+    width: 75%; /* Adjust input field width */
+    padding: 10px; /* Add padding */
   }
 
   .input-container button {
-      font-size: 16px; /* Adjust button font size */
-      padding: 10px 15px; /* Increase button padding */
+    font-size: 16px; /* Adjust button font size */
+    padding: 10px 15px; /* Increase button padding */
   }
 }
 
 /* Additional Media Query for Extra Small Screens */
 @media (max-width: 480px) {
   .footer-container {
-      flex-direction: row; /* Keep items in a row on smaller screens */
-      justify-content: space-between; /* Distribute elements evenly */
-      gap: 15px; /* Space between elements */
+    flex-direction: row; /* Keep items in a row on smaller screens */
+    justify-content: space-between; /* Distribute elements evenly */
+    gap: 15px; /* Space between elements */
   }
 
   .footer-links ul {
-      display: flex; /* Align links in a row */
-      gap: 10px; /* Adjust space between links */
+    display: flex; /* Align links in a row */
+    gap: 10px; /* Adjust space between links */
   }
 
   .footer-links li a {
-      font-size: 14px; /* Slightly smaller font for smaller screens */
+    font-size: 14px; /* Slightly smaller font for smaller screens */
   }
 
   .footer-cer img {
-      height: 60px; /* Reduce certificate size for small screens */
-      width: auto;
+    height: 60px; /* Reduce certificate size for small screens */
+    width: auto;
   }
 
   .contact-item {
-      font-size: 14px; /* Smaller font for contact items */
+    font-size: 14px; /* Smaller font for contact items */
   }
 
   .back-to-top {
-      padding: 10px; /* Increase button size for better tap */
-      font-size: 22px; /* Adjust button font size */
-      width: 50px;
-      height: 50px;
+    padding: 10px; /* Increase button size for better tap */
+    font-size: 22px; /* Adjust button font size */
+    width: 50px;
+    height: 50px;
   }
 
   #chatbot {
-      width: 280px; /* Adjust chatbot width */
-      height: 320px;
+    width: 280px; /* Adjust chatbot width */
+    height: 320px;
   }
 
   .chatbot-header {
-      font-size: 14px; /* Smaller font size */
-      padding: 10px;
+    font-size: 14px; /* Smaller font size */
+    padding: 10px;
   }
 
   .input-container input {
-      font-size: 12px; /* Smaller input font size */
-      width: 70%; /* Adjust input width */
-      padding: 8px; /* Add padding */
+    font-size: 12px; /* Smaller input font size */
+    width: 70%; /* Adjust input width */
+    padding: 8px; /* Add padding */
   }
 
   .input-container button {
-      font-size: 14px; /* Slightly smaller button size */
-      padding: 8px 12px; /* Adjust padding */
+    font-size: 14px; /* Slightly smaller button size */
+    padding: 8px 12px; /* Adjust padding */
   }
 }
