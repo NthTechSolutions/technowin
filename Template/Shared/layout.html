@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+{% csrf_token %}
 <head>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/contact_us_style.css' %}">
@@ -230,7 +230,7 @@
     </script>
         
     <!-- JavaScript for Chatbot -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
             let typingTimeout;  // To manage the typing indicator timeout for the user
         
@@ -262,29 +262,41 @@
                     // Simulate bot response after a delay
                     setTimeout(() => {
                         removeTypingIndicator('bot');
-                        displayMessage('bot', getBotResponse(userMessage)); // Display bot response
+                        let botResponse =  getBotResponse(userMessage);
+                        displayMessage('bot',botResponse); // Display bot response
                     }, 1500);
                 }
             }
-        
+          
+
             // Function to get bot response
             function getBotResponse(userMessage) {
-                const lowerCaseMessage = userMessage.toLowerCase();
-                if (lowerCaseMessage.includes('hello')) {
-                    return 'Hello! How can I assist you today?';
-                } else if (lowerCaseMessage.includes('how are you')) {
-                    return 'I am doing great, thanks for asking!';
-                } else if (lowerCaseMessage.includes('what is your name')) {
-                    return 'I am a chatbot created by Technowin IT Infra.';
-                } else if (lowerCaseMessage.includes('help')) {
-                    return 'Sure! How can I assist you with your needs?';
-                } else {
-                    return 'Sorry, I didn\'t understand that. Can you ask something else?';
-                }
+                const q = userMessage.toLowerCase();
+                let botResponse = "";
+            
+                $.ajax({
+                    url: "{% url 'get_botans' %}",
+                    type: "GET",
+                    data: {
+                        'q': q,
+                        'csrfmiddlewaretoken': '{{ csrf_token }}'
+                    },
+                    async: false, // Deprecated, but forces synchronous execution
+                    success: function(response) {
+                        botResponse = response.data;
+                    },
+                    error: function(error) {
+                        console.log("Error fetching bot response:", error);
+                    }
+                });
+            
+                return botResponse; // Ensures function waits for AJAX response
             }
+            
         
             // Function to display messages in the chat window
             function displayMessage(sender, message) {
+                debugger;
                 const chatMessages = document.getElementById('chatMessages');
                 
                 // Create icon and text
