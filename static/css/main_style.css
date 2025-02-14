@@ -2508,7 +2508,7 @@ footer {
     list-style: none;
     display: flex;
     gap: 15px;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0;
     margin: 0;
     align-items: center;
@@ -2656,7 +2656,7 @@ footer {
     bottom: 120px;
     /* bottom: 20px; */
     left: 20px;
-    width: 300px;
+    width: 400px;
     background: rgb(8, 55, 116);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -2678,6 +2678,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     font-weight: bold;
+    z-index: 9999;
 }
 
 .chatbot-gif {
@@ -2694,6 +2695,7 @@ footer {
     color: rgb(255, 255, 255);
     font-weight: bold;
     transition: all 0.3s ease; /* For smooth animation */
+    z-index: 9999;
   }
   
   .close-btn:hover {

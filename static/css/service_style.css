@@ -1304,13 +1304,12 @@ footer {
 }
 
 /* Chatbot Styling within Footer */
-/* Chatbot Styling within Footer */
 .chatbot-container {
   position: fixed;
   bottom: 120px;
   /* bottom: 20px; */
   left: 20px;
-  width: 300px;
+  width: 400px;
   background: rgb(8, 55, 116);
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -1332,6 +1331,7 @@ footer {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
+  z-index: 9999;
 }
 
 .chatbot-gif {
@@ -1348,22 +1348,19 @@ footer {
   color: rgb(255, 255, 255);
   font-weight: bold;
   transition: all 0.3s ease; /* For smooth animation */
+  z-index: 9999;
 }
 
 .close-btn:hover {
-  color: #f50606; /* Change color on hover */
+  color: #f50606;/* Change color on hover */
   font-weight: bold;
   transform: scale(1.2); /* Slightly enlarge the button */
 }
 
 /* Add a custom animation */
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .close-btn.fade-out {
@@ -1412,19 +1409,19 @@ footer {
 
 @keyframes bounce {
   0% {
-    transform: translateX(-10px);
+      transform: translateX(-10px);
   }
   100% {
-    transform: translateY(-10px);
+      transform: translateY(-10px);
   }
 }
 
 @keyframes glow {
   0% {
-    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
   }
   100% {
-    box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
+      box-shadow: 0 20px 20px rgba(0, 123, 255, 0.5);
   }
 }
 
@@ -1433,14 +1430,34 @@ footer {
   border-radius: 20px;
 }
 
-/* Message Area */
+/* Ensure parent container is properly positioned */
+#chatContainer {
+  
+  width: 100%;
+}
+
+/* Chat messages container with no overlap */
 #chatMessages {
   overflow-y: auto; /* Allow vertical scrolling */
+  position: relative; /* Add this if not already set */
   padding: 25px;
   background-color: #f4f4f4;
   border-radius: 0 0 10px 10px;
   animation: fadeIn 0.3s ease-out;
-  max-height: 400px; /* Set a fixed height */
+  max-height: 400px; /* Adjust height or remove if needed */
+  z-index: 1; /* Ensure it appears above other content */
+  box-sizing: border-box; /* Prevent overflow caused by padding */
+  margin-bottom: 10px; /* Ensure some spacing at the bottom */
+}
+
+/* Optional: Adjust the fading animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 /* Messages */
@@ -1457,6 +1474,7 @@ footer {
 
 .user-message {
   margin-right: 10px; /* Right align for bot */
+  
 }
 
 .bot-message {
@@ -1468,6 +1486,7 @@ footer {
 .message .bot-icon {
   order: 1; /* Bot image comes before message */
 }
+
 
 .message .message-text {
   max-width: 70%;
@@ -1489,11 +1508,11 @@ footer {
   color: rgb(8, 55, 116);
   padding: 10px;
 }
-.message .bot-icon {
+.message .bot-icon{
   margin-right: 10px;
 }
 
-.message .user-icon {
+.message .user-icon{
   margin-right: 10px;
 }
 
@@ -1568,68 +1587,122 @@ footer {
 /* Keyframes for Animations */
 @keyframes chatbotSlideIn {
   0% {
-    transform: scale(0.5);
-    opacity: 0;
+      transform: scale(0.5);
+      opacity: 0;
   }
   100% {
-    transform: scale(1);
-    opacity: 1;
+      transform: scale(1);
+      opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   0% {
-    opacity: 0;
+      opacity: 0;
   }
   100% {
-    opacity: 1;
+      opacity: 1;
   }
 }
 
 @keyframes slideIn {
   0% {
-    transform: translateX(30px);
-    opacity: 0;
+      transform: translateX(30px);
+      opacity: 0;
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
   }
 }
 
 @keyframes userMessage {
   0% {
-    transform: translateX(20px);
-    opacity: 0;
+      transform: translateX(20px);
+      opacity: 0;
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
   }
 }
 
 @keyframes botMessage {
   0% {
-    transform: translateX(-20px);
-    opacity: 0;
+      transform: translateX(-20px);
+      opacity: 0;
   }
   100% {
-    transform: translateX(0);
-    opacity: 1;
+      transform: translateX(0);
+      opacity: 1;
   }
 }
 
 @keyframes typingDots {
   0% {
-    opacity: 0;
+      opacity: 0;
   }
   50% {
-    opacity: 1;
+      opacity: 1;
   }
   100% {
-    opacity: 0;
+      opacity: 0;
   }
 }
+
+/* Responsive Design for Mobile and Small Screens */
+/* Responsive adjustments for mobile */
+@media screen and (max-width: 600px) {
+  /* Adjust chatbot container width and position for smaller screens */
+  .chatbot-container {
+      width: 90%; /* Make it occupy 90% of the screen */
+      left: 5%; /* Center the chatbot */
+      bottom: 80px; /* Adjust bottom spacing */
+  }
+
+  /* Adjust the chat button for smaller screens */
+  .chatBot {
+      width: 60px;
+      height: 60px;
+      animation: bounce 1.5s infinite alternate, glow 2s infinite;
+  }
+
+  /* Adjust the message area height */
+  #chatMessages {
+      max-height: 300px; /* Reduce the max-height for smaller screens */
+  }
+
+  /* Make the input area take full width */
+  .input-container input {
+      width: 75%; /* Allow input field to occupy more space */
+  }
+
+  .input-container button {
+      padding: 8px 12px; /* Adjust button padding */
+  }
+
+  /* Adjust the header and icons */
+  .chatbot-header {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  .chatbot-gif {
+      width: 25px;
+      height: 25px;
+  }
+
+  .message .message-text {
+      font-size: 14px; /* Adjust message font size */
+  }
+
+  /* Adjust user and bot icons */
+  .message img {
+      width: 25px;
+      height: 25px;
+  }
+}
+
 
 /* Responsive Design for Mobile and Small Screens */
 
