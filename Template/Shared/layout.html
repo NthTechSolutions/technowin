@@ -95,7 +95,7 @@
             <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
             <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
             <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
-            <li>
+            {% comment %} <li>
                 <div id="google_translate_element"></div>
                 <script>
                     // Initialize Google Translate
@@ -110,7 +110,7 @@
                       );
                     }
                 </script>
-            </li>
+            </li> {% endcomment %}
 
             {% comment %} <li>
                 <div class="language-dropdown">
