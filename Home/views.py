@@ -32,7 +32,7 @@ def get_botans(request):
             # Check if the question exists in the database (fuzzy search)
             chatbot_entry = chatbot.objects.filter(Q(question__icontains=q)).first()
             if chatbot_entry:
-                response_data = {'result': 'success', 'data': chatbot_entry.answer}
+                response_data = {'result': 'success', 'data': chatbot_entry.link if chatbot_entry.link else chatbot_entry.answer}
             else:
                 # Configure Gemini API
                 genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')

@@ -363,7 +363,11 @@
                 
                 const messageTextDiv = document.createElement('div');
                 messageTextDiv.classList.add('message-text');
-                messageTextDiv.textContent = message;
+                if ((sender === "bot") && (message.includes('<a') || message.includes('</a>') || message.includes('href='))) {
+                    messageTextDiv.innerHTML = message; 
+                } else {
+                    messageTextDiv.textContent = message;
+                }
                 
                 // Append icon first, then message text to the message div
                 messageDiv.appendChild(iconDiv);
