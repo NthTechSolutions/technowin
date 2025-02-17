@@ -993,7 +993,7 @@ font-weight: bold;
         flex: 1 1 100%; /* One column on very small screens */
     }
     .service-box img {
-        width: 90%; /* Further adjust image size for small screens */
+        width: 60%; /* Further adjust image size for small screens */
     }
     .read-more {
         font-size: 13px; /* Even smaller font for very small screens */
