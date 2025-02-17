@@ -363,7 +363,7 @@
                 
                 const messageTextDiv = document.createElement('div');
                 messageTextDiv.classList.add('message-text');
-                if ((sender === "bot") && (message.includes('<a') || message.includes('</a>') || message.includes('href='))) {
+                if ((sender === "bot") && (message.includes('<a') && message.includes('</a>') && message.includes('href='))) {
                     messageTextDiv.innerHTML = message; 
                 } else {
                     messageTextDiv.textContent = message;
