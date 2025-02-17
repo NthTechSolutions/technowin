@@ -6,7 +6,6 @@ class chatbot(models.Model):
     id = models.AutoField(primary_key=True)
     question = models.TextField(null=True, blank=True)
     answer = models.TextField(null=True, blank=True)
-    link = models.TextField(null=True, blank=True)
     class Meta:
         db_table = 'chatbot'
     def __str__(self):
