@@ -3437,6 +3437,13 @@ footer {
     align-items: center;
 }
 
+/* Mobile view (for screens up to 768px wide) */
+@media screen and (max-width: 768px) {
+    .slider-video-section {
+        height: 300px; /* Adjusted height for mobile */
+    }
+}
+
 .auto-video {
     width: 150%;
     height: 100%;
@@ -3451,7 +3458,8 @@ footer {
 
     .auto-video {
        
-        width: 350px;
+        /* width: 350px; */
+        width: 400px;
     }
 }
 
