@@ -48,6 +48,93 @@
           border: 1px solid #ccc;
           border-radius: 4px;
         }
+
+        /* Search bar styling */
+        .search-bar {
+            width: 200px;
+            margin-top: 20px;
+            margin-left: 30px;
+            padding: 10px 10px 10px 30px; /* Space for the icon on the left */
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease-in-out; /* Smooth transition */
+          }
+          
+          li {
+            position: relative;
+            display: inline-block; /* Make sure the icon is in the same line */
+          }
+          
+          .fa-search {
+            position: absolute;
+            left: 10px; /* Adjust the icon position */
+            top: 60%;
+            left:80%;
+            transform: translateY(-50%); /* Center the icon vertically */
+            pointer-events: none; /* So it doesn't interfere with input focus */
+          }
+          
+          /* Focus animation for search bar */
+          .search-bar:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green glow */
+            transform: scale(1.05); /* Slightly enlarge */
+          }
+          
+          /* Hover effect for search bar */
+          .search-bar:hover {
+            border-color: #2196F3;
+            box-shadow: 0 0 5px rgba(33, 150, 243, 0.5); /* Blue glow */
+          }
+          
+          /* Optional: Adding a placeholder animation */
+          .search-bar::placeholder {
+            color: #999;
+            animation: fadeInOut 4s infinite; /* Fade-in/fade-out animation */
+          }
+          
+          /* Keyframes for placeholder animation */
+          @keyframes fadeInOut {
+            0% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          /* Responsive adjustments for smaller screens */
+          @media (max-width: 768px) {
+            .search-bar {
+              width: 150px; /* Make search bar a bit smaller on tablets */
+              margin-left: 20px; /* Reduce margin */
+              font-size: 14px; /* Smaller font size */
+            }
+            
+            .fa-search {
+              left: 55%; /* Adjust icon position for smaller screens */
+              top: 60%; /* Adjust vertical centering */
+            }
+          }
+          
+          @media (max-width: 480px) {
+            .search-bar {
+              width: 120px; /* Make search bar smaller on mobile devices */
+              margin-top: 10px; /* Further reduce margin */
+              margin-left: 10px; /* Further reduce margin */
+              font-size: 12px; /* Smaller font size */
+              padding: 8px 8px 8px 25px; /* Adjust padding */
+            }
+            
+            .fa-search {
+                left: 80%; /* Adjust icon position for smaller screens */
+                top: 63%; /* Adjust vertical centering */
+            }
+          } 
       </style>
 
   
@@ -131,6 +218,13 @@
                     Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                 </a>
             </li>
+            
+            <li>
+                <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
+               
+              </li>
+              
+              
         </ul>
 
     </nav>
@@ -363,11 +457,7 @@
                 
                 const messageTextDiv = document.createElement('div');
                 messageTextDiv.classList.add('message-text');
-                if ((sender === "bot") && (message.includes('<a') && message.includes('</a>') && message.includes('href='))) {
-                    messageTextDiv.innerHTML = message; 
-                } else {
-                    messageTextDiv.textContent = message;
-                }
+                messageTextDiv.textContent = message;
                 
                 // Append icon first, then message text to the message div
                 messageDiv.appendChild(iconDiv);
@@ -495,5 +585,7 @@
         </script>
         
     </script>
+
+    
 
 </html>

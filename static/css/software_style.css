@@ -658,6 +658,14 @@ html {
   padding: 20px;
 }
 
+/* Individual Project Styling */
+.project-1, .project-2, .project-3, .project-4 {
+  display: grid;
+  gap: 40px;
+  justify-content: center;
+  padding: 20px;
+}
+
 /* Video Card */
 .video-card {
   background: white;
@@ -884,6 +892,18 @@ html {
   padding: 20px;
 }
 
+/* Individual Project Styling */
+.web-project-1, .web-project-2, .web-project-3, .web-project-4,
+.web-project-5, .web-project-6, .web-project-7, .web-project-8,
+.web-project-9, .web-project-10, .web-project-11, .web-project-12,
+.web-project-13, .web-project-14, .web-project-15, .web-project-16,
+.web-project-17, .web-project-18, .web-project-19 {
+  display: grid;
+  gap: 40px;
+  justify-content: center;
+  padding: 20px;
+}
+
 /* Video Card */
 .web-video-card {
   width: 100%;
@@ -895,8 +915,38 @@ html {
 
 .web-video-card video {
   width: 100%;
-  display: block;
   border-radius: 12px;
+}
+
+/* Title */
+.web-video-card h2 {
+  font-size: 20px;
+  color: rgb(8, 55, 116);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.web-video-card:hover h2 {
+  transform: scale(1.05);
+  text-shadow: 0 10px 10px rgba(248, 214, 21, 0.6);
+}
+
+.web-video-card h4 {
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Title and Description */
+.web-video-card:hover h4 {
+  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
 }
 
 /* Text Card */
@@ -915,38 +965,6 @@ html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Title */
-.web-text-card h2 {
-  font-size: 20px;
-  color: rgb(8, 55, 116);
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-/* Hover Effects */
-.web-text-card:hover h2 {
-  transform: scale(1.05);
-  text-shadow: 0 10px 10px rgba(248, 214, 21, 0.6);
-}
-
-.web-text-card h4 {
-  font-size: 16px;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  margin-bottom: 10px;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-}
-
-/* Hover Effect for Title and Description */
-.web-text-card:hover h4 {
-  transform: scale(1.1);
-  text-shadow: 0 0 10px rgba(247, 2, 2, 0.6);
-}
 .web-text-card:hover p {
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -993,6 +1011,66 @@ html {
     transform: translateX(0);
   }
 }
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  /* Adjust the grid layout for mobile */
+  .web-dev-container {
+    grid-template-columns: 1fr; /* 1 column layout */
+    gap: 20px;
+  }
+
+  /* Make the heading font smaller and adjust margins for mobile */
+  .web-project h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Make video cards more compact */
+  .web-video-card {
+    box-shadow: none;
+    margin-bottom: 20px;
+  }
+
+  /* Reduce title font size for video cards */
+  .web-video-card h2 {
+    font-size: 18px;
+  }
+
+  /* Reduce paragraph size in text cards */
+  .web-text-card p {
+    font-size: 14px;
+  }
+
+  /* Adjust text card padding and margins */
+  .web-text-card {
+    padding: 10px;
+  }
+
+  /* Disable hover effects on mobile */
+  .web-project h3:hover, .web-video-card:hover h2, .web-video-card:hover h4 {
+    transform: none;
+    text-shadow: none;
+  }
+}
+
+/* Extra small screen adjustments (Mobile Portrait) */
+@media (max-width: 480px) {
+  /* Further adjust text sizes and padding for very small screens */
+  .web-project h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .web-video-card h2 {
+    font-size: 16px;
+  }
+
+  .web-text-card p {
+    font-size: 12px;
+  }
+}
+
 
 /* Pin the section to the right side */
 #pinned-section {

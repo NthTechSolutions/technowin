@@ -1327,6 +1327,22 @@ html {
   }
 }
 
+/* Media Queries for responsiveness */
+
+@media (max-width: 768px) {
+  .video-title {
+    font-size: 2rem; /* Smaller font size for tablets */
+    margin-top: 400px; /* Adjust margin-top for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .video-title {
+    font-size: 1.8rem; /* Smaller font size for mobile screens */
+    margin-top: 400px; /* Adjust margin-top for mobile */
+  }
+}
+
 /* Pin the section to the right side */
 #pinned-section {
   position: fixed; /* Keeps the section fixed while scrolling */
