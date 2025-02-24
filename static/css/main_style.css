@@ -993,7 +993,7 @@ font-weight: bold;
         flex: 1 1 100%; /* One column on very small screens */
     }
     .service-box img {
-        width: 90%; /* Further adjust image size for small screens */
+        width: 60%; /* Further adjust image size for small screens */
     }
     .read-more {
         font-size: 13px; /* Even smaller font for very small screens */
@@ -3436,6 +3436,13 @@ footer {
     justify-content: center;
     align-items: center;
 }
+/* Mobile view (for screens up to 768px wide) */
+@media screen and (max-width: 768px) {
+    .slider-video-section {
+        height: 300px; /* Adjusted height for mobile */
+    }
+}
+
 
 .auto-video {
     width: 150%;
@@ -3451,7 +3458,8 @@ footer {
 
     .auto-video {
        
-        width: 350px;
+         /* width: 350px; */
+        width: 400px;
     }
 }
 
