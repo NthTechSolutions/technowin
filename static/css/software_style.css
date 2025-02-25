@@ -519,6 +519,8 @@ html {
   box-sizing: border-box; /* Ensure padding is inside the element */
   animation: fadeIn 2s ease-out; /* Adding fade-in animation */
   text-align: center; /* Center-align text inside the card */
+  margin-top:140px;
+  margin-bottom:20px;
 }
 
 /* Card title styling */
@@ -615,7 +617,7 @@ html {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 .app-project h3 {
@@ -892,18 +894,6 @@ html {
   padding: 20px;
 }
 
-/* Individual Project Styling */
-.web-project-1, .web-project-2, .web-project-3, .web-project-4,
-.web-project-5, .web-project-6, .web-project-7, .web-project-8,
-.web-project-9, .web-project-10, .web-project-11, .web-project-12,
-.web-project-13, .web-project-14, .web-project-15, .web-project-16,
-.web-project-17, .web-project-18, .web-project-19 {
-  display: grid;
-  gap: 40px;
-  justify-content: center;
-  padding: 20px;
-}
-
 /* Video Card */
 .web-video-card {
   width: 100%;
@@ -965,6 +955,16 @@ html {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+.web-project-image {
+  width: 100%; /* Ensures responsiveness */
+  max-width: 600px; /* Limits size to prevent oversizing */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Centers the image */
+  margin: 20px auto; /* Adds space around and centers horizontally */
+  border-radius: 10px; /* Smooth edges */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Adds a soft shadow */
+}
+
 .web-text-card:hover p {
   color: rgb(0, 0, 0);
   font-weight: bold;
@@ -1012,62 +1012,112 @@ html {
   }
 }
 
-/* Media Queries for Mobile */
+/* Responsive for Mobile */
 @media (max-width: 768px) {
-  /* Adjust the grid layout for mobile */
   .web-dev-container {
-    grid-template-columns: 1fr; /* 1 column layout */
+    grid-template-columns: 1fr; /* Stacks items vertically */
     gap: 20px;
   }
+}
 
-  /* Make the heading font smaller and adjust margins for mobile */
+/* Video Card */
+.web-video-card {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: slideInLeft 1s ease-in-out;
+}
+
+/* Video Element */
+.web-video-card video {
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Text Card */
+.web-text-card {
+  background: white;
+  padding: 15px;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Responsive Text Sizing */
+.web-text-card p {
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.6;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Project Image */
+.web-project-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Image */
+@media (max-width: 768px) {
+  .web-project-image {
+    max-width: 350px; /* Reduce size slightly for mobile */
+  }
+}
+
+/* Responsive Heading */
+.web-project h3 {
+  font-size: 28px; /* Adjusted for mobile readability */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 480px) {
   .web-project h3 {
     font-size: 24px;
-    margin-bottom: 20px;
   }
 
-  /* Make video cards more compact */
-  .web-video-card {
-    box-shadow: none;
-    margin-bottom: 20px;
-  }
-
-  /* Reduce title font size for video cards */
-  .web-video-card h2 {
-    font-size: 18px;
-  }
-
-  /* Reduce paragraph size in text cards */
-  .web-text-card p {
-    font-size: 14px;
-  }
-
-  /* Adjust text card padding and margins */
   .web-text-card {
     padding: 10px;
   }
 
-  /* Disable hover effects on mobile */
-  .web-project h3:hover, .web-video-card:hover h2, .web-video-card:hover h4 {
-    transform: none;
-    text-shadow: none;
+  .web-video-card h2 {
+    font-size: 18px;
+  }
+
+  .web-video-card h4 {
+    font-size: 14px;
   }
 }
 
-/* Extra small screen adjustments (Mobile Portrait) */
-@media (max-width: 480px) {
-  /* Further adjust text sizes and padding for very small screens */
-  .web-project h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+/* Fade-In Bounce Animation */
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-
-  .web-video-card h2 {
-    font-size: 16px;
+  50% {
+    opacity: 1;
+    transform: translateY(5px);
   }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-  .web-text-card p {
-    font-size: 12px;
+/* Responsive Grid Fix */
+@media (max-width: 600px) {
+  .web-dev-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 

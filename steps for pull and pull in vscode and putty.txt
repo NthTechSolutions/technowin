@@ -1,0 +1,11 @@
+steps for pull in putty :-
+1) ubuntu
+2) cd technowin
+3) git pull origin master
+4) sudo service gunicorn restart
+
+steps for push in vscode:-
+1) discard settings file
+2) discard/delete (.pyc) files 
+3) add the files which are changed 
+4) commit and sync
