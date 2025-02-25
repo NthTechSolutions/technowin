@@ -519,6 +519,8 @@ html {
   box-sizing: border-box; /* Ensure padding is inside the element */
   animation: fadeIn 2s ease-out; /* Adding fade-in animation */
   text-align: center; /* Center-align text inside the card */
+  margin-top:140px;
+  margin-bottom:20px;
 }
 
 /* Card title styling */
@@ -615,7 +617,7 @@ html {
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 
 .app-project h3 {

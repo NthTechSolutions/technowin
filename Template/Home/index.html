@@ -99,7 +99,7 @@
                     <h5><u>File comparison using AI / ML</u></h5>
                     <h5><u>Audit Utility </u>…</h5>
                         </p>
-                        <a href="#" class="read-more">
+                        <a href="{% url 'Software' %}" class="read-more">
                             <span>Read More</span>
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -128,10 +128,10 @@
                     <h5><u>Audit Utility</u>–</h5>
                     <p>Customized for CGST Commissionerate,Labour Law Consultant</p>
                     <h5><u>Payroll System</u>–</h5> 
-                    <p>For Municipal Corporation, Daily Salary payment for Supply Chain Company
-                        <h5><u>Customized Software for Labour Law Consultants</u>…</h5>
+                    <p>For Municipal Corporation, Daily Salary payment for Supply Chain Company</p>
+                       <p> <h5><u>Customized Software for Labour Law Consultants</u>…</h5>
                         </p>
-                    <a href="#" class="read-more">
+                    <a href="{% url 'ContactUs' %}#feedback-section" class="read-more">
                         <span>Read More</span>
                         <i class="fas fa-arrow-right"></i>
                     </a></div>
@@ -189,7 +189,7 @@
     </section>
         
         <!-- Services Section -->
-    <section class="serviceview">
+    <section class="serviceview" id="serviceview">
         <h2><u>Services We Provide</u></h2>
     
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
@@ -198,7 +198,7 @@
             <img src="{% static 'images/service1.png' %}" alt="Service 1">
             <h3>Web Development with AI enabled Features</h3>
             <p>Technowin develops websites, web applications, E-Commerce Sites, Content Management Systems, Databases, Server and Network Security Systems etc. as per Customer Requirement.</p>
-            <a href="{% url 'Software' %}#web-development" class="read-more">
+            <a href="{% url 'Software' %}#web-project" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -208,7 +208,7 @@
             <h3>App Development</h3>
             <p>Apps for Mobile Devices like Cell Phones, Tablets etc. for both Android and IOS devices are developed by Technowin.  </p><br><br>
             <br><br>
-            <a href="{% url 'Software' %}#app-development" class="read-more">
+            <a href="{% url 'Software' %}#app-project" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -217,7 +217,7 @@
             <img src="{% static 'images/service3.png' %}" alt="Service 3">
             <h3>Program Management</h3>
             <p>Technowin provides Umbrella services for many of the Customers; Providing Hardware, Networking Services, Manpower, Cloud Services, Software and Maintenance, Project Management and Implementation.</p><br><br>
-            <a href="Services" class="read-more">
+            <a href="{% url 'Services' %}#hardware-amc-service" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -226,7 +226,7 @@
             <img src="{% static 'images/service5.png' %}" alt="Service 4">
             <h3>Hardware Networking</h3>
             <p>Technowin Supplies Hardware and Networking Equipment and also providing Annual Maintenance Services to their Customers.</p>
-            <a href="Services" class="read-more">
+            <a href="{% url 'Services' %}#hardware-service" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -235,7 +235,7 @@
             <img src="{% static 'images/service6.png' %}" alt="Service 5">
             <h3>Cloud Hosting</h3>
             <p>Technowin provides hosting services to its customer for hosting both self-developed software as well as Third Party ones.</p><br><br>
-            <a href="Services" class="read-more">
+            <a href="{% url 'Services' %}#cloud-service" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -245,7 +245,7 @@
             <h3>Manpower</h3>
             <p>Technowin provides Manpower Services for Software Coordination and Implementation, scanning, data entry, cataloguing and other IT related Tasks.</p>
             <br>
-            <a href="Services" class="read-more">
+            <a href="{% url 'Services' %}#manpower-service" class="read-more">
             <span>Read More</span>
             <i class="fas fa-arrow-right"></i>
             </a>
@@ -298,7 +298,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <p>TechnoWin IT Infra Pvt Ltd has created a user-friendly, responsive web development project 🌐💻. Focused on innovative designs, seamless performance, and secure solutions 🔒, it caters to diverse business needs. Perfect for boosting online presence! 🚀✨</p>
-                <a href="{% url 'Software' %}#web-development" class="read-more">
+                <a href="{% url 'Software' %}#web-project" class="read-more">
                     Read More
                 </a>
             </div>
@@ -311,7 +311,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <p>TechnoWin IT Infra Pvt Ltd has developed an intuitive, high-performance app 🌟📱. With a focus on sleek design, smooth functionality, and robust security 🔐, it meets the unique needs of businesses. Ideal for enhancing mobile engagement! 🚀📲</p>
-                <a href="{% url 'Software' %}#app-development" class="read-more">
+                <a href="{% url 'Software' %}#app-project" class="read-more">
                     Read More
                 </a>
             </div>
@@ -324,7 +324,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <p>TechnoWin IT Infra Pvt Ltd offers reliable and scalable cloud services ☁️💼. With seamless integration, high security 🔐, and flexible solutions, it helps businesses optimize their operations and enhance efficiency 🌟. Perfect for driving growth and innovation! 🚀</p>
-                <a href="{% url 'Services' %}" class="read-more">
+                <a href="{% url 'Services' %}#cloud-service" class="read-more">
                     Read More
                 </a>
             </div>
@@ -394,7 +394,7 @@
             <!-- Card 2: Title, Description, Read More -->
             <div class="tech-card tech-content-card">
             
-                <h3 class="tech-card-title">Explore Our Technology Stack</h3><br>
+                {% comment %} <h3 class="tech-card-title">Explore Our Technology Stack</h3><br> {% endcomment %}
                 <img src="{% static 'images/technologies.png' %}" alt="Tech Image" class="tech-card-img">
                 {% comment %} <p class="tech-card-description">
                     <u>Frameworks</u> 🖥️: Frameworks like Django, Laravel, and CodeIgniter provide pre-built structures for building web applications, helping developers streamline the development process. 🚀
@@ -405,14 +405,14 @@
                     <br><br>
                     <u>Web Servers</u> 🌐: Web servers like IIS, Nginx, and Apache are responsible for delivering website content to users by handling HTTP requests, ensuring fast and reliable website performance. ⚡
                 </p> {% endcomment %}
-                <a href="project.html" class="read-more">
+                <a href="{% url 'Software' %}" class="read-more">
                     Read More
                 </a>
             </div>
             
     </section>
 
-    <section class="achievements-section">
+    <section class="achievements-section" id="achievements-section">
         <div class="achievements-text">
             <h2 class="achievements-title"><u>Achievements</u></h2>
             <p class="achievements-description">
@@ -450,7 +450,7 @@
     </section>
         
 
-    <section class="client-carousel-section">
+    <section class="client-carousel-section" id="client-carousel-section">
         <h2>
             <u> Our Clients</u>
         </h2>
