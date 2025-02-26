@@ -93,6 +93,30 @@
         margin-left: 150px;
     }
    
+    .contact-btn {
+        display: inline-flex;  /* Allows the image to be the only visible item */
+        justify-content: center; /* Center the image */
+        align-items: center;  /* Center vertically */
+        padding: 2px;  /* Optional padding to make the button larger */
+        background-color: transparent; /* Transparent background */
+        border: none;  /* No border */
+        cursor: pointer;  /* Make the button clickable */
+        transition: all 0.3s ease;  /* Smooth transition for hover effect */
+        margin-top:15px;
+    }
+        
+    /* Styling for the GIF image */
+    .contact-btn img {
+        width: 50px;  /* Adjust size of the image */
+        height: 50px;  /* Adjust size of the image */
+        transition: transform 0.3s ease;  /* Smooth transition for image animation */
+    }
+
+    /* Adding a small rotation effect on hover */
+    .contact-btn:hover img {
+        transform: rotate(360deg); /* Rotate the image when the button is hovered */
+    }
+
 }
 
 /* Mobile view */
@@ -140,6 +164,46 @@
         width:200px ;
         margin-left: 150px;
     }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+      width: 320px; /* Make search bar smaller on mobile devices */
+      margin-top: 10px; /* Further reduce margin */
+      margin-left: 10px; /* Further reduce margin */
+      font-size: 12px; /* Smaller font size */
+      padding: 8px 8px 8px 25px; /* Adjust padding */
+    }
+    
+    .fa-search {
+        left: 80%; /* Adjust icon position for smaller screens */
+        top: 63%; /* Adjust vertical centering */
+    }
+
+    .contact-btn {
+        display: inline-flex;  /* Allows the image to be the only visible item */
+        justify-content: center; /* Center the image */
+        align-items: center;  /* Center vertically */
+        padding: 2px;  /* Optional padding to make the button larger */
+        background-color: transparent; /* Transparent background */
+        border: none;  /* No border */
+        cursor: pointer;  /* Make the button clickable */
+        transition: all 0.3s ease;  /* Smooth transition for hover effect */
+    }
+        
+    /* Styling for the GIF image */
+    .contact-btn img {
+        width: 75px;  /* Adjust size of the image */
+        height: 70px;  /* Adjust size of the image */
+        transition: transform 0.3s ease;  /* Smooth transition for image animation */
+    }
+
+    /* Adding a small rotation effect on hover */
+    .contact-btn:hover img {
+        transform: rotate(360deg); /* Rotate the image when the button is hovered */
+    }
+
+
 }
     
 
@@ -251,18 +315,7 @@ nav ul img:hover {
     border: 3px solid rgb(20, 76, 150);
     border-radius: 5px;
 }
-/* Styling for the contact button */
-.contact-btn {
-    display: inline-flex;  /* Allows the image to be the only visible item */
-    justify-content: center; /* Center the image */
-    align-items: center;  /* Center vertically */
-    padding: 2px;  /* Optional padding to make the button larger */
-    background-color: transparent; /* Transparent background */
-    border: none;  /* No border */
-    cursor: pointer;  /* Make the button clickable */
-    transition: all 0.3s ease;  /* Smooth transition for hover effect */
-    margin-top:15px;
-}
+
 
 /* Animation for the contact button when hovered */
 .contact-btn:hover {
@@ -273,16 +326,15 @@ nav ul img:hover {
 
 
 /* Styling for the GIF image */
-.contact-btn img {
-    width: 50px;  /* Adjust size of the image */
-    height: 50px;  /* Adjust size of the image */
-    transition: transform 0.3s ease;  /* Smooth transition for image animation */
+/* .contact-btn img {
+    width: 50px;  
+    height: 50px; 
+    transition: transform 0.3s ease; 
 }
 
-/* Adding a small rotation effect on hover */
 .contact-btn:hover img {
-    transform: rotate(360deg); /* Rotate the image when the button is hovered */
-}
+    transform: rotate(360deg);
+} */
 
 
 
