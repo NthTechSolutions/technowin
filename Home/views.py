@@ -28,19 +28,30 @@ def get_botans(request):
     try:
         if request.method == "GET":
             q = str(request.GET.get('q', '')).strip()
-
-            # Check if the question exists in the database (fuzzy search)
-            chatbot_entry = chatbot.objects.filter(Q(question__icontains=q)).first()
-            if chatbot_entry:
-                response_data = {'result': 'success', 'data': chatbot_entry.answer}
-            else:
-                # Configure Gemini API
-                genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')
-                model = genai.GenerativeModel('gemini-pro')
-
-                # Refined prompt for company-specific responses
+            all_questions = list(chatbot.objects.values_list("question", flat=True))
+            if all_questions:
+                # Construct a prompt for Gemini to match the most relevant question
                 prompt = (
-                    f"\r\n\r\n\r\nThis is a customer question: '{q}'\r\n\r\n\r\n"
+                    "Given the following list of company questions:\n\n"
+                    f"{all_questions}\n\n"
+                    f"Which question from the list is the closest match to this user query: '{q}'?\n"
+                    "give only the question from the list which is match."
+                    "If none match closely, respond with 'No match'."
+                )
+                genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
+                model = genai.GenerativeModel("gemini-1.5-pro-latest")
+                response = model.generate_content(prompt)
+                matched_question = response.text.strip()
+
+                # If Gemini found a close match, retrieve the answer from the database
+                if matched_question and matched_question != "No match":
+                    chatbot_entry = chatbot.objects.filter(question=matched_question).first()
+                    if chatbot_entry:
+                        return JsonResponse({"result": "success", "data": chatbot_entry.answer}, safe=False)
+
+            # If no match, generate a response using Gemini AI
+            ai_prompt = (
+                f"\r\n\r\n\r\nThis is a customer question: '{q}'\r\n\r\n\r\n"
                     "You are an AI chatbot for Technowin IT Infra Pvt Ltd, a leading software development company. "
                     "Answer only based on the company's services, expertise, and work domain. "
                     "Do not provide general AI responses, additional explanations, or unrelated details. "
@@ -48,11 +59,12 @@ def get_botans(request):
                     "Focus only on software development, IT solutions, and technologies that we specialize in.\n\n"
                     "Limit your response to one or two sentences only. Avoid adding unnecessary information or assumptions.\n\n"
                 )
-
-
-                # Get response from Gemini
-                data = model.generate_content(prompt)
-                response_data = {'result': 'success', 'data': data.text}
+            genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
+            model = genai.GenerativeModel("gemini-1.5-pro-latest")
+            ai_response = model.generate_content(ai_prompt)
+            bot_reply = ai_response.text.strip().split("\n")[0]
+           
+            response_data = {'result': 'success', 'data':bot_reply}
 
     except Exception as e:
         print("Error:", e)
