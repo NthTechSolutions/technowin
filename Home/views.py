@@ -59,3 +59,5 @@ def get_botans(request):
         response_data = {'result': 'fail', 'error': str(e)}
 
     return JsonResponse(response_data, safe=False)
+
+

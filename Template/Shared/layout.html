@@ -3,7 +3,7 @@
 {% csrf_token %}
 <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/contact_us_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <link
@@ -212,18 +212,33 @@
                     </select>
                 </div>
             </li> {% endcomment %}
+
             <!-- Contact Us Button -->
-            <li style="">
+            {% comment %} <li >
                 <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
                     Contact Us <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
                 </a>
-            </li>
-            
+            </li> {% endcomment %}
+ 
             <li>
                 <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
                
               </li>
+            
+              <li>
+                <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
+                    <!-- Only the GIF image, no text -->
+                    <img src="{% static 'images/contact.gif' %}" class="contact-btn img" alt="Contact Us">
+                </a>
+            </li>
               
+               
+            <li>
+                <a href="{% url 'Services' %}#faq-section" id="contactButton" class="contact-btn">
+                    <!-- Only the GIF image, no text -->
+                    <img src="{% static 'images/helpcenter.gif' %}" class="contact-btn img" alt="Contact Us">
+                </a>
+            </li>
               
         </ul>
 
@@ -235,11 +250,11 @@
 
     {% comment %} Back to top And Chatbot Button  {% endcomment %}
 
-    <section>
+    {% comment %} <section>
         <button id="back-to-top">
         <img src="{% static 'images/up_arrow.gif' %}" alt="Back to Top">
         </button>
-    </section>
+    </section> {% endcomment %}
 
     <section>
         
@@ -325,11 +340,11 @@
                 </div>
             </div>
         </div>
-    
-        <button class="back-to-top" title="Go to top">
-            <i class="fa fa-arrow-up"></i> 
-        </button>
-    
+   
+            <button id="back-to-top" class="back-to-top">
+            <img src="{% static 'images/up_arrow.gif' %}" alt="Back to Top">
+            </button>
+            
         <div class="footer-bottom">
             <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
         </div>
