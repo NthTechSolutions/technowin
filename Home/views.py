@@ -38,7 +38,7 @@ def get_botans(request):
                     "give only the question from the list which is match."
                     "If none match closely, respond with 'No match'."
                 )
-                genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')
+                genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
                 model = genai.GenerativeModel("gemini-1.5-pro-latest")
                 response = model.generate_content(prompt)
                 matched_question = response.text.strip()
@@ -59,7 +59,7 @@ def get_botans(request):
                     "Focus only on software development, IT solutions, and technologies that we specialize in.\n\n"
                     "Limit your response to one or two sentences only. Avoid adding unnecessary information or assumptions.\n\n"
                 )
-            genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')
+            genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
             model = genai.GenerativeModel("gemini-1.5-pro-latest")
             ai_response = model.generate_content(ai_prompt)
             bot_reply = ai_response.text.strip().split("\n")[0]
