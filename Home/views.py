@@ -35,10 +35,11 @@ def get_botans(request):
                     "Given the following list of company questions:\n\n"
                     f"{all_questions}\n\n"
                     f"Which question from the list is the closest match to this user query: '{q}'?\n"
+                    "give only the question from the list which is match."
                     "If none match closely, respond with 'No match'."
                 )
                 genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')
-                model = genai.GenerativeModel("gemini-pro")
+                model = genai.GenerativeModel("gemini-1.5-pro-latest")
                 response = model.generate_content(prompt)
                 matched_question = response.text.strip()
 
@@ -59,7 +60,7 @@ def get_botans(request):
                     "Limit your response to one or two sentences only. Avoid adding unnecessary information or assumptions.\n\n"
                 )
             genai.configure(api_key='AIzaSyDY58C2WPnq6qRLMauptJJ6urnzHRtNg6Q')
-            model = genai.GenerativeModel("gemini-pro")
+            model = genai.GenerativeModel("gemini-1.5-pro-latest")
             ai_response = model.generate_content(ai_prompt)
             bot_reply = ai_response.text.strip().split("\n")[0]
            
