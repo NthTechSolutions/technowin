@@ -64,7 +64,7 @@
           
           li {
             position: relative;
-            display: inline-block; /* Make sure the icon is in the same line */
+            {% comment %} display: inline-block; /* Make sure the icon is in the same line */ {% endcomment %}
           }
           
           .fa-search {
@@ -294,6 +294,7 @@
                     <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
                     <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
                     <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'siteMap' %}">Site Map</a></li>
                 </ul>
             </div>
             <div class="footer-cer">

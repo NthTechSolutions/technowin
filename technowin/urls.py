@@ -24,6 +24,7 @@ urlpatterns = [
     path('Services', Services, name='Services'),
     path('ContactUs', ContactUs, name='ContactUs'),
     path('Software', Software, name='Software'),
+    path('siteMap', siteMap, name='siteMap'),
     path('get_botans', get_botans, name='get_botans'),
 
 ]

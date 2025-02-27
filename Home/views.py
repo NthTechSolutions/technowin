@@ -23,6 +23,8 @@ def ContactUs(request):
 def Software(request):
     return render(request,'Home/software.html') 
 
+def siteMap(request):
+    return render(request,'Home/siteMap.html') 
 
 def get_botans(request):
     try:

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %} 
+<html lang="en">
+    <head>
+        
+        {% load static %}
+        {% comment %} <link rel="stylesheet" href="{% static 'css/main_style.css' %}"> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/siteMap.css' %}">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/share_layout.css' %}"> {% endcomment %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technowin Website</title>
+        {% comment %} <link rel="stylesheet" href="{% static 'css/slider.css' %}"> {% endcomment %}
+    </head>
+    
+<body>
+
+    <section>
+   
+        <div class="content">
+            <h2>Site Map</h2>
+            {% comment %} <ul class="sitemap">
+                <li>Home
+                    <ul>
+                        <li>Skills</li>
+                        <li>Service We Provide</li>
+                        <li>Innovation by Us</li>
+                        <li>Technology Stack</li>
+                        <li>Achievements</li>
+                        <li>Our Clients</li>
+                        <li>Testimonial</li>
+                        <li>Contact Form</li>
+                        <li>Footer</li>
+                    </ul>
+                </li>
+                <li>About Us
+                    <ul>
+                        <li>History Of Technowin</li>
+                        <li>Meet The Team Section</li>
+                        <li>Vision, Mission Section</li>
+                        <li>Footer</li>
+                    </ul>
+                </li>
+                <li>Software
+                    <ul>
+                        <li>APP Developed Project Information</li>
+                        <li>Web Developed Project Information</li>
+                        <li>Footer</li>
+                    </ul>
+                </li>
+                <li>Services
+                    <ul>
+                        <li>Service Information</li>
+                        <li>FAQ</li>
+                        <li>Footer</li>
+                    </ul>
+                </li>
+                <li>Contact Us
+                    <ul>
+                        <li>Customer Feedback</li>
+                        <li>Get In Touch Form</li>
+                        <li>Our Gallery</li>
+                        <li>Footer</li>
+                    </ul>
+                </li>
+            </ul> {% endcomment %}
+            <ul class="sitemap">
+                <li><a href="#">Home</a>
+                    <ul>achievements-section
+                        <li><a href="#">Skills</a></li>
+                        <li><a href="#">Service We Provide</a></li>
+                        <li><a href="#">Innovation by Us</a></li>
+                        <li><a href="#">Technology Stack</a></li>
+                        <li><a href="{% url 'Home' %}#achievements-section">Achievements</a></li>
+                        <li><a href="#">Our Clients</a></li>
+                        <li><a href="#">Testimonial</a></li>
+                        <li><a href="#">Contact Form</a></li>
+                        <li><a href="#">Footer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">History Of Technowin</a></li>
+                        <li><a href="#">Meet The Team Section</a></li>
+                        <li><a href="#">Vision, Mission Section</a></li>
+                        <li><a href="#">Footer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Software</a>
+                    <ul>
+                        <li><a href="#">APP Developed Project Information</a></li>
+                        <li><a href="#">Web Developed Project Information</a></li>
+                        <li><a href="#">Footer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Services</a>
+                    <ul>
+                        <li><a href="#">Service Information</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Footer</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact Us</a>
+                    <ul>
+                        <li><a href="#">Customer Feedback</a></li>
+                        <li><a href="#">Get In Touch Form</a></li>
+                        <li><a href="#">Our Gallery</a></li>
+                        <li><a href="#">Footer</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+
+    </section>
+
+</body>
+
+</html>
+
+{% endblock %}
