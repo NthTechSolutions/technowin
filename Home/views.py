@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import google.generativeai as genai
 from django.db.models import Q
-from .models import chatbot
+from Home.models import chatbot, webiste_counter
 
 # Create your views here.
 def Home(request):
@@ -75,5 +75,21 @@ def get_botans(request):
         response_data = {'result': 'fail', 'error': str(e)}
 
     return JsonResponse(response_data, safe=False)
+
+def website_counter(request):
+    try:
+        if not request.COOKIES.get('visitor_counted'):
+            counter_obj, created = webiste_counter.objects.get_or_create(id=1)
+            counter_obj.counter += 1
+            counter_obj.save()
+
+            response = JsonResponse({"total_visits": counter_obj.counter})
+            response.set_cookie('visitor_counted', 'true', max_age=86400)  # Cookie expires in 1 day
+            return response
+        else:
+            return JsonResponse({"total_visits": webiste_counter.objects.get(id=1).counter})
+
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
 
 

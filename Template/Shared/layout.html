@@ -331,9 +331,8 @@
                         </a>
                     </div>
                     <div class="contact-item">
-                        <p>You Are Visitor No.</p>
+                        <p>You Are Visitor No. &nbsp&nbsp&nbsp<span id="visitor-count"></span></p>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -601,6 +600,22 @@
         
     </script>
 
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            debugger;
+            $.ajax({
+                url: "website_counter",  // Fix: Use proper URL
+                type: "GET",
+                success: function(response) {
+                    $("#visitor-count").text(response.total_visits);
+                },
+                error: function() {
+                    $("#visitor-count").text("Error fetching count");
+                }
+            });
+        });
+    </script>
 
 </html>
