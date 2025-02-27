@@ -39,13 +39,13 @@ def get_botans(request):
                     "If none match closely, respond with 'No match'."
                 )
                 genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
-                model = genai.GenerativeModel('models/gemini-2.0-flash')
+                model = genai.GenerativeModel('gemini-2.0-flash')
                 response = model.generate_content(prompt)
                 matched_question = response.text.strip()
 
                 # If Gemini found a close match, retrieve the answer from the database
                 if matched_question and matched_question != "No match":
-                    chatbot_entry = chatbot.objects.filter(Q(question__icontains=q)).first()
+                    chatbot_entry = chatbot.objects.filter(question=matched_question).first()
                     if chatbot_entry:
                         return JsonResponse({"result": "success", "data": chatbot_entry.answer}, safe=False)
 
@@ -60,7 +60,7 @@ def get_botans(request):
                     "Limit your response to one or two sentences only. Avoid adding unnecessary information or assumptions.\n\n"
                 )
             genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
-            model = genai.GenerativeModel('models/gemini-2.0-flash')
+            model = genai.GenerativeModel('gemini-2.0-flash')
             ai_response = model.generate_content(ai_prompt)
             bot_reply = ai_response.text.strip().split("\n")[0]
            
