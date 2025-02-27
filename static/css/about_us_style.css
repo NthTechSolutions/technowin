@@ -1122,76 +1122,7 @@ body {
   }
 }
 
-/* Back to Top Button */
-#back-to-top {
-  position: fixed; /* Keeps it at the bottom-right corner */
-  bottom: 20px; /* Distance from the bottom */
-  right: 20px; /* Distance from the right */
-  width: 60px; /* Button size */
-  height: 60px;
-  background-color: rgb(50, 100, 167); /* Button background color (blue) */
-  border: none; /* Remove border */
-  border-radius: 50%; /* Make it circular */
-  cursor: pointer; /* Show pointer on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Hover transition */
-  display: none; /* Initially hidden */
-  z-index: 1000; /* Ensures it stays above other content */
-}
 
-/* Add the image inside the button */
-#back-to-top img {
-  width: 90%; /* Adjust image size */
-  height: 90%;
-  object-fit: contain; /* Make sure the image fits properly inside */
-  display: block;
-  margin: 0 auto; /* Center the image inside the button */
-}
-
-/* Hover effect */
-#back-to-top:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  background-color: #0056b3; /* Darker blue on hover */
-  box-shadow: 0 6px 12px #ff0808; /* Add shadow on hover */
-}
-
-/* Show the button when scrolled */
-#back-to-top.show {
-  display: block; /* Show button when class 'show' is added */
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  /* Reduce button size on smaller screens */
-  #back-to-top {
-    width: 50px;
-    height: 50px;
-    bottom: 15px; /* Reduce the bottom margin */
-    right: 15px; /* Reduce the right margin */
-  }
-
-  /* Adjust image inside the button for smaller screens */
-  #back-to-top img {
-    width: 80%; /* Slightly smaller image on mobile */
-    height: 80%;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Further reduce button size on very small screens */
-  #back-to-top {
-    width: 45px;
-    height: 45px;
-    bottom: 10px; /* Further reduce bottom margin */
-    right: 10px; /* Further reduce right margin */
-  }
-
-  /* Adjust image inside the button for very small screens */
-  #back-to-top img {
-    width: 90%; /* Even smaller image */
-    height: 90%;
-  }
-}
 
 /* Overall Section Styling */
 #social-media-section {
