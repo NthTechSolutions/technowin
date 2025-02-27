@@ -74,47 +74,56 @@
                 </li>
             </ul> {% endcomment %}
             <ul class="sitemap">
-                <li><a href="#">Home</a>
+                <li><a href="{% url 'Home' %}">Home</a>
                     <ul>achievements-section
-                        <li><a href="#">Skills</a></li>
-                        <li><a href="#">Service We Provide</a></li>
-                        <li><a href="#">Innovation by Us</a></li>
-                        <li><a href="#">Technology Stack</a></li>
+                        <li><a href="{% url 'Home' %}#slider-video-section">Slider</a></li>
+                        <li><a href="{% url 'Home' %}#why-techno_stand">Service We Provide</a></li>
+                        <li><a href="{% url 'Home' %}#project-videos">Innovation by Us</a></li>
+                        <li><a href="{% url 'Home' %}#tech-section">Technology Stack</a></li>
                         <li><a href="{% url 'Home' %}#achievements-section">Achievements</a></li>
-                        <li><a href="#">Our Clients</a></li>
-                        <li><a href="#">Testimonial</a></li>
-                        <li><a href="#">Contact Form</a></li>
-                        <li><a href="#">Footer</a></li>
+                        <li><a href="{% url 'Home' %}#socialIcons">Socail Media</a></li>
+                        <li><a href="{% url 'Home' %}#client-carousel-section">Our Clients</a></li>
+                        <li><a href="{% url 'Home' %}#short_feedback">Testimonial</a></li>
+                        <li><a href="{% url 'Home' %}#short_feedback">Enquiry Form</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Us</a>
+                <li><a href="{% url 'AboutUs' %}">About Us</a>
                     <ul>
-                        <li><a href="#">History Of Technowin</a></li>
-                        <li><a href="#">Meet The Team Section</a></li>
-                        <li><a href="#">Vision, Mission Section</a></li>
-                        <li><a href="#">Footer</a></li>
+                        <li><a href="{% url 'AboutUs' %}#social-media-section">About Us Slider</a></li>
+                        <li><a href="{% url 'AboutUs' %}#history-technowin">History Of Technowin</a></li>
+                        <li><a href="{% url 'AboutUs' %}#testimonials">Meet The Team Section</a></li>
+                        <li><a href="{% url 'AboutUs' %}#mvo-video-background">Vision, Mission Section</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Software</a>
+                <li><a href="{% url 'Software' %}">Software</a>
                     <ul>
-                        <li><a href="#">APP Developed Project Information</a></li>
-                        <li><a href="#">Web Developed Project Information</a></li>
-                        <li><a href="#">Footer</a></li>
+                        <li><a href="{% url 'Software' %}#background-section">Software Slider</a></li>
+                        <li><a href="{% url 'Software' %}#app-project">APP Developed Project Information</a></li>
+                        <li><a href="{% url 'Software' %}#web-project">Web Developed Project Information</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Services</a>
+                <li><a href="{% url 'Services' %}">Services</a>
                     <ul>
-                        <li><a href="#">Service Information</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Footer</a></li>
+                        <li><a href="{% url 'Services' %}#service-background">Services Slider</a></li>
+                        <li><a href="{% url 'Services' %}#service-info">Service Information</a></li>
+                        <ul>
+                            <li><a href="{% url 'Services' %}#cloud-service">Cloud Computing</a></li>
+                            <li><a href="{% url 'Services' %}#manpower-service">Supply of Manpower</a></li>
+                            <li><a href="{% url 'Services' %}#hardware-service">Hardware Supply</a></li>
+                            <li><a href="{% url 'Services' %}#digitalization-service">Digitalization of Documents</a></li>
+                            <li><a href="{% url 'Services' %}#hardware-amc-service">Hardware AMC</a></li>
+                            <li><a href="{% url 'Services' %}#ai-service">A.I. Based Solutions & Features</a></li>
+                        </ul>
+                        <li><a href="{% url 'Services' %}#faq-section">FAQ</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Contact Us</a>
+                <li><a href="{% url 'ContactUs' %}">Contact Us</a>
                     <ul>
-                        <li><a href="#">Customer Feedback</a></li>
-                        <li><a href="#">Get In Touch Form</a></li>
-                        <li><a href="#">Our Gallery</a></li>
-                        <li><a href="#">Footer</a></li>
+                        <li><a href="{% url 'ContactUs' %}#contact-media-section">Contact Us Slider</a></li>
+                        <li><a href="{% url 'ContactUs' %}#socialIcons">Socail Media</a></li>
+                        <li><a href="{% url 'ContactUs' %}#feedback-section">Customer Feedback</a></li>
+                        <li><a href="{% url 'ContactUs' %}#technoWinContactSection">Get In Touch Form</a></li>
+                        <li><a href="{% url 'ContactUs' %}#background-video-section">Our Gallery</a></li>
                     </ul>
                 </li>
             </ul>
