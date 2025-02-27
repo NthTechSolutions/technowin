@@ -32,14 +32,16 @@ def get_botans(request):
             if all_questions:
                 # Construct a prompt for Gemini to match the most relevant question
                 prompt = (
-                    "Given the following list of company questions:\n\n"
+                    "Here is a list of company-related questions:\n\n"
                     f"{all_questions}\n\n"
-                    f"Which question from the list is the closest match to this user query: '{q}'?\n"
-                    "give only the question from the list which is match."
-                    "If none match closely, respond with 'No match'."
+                    f"Find the question from the list that best matches the user's query: '{q}'.\n"
+                    "Use semantic similarity to determine the closest match. \n"
+                    "Respond only with the exact matching question from the list, without modifications or extra spaces. \n"
+                    "If no close match is found, respond with 'No match'."
                 )
+
                 genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
-                model = genai.GenerativeModel("gemini-1.5-pro-latest")
+                model = genai.GenerativeModel('gemini-2.0-flash')
                 response = model.generate_content(prompt)
                 matched_question = response.text.strip()
 
@@ -60,7 +62,7 @@ def get_botans(request):
                     "Limit your response to one or two sentences only. Avoid adding unnecessary information or assumptions.\n\n"
                 )
             genai.configure(api_key='AIzaSyAPvmuqD0zQb5qZWL_NdUu29QMKOXoeRnY')
-            model = genai.GenerativeModel("gemini-1.5-pro-latest")
+            model = genai.GenerativeModel('gemini-2.0-flash')
             ai_response = model.generate_content(ai_prompt)
             bot_reply = ai_response.text.strip().split("\n")[0]
            
