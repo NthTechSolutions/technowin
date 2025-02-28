@@ -609,6 +609,20 @@
         
     </script>
 
-    
+    <script>
+        $(document).ready(function() {
+            debugger;
+            $.ajax({
+                url: "website_counter",  // Fix: Use proper URL
+                type: "GET",
+                success: function(response) {
+                    $("#visitor-count").text(response.total_visits);
+                },
+                error: function() {
+                    $("#visitor-count").text("Error fetching count");
+                }
+            });
+        });
+    </script>
 
 </html>
