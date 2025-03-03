@@ -256,7 +256,7 @@ html {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   justify-content: center;
-  padding: 20px;
+  padding: 7px;
 }
 
 /* Individual Project Styling */
@@ -382,6 +382,74 @@ html {
 .text-card:hover p {
   color: #020202; /* Text color changes slightly */
   font-weight: bold;
+}
+
+/* Center the button */
+.text-card-read-more {
+  display: inline-flex;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto; /* Center button horizontally with auto margins */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  border: 2px solid rgb(8, 55, 116);
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+
+/* Hover effect on View button */
+.text-card-read-more:hover {
+  color: #ffffff;
+  background-color:rgb(207, 34, 21); /* Background color on hover */
+  transform: translateX(5px); /* Move the button slightly to the right */
+}
+
+/* Hover effect on icon */
+.text-card-read-more:hover i {
+  transform: translateX(5px); /* Move the icon along with the text on hover */
+}
+
+/* Icon inside the View button */
+.text-card-read-more i {
+  margin-left: 8px; /* Space between text and icon */
+  font-size: 16px;
+  transition: transform 0.3s ease; /* Smooth transition for icon movement */
+}
+
+/* Slide-in animation for elements */
+.slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Animations */
@@ -663,10 +731,86 @@ html {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Center the button */
+.web-text-card-read-more {
+  display: inline-flex;
+  background-color: rgb(8, 55, 116);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 2px auto; /* Center button horizontally with auto margins */
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  border: 2px solid rgb(8, 55, 116);
+  padding: 10px 25px;
+  border-radius: 5px;
+}
+
+
+/* Hover effect on View button */
+.web-text-card-read-more:hover {
+  color: #ffffff;
+  background-color:rgb(207, 34, 21); /* Background color on hover */
+  transform: translateX(5px); /* Move the button slightly to the right */
+}
+
+/* Hover effect on icon */
+.web-text-card-read-more:hover i {
+  transform: translateX(5px); /* Move the icon along with the text on hover */
+}
+
+/* Icon inside the View button */
+.web-text-card-read-more i {
+  margin-left: 8px; /* Space between text and icon */
+  font-size: 16px;
+  transition: transform 0.3s ease; /* Smooth transition for icon movement */
+}
+
+/* Slide-in animation for elements */
+.slideInLeft {
+  animation: slideInLeft 1s ease-out forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 1s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 /* Responsive Image */
 @media (max-width: 768px) {
   .web-project-image {
     max-width: 350px; /* Reduce size slightly for mobile */
+  }
+  .web-text-card-read-more {
+    font-size: 18px;
+    padding: 6px 15px;
+  }
+
+  .web-text-card-read-more i {
+    font-size: 14px;
   }
 }
 
@@ -694,6 +838,14 @@ html {
 
   .web-video-card h4 {
     font-size: 14px;
+  }
+  .web-text-card-read-more {
+    font-size: 16px;
+    padding: 5px 12px;
+  }
+
+  .web-text-card-read-more i {
+    font-size: 12px;
   }
 }
 
@@ -1108,3 +1260,5 @@ html {
     padding: 8px 12px; /* Adjust padding */
   }
 }
+
+
