@@ -301,17 +301,52 @@ font-weight: bold;
     animation: fadeIn 1.5s ease-in-out; /* Image fade-in animation */
 }
 
-/* Counter number styling */
-.counter {
-    font-size: 48px;
+/* Static Number Styling */
+.counter-value {
+    font-size: 35px;
     font-weight: bold;
-    color: #e74c3c;
-    margin-bottom: 10px;
+    color: #fc1e06;
+    margin: 20px 0;
+    animation: fadeInUp 1.5s ease-out, scaleUp 0.5s ease-in-out, rotateEffect 2s infinite alternate;
 }
+
+/* Fade In Up animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scale Up animation */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Counter description styling */
+.why-techno-card-content h3 {
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(50, 100, 167);
+}
+
 
 /* Counter description styling */
 .why-techno-card-content p {
     font-size: 16px;
+    font-weight: bold;
     color: #000000;
 }
 

@@ -141,54 +141,56 @@
     </section>
 
     <!-- why-techno-section Section --> 
-    <section class="why-techno-section" id="why-techno-section">
-        {% comment %} <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
+<section class="why-techno-section" id="why-techno-section">
+    {% comment %} 
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
             <u>Why TechnoWin IT Infra Stands Out</u>
-        </h2> {% endcomment %}
-        
-        <div class="why-techno-cards">
-            <!-- Counter 1: Years of Experience -->
-            <div class="why-techno-card">
-                <div class="why-techno-card-content">
-                    <h3>Years of<br> Experience</h3>
-                    <img src="{% static 'images/evolution.gif' %}" alt="Years of Experience">
-                    <div class="counter" data-count="25">0</div>
-                    <p>We bring over 15 years of expertise in providing innovative IT solutions to our clients.</p>
-                </div>
-            </div>
-
-            <!-- Counter 2: Customer Satisfaction -->
-            <div class="why-techno-card">
-                <div class="why-techno-card-content">
-                    <h3>Customer <br>Satisfaction</h3>
-                    <img src="{% static 'images/customer-experience.gif' %}" alt="Customer Satisfaction">
-                    <div class="counter" data-count="98">0</div>
-                    <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
-                </div>
-            </div>
-
-            <!-- Counter 3: Number of Clients -->
-            <div class="why-techno-card">
-                <div class="why-techno-card-content">
-                    <h3>Our <br> Clients</h3>
-                    <img src="{% static 'images/customer-care.gif' %}" alt="Our Clients">
-                    <div class="counter" data-count="50">0</div>
-                    <p>Over 200 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
-                </div>
-            </div>
-
-            <!-- Counter 4: Number of Projects -->
-            <div class="why-techno-card">
-                <div class="why-techno-card-content">
-                    <h3>Our <br> Projects</h3>
-                    <img src="{% static 'images/project1.gif' %}" alt="Our Projects">
-                    <div class="counter" data-count="100">0</div>
-                    <p>We've successfully completed over 350 IT infrastructure and support projects.</p>
-                </div>
+        </h2> 
+    {% endcomment %}
+    
+    <div class="why-techno-cards">
+        <!-- Card 1: Years of Experience -->
+        <div class="why-techno-card">
+            <div class="why-techno-card-content">
+                <h3>Years of<br> Experience</h3>
+                <img src="{% static 'images/evolution.gif' %}" alt="Years of Experience">
+                <div class="counter-value">25+</div> <!-- Keep the number, but remove the counter class -->
+                <p>We bring over 25+ years of expertise in providing innovative IT solutions to our clients.</p>
             </div>
         </div>
-    </section>
-        
+
+        <!-- Card 2: Customer Satisfaction -->
+        <div class="why-techno-card">
+            <div class="why-techno-card-content">
+                <h3>Customer <br>Satisfaction</h3>
+                <img src="{% static 'images/customer-experience.gif' %}" alt="Customer Satisfaction">
+                <div class="counter-value">98%</div> <!-- Keep the number, but remove the counter class -->
+                <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
+            </div>
+        </div>
+
+        <!-- Card 3: Our Clients -->
+        <div class="why-techno-card">
+            <div class="why-techno-card-content">
+                <h3>Our <br> Clients</h3>
+                <img src="{% static 'images/customer-care.gif' %}" alt="Our Clients">
+                <div class="counter-value">200+</div> <!-- Keep the number, but remove the counter class -->
+                <p>Over 200 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
+            </div>
+        </div>
+
+        <!-- Card 4: Our Projects -->
+        <div class="why-techno-card">
+            <div class="why-techno-card-content">
+                <h3>Our <br> Projects</h3>
+                <img src="{% static 'images/project1.gif' %}" alt="Our Projects">
+                <div class="counter-value">350+</div> <!-- Keep the number, but remove the counter class -->
+                <p>We've successfully completed over 350 IT infrastructure and support projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- Services Section -->
     <section class="serviceview" id="serviceview">
         <h2><u>Services We Provide</u></h2>
@@ -298,7 +300,7 @@
                     <source src="{% static 'project_data/web_development_technowin.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p>TechnoWin IT Infra Pvt Ltd has created a user-friendly, responsive web development project 🌐💻. Focused on innovative designs, seamless performance, and secure solutions 🔒, it caters to diverse business needs. Perfect for boosting online presence! 🚀✨</p>
+                <p>TechnoWin IT Infra Pvt Ltd specializes in responsive web development solutions that elevate your business. We offer innovative web designs, seamless performance, and secure, scalable websites tailored to your needs. Our solutions improve online presence, user engagement, and website security, optimized for speed and mobile responsiveness.</p>
                 <a href="{% url 'Software' %}#web-project" class="read-more">
                     Read More
                 </a>
@@ -311,7 +313,8 @@
                     <source src="{% static 'project_data/technowin_app_video.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p>TechnoWin IT Infra Pvt Ltd has developed an intuitive, high-performance app 🌟📱. With a focus on sleek design, smooth functionality, and robust security 🔐, it meets the unique needs of businesses. Ideal for enhancing mobile engagement! 🚀📲</p>
+                <p>We develop high-performance mobile apps focused on exceptional user experience, sleek design, smooth functionality, and robust security. Optimized for fast, seamless performance across all devices, our scalable, secure apps enhance engagement, streamline operations, and boost brand presence.</p>
+                <br>
                 <a href="{% url 'Software' %}#app-project" class="read-more">
                     Read More
                 </a>
@@ -324,7 +327,8 @@
                     <source src="{% static 'images/cloud_services_video.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p>TechnoWin IT Infra Pvt Ltd offers reliable and scalable cloud services ☁️💼. With seamless integration, high security 🔐, and flexible solutions, it helps businesses optimize their operations and enhance efficiency 🌟. Perfect for driving growth and innovation! 🚀</p>
+                <p>We offer reliable, scalable cloud solutions that transform business operations. Our services ensure seamless integration, high security, and flexibility to meet your unique needs. Focused on scalability and performance, we help businesses streamline operations, improve accessibility, and drive sustainable growth.</p>
+                <br>
                 <a href="{% url 'Services' %}#cloud-service" class="read-more">
                     Read More
                 </a>
@@ -337,7 +341,7 @@
                     <source src="{% static 'images/value_added_services_video.mp4' %}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <p>TechnoWin IT Infra Pvt Ltd provides high-quality, durable hardware solutions 🖥️🔧. Designed for optimal performance and reliability, it supports businesses with cutting-edge technology 💡. Perfect for enhancing infrastructure and boosting productivity! 🚀</p>
+                <p>At TechnoWin IT Infra Pvt Ltd, we provide durable, high-performance hardware solutions to support business operations. Our cutting-edge technology ensures seamless functionality and robust infrastructure, helping businesses enhance IT systems, boost productivity, and stay competitive with the latest hardware advancements.</p>
                 <a  href="{% url 'Services' %}" class="read-more">
                 Read More
                 </a>

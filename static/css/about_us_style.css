@@ -516,7 +516,7 @@ blockquote cite h3 {
 
   .books-border p {
     color: red;
-    font-size: 75%;
+    font-size: 40%;
   }
 
   /* Modify the font size of the cover heading */
@@ -1229,5 +1229,44 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+/* Media Query for mobile devices */
+@media screen and (max-width: 768px) {
+  /* Adjust the background wrapper height for mobile */
+  .mvo-background-wrapper {
+    height: 50vh; /* Reduce the height on smaller screens */
+  }
+
+  /* Adjust the video element's opacity and margin */
+  #mvo-video-element {
+    opacity: 0.7; /* Lower opacity for better visibility on mobile */
+    margin-bottom: 100px; /* Reduce bottom margin */
+  }
+
+  /* Adjust text size and appearance for mobile */
+  .mvo-background-wrapper h2 {
+    font-size: 2rem; /* Smaller font size for mobile */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7); /* Adjust shadow for better readability */
+  }
+}
+
+/* Media Query for very small devices (portrait phones) */
+@media screen and (max-width: 480px) {
+  /* Further adjustments for small screens */
+  .mvo-background-wrapper {
+    height: 50vh; /* Further reduce height */
+  }
+
+  /* Adjust video opacity and margin */
+  #mvo-video-element {
+    opacity: 0.6; /* More opacity reduction for small screens */
+    margin-bottom: 80px; /* Further reduce margin */
+  }
+
+  /* Further reduce text size */
+  .mvo-background-wrapper h2 {
+    font-size: 1.5rem; /* Even smaller text size for very small screens */
   }
 }
