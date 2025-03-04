@@ -4,6 +4,7 @@ import google.generativeai as genai
 from django.db.models import Q
 from Home.models import chatbot, webiste_counter
 
+
 # Create your views here.
 def Home(request):
     return render(request,'Home/index.html') 
