@@ -15,7 +15,6 @@ class contact_us(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.TextField(null=True, blank=True)
     email_id = models.TextField(null=True, blank=True)
-    mobile_no = models.TextField(null=True, blank=True)
     subject = models.TextField(null=True, blank=True)
     message = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)

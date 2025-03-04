@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hi=+*q#4c!x3@u-j(vxz$wok%j2a!726z#(=5q*(k%=ny2$km&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
-ALLOWED_HOSTS = ['65.1.57.165','technowinitinfra.com','www.technowinitinfra.com']
+# ALLOWED_HOSTS = ['65.1.57.165','technowinitinfra.com','www.technowinitinfra.com']
 
 
 # Application definition
@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'technowin-website-db',    
         'USER': 'root',    
         'PASSWORD': 'Mysql_GM-047319',  
-        # 'HOST': '65.1.57.165',       
-        'HOST': '127.0.0.1',      
+        'HOST': '65.1.57.165',       
+        # 'HOST': '127.0.0.1',      
         'PORT': '3306',          
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",

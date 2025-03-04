@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import google.generativeai as genai
 from django.db.models import Q
-from Home.models import chatbot, webiste_counter
+from Home.models import *
 
 
 # Create your views here.
@@ -93,4 +93,26 @@ def website_counter(request):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
+# contactUs Form
 
+from django.http import HttpResponse, HttpResponseBadRequest
+
+def contactUsFormPost(request):
+    if request.method == "POST":
+        try:
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            subject = request.POST.get("subject")
+            message = request.POST.get("message")
+            new_contact = contact_us(
+                name=name,
+                email_id=email,
+                subject=subject,
+                message=message
+            )
+            new_contact.save()
+            return JsonResponse({"message": "Thank you for contacting us!"}, status=200)
+        except Exception as e:
+            return JsonResponse({"error": "An error occurred while processing your request."}, status=500)
+    else:
+        return HttpResponseBadRequest("Invalid request method.")
