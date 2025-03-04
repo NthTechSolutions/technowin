@@ -748,13 +748,11 @@ footer {
     border-radius: 20px;
   }
 
-  .chatbot-prompt {
-    margin-left: 10px;  /* Adds space between the icon and the text */
-    font-size: 18px;    /* Adjusted for better visibility */
-    color: rgb(255, 255, 255);
-    background: rgb(8, 55, 116);
-    font-weight: bold;
-    display: inline-block;
+  .chatbot-prompt-box {
+    padding: 15px 25px;         /* Padding to give space around the text */
+    border-radius: 12px;        /* Rounded corners */
+    display: inline-block;      /* Keeps the box inline with the rest of the content */
+    margin-top: 10px;           /* Adds space between the chatbot icon and the text box */
     animation: wave 2s ease-in-out infinite;  /* Apply wave effect */
 }
 
@@ -774,6 +772,18 @@ footer {
     }
 }
 
+/* Styling for text inside the box */
+.chatbot-prompt {
+    font-size: 18px;            /* Adjust font size */
+    font-weight: bold;          /* Make the text bold */
+    color: rgb(255, 255, 255);  /* White color for the text */
+    background: rgb(8, 55, 116);/* Dark blue background for text */
+    text-align: center;         /* Center-align the text inside the box */
+    display: inline-block;      /* Keeps the text inline with the box */
+    padding: 5px 10px;          /* Padding inside the text box for spacing */
+    border-radius: 8px;         /* Slight rounding of text box edges */
+}
+
 
   /* Ensure parent container is properly positioned */
   #chatContainer {
@@ -786,7 +796,7 @@ footer {
     overflow-y: auto; /* Allow vertical scrolling */
     position: relative; /* Add this if not already set */
     padding: 25px;
-    background-color: #f4f4f4;
+    /* background-color: #f4f4f4; */
     border-radius: 0 0 10px 10px;
     animation: fadeIn 0.3s ease-out;
     max-height: 400px; /* Adjust height or remove if needed */

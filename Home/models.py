@@ -34,3 +34,17 @@ class webiste_counter(models.Model):
     updated_by = models.TextField(null=True, blank=True)
     class Meta:
         db_table = 'webiste_counter'
+
+
+class about_us(models.Model):
+    about_id = models.AutoField(primary_key=True)
+    about_full_name = models.TextField(null=True, blank=True)
+    about_email_id = models.TextField(null=True, blank=True)
+    about_budget = models.IntegerField(null=True, blank=True)  # Changed to IntegerField
+    about_requirement = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    created_by = models.TextField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+    updated_by = models.TextField(null=True, blank=True)
+    class Meta:
+        db_table = 'about_us'

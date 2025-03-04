@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="{% static 'css/contact_us_style.css' %}">
         <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -398,7 +398,21 @@
         gtag('config', 'G-2ZJE06MHVY');
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    {% if messages %}
+      {% for message in messages %}
+        <script>
+        Swal.fire({
+          title: "{{ message.tags }}",
+          text: "{{ message }}",
+          icon: "{{ message.tags }}",
+          confirmButtonText: "OK",
+        });
+      </script>
+      {% endfor %}
+    {% endif %}
+    
     
 </html>
 

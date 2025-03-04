@@ -3,6 +3,19 @@ from django.http import JsonResponse
 import google.generativeai as genai
 from django.db.models import Q
 from Home.models import *
+from django.contrib import messages
+from django.http import HttpResponseBadRequest
+from django.shortcuts import render
+from .models import *
+from django.shortcuts import render, redirect
+from django.contrib import messages
+import re
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+from django.db.models import Q
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .models import about_us
 
 
 # Create your views here.
@@ -95,7 +108,34 @@ def website_counter(request):
 
 # contactUs Form
 
-from django.http import HttpResponse, HttpResponseBadRequest
+# from django.http import HttpResponse, HttpResponseBadRequest
+
+# def contactUsFormPost(request):
+#     if request.method == "POST":
+#         try:
+#             name = request.POST.get("name")
+#             email = request.POST.get("email")
+#             subject = request.POST.get("subject")
+#             message = request.POST.get("message")
+#             new_contact = contact_us(
+#                 name=name,
+#                 email_id=email,
+#                 subject=subject,
+#                 message=message
+#             )
+#             new_contact.save()
+#             return JsonResponse({"message": "Thank you for contacting us!"}, status=200)
+#         except Exception as e:
+#             return JsonResponse({"error": "An error occurred while processing your request."}, status=500)
+#     else:
+#         return HttpResponseBadRequest("Invalid request method.")
+
+
+
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import HttpResponseBadRequest
+from .models import contact_us  # Adjust the import as per your project structure
 
 def contactUsFormPost(request):
     if request.method == "POST":
@@ -104,6 +144,8 @@ def contactUsFormPost(request):
             email = request.POST.get("email")
             subject = request.POST.get("subject")
             message = request.POST.get("message")
+            
+            # Save the contact form data to the database
             new_contact = contact_us(
                 name=name,
                 email_id=email,
@@ -111,8 +153,115 @@ def contactUsFormPost(request):
                 message=message
             )
             new_contact.save()
-            return JsonResponse({"message": "Thank you for contacting us!"}, status=200)
+
+            # Add a success message
+            messages.success(request, "Thank you for contacting us!")
+
+            # Redirect to the same contact page or a confirmation page
+            return redirect('ContactUs')  # Replace 'contact_us' with the actual URL name for the contact page
         except Exception as e:
-            return JsonResponse({"error": "An error occurred while processing your request."}, status=500)
+            # Add an error message if something goes wrong
+            messages.error(request, "An error occurred while processing your request.")
+            return render(request, 'Home/contact_us.html')  # Replace with the actual template name
+    else:
+        return HttpResponseBadRequest("Invalid request method.")
+
+
+
+
+# def aboutUsFormPost(request):
+#     if request.method == "POST":
+#         try:
+#             name = request.POST.get("name")
+#             email = request.POST.get("email")
+#             budget = request.POST.get("budget")  # Changed 'subject' to 'budget' to match the form field name
+#             requirement = request.POST.get("requirement")
+            
+#             # Save the contact form data to the database
+#             new_enquiry = about_us(
+#                 about_full_name=name,
+#                 about_email_id=email,
+#                 about_budget=budget,
+#                 about_requirement=requirement
+#             )
+#             new_enquiry.save()
+
+#             # Add a success message
+#             messages.success(request, "Thank you for contacting us!")
+
+#             # Redirect to the same page or another page to avoid form resubmission on refresh
+#             return redirect('Home')  # Replace 'home' with the actual URL name of your home page
+
+#         except Exception as e:
+#             # Add an error message if something goes wrong
+#             messages.error(request, "An error occurred while processing your request.")
+#             return redirect('Home')  # Replace 'home' with the actual URL name of your home page
+#     else:
+#         return HttpResponseBadRequest("Invalid request method.")
+
+
+# Function to validate full name (only alphabets and spaces)
+def validate_full_name(name):
+    if not re.match(r'^[A-Za-z\s]+$', name):
+        raise ValidationError("Full name must contain only alphabets.")
+
+# Function to validate budget (should be a valid number)
+def validate_budget(budget):
+    try:
+        # Check if budget is a number (integer or float)
+        float(budget)
+    except ValueError:
+        raise ValidationError("Budget must be a valid number.")
+
+def aboutUsFormPost(request):
+    if request.method == "POST":
+        try:
+            name = request.POST.get("name")
+            email = request.POST.get("email")
+            budget = request.POST.get("budget")
+            requirement = request.POST.get("requirement")
+
+            # Check if a submission already exists for the given email
+            if about_us.objects.filter(about_email_id=email).exists():
+                messages.warning(request, "You have already filled the form with this email.")
+                return redirect('Home')  # Redirect to home or another page
+
+            # Validate full name (only alphabets)
+            validate_full_name(name)
+
+            # Validate email (Django provides a built-in email validator)
+            try:
+                validate_email(email)
+            except ValidationError:
+                messages.error(request, "Please provide a valid email address.")
+                return redirect('Home')
+
+            # Validate budget (must be a number)
+            validate_budget(budget)
+
+            # Save the contact form data to the database
+            new_enquiry = about_us(
+                about_full_name=name,
+                about_email_id=email,
+                about_budget=budget,
+                about_requirement=requirement
+            )
+            new_enquiry.save()
+
+            # Add a success message
+            messages.success(request, "Thank you for Booking  Demo!")
+
+            # Redirect to the same page or another page to avoid form resubmission on refresh
+            return redirect('Home')  # Replace 'home' with the actual URL name of your home page
+
+        except ValidationError as e:
+            # Handle validation errors
+            messages.error(request, str(e))
+            return redirect('Home')
+
+        except Exception as e:
+            # Add an error message if something goes wrong
+            messages.error(request, "An error occurred while processing your request.")
+            return redirect('Home')
     else:
         return HttpResponseBadRequest("Invalid request method.")

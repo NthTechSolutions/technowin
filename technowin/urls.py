@@ -28,5 +28,5 @@ urlpatterns = [
     path('get_botans', get_botans, name='get_botans'),
     path('website_counter/', website_counter, name='website_counter'),
     path('contactUsFormPost/', contactUsFormPost, name='contactUsFormPost'),
-
+    path('aboutUsFormPost/', aboutUsFormPost, name='aboutUsFormPost'),
 ]
