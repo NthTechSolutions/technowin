@@ -268,7 +268,7 @@
             </a>
             <!-- Added a box for "May I help you?" -->
             <div class="chatbot-prompt-box">
-                <div class="chatbot-prompt">May I help you?</div> <!-- Text inside the box -->
+                <div class="chatbot-prompt" id="hideChatBot">May I help you?</div> <!-- Text inside the box -->
             </div>
         </div>
     
@@ -605,10 +605,25 @@
         </script>   
 
         <script>
-            function toggleChatbot() {
+            {% comment %} function toggleChatbot() {
                 const chatbot = document.getElementById("chatbot");
                 chatbot.classList.toggle("active");
+            } {% endcomment %}
+
+            function toggleChatbot() {
+                debugger;
+                const chatbot = document.getElementById("chatbot");
+                const hideMayIText = document.getElementById("hideChatBot");
+            
+                const isActive = chatbot.classList.toggle("active");
+            
+                if (isActive) {
+                    hideMayIText.style.display = 'none';
+                } else {
+                    hideMayIText.style.display = 'block';
+                }
             }
+            
         </script>
         
     </script>
