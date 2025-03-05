@@ -106,31 +106,6 @@ def website_counter(request):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
-# contactUs Form
-
-# from django.http import HttpResponse, HttpResponseBadRequest
-
-# def contactUsFormPost(request):
-#     if request.method == "POST":
-#         try:
-#             name = request.POST.get("name")
-#             email = request.POST.get("email")
-#             subject = request.POST.get("subject")
-#             message = request.POST.get("message")
-#             new_contact = contact_us(
-#                 name=name,
-#                 email_id=email,
-#                 subject=subject,
-#                 message=message
-#             )
-#             new_contact.save()
-#             return JsonResponse({"message": "Thank you for contacting us!"}, status=200)
-#         except Exception as e:
-#             return JsonResponse({"error": "An error occurred while processing your request."}, status=500)
-#     else:
-#         return HttpResponseBadRequest("Invalid request method.")
-
-
 
 from django.shortcuts import render, redirect
 from django.contrib import messages
@@ -165,60 +140,21 @@ def contactUsFormPost(request):
             return render(request, 'Home/contact_us.html')  # Replace with the actual template name
     else:
         return HttpResponseBadRequest("Invalid request method.")
-
-
-
-
-# def aboutUsFormPost(request):
-#     if request.method == "POST":
-#         try:
-#             name = request.POST.get("name")
-#             email = request.POST.get("email")
-#             budget = request.POST.get("budget")  # Changed 'subject' to 'budget' to match the form field name
-#             requirement = request.POST.get("requirement")
-            
-#             # Save the contact form data to the database
-#             new_enquiry = about_us(
-#                 about_full_name=name,
-#                 about_email_id=email,
-#                 about_budget=budget,
-#                 about_requirement=requirement
-#             )
-#             new_enquiry.save()
-
-#             # Add a success message
-#             messages.success(request, "Thank you for contacting us!")
-
-#             # Redirect to the same page or another page to avoid form resubmission on refresh
-#             return redirect('Home')  # Replace 'home' with the actual URL name of your home page
-
-#         except Exception as e:
-#             # Add an error message if something goes wrong
-#             messages.error(request, "An error occurred while processing your request.")
-#             return redirect('Home')  # Replace 'home' with the actual URL name of your home page
-#     else:
-#         return HttpResponseBadRequest("Invalid request method.")
-
+    
 
 # Function to validate full name (only alphabets and spaces)
 def validate_full_name(name):
     if not re.match(r'^[A-Za-z\s]+$', name):
         raise ValidationError("Full name must contain only alphabets.")
 
-# Function to validate budget (should be a valid number)
-def validate_budget(budget):
-    try:
-        # Check if budget is a number (integer or float)
-        float(budget)
-    except ValueError:
-        raise ValidationError("Budget must be a valid number.")
+
 
 def aboutUsFormPost(request):
     if request.method == "POST":
         try:
             name = request.POST.get("name")
             email = request.POST.get("email")
-            budget = request.POST.get("budget")
+            # budget = request.POST.get("budget")
             requirement = request.POST.get("requirement")
 
             # Check if a submission already exists for the given email
@@ -236,14 +172,14 @@ def aboutUsFormPost(request):
                 messages.error(request, "Please provide a valid email address.")
                 return redirect('Home')
 
-            # Validate budget (must be a number)
-            validate_budget(budget)
+            # # Validate budget (must be a number)
+            # validate_budget(budget)
 
             # Save the contact form data to the database
             new_enquiry = about_us(
                 about_full_name=name,
                 about_email_id=email,
-                about_budget=budget,
+                # about_budget=budget,
                 about_requirement=requirement
             )
             new_enquiry.save()
