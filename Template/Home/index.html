@@ -150,9 +150,6 @@
 
     <!-- why-techno-section Section --> 
     <section class="why-techno-section" id="why-techno-section">
-        {% comment %} <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">
-            <u>Why TechnoWin IT Infra Stands Out</u>
-        </h2> {% endcomment %}
         
         <div class="why-techno-cards">
             <!-- Counter 1: Years of Experience -->
@@ -1197,38 +1194,42 @@
     </script>
 
     <script>
-        // Function to animate the counter
-        function animateCounter(counterElement) {
-            const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
-            let currentValue = 0;
+   // Function to animate the counter
+function animateCounter(counterElement) {
+    const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+    let currentValue = 0;
 
-            // Increment the counter
-            const interval = setInterval(() => {
-                counterElement.innerText = currentValue;
-                if (currentValue >= targetValue) {
-                    clearInterval(interval);
-                } else {
-                    currentValue++;
-                }
-            }, 30); // Adjust speed by changing the interval
+    // Increment the counter
+    const interval = setInterval(() => {
+        counterElement.innerText = currentValue;
+        if (currentValue >= targetValue) {
+            clearInterval(interval); // Stop the counting when the target is reached
+        } else {
+            currentValue++;
         }
+    }, 11150); // Adjust speed by changing the interval (50ms between each increment)
+}
 
-        // Detect when the counters are visible
-        function startCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const counterPosition = counter.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
+// Detect when the counters are visible
+function startCounters() {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        // If the counter has not already been counted
+        if (!counter.classList.contains('counted')) {
+            const counterPosition = counter.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
 
-                if (counterPosition < windowHeight) {
-                    animateCounter(counter);
-                }
-            });
+            // Start the counter when the counter is visible in the viewport
+            if (counterPosition < windowHeight) {
+                animateCounter(counter); // Start animation
+                counter.classList.add('counted'); // Mark it as counted to prevent restarting
+            }
         }
+    });
+}
 
-        // Trigger the counter animation when the page loads or scrolls
-        window.addEventListener('scroll', startCounters);
-        window.addEventListener('load', startCounters);
+// Trigger the counter animation only once when the page loads
+window.addEventListener('load', startCounters);
 
     </script>
 

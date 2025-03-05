@@ -258,7 +258,7 @@ font-weight: bold;
 /* counter section styling */
 .why-techno-section {
     padding: 40px;
-    background-color:rgb(186, 186, 194);
+    background-color: rgb(186, 186, 194);
     text-align: center;
 }
 
@@ -290,8 +290,7 @@ font-weight: bold;
     transform: translateX(5px);
     box-shadow: 0 25px 25px rgb(50, 100, 167);
     opacity: 1;
-  }
-
+}
 
 /* Image styling */
 .why-techno-card img {
@@ -307,19 +306,20 @@ font-weight: bold;
     font-weight: bold;
     color: #e74c3c;
     margin-bottom: 10px;
+    transition: all 60s ease; /* Added transition for smooth animation */
 }
 
 /* Counter description styling */
 .why-techno-card-content h3 {
     font-size: 25px;
     font-weight: bold;
-    color:rgb(50, 100, 167);
+    color: rgb(50, 100, 167);
 }
 
 /* Counter description styling */
 .why-techno-card-content p {
     font-size: 16px;
-      font-weight: bold;
+    font-weight: bold;
     color: #000000;
 }
 
