@@ -16,6 +16,13 @@ from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import about_us
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.http import HttpResponseBadRequest
+from .models import contact_us  # Adjust the import as per your project structure
+from django.core.validators import EmailValidator
+import traceback
+from django.utils.timezone import now
 
 
 # Create your views here.
@@ -107,10 +114,26 @@ def website_counter(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-from django.shortcuts import render, redirect
-from django.contrib import messages
-from django.http import HttpResponseBadRequest
-from .models import contact_us  # Adjust the import as per your project structure
+# Function to validate name (only alphabets and spaces, no longer than 30 characters)
+def validate_name(name):
+    if not re.match(r'^[A-Za-z\s]+$', name):  # Allow alphabets and spaces only
+        raise ValidationError("Name must contain only alphabets and spaces.")
+    if len(name) > 30:
+        raise ValidationError("Name must be less than or equal to 30 characters.")
+
+# Function to validate subject and message (only alphabets and spaces, no longer than 50 characters)
+def validate_subject_or_message(subject, message):
+    # Validate subject
+    if not re.match(r'^[A-Za-z\s]+$', subject):  # Allow alphabets and spaces only
+        raise ValidationError("Subject must contain only alphabets and spaces.")
+    if len(subject) > 50:
+        raise ValidationError("Subject must be less than or equal to 50 characters.")
+    
+    # Validate message
+    if not re.match(r'^[A-Za-z\s]+$', message):  # Allow alphabets and spaces only
+        raise ValidationError("Message must contain only alphabets and spaces.")
+    if len(message) > 50:
+        raise ValidationError("Message must be less than or equal to 50 characters.")
 
 def contactUsFormPost(request):
     if request.method == "POST":
@@ -119,9 +142,21 @@ def contactUsFormPost(request):
             email = request.POST.get("email")
             subject = request.POST.get("subject")
             message = request.POST.get("message")
-            
+
+            # Validate Name
+            validate_name(name)
+
+            # Validate Subject and Message
+            validate_subject_or_message(subject, message)
+
+            # Validate Email (using Django's built-in EmailValidator)
+            try:
+                EmailValidator()(email)
+            except ValidationError:
+                raise ValidationError("Please enter a valid email address.")
+
             # Save the contact form data to the database
-            new_contact = contact_us(
+            new_contact = ContactUs(
                 name=name,
                 email_id=email,
                 subject=subject,
@@ -130,31 +165,44 @@ def contactUsFormPost(request):
             new_contact.save()
 
             # Add a success message
-            messages.success(request, "Thank you for contacting us!")
-
-            # Redirect to the same contact page or a confirmation page
-            return redirect('ContactUs')  # Replace 'contact_us' with the actual URL name for the contact page
+            messages.success(request, "Thank you for contacting Technowin !")
+            return redirect('ContactUs')  # Replace 'ContactUs' with your actual URL name for the contact page
         except Exception as e:
-            # Add an error message if something goes wrong
+            tb = traceback.extract_tb(e.__traceback__)
+            fun = tb[0].name
+            error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
+            # Add an error message if something else goes wrong
             messages.error(request, "An error occurred while processing your request.")
-            return render(request, 'Home/contact_us.html')  # Replace with the actual template name
+            return render(request, 'Home/contact_us.html')  # Replace with your actual template name
     else:
         return HttpResponseBadRequest("Invalid request method.")
+
     
 
-# Function to validate full name (only alphabets and spaces)
+# Function to validate full name (only alphabets, spaces, and a character limit)
 def validate_full_name(name):
+    # Check if the name contains only alphabets and spaces
     if not re.match(r'^[A-Za-z\s]+$', name):
-        raise ValidationError("Full name must contain only alphabets.")
+        raise ValidationError("Full name must contain only alphabets and spaces.")
+    
+    # Check if the name length is less than or equal to 30 characters
+    if len(name) > 30:
+        raise ValidationError("Full name must not exceed 30 characters.")
 
 
+# Function to validate the requirement field
+def validate_requirement(requirement):
+    # Validate that the requirement contains only alphabets and spaces, and is no longer than 50 characters
+    if not re.match(r'^[A-Za-z\s]+$', requirement):  # Allow alphabets and spaces only
+        raise ValidationError("Requirement must contain only alphabets and spaces.")
+    if len(requirement) > 50:
+        raise ValidationError("Requirement must be less than or equal to 50 characters.")
 
 def aboutUsFormPost(request):
     if request.method == "POST":
         try:
             name = request.POST.get("name")
             email = request.POST.get("email")
-            # budget = request.POST.get("budget")
             requirement = request.POST.get("requirement")
 
             # Check if a submission already exists for the given email
@@ -172,31 +220,25 @@ def aboutUsFormPost(request):
                 messages.error(request, "Please provide a valid email address.")
                 return redirect('Home')
 
-            # # Validate budget (must be a number)
-            # validate_budget(budget)
+            # Validate requirement (only alphabets and spaces, max length 50)
+            validate_requirement(requirement)
 
             # Save the contact form data to the database
             new_enquiry = about_us(
                 about_full_name=name,
                 about_email_id=email,
-                # about_budget=budget,
                 about_requirement=requirement
             )
             new_enquiry.save()
 
             # Add a success message
-            messages.success(request, "Thank you for Booking  Demo!")
-
-            # Redirect to the same page or another page to avoid form resubmission on refresh
-            return redirect('Home')  # Replace 'home' with the actual URL name of your home page
-
-        except ValidationError as e:
-            # Handle validation errors
-            messages.error(request, str(e))
-            return redirect('Home')
-
+            messages.success(request, "Thank you for Booking a Demo!")
+            return redirect('Home')  # Replace 'Home' with the actual URL name of your home page
         except Exception as e:
-            # Add an error message if something goes wrong
+            tb = traceback.extract_tb(e.__traceback__)
+            fun = tb[0].name
+            error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
+            # Add an error message if something else goes wrong
             messages.error(request, "An error occurred while processing your request.")
             return redirect('Home')
     else:
