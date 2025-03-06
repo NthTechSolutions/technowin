@@ -162,6 +162,45 @@
     opacity: 1;
 }
 
+/* Media Queries for Responsiveness */
+
+/* Adjust the tooltip size and position for mobile devices */
+@media (max-width: 768px) {
+    .tooltip-text-help, .tooltip-text-contact {
+        width: 120px; /* Increase width for better visibility on small screens */
+        font-size: 14px; /* Increase font size for readability */
+    }
+
+    /* Adjust tooltip position for mobile */
+    #contactButton:hover .tooltip-text-help {
+        top: 105%; /* Move down slightly to avoid overlapping */
+        right: 10%; /* Adjust position */
+    }
+
+    #contactButton:hover .tooltip-text-contact {
+        top: 105%; /* Move down slightly to avoid overlapping */
+        left: 10%; /* Adjust position */
+    }
+}
+
+/* For very small screens (e.g., mobile phones) */
+@media (max-width: 480px) {
+    .tooltip-text-help, .tooltip-text-contact {
+        width: 140px; /* Ensure the tooltip is wide enough */
+        font-size: 16px; /* Increase font size for readability */
+    }
+
+    /* Adjust tooltip position for small screens */
+    #contactButton:hover .tooltip-text-help {
+        top: 110%; /* Adjust top position */
+        right: 5%; /* Adjust right position */
+    }
+
+    #contactButton:hover .tooltip-text-contact {
+        top: 110%; /* Adjust top position */
+        left: 5%; /* Adjust left position */
+    }
+}
 }
 
 
@@ -417,6 +456,23 @@ nav ul img:hover {
         width: 100%; /* Make the contact button full width */
         text-align: center;
     }
+
+    .tooltip-text-help,
+    .tooltip-text-contact {
+        width: 120px; /* Make the tooltip wider */
+        font-size: 14px; /* Increase font size for better visibility */
+    }
+
+    /* Adjust tooltip position for tablet screens */
+    #contactButton:hover .tooltip-text-help {
+        top: 105%; /* Position it slightly below */
+        right: 10%; /* Adjust position */
+    }
+
+    #contactButton:hover .tooltip-text-contact {
+        top: 105%; /* Position it slightly below */
+        left: 10%; /* Adjust position */
+    }
 }
 
 /* For mobile devices (768px and below) */
@@ -458,6 +514,23 @@ nav ul img:hover {
         width: 100%; /* Full width button */
         text-align: center; /* Center-align the text */
     }
+
+    .tooltip-text-help,
+    .tooltip-text-contact {
+        width: 140px; /* Make the tooltip wider */
+        font-size: 16px; /* Increase font size for better visibility */
+    }
+
+    /* Adjust tooltip position for mobile */
+    #contactButton:hover .tooltip-text-help {
+        top: 110%; /* Move tooltip lower to prevent overlap */
+        right: 5%; /* Adjust position */
+    }
+
+    #contactButton:hover .tooltip-text-contact {
+        top: 110%; /* Move tooltip lower to prevent overlap */
+        left: 5%; /* Adjust position */
+    }
 }
 
 /* For very small screens (480px and below) */
@@ -481,8 +554,25 @@ nav ul img:hover {
 
     .contact-btn {
         font-size: 12px; /* Make button text smaller */
-        padding: 6px 12px; /* Reduce padding */
+        padding: 6px 0; /* Reduce padding */
         margin-left: 7%;
+    }
+
+    .tooltip-text-help,
+    .tooltip-text-contact {
+        width: 60px; /* Make tooltip wider for readability */
+        font-size: 14px; /* Increase font size for readability */
+    }
+
+    /* Adjust tooltip position for small screens */
+    #contactButton:hover .tooltip-text-help {
+        top: 115%; /* Move tooltip lower to avoid overlap */
+        right: 3%; /* Adjust position */
+    }
+
+    #contactButton:hover .tooltip-text-contact {
+        top: 115%; /* Move tooltip lower to avoid overlap */
+        left: 3%; /* Adjust position */
     }
 }
 
