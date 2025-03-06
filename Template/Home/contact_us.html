@@ -307,42 +307,84 @@
             </a>
         </section> {% endcomment %}
 
-    <section id="technoWinContactSection">
-        <div class="heading-with-logo">
-            <h2><u>Get in Touch With - Innovators</u></h2>
-        </div>
+        <section id="technoWinContactSection">
+            <div class="heading-with-logo">
+                <h2><u>Get in Touch With - Innovators</u></h2>
+            </div>
         
-        <!-- Contact Form -->
-        <div class="contact-form-container">
-            
-            <!-- Your HTML Form -->
-            <form method="POST" action="{% url 'contactUsFormPost' %}" class="contact-form">
-                {% csrf_token %}
-                <div class="form-field">
-                    <label for="name">Full Name: <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-field">
-                    <label for="email">Email Address: <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-                </div>
-                <div class="form-field">
-                    <label for="subject">Subject: <span class="required">*</span></label>
-                    <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
-                </div>
-                <div class="form-field">
-                    <label for="message">Message: <span class="required">*</span></label>
-                    <textarea id="message" name="message" placeholder="Write your message" rows="5" required></textarea>
-                </div>
-                <div class="form-button-container">
-                    <button type="submit" class="submit-btn"> 
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </div>
-            </form>
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <!-- Your HTML Form -->
+                <form method="POST" action="{% url 'contactUsFormPost' %}" class="contact-form" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    
+                    <!-- Full Name Field -->
+                    <div class="form-field">
+                        <label for="name">Full Name: <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter your full name" 
+                            required 
+                            maxlength="30" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Full Name must contain only alphabets and spaces, no special characters allowed">
+                    </div>
+                    
+                    <!-- Email Address Field -->
+                    <div class="form-field">
+                        <label for="email">Email Address: <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email address" 
+                            required 
+                            title="Please enter a valid email address (max 2 dots allowed)"
+                            oninput="validateEmail(this)" 
+                            maxlength="50">
+                    </div>
+                    
+                    <!-- Subject Field -->
+                    <div class="form-field">
+                        <label for="subject">Subject: <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="Enter subject" 
+                            required 
+                            maxlength="50" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Subject must contain only alphabets and spaces, no special characters allowed">
+                    </div>
+                    
+                    <!-- Message Field -->
+                    <div class="form-field">
+                        <label for="message">Message: <span class="required">*</span></label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Write your message" 
+                            rows="5" 
+                            required 
+                            maxlength="50" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Message must contain only alphabets and spaces, no special characters allowed">
+                        </textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-button-container">
+                        <button type="submit" class="submit-btn"> 
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-        </div>
-    </section>
 
     <section id="background-video-section">
         <div class="video-overlay">
@@ -414,7 +456,43 @@
       {% endfor %}
     {% endif %}
     
-    
+    <!-- JavaScript to Validate and Trim Whitespaces -->
+<script>
+    // Validate form inputs before submission
+    function validateForm() {
+        // Trim leading and trailing whitespace from all input fields before submitting
+        document.getElementById('name').value = document.getElementById('name').value.trim();
+        document.getElementById('email').value = document.getElementById('email').value.trim();
+        document.getElementById('subject').value = document.getElementById('subject').value.trim();
+        document.getElementById('message').value = document.getElementById('message').value.trim();
+
+        // Validate the email format
+        var emailInput = document.getElementById('email');
+        if (!validateEmailFormat(emailInput)) {
+            alert("Please enter a valid email address with 1 '@' and max 2 '.'");
+            return false; // Prevent form submission
+        }
+
+        return true; // Allow form submission if all validations pass
+    }
+
+    // Email validation to ensure 1 '@' and max 2 '.'
+    function validateEmailFormat(input) {
+        var emailValue = input.value;
+        var atCount = emailValue.split('@').length - 1;
+        var dotCount = emailValue.split('.').length - 1;
+
+        if (atCount !== 1) {
+            return false; // Invalid email if more or less than 1 '@'
+        }
+        if (dotCount > 2) {
+            return false; // Invalid email if there are more than 2 '.'
+        }
+
+        return true; // Valid email format
+    }
+</script>
+
 </html>
 
 {% endblock %}

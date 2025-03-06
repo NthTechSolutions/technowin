@@ -135,6 +135,27 @@ def validate_subject_or_message(subject, message):
     if len(message) > 50:
         raise ValidationError("Message must be less than or equal to 50 characters.")
 
+# Define the custom email validation function
+def validate_email(email):
+    """ Validate email with custom logic: 1 '@' and max 2 dots '.' """
+    at_count = email.count('@')
+    dot_count = email.count('.')
+    
+    # Check if there's exactly one '@'
+    if at_count != 1:
+        raise ValidationError("Email must contain exactly one '@'.")
+    
+    # Check if there are no more than two dots ('.')
+    if dot_count > 2:
+        raise ValidationError("Email must contain no more than two '.' characters.")
+    
+    # Use Django's built-in EmailValidator to check the general validity of the email
+    try:
+        EmailValidator()(email)
+    except ValidationError:
+        raise ValidationError("Please enter a valid email address.")
+
+
 def contactUsFormPost(request):
     if request.method == "POST":
         try:
@@ -197,6 +218,26 @@ def validate_requirement(requirement):
         raise ValidationError("Requirement must contain only alphabets and spaces.")
     if len(requirement) > 50:
         raise ValidationError("Requirement must be less than or equal to 50 characters.")
+
+# Define the custom email validation function
+def validate_email(email):
+    """ Validate email with custom logic: 1 '@' and max 2 dots '.' """
+    at_count = email.count('@')
+    dot_count = email.count('.')
+    
+    # Check if there's exactly one '@'
+    if at_count != 1:
+        raise ValidationError("Email must contain exactly one '@'.")
+    
+    # Check if there are no more than two dots ('.')
+    if dot_count > 2:
+        raise ValidationError("Email must contain no more than two '.' characters.")
+    
+    # Use Django's built-in EmailValidator to check the general validity of the email
+    try:
+        EmailValidator()(email)
+    except ValidationError:
+        raise ValidationError("Please enter a valid email address.")
 
 def aboutUsFormPost(request):
     if request.method == "POST":

@@ -112,10 +112,55 @@
         transition: transform 0.3s ease;  /* Smooth transition for image animation */
     }
 
-    /* Adding a small rotation effect on hover */
-    .contact-btn:hover img {
-        transform: rotate(360deg); /* Rotate the image when the button is hovered */
-    }
+/* The tooltip text */
+.tooltip-text-help {
+    visibility: hidden;
+    width: 80px;
+    background-color: rgb(56, 55, 55);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    position: absolute;
+    top: 95%; /* Position the tooltip above the image */
+    right: 30%;
+    /* margin-left: -60px; */
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 4px 6px rgb(243, 11, 3);
+}
+
+/* Show the tooltip text when hovering over the image */
+#contactButton:hover .tooltip-text-help {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* The tooltip text */
+.tooltip-text-contact {
+    visibility: hidden;
+    width: 100px;
+    background-color: rgb(56, 55, 55);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 5px;
+    position: absolute;
+    top: 95%; /* Position the tooltip above the image */
+    left: 30%;
+    box-shadow: 0 4px 6px rgb(243, 11, 3);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text when hovering over the image */
+#contactButton:hover .tooltip-text-contact {
+    visibility: visible;
+    opacity: 1;
+}
 
 }
 

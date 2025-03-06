@@ -229,17 +229,20 @@
             
             
                
-            <li>
+              <li>
                 <a href="{% url 'Services' %}#faq-section" id="contactButton" class="contact-btn">
-                    <!-- Only the GIF image, no text -->
-                    <img src="{% static 'images/helpcenter.gif' %}" class="contact-btn img" alt="Contact Us">
+                    <!-- Tooltip container -->
+                    <span class="tooltip-text-help">Help Desk</span>
+                    <img src="{% static 'images/help_center.png' %}" class="contact-btn img" alt="Contact Us">
                 </a>
             </li>
+            
 
             <li>
                 <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
-                    <!-- Only the GIF image, no text -->
-                    <img src="{% static 'images/contact.gif' %}" class="contact-btn img" alt="Help Center">
+                    <!-- Tooltip container -->
+                    <span class="tooltip-text-contact">Contact Form</span>
+                    <img src="{% static 'images/contact.png' %}" class="contact-btn img" alt="Help Center">
                     
                 </a>
             </li>
