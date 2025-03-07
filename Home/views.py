@@ -164,20 +164,9 @@ def contactUsFormPost(request):
             subject = request.POST.get("subject")
             message = request.POST.get("message")
 
-            # Validate Name
-            validate_name(name)
-
-            # Validate Subject and Message
-            validate_subject_or_message(subject, message)
-
-            # Validate Email (using Django's built-in EmailValidator)
-            try:
-                EmailValidator()(email)
-            except ValidationError:
-                raise ValidationError("Please enter a valid email address.")
 
             # Save the contact form data to the database
-            new_contact = ContactUs(
+            new_contact = contact_us(
                 name=name,
                 email_id=email,
                 subject=subject,
@@ -191,7 +180,7 @@ def contactUsFormPost(request):
         except Exception as e:
             tb = traceback.extract_tb(e.__traceback__)
             fun = tb[0].name
-            error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
+            # error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
             # Add an error message if something else goes wrong
             messages.error(request, "An error occurred while processing your request.")
             return render(request, 'Home/contact_us.html')  # Replace with your actual template name
@@ -278,7 +267,7 @@ def aboutUsFormPost(request):
         except Exception as e:
             tb = traceback.extract_tb(e.__traceback__)
             fun = tb[0].name
-            error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
+            # error_log.objects.create(method=fun,error=str(e),error_date=now(),user='')
             # Add an error message if something else goes wrong
             messages.error(request, "An error occurred while processing your request.")
             return redirect('Home')

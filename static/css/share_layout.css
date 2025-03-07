@@ -1310,7 +1310,8 @@ footer {
 
     .footer-links ul {
         display: flex; /* Align links in a row */
-        gap: 10px; /* Adjust space between links */
+        gap: 0px; /* Adjust space between links */
+        margin-left:-10%;
     }
 
     .footer-links li a {
@@ -1668,10 +1669,14 @@ footer {
   @media (max-width: 480px) {
     /* Further reduce button size on very small screens */
     #back-to-top {
-      width: 45px;
-      height: 45px;
-      bottom: 31px; /* Further reduce bottom margin */
-      left: 368px; /* Further reduce right margin */
+        width: 45px;
+        height: 45px;
+        bottom: 15px; /* Further reduce bottom margin */
+        left: 300px; /* Further reduce right margin */
+    }
+  
+    #hideChatBot{
+        display: none;
     }
   
     /* Adjust image inside the button for very small screens */

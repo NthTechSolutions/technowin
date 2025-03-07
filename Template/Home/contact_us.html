@@ -388,7 +388,7 @@
 
     <section id="background-video-section">
         <div class="video-overlay">
-            <h2 class="video-title">💾 Creating Memories | Our Gallery 🌟</h2>
+            {% comment %} <h2 class="video-title">💾 Creating Memories | Our Gallery 🌟</h2> {% endcomment %}
         </div>
         <video class="background-video" controls>
             <source src="{% static 'images/life_in_technowin_video.mp4' %}" type="video/mp4">
@@ -458,39 +458,111 @@
     
     <!-- JavaScript to Validate and Trim Whitespaces -->
 <script>
-    // Validate form inputs before submission
-    function validateForm() {
-        // Trim leading and trailing whitespace from all input fields before submitting
-        document.getElementById('name').value = document.getElementById('name').value.trim();
-        document.getElementById('email').value = document.getElementById('email').value.trim();
-        document.getElementById('subject').value = document.getElementById('subject').value.trim();
-        document.getElementById('message').value = document.getElementById('message').value.trim();
+   // Validate Full Name - Only alphabets and spaces allowed, max length 30
+function validateName(input) {
+    const namePattern = /^[A-Za-z\s]+$/;  // Allows only alphabets and spaces
+    const nameField = input;
 
-        // Validate the email format
-        var emailInput = document.getElementById('email');
-        if (!validateEmailFormat(emailInput)) {
-            alert("Please enter a valid email address with 1 '@' and max 2 '.'");
-            return false; // Prevent form submission
-        }
-
-        return true; // Allow form submission if all validations pass
+    // Check if the name matches the pattern (only alphabets and spaces)
+    if (!namePattern.test(nameField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Full Name',
+            text: 'Full Name must contain only alphabets and spaces, no special characters allowed.'
+        });
+        nameField.value = "";  // Clear input if invalid
+        nameField.focus();  // Refocus the field
+        return false;  // Prevent form submission
+    } else if (nameField.value.length > 30) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Name Too Long',
+            text: 'Full Name must not exceed 30 characters.'
+        });
+        nameField.value = "";  // Clear input if it exceeds 30 characters
+        nameField.focus();  // Refocus the field
+        return false;  // Prevent form submission
     }
+    return true;  // Validation passed
+}
 
-    // Email validation to ensure 1 '@' and max 2 '.'
-    function validateEmailFormat(input) {
-        var emailValue = input.value;
-        var atCount = emailValue.split('@').length - 1;
-        var dotCount = emailValue.split('.').length - 1;
+// Validate Email Address - Proper email with domains, 1 '@', 3 '.' (dots)
+function validateEmail(input) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;  // Valid email pattern
+    const emailField = input;
 
-        if (atCount !== 1) {
-            return false; // Invalid email if more or less than 1 '@'
-        }
-        if (dotCount > 2) {
-            return false; // Invalid email if there are more than 2 '.'
-        }
-
-        return true; // Valid email format
+    if (!emailPattern.test(emailField.value)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Please enter a valid email address with only 1 "@" symbol and 3 "." symbols.'
+        });
+        return false;  // Prevent form submission
     }
+    return true;  // Validation passed
+}
+
+// Validate Subject - Only alphabets, spaces, commas, periods, and question marks allowed, max length 50
+function validateSubject(input) {
+    const subjectPattern = /^[A-Za-z\s,?\.]+$/;  // Allows alphabets, spaces, commas, periods, and question marks
+    const subjectField = input;
+
+    if (!subjectPattern.test(subjectField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Subject',
+            text: 'Subject can only contain alphabets, spaces, commas, periods, and question marks.'
+        });
+        return false;  // Prevent form submission
+    } else if (subjectField.value.length > 50) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Subject Too Long',
+            text: 'Subject must not exceed 50 characters.'
+        });
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Validate Message - Only alphabets, spaces, commas, periods, and question marks allowed, max length 50
+function validateMessage(input) {
+    const messagePattern = /^[A-Za-z0-9\s,?\.]+$/;  // Allows alphabets, spaces, commas, periods, and question marks
+    const messageField = input;
+
+    if (!messagePattern.test(messageField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Message',
+            text: 'Message can only contain alphabets, numbers, spaces, commas, periods, and question marks.'
+        });
+        return false;  // Prevent form submission
+    } else if (messageField.value.length > 50) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Message Too Long',
+            text: 'Message must not exceed 50 characters.'
+        });
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Form validation before submitting
+function validateForm() {
+    const nameValid = validateName(document.getElementById("name"));
+    const emailValid = validateEmail(document.getElementById("email"));
+    const subjectValid = validateSubject(document.getElementById("subject"));
+    const messageValid = validateMessage(document.getElementById("message"));
+
+    // Return true if all fields are valid, otherwise return false
+    if (nameValid && emailValid && subjectValid && messageValid) {
+        return true;  // All fields are valid, submit form
+    } else {
+        return false;  // At least one field is invalid, prevent form submission
+    }
+}
+
 </script>
 
 </html>
