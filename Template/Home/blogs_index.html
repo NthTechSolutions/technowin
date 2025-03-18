@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %}
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+    ></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blogs</title>
+  </head>
+  <body>
+
+
+    <section class="blog-section" id="blog-1">
+     <!-- Blog Post 1 -->
+    <div class="blog-post">
+        <h2><u>Creation of a Workflow Management System: A Case Study</u></h2>
+        <div class="blog-card">
+            <div class="blog-card-image">
+                <img src="{% static 'blog/workflow/workflow_blog_1.png' %}" alt="Client's Requirement" />
+            </div>
+        </div>
+        <div class="blog-card">
+            <div class="blog-card-text">
+                <h3><i>Client's Requirement:</i></h3>
+                <p>
+                    Our client recently approached us with the need for a web application that could handle multiple services, each requiring a unique application form and document upload process. These services had to go through a custom workflow system involving various roles, each with specific actions. The challenge was that each service had its own requirements, and the process needed to adhere to a strict timeline. If any step was delayed, the system should trigger an alert. The project was given an extremely tight deadline, with a budget initially designed for a single service application.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+     <!-- Blog Post 2 (Reversed Layout) -->
+<div class="blog-post reverse">
+    <div class="blog-card">
+        <div class="blog-card-text">
+            <h3><i>Our Creative Approach:</i></h3>
+            <p>
+                Given the unclear data and document requirements for the services, and the fact that the workflow was documented, we decided to take a unique approach. Rather than building separate applications for each service, we developed a single web application capable of managing multiple services. This solution was not only flexible but also scalable, allowing the addition of more services in the future.
+            </p>
+        </div>
+    </div>
+    <div class="blog-card">
+        <div class="blog-card-image">
+            <img src="{% static 'blog/workflow/workflow_blog_2.png' %}" alt="Our Creative Approach" />
+        </div>
+    </div>
+</div>
+
+    
+     <!-- Blog Post 3 -->
+<div class="blog-post">
+    <div class="blog-card">
+        <div class="blog-card-image">
+            <img src="{% static 'blog/workflow/workflow_blog_3.png' %}" alt="The Solution We Delivered" />
+        </div>
+    </div>
+    <div class="blog-card">
+        <div class="blog-card-text">
+            <h3><i>The Solution We Delivered:</i></h3>
+            <p>
+                We created a form generator that could dynamically create forms with varying field types, data types, and document upload options, tailored to each service's needs. To manage the workflow, we introduced a new concept called the 'Service Matrix.' This data structure defined the responsibilities, actions, and timelines for each stage in the workflow. By using this matrix, we could control who does what, when, and within what timeframe for each service. We also designed a single multipurpose screen for managing all actions—except the one action that differed at each level within the Service Matrix. The entire program was developed with simplicity, flexibility, and scalability in mind.
+            </p>
+        </div>
+    </div>
+</div>
+
+    
+       <!-- Blog Post 4 -->
+<div class="blog-post reverse">
+    <div class="blog-card">
+        <div class="blog-card-text">
+            <h3><i>Key Achievements:</i></h3>
+            <ul>
+                <li>First service: Took 1 month to develop.</li>
+                <li>Second service: Developed in just 1 day.</li>
+                <li>Third, fourth, and fifth services: Developed in just 1 day each.</li>
+                <li>The application worked as intended with low maintenance, minimal training, and was easy to understand, resulting in a happy client.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="blog-card">
+        <div class="blog-card-image">
+            <img src="{% static 'blog/workflow/workflow_blog_4.png' %}" alt="Key Achievements" />
+        </div>
+    </div>
+</div>
+
+    
+       <!-- Blog Post 5 -->
+<div class="blog-post">
+    <div class="blog-card">
+        <div class="blog-card-image">
+            <img src="{% static 'blog/workflow/workflow_blog_5.png' %}" alt="What's Next?" />
+        </div>
+    </div>
+    <div class="blog-card">
+        <div class="blog-card-text">
+            <h3><i>What's Next?</i></h3>
+            <p>
+                Our innovative solution has set the stage for faster and more efficient development of form-based systems and workflow management applications. Moving forward, we are focused on further optimizing this application to make it even more robust and scalable. Stay tuned for future updates and integrations to enhance the system’s capabilities.
+            </p>
+        </div>
+    </div>
+</div>
+
+        <!-- Navigation Buttons -->
+        <div class="blog-navigation">
+            <a href="previous-blog-url.html" class="blog-nav-btn previous-btn">
+                <i class="fas fa-arrow-left"></i> Previous Blog
+            </a>
+            <a href="next-blog-url.html" class="blog-nav-btn next-btn">
+                Next Blog <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    
+    
+    
+  </body>
+
+
+  
+</html>
+
+{% endblock %}

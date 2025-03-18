@@ -47,6 +47,9 @@ def Software(request):
 def siteMap(request):
     return render(request,'Home/siteMap.html') 
 
+def Blogs(request):
+    return render(request,'Home/blogs_index.html') 
+
 def get_botans(request):
     try:
         if request.method == "GET":
