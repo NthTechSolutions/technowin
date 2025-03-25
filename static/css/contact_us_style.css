@@ -476,6 +476,7 @@ html {
   }
 }
 
+
 /* Social Media Links pinned to the right side */
 .social-links {
   position: fixed;
@@ -510,7 +511,7 @@ html {
 
 /* Hover effect to enlarge and add color */
 .social-icon:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
   transform: scale(1.1);
 }
 
@@ -521,12 +522,12 @@ html {
 /* Animations to make the icons appear with a sliding effect */
 @keyframes slideIn {
   0% {
-    opacity: 0;
-    transform: translateX(20px);
+      opacity: 0;
+      transform: translateX(20px);
   }
   100% {
-    opacity: 1;
-    transform: translateX(0);
+      opacity: 1;
+      transform: translateX(0);
   }
 }
 
@@ -537,7 +538,7 @@ html {
   bottom: 50%;
   right: 10%;
   transform: translateX(-50%);
-  background-color: rgb(56, 55, 55);
+  background-color: rgb(39, 39, 39);
   color: white;
   padding: 2px;
   border-radius: 4px;
@@ -560,24 +561,34 @@ html {
 
 /* Optional: You can add specific hover effects for individual icons */
 .social-icon.facebook:hover {
-  background-color: rgb(162, 179, 216); /* Facebook color */
+  background-color:rgb(39, 39, 39); /* Facebook color */
 }
 
 .social-icon.twitter:hover {
-  background-color: #1da1f2; /* Twitter color */
+  background-color: rgb(39, 39, 39); /* Twitter color */
 }
 
 .social-icon.linkedin:hover {
-  background-color: #0077b5; /* LinkedIn color */
+  background-color: rgb(39, 39, 39); /* LinkedIn color */
 }
 
 .social-icon.instagram:hover {
-  background-color: #e4405f; /* Instagram color */
+  background-color: rgb(39, 39, 39); /* Instagram color */
 }
 
 /* Add WhatsApp hover effect */
 .social-icon.whatsapp:hover {
-  background-color: #25d366; /* WhatsApp green color */
+  background-color:rgb(39, 39, 39); /* WhatsApp green color */
+}
+
+/* Add WhatsApp hover effect */
+.ssocial-icon.brochure:hover {
+  background-color:rgb(39, 39, 39); /* WhatsApp green color */
+}
+
+/* Add YouTube hover effect */
+.social-icon.youtube:hover {
+  background-color: rgb(39, 39, 39); /* YouTube red color */
 }
 
 /* Ensure the social icons are visible and properly spaced on mobile screens */
