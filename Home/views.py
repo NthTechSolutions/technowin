@@ -50,6 +50,9 @@ def siteMap(request):
 def Blogs(request):
     return render(request,'Home/blogs_index.html') 
 
+def Product(request):
+    return render(request,'Home/product.html') 
+
 def get_botans(request):
     try:
         if request.method == "GET":

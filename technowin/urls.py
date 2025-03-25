@@ -30,6 +30,7 @@ urlpatterns = [
     path('ContactUs', ContactUs, name='ContactUs'),
     path('Software', Software, name='Software'),
     path('siteMap', siteMap, name='siteMap'),
+    path('Product', Product, name='Product'),
     path('Blogs', Blogs, name='Blogs'),
     path('get_botans', get_botans, name='get_botans'),
     path('website_counter/', website_counter, name='website_counter'),

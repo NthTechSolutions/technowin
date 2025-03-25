@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %}
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/product.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+    ></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Product</title>
+  </head>
+  <body>
+    
+    <section class="project-card-container">
+        <div class="project-card" id="product-1">
+          <h2 class="project-title">Attendance Leave and Payroll</h2>
+          <div class="project-video">
+            <video controls>
+              <source src="{% static 'product/payroll_product.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="project-description">
+           
+          </div>
+          <a href="{% static 'product/payroll_product.pdf' %}" class="download-btn" download>
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </div>
+      
+        <div class="project-card" id="product-2">
+          <h2 class="project-title">Employee Self Service Website</h2>
+          <div class="project-video">
+            <video controls>
+              <source src="{% static 'product/ess_product.mp4' %}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="project-description">
+      
+        </div>
+          <a href="{% static 'product/ess_product.pdf' %}" class="download-btn" download>
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </div>
+
+        <div class="project-card" id="product-3">
+            <h2 class="project-title">Student Attendance Capture for College</h2>
+            <div class="project-video">
+              <video controls>
+                <source src="{% static 'product/student_attendance_capture.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-description">
+            
+            </div>
+            <a href="{% static 'product/student_attendance_capture.pdf' %}" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+          </div>
+
+          <div class="project-card" id="product-4">
+            <h2 class="project-title">Chatbot Desktop App</h2>
+            <div class="project-video">
+              <video controls>
+                <source src="{% static 'product/chatbot_product.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-description">
+             
+            </div>
+            <a href="{% static 'product/chatbot_product.pdf' %}" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+          </div>
+
+          <div class="project-card" id="product-5">
+            <h2 class="project-title">Employee Self Service App</h2>
+            <div class="project-video">
+              <video controls>
+                <source src="{% static 'product/ess_app_product.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-description">
+             
+            </div>
+            <a href="{% static 'product/ess_app_product.pdf' %}" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+          </div>
+
+          <div class="project-card" id="product-6">
+            <h2 class="project-title">Document Managment System (DMS)</h2>
+            <div class="project-video">
+              <video controls>
+                <source src="{% static 'product/dms_product.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <div class="project-description">
+             
+            </div>
+            <a href="{% static 'product/dms_product.pdf' %}" class="download-btn" download>
+                <i class="fas fa-download"></i> Download PDF
+              </a>
+          </div>
+      </section>
+      
+    
+    
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        debugger;
+        const previousBtn = document.getElementById("previous-btn");
+        const nextBtn = document.getElementById("next-btn");
+    
+        const blogs = document.querySelectorAll(".heading-blog");
+        let currentIndex = 0; // Start with the first blog
+    
+        function updateVisibility() {
+            blogs.forEach((blog, index) => {
+                blog.style.display = index === currentIndex ? "block" : "none";
+            });
+    
+            // Disable links if at the first or last div
+            previousBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+            nextBtn.style.pointerEvents = currentIndex === blogs.length - 1 ? "none" : "auto";
+    
+            previousBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+            nextBtn.style.opacity = currentIndex === blogs.length - 1 ? "0.5" : "1";
+        }
+    
+        nextBtn.addEventListener("click", function () {
+            debugger;
+            if (currentIndex < blogs.length - 1) {
+                currentIndex++;
+                updateVisibility();
+            }
+        });
+    
+        previousBtn.addEventListener("click", function () {
+            debugger;
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibility();
+            }
+        });
+    
+        // Initialize visibility
+        updateVisibility();
+    });
+    
+</script>  
+  
+
+
+
+  
+</html>
+
+{% endblock %}

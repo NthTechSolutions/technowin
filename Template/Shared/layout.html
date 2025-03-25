@@ -188,9 +188,9 @@
             <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
             <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
             <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-            <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
+            <li style="margin-top:2%"><a href="{% url 'Product' %}">Product</a></li>
             <li style="margin-top:2%"><a href="{% url 'Blogs' %}">Blogs</a></li>
-
+            {% comment %} <li style="margin-top:2%"><a href="{% url 'Event' %}">Event Form</a></li> {% endcomment %}
             {% comment %} <li>
                 <div id="google_translate_element"></div>
                 <script>
@@ -241,9 +241,9 @@
             
 
             <li>
-                <a href="{% url 'ContactUs' %}#technoWinContactSection" id="contactButton" class="contact-btn">
+                <a href="{% url 'ContactUs' %}" id="contactButton" class="contact-btn">
                     <!-- Tooltip container -->
-                    <span class="tooltip-text-contact">Contact Form</span>
+                    <span class="tooltip-text-contact">Contact Us</span>
                     <img src="{% static 'images/contact.png' %}" class="contact-btn img" alt="Help Center">
                     
                 </a>
@@ -312,7 +312,7 @@
                     <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
                     <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
                     <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-                    <li style="margin-top:2%"><a href="{% url 'ContactUs' %}">Contact Us</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'Product' %}">Product</a></li>
                     <li style="margin-top:2%"><a href="{% url 'siteMap' %}">Site Map</a></li>
                 </ul>
             </div>

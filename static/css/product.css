@@ -1,0 +1,243 @@
+/* Project Card Container */
+.project-card-container {
+    display: flex;
+    flex-wrap: wrap;             /* Allow cards to wrap if there's not enough space */
+    justify-content: center;     /* Center the cards in the container */
+    gap: 40px;                   /* Space between cards */
+    padding: 40px 20px;
+    background-color: #f4f7fa;
+    margin-top: 30px;
+}
+
+/* Project Card */
+.project-card {
+    background-color: #ffffff;
+    padding: 20px;
+    width: calc(40% - 10px);      /* 50% width for 2 cards per row minus the gap */
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
+    text-align: center;          /* Center all child elements inside the card */
+    box-sizing: border-box;      /* Ensure padding doesn't affect the width */
+}
+
+/* Hover Effect on Card */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgb(50, 100, 167);
+}
+
+  /* Project Video */
+  .project-video video {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: scaleUp 1.5s ease-out;
+  }
+  
+/* Project Title */
+.project-title {
+  font-size: 2rem;                  /* Slightly larger font size */
+  color: #000000;                   /* Default text color */
+  font-weight: bold;                
+  margin-bottom: 20px;              
+  text-transform: uppercase;        /* Make title uppercase */
+  letter-spacing: 1px;              /* Add some spacing between letters */
+  position: relative;               /* For the hover effect positioning */
+  animation: slideInFromTop 1s ease-out, fadeInTitle 1s ease-out;
+}
+
+/* Slide in from the top */
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-100px); /* Start above */
+      opacity: 0;                    /* Invisible */
+  }
+  100% {
+      transform: translateY(0);      /* Final position */
+      opacity: 1;                    /* Fully visible */
+  }
+}
+
+/* Fade-in effect */
+@keyframes fadeInTitle {
+  0% {
+      opacity: 0;                    /* Start invisible */
+  }
+  100% {
+      opacity: 1;                    /* Fade in */
+  }
+}
+
+/* Hover effect */
+.project-title:hover {
+  color: #007BFF;                  /* Change text color on hover */
+  transform: scale(1.1);            /* Slightly enlarge on hover */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+  cursor: pointer;                 /* Change cursor to indicate interaction */
+  transition: all 0.3s ease;        /* Smooth transition for all properties */
+}
+
+/* Hover effect on text with underline */
+.project-title:hover::after {
+  content: '';                      /* Create a pseudo-element */
+  position: absolute;               /* Position at the bottom of the text */
+  bottom: -5px;                     /* 5px below the text */
+  left: 0;
+  width: 100%;                       /* Make it span the entire width of the title */
+  height: 2px;                       /* Thin line */
+  background-color: #007BFF;         /* Blue underline color */
+  transform: scaleX(0);              /* Initially hidden */
+  transform-origin: bottom right;   /* Start from the right */
+  transition: transform 0.3s ease;   /* Smooth transition effect */
+}
+
+/* Underline animation */
+.project-title:hover::after {
+  transform: scaleX(1);             /* Scale to full width */
+  transform-origin: bottom left;    /* Scale from left */
+}
+  
+  /* Project Description */
+  .project-description {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    animation: fadeInDescription 1.5s ease-in-out, slideInFromLeft 1s ease-out;
+  }
+  
+
+
+  /* Slide In From Top Animation (for project title) */
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-30px); /* Start above the normal position */
+      opacity: 0; /* Start as invisible */
+    }
+    100% {
+      transform: translateY(0); /* End at the normal position */
+      opacity: 1; /* Fade in to full visibility */
+    }
+  }
+  
+  /* Fade In (for project title) */
+  @keyframes fadeInTitle {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Fade In Description Animation */
+  @keyframes fadeInDescription {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Slide In From Left (for project description) */
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-30px); /* Start from the left */
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0); /* End at the normal position */
+      opacity: 1;
+    }
+  }
+  /* Download Button */
+.download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: rgb(50, 100, 167);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-btn:hover {
+    background-color:rgb(196, 27, 27);
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes scaleUp {
+    0% {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInDescription {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  /* Responsive Design */
+
+/* Mobile / Tablet Layout */
+@media screen and (max-width: 768px) {
+    .project-card {
+        width: calc(50% - 10px);  /* 2 cards per row for smaller screens */
+    }
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 480px) {
+    .project-card {
+        width: 100%;  /* 1 card per row on very small screens */
+    }
+
+    .project-title {
+        font-size: 1.5rem;  /* Adjust title size for small screens */
+    }
+
+    .project-description {
+        font-size: 0.9rem;  /* Adjust description font size for small screens */
+    }
+    
+    /* Adjust padding for better mobile layout */
+    .project-card-container {
+        padding: 20px;
+    }
+}
