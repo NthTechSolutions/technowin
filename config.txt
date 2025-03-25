@@ -9,3 +9,6 @@ steps for push in vscode:-
 2) discard/delete (.pyc) files 
 3) add the files which are changed 
 4) commit and sync
+
+
+clone of project :- path of python folder type cmd then write "git clone 'project link'"
