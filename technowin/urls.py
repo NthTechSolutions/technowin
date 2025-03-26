@@ -20,7 +20,13 @@ from Home.views import *
 from django.urls import re_path
 from django.views.static import serve
 from django.conf import settings
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import StaticViewSitemap
 
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
 
 urlpatterns = [
     path('admin', admin.site.urls),
@@ -32,6 +38,7 @@ urlpatterns = [
     path('siteMap', siteMap, name='siteMap'),
     path('Product', Product, name='Product'),
     path('Blogs', Blogs, name='Blogs'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('get_botans', get_botans, name='get_botans'),
     path('website_counter/', website_counter, name='website_counter'),
     path('contactUsFormPost/', contactUsFormPost, name='contactUsFormPost'),
