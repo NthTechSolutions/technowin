@@ -73,8 +73,7 @@
 
 /* Hover effect */
 .project-title:hover {
-  color: #007BFF;                  /* Change text color on hover */
-  transform: scale(1.1);            /* Slightly enlarge on hover */
+  color: rgb(255, 0, 0);               /* Change text color on hover */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
   cursor: pointer;                 /* Change cursor to indicate interaction */
   transition: all 0.3s ease;        /* Smooth transition for all properties */
