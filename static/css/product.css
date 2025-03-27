@@ -29,14 +29,26 @@
 }
 
   /* Project Video */
-  .project-video video {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: scaleUp 1.5s ease-out;
+.project-video iframe {
+  width: 90%; /* Ensure iframe takes the full width of its container */
+  height: 250px; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the iframe */
+  animation: scaleUp 1.5s ease-out; /* Add animation */
+}
+
+/* Animation for scaling up */
+@keyframes scaleUp {
+  from {
+      transform: scale(0.8);
+      opacity: 0;
   }
-  
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
 /* Project Title */
 .project-title {
   font-size: 2rem;                  /* Slightly larger font size */
@@ -239,4 +251,56 @@
     .project-card-container {
         padding: 20px;
     }
+}
+
+/* Responsive Design */
+
+/* Tablet Layout */
+@media screen and (max-width: 1024px) {
+  .project-card {
+      width: calc(33.33% - 10px);  /* 3 cards per row */
+  }
+}
+
+/* Mobile Layout (Portrait) */
+@media screen and (max-width: 768px) {
+  .project-card {
+      width: calc(50% - 10px);  /* 2 cards per row for smaller screens */
+  }
+
+  /* Adjust the font size for project title and description */
+  .project-title {
+      font-size: 1.6rem;
+  }
+
+  .project-description {
+      font-size: 0.9rem;
+  }
+}
+
+/* Mobile Layout (Portrait) */
+@media screen and (max-width: 480px) {
+  .project-card {
+      width: 100%;  /* 1 card per row on very small screens */
+  }
+
+  /* Adjust title and description sizes */
+  .project-title {
+      font-size: 1.4rem;
+  }
+
+  .project-description {
+      font-size: 0.85rem;
+  }
+
+  /* Adjust padding for better mobile layout */
+  .project-card-container {
+      padding: 20px;
+  }
+
+  /* Adjust button size for mobile */
+  .download-btn {
+      font-size: 1rem;
+      padding: 10px 20px;
+  }
 }

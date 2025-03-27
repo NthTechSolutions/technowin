@@ -599,7 +599,7 @@ font-weight: bold;
 /* project videos section styling */
 #project-videos {
    background-color:rgb(186, 186, 194);
-    padding: 50px 20px;
+    padding: 10px 20px;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -622,7 +622,7 @@ font-weight: bold;
 
 .card-container {
     display: flex;
-    margin-left: 15px;
+    margin-left: 10px;
     justify-content: space-between;
     flex-wrap: wrap; /* Ensure cards wrap on smaller screens */
     gap: 5px; /* Space between cards */
@@ -666,10 +666,27 @@ font-weight: bold;
 }
 
 
-.card video {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 15px;
+/* Style for the iframe inside .card */
+.card iframe {
+    width: 100%;               /* Ensure the iframe takes up the full width of its container */
+    height: 200px;             /* Set a fixed height, but adjust as needed */
+    border-radius: 5px;        /* Apply border-radius for rounded corners */
+    margin-bottom: 15px;       /* Add margin to the bottom for spacing */
+    box-sizing: border-box;    /* Ensures padding and border are included in the width and height calculation */
+}
+
+
+
+/* Responsive design: adjust iframe size on smaller screens */
+@media (max-width: 768px) {
+    .card iframe {
+        height: 200px;         /* Reduce iframe height on smaller screens */
+    }
+
+    .card {
+        width: 100%;           /* Cards take full width on smaller screens */
+        margin-bottom: 20px;   /* Add margin between cards */
+    }
 }
 
 .read-more {
