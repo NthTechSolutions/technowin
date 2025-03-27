@@ -1,38 +1,37 @@
 /* Project Card Container */
 .project-card-container {
-    display: flex;
-    flex-wrap: wrap;             /* Allow cards to wrap if there's not enough space */
-    justify-content: center;     /* Center the cards in the container */
-    gap: 40px;                   /* Space between cards */
-    padding: 40px 20px;
-    background-color: #f4f7fa;
-    margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;             /* Allow cards to wrap if there's not enough space */
+  justify-content: space-between; /* Space between cards */
+  gap: 20px;                   /* Space between cards */
+  padding: 40px 20px;
+  background-color: #f4f7fa;
+  margin-top: 30px;
 }
 
 /* Project Card */
 .project-card {
-    background-color: #ffffff;
-    padding: 20px;
-    width: calc(40% - 10px);      /* 50% width for 2 cards per row minus the gap */
-    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    animation: fadeIn 1s ease-out;
-    text-align: center;          /* Center all child elements inside the card */
-    box-sizing: border-box;      /* Ensure padding doesn't affect the width */
+  background-color: #ffffff;
+  padding: 20px;
+  width: calc(33.33% - 20px);      /* 33.33% width for 3 cards per row minus the gap */
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-out;
+  text-align: center;          /* Center all child elements inside the card */
+  box-sizing: border-box;      /* Ensure padding doesn't affect the width */
 }
 
-/* Hover Effect on Card */
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgb(50, 100, 167);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgb(50, 100, 167);
 }
 
   /* Project Video */
 .project-video iframe {
-  width: 90%; /* Ensure iframe takes the full width of its container */
+  width: 100%; /* Ensure iframe takes the full width of its container */
   height: 250px; /* Maintain aspect ratio */
-  border-radius: 8px; /* Rounded corners */
+  border-radius: 3px; /* Rounded corners */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the iframe */
   animation: scaleUp 1.5s ease-out; /* Add animation */
 }
@@ -51,7 +50,7 @@
 
 /* Project Title */
 .project-title {
-  font-size: 2rem;                  /* Slightly larger font size */
+  font-size:15px;                  /* Slightly larger font size */
   color: #000000;                   /* Default text color */
   font-weight: bold;                
   margin-bottom: 20px;              
@@ -88,7 +87,8 @@
   color: rgb(255, 0, 0);               /* Change text color on hover */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
   cursor: pointer;                 /* Change cursor to indicate interaction */
-  transition: all 0.3s ease;        /* Smooth transition for all properties */
+  transition: all 0.3s ease;  
+  font-weight: bold;      /* Smooth transition for all properties */
 }
 
 /* Hover effect on text with underline */
@@ -224,83 +224,69 @@
   }
   
 
-  /* Responsive Design */
+/* Media Queries for Responsiveness */
 
-/* Mobile / Tablet Layout */
-@media screen and (max-width: 768px) {
-    .project-card {
-        width: calc(50% - 10px);  /* 2 cards per row for smaller screens */
-    }
-}
-
-/* Mobile Layout */
-@media screen and (max-width: 480px) {
-    .project-card {
-        width: 100%;  /* 1 card per row on very small screens */
-    }
-
-    .project-title {
-        font-size: 1.5rem;  /* Adjust title size for small screens */
-    }
-
-    .project-description {
-        font-size: 0.9rem;  /* Adjust description font size for small screens */
-    }
-    
-    /* Adjust padding for better mobile layout */
-    .project-card-container {
-        padding: 20px;
-    }
-}
-
-/* Responsive Design */
-
-/* Tablet Layout */
-@media screen and (max-width: 1024px) {
-  .project-card {
-      width: calc(33.33% - 10px);  /* 3 cards per row */
-  }
-}
-
-/* Mobile Layout (Portrait) */
-@media screen and (max-width: 768px) {
-  .project-card {
-      width: calc(50% - 10px);  /* 2 cards per row for smaller screens */
-  }
-
-  /* Adjust the font size for project title and description */
-  .project-title {
-      font-size: 1.6rem;
-  }
-
-  .project-description {
-      font-size: 0.9rem;
-  }
-}
-
-/* Mobile Layout (Portrait) */
-@media screen and (max-width: 480px) {
-  .project-card {
-      width: 100%;  /* 1 card per row on very small screens */
-  }
-
-  /* Adjust title and description sizes */
-  .project-title {
-      font-size: 1.4rem;
-  }
-
-  .project-description {
-      font-size: 0.85rem;
-  }
-
-  /* Adjust padding for better mobile layout */
+/* For mobile devices (screens 600px and below) */
+@media (max-width: 600px) {
   .project-card-container {
-      padding: 20px;
+    flex-direction: column; /* Stack cards vertically */
+    padding: 20px;
+    gap: 20px;
   }
 
-  /* Adjust button size for mobile */
+  .project-card {
+    width: 100%; /* Make cards full-width on smaller screens */
+    margin-bottom: 20px; /* Space between cards */
+  }
+
+  .project-title {
+    font-size: 1.5rem; /* Adjust title size for smaller screens */
+  }
+
+  .project-description {
+    font-size: 0.9rem; /* Slightly smaller font size for description */
+  }
+
+  .project-video iframe {
+    height: 200px; /* Reduce video height for smaller screens */
+  }
+
   .download-btn {
-      font-size: 1rem;
-      padding: 10px 20px;
+    padding: 10px 25px; /* Adjust padding for the button */
+    font-size: 1rem; /* Slightly smaller font size */
+  }
+}
+
+/* For tablets (screens between 600px and 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .project-card {
+    width: calc(50% - 10px); /* Make cards take up 50% of the width */
+  }
+
+  .project-title {
+    font-size: 1.8rem; /* Adjust title size for tablet screens */
+  }
+
+  .project-description {
+    font-size: 1rem; /* Adjust description size for tablet screens */
+  }
+
+  .project-video iframe {
+    height: 220px; /* Adjust video size for tablets */
+  }
+}
+
+/* For larger screens (1024px and above) */
+@media (min-width: 1025px) {
+  .project-card {
+    width: calc(33.33% - 20px); /* 3 cards per row on larger screens */
+  }
+
+  .project-title {
+    font-size: 1rem; /* Larger font size for desktop */
+  }
+
+  .project-description {
+    font-size: 1.1rem; /* Larger font size for desktop */
   }
 }
