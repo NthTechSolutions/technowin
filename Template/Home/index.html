@@ -1129,6 +1129,15 @@
         </div>
     </section>
     
+<!-- Modal HTML -->
+<div id="eventModal">
+    <div class="event-modal-content">
+        <span class="close-btn-event" id="closeEventModal">&times;</span>
+        <div class="event-title">{{ event.event_name }}</div>
+        <div class="event-description">{{ event.event_description }}</div>
+        <a href="{% url 'ContactUs' %}#technoWinContactSection" class="contact-btn-event" target="_blank">Contact Me</a>
+    </div>
+</div>
 
 </body>
 
@@ -1414,7 +1423,7 @@
         }
 </script>
 
-{% if event %}
+{% comment %} {% if event %}
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.min.js"></script>
 
 <script>
@@ -1450,7 +1459,37 @@
         }
     });
 </script>
-{% endif %}
+{% endif %} {% endcomment %}
+
+{% if event %}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const eventName = "{{ event.event_name|escapejs }}";
+        const eventId = "{{ event.id }}";
+        const eventKey = `eventShown_${eventId}`;
+    
+        const alreadyShown = localStorage.getItem(eventKey);
+    
+        if (!alreadyShown && eventName.trim() !== "") {
+            const modal = document.getElementById("eventModal");
+            modal.style.display = "block";
+            localStorage.setItem(eventKey, "true");
+        }
+    
+        document.getElementById("closeEventModal").addEventListener("click", function () {
+            document.getElementById("eventModal").style.display = "none";
+        });
+    
+        // Optional: close modal if user clicks outside content
+        window.onclick = function(event) {
+            const modal = document.getElementById("eventModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    });
+    </script>
+    {% endif %}
 
 
 {% comment %} <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.min.js"></script>   {% endcomment %}
