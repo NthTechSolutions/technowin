@@ -57,3 +57,15 @@ class error_log(models.Model):
     user = models.TextField(null=True,blank=True)
     class Meta:
         db_table = 'error_log'
+
+class events_notification(models.Model):
+    event_id = models.AutoField(primary_key=True)
+    event_date = models.TextField(null=True, blank=True)
+    event_name = models.TextField(null=True,blank=True)
+    event_description = models.TextField(null=True,blank=True)
+    created_at = models.DateTimeField(null=True, blank=True)
+    created_by = models.TextField(null=True, blank=True)
+    updated_at = models.DateTimeField(null=True, blank=True)
+    updated_by = models.TextField(null=True, blank=True)
+    class Meta:
+        db_table = 'events_notification'

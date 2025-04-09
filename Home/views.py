@@ -23,11 +23,14 @@ from .models import contact_us  # Adjust the import as per your project structur
 from django.core.validators import EmailValidator
 import traceback
 from django.utils.timezone import now
+from datetime import datetime
 
 
 # Create your views here.
 def Home(request):
-    return render(request,'Home/index.html') 
+    today = datetime.today().strftime('%d-%m-%Y')  # Get today's date in DD-MM-YYYY format
+    event = events_notification.objects.filter(event_date=today).first()
+    return render(request,'Home/index.html', {'event': event}) 
 
 # Create your views here.
 def AboutUs(request):

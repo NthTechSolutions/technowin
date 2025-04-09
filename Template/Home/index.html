@@ -128,70 +128,6 @@
         </div>
 
     </section>
-    {% comment %} 
-    {% if event %}
-        <div class="event-card" id="eventCard">
-            <span class="close-btn-event" onclick="closeEventCard()">×</span>
-            <div class="event-title">{{ event.event_name }}</div>
-            <div class="event-description">{{ event.event_description }}</div>
-            <a href="{% url 'ContactUs' %}#technoWinContactSection" class="contact-btn-Event">
-                Contact Me
-            </a>
-            
-        </div>
-    {% endif %} {% endcomment %}
-
-    {% comment %} <!-- Slider Section -->
-    <section class="pc-view">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide active">
-                    <img src="{% static 'slider/appDevelopment.png' %}" alt="App Development">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/webDevelopment.png' %}" alt="Cloud Computing">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/projectManagent.png' %}" alt="Web Development">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/cloudComputing.png' %}" alt="Hardware">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/dataManagement.png' %}" alt="Manpower">
-                </div>
-            </div>
-
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-    </section> {% endcomment %}
-
-    {% comment %} <section class="mobile-view">
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide active">
-                    <img src="{% static 'slider/appDevelopmentMobile.png' %}" alt="App Development">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/webDevelopmentMobile.png' %}" alt="Cloud Computing">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/cloudComputing_mobile.png' %}" alt="Web Development">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/data_management_Mobile.png' %}" alt="Hardware">
-                </div>
-                <div class="slide">
-                    <img src="{% static 'slider/programManagementMobile.png' %}" alt="Manpower">
-                </div>
-            </div>
-
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-    </section>
-    {% endcomment %}
 
     <!-- why-techno Section --> 
     <section class="why-techno" id-"why-techno_stand">
@@ -362,7 +298,7 @@
         </div>
     </section>
     
-    <!-- social Media Section --> 
+   
     <!-- Social Media Section -->
     <section>
         <div class="social-links" id="socialIcons">
@@ -1478,46 +1414,46 @@
         }
 </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        debugger;
-        let eventShown = localStorage.getItem("eventShown");
+{% if event %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.min.js"></script>
 
-        if (!eventShown) {
-            let eventName = "{{ event.event_name|escapejs }}";
-            let eventDescription = "{{ event.event_description|escapejs }}";
-            let contactUrl = "{% url 'ContactUs' %}#technoWinContactSection";
-            debugger;
-            
-            if (eventName.trim() !== "") {
-                Swal.fire({
-                    title: eventName,
-                    html: `
-                        <div class="event-card" style="text-align: center;">
-                            <span class="close-btn-event" onclick="Swal.close()">×</span>
-                            <div class="event-title">${eventName}</div>
-                            <div class="event-description">${eventDescription}</div>
-                            <a href="${contactUrl}" class="contact-btn-Event" target="_blank">Contact Me</a>
-                        </div>
-                    `,
-                    showConfirmButton: false,
-                    customClass: {
-                        popup: 'event-card-popup',
-                        title: 'event-title-popup',
-                        htmlContainer: 'event-description-popup'
-                    },
-                    preConfirm: () => {
-                        Swal.close();
-                    }
-                });
-                
-                localStorage.setItem("eventShown", "true");
-            }
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const eventName = "{{ event.event_name|escapejs }}";
+        const eventDescription = "{{ event.event_description|escapejs }}";
+        const contactUrl = "{% url 'ContactUs' %}#technoWinContactSection";
+
+        const eventKey = `eventShown_{{ event.id }}`;  // Unique key per event
+
+        const alreadyShown = localStorage.getItem(eventKey);
+
+        if (!alreadyShown && eventName.trim() !== "") {
+            Swal.fire({
+                title: eventName,
+                html: `
+                    <div class="event-card" style="text-align: center;">
+                        <span class="close-btn-event" onclick="Swal.close()">×</span>
+                        <div class="event-title">${eventName}</div>
+                        <div class="event-description">${eventDescription}</div>
+                        <a href="${contactUrl}" class="contact-btn-Event" target="_blank">Contact Me</a>
+                    </div>
+                `,
+                showConfirmButton: false,
+                customClass: {
+                    popup: 'event-card-popup',
+                    title: 'event-title-popup',
+                    htmlContainer: 'event-description-popup'
+                }
+            });
+
+            localStorage.setItem(eventKey, "true");
         }
     });
 </script>
+{% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.min.js"></script>  
+
+{% comment %} <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.2/dist/sweetalert2.min.js"></script>   {% endcomment %}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
 
 <script>
