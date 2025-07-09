@@ -191,53 +191,19 @@
         </div>
 
         <ul id="navLinks" class="hidden">
-            <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
-            <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
-            <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
-            <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
-            <li style="margin-top:2%"><a href="{% url 'Product' %}">Product</a></li>
-            <li style="margin-top:2%"><a href="{% url 'Blogs' %}">Blogs</a></li>
-            {% comment %} <li style="margin-top:2%"><a href="{% url 'Event' %}">Event Form</a></li> {% endcomment %}
-            {% comment %} <li>
-                <div id="google_translate_element"></div>
-                <script>
-                    // Initialize Google Translate
-                    function googleTranslateElementInit() {
-                      new google.translate.TranslateElement(
-                        {
-                          pageLanguage: 'en', // Default language of the page
-                          includedLanguages: 'en,es,fr,de,hi,zh-CN,mr', // Comma-separated language codes
-                          layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-                        },
-                        'google_translate_element'
-                      );
-                    }
-                </script>
-            </li> {% endcomment %}
+            <li style="margin-top:2.5%"><a href="{% url 'Home' %}">Home</a></li>
+            <li style="margin-top:2.5%"><a href="{% url 'AboutUs' %}">About Us</a>
+            <li style="margin-top:2.5%"><a href="{% url 'Software' %}">Software</a></li>
+            <li style="margin-top:2.5%"><a href="{% url 'Services' %}">Services</a></li>
+            <li style="margin-top:2%;">
+                <a href="{% url 'Product' %}" style="position: relative; display: inline-block;">
+                    Product
+                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                </a>
+            </li>
 
-            {% comment %} <li>
-                <div class="language-dropdown">
-                    <br>
-                    <select id="language" name="language" style="">
-                        <option value="en">English</option>
-                        <option value="fr">Français</option>
-                        <option value="es">Español</option>
-                        <option value="de">Deutsch</option>
-                        <option value="hi">हिंदी</option>
-                        <option value="zh">中文</option>
-                    </select>
-                </div>
-            </li> {% endcomment %}
-
-           
-{% comment %}  
-            <li>
-                <input type="text" class="search-bar" placeholder="Search..." id="searchInput">
-               
-              </li> {% endcomment %}
+            <li style="margin-top:2.5%"><a href="{% url 'Blogs' %}">Blogs</a></li>
             
-            
-               
               <li>
                 <a href="{% url 'Services' %}#faq-section" id="contactButton" class="contact-btn">
                     <!-- Tooltip container -->
