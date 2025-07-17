@@ -202,8 +202,13 @@
                 </a>
             </li>
 
-            <li style="margin-top:2.5%"><a href="{% url 'Blogs' %}">Blogs</a></li>
-            
+             <li style="margin-top:2%;">
+                <a href="{% url 'Blogs' %}" style="position: relative; display: inline-block;">
+                    Blogs
+                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                </a>
+            </li>
+        
               <li>
                 <a href="{% url 'Services' %}#faq-section" id="contactButton" class="contact-btn">
                     <!-- Tooltip container -->
@@ -222,10 +227,67 @@
                 </a>
             </li>
               
-              
+              <li>
+                <a href="javascript:void(0);" id="notificationButton" style="position: relative;" title="Notification">
+                    <img src="{% static 'images/bell.gif' %}" alt="Notifications" style="height: 40px; width: 40px;margin-top:20px">
+                </a>
+            </li>
+
         </ul>
 
     </nav>
+
+    <div id="notificationModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); font-family:'Segoe UI', sans-serif;">
+    <div style="background: linear-gradient(135deg, #ffffff, #f1f5f9); margin:8% auto; padding:20px; border-radius:12px; width:90%; max-width:500px; position:relative; box-shadow:0 8px 20px rgba(0,0,0,0.4); border:1px solid #e0e0e0;">
+        
+        <!-- Close Button -->
+        <span id="closeModal" style="color:#666; position:absolute; right:20px; top:15px; font-size:26px; font-weight:bold; cursor:pointer;">&times;</span>
+        
+        <!-- Modal Title -->
+        <h3 style="margin-top:0; font-size:20px; color:#1a202c; border-bottom:1px solid #ccc; padding-bottom:10px; text-align:center;">
+            🔔 Notifications
+        </h3>
+        
+        <!-- Notification List -->
+        <ul id="notificationList" style="list-style:none; padding:0; margin-top:15px; max-height:300px; overflow-y:auto;">
+        
+        <!-- Product Notification -->
+        <li style="margin-bottom:12px; padding:12px; background-color:#fef9c3; border-left:5px solid #e0b60b; border-radius:6px; color:#4b5563; font-size:15px; display:flex; flex-direction:column; gap:10px;">
+            <span>
+                <i class="fa-solid fa-box-open" style="margin-right:8px;"></i>
+                🆕 <b>New Products are Launched —</b> <strong>check them out!</strong>
+            </span>
+            <a href="{% url 'Product' %}" style="align-self:flex-start; padding:6px 12px; background-color:#e0b60b; color:#1f2937; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
+                Products <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+            </a>
+        </li>
+
+        <!-- Event Notification -->
+        <li style="margin-bottom:12px; padding:12px; background-color:#f3e8ff; border-left:5px solid #6f11ce; border-radius:6px; color:#4b0082; font-size:15px; display:flex; flex-direction:column; gap:10px;">
+            <span>
+                <i class="fa-solid fa-calendar-check" style="margin-right:8px;"></i>
+                📣 <b>New Events are Launched —</b> <strong>check them out now!</strong>
+            </span>
+            <a href="{% url 'Blogs' %}#event_attended" style="align-self:flex-start; padding:6px 12px; background-color:#6f11ce; color:#fff; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
+                Events <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+            </a>
+        </li>
+
+        <!-- Resources Notification -->
+        <li style="margin-bottom:12px; padding:12px; background-color:#e0f2fe; border-left:5px solid #111ece; border-radius:6px; color:#1e3a8a; font-size:15px; display:flex; flex-direction:column; gap:10px;">
+            <span>
+                <i class="fa-solid fa-book" style="margin-right:8px;"></i>
+                📘 <b>New Valuable Resources are provided</b>
+            </span>
+            <a href="{% url 'Blogs' %}#other_resources" style="align-self:flex-start; padding:6px 12px; background-color:#111ece; color:#fff; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
+                Resources <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
+            </a>
+        </li>
+
+        </ul>
+    </div>
+</div>
+
 
     {% block content %}
             
@@ -621,5 +683,22 @@
             });
         });
     </script>
+
+    <script>
+    document.getElementById("notificationButton").onclick = function () {
+        document.getElementById("notificationModal").style.display = "block";
+    };
+
+    document.getElementById("closeModal").onclick = function () {
+        document.getElementById("notificationModal").style.display = "none";
+    };
+
+    window.onclick = function (event) {
+        if (event.target === document.getElementById("notificationModal")) {
+            document.getElementById("notificationModal").style.display = "none";
+        }
+    };
+</script>
+
 
 </html>

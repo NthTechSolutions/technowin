@@ -359,55 +359,108 @@
         </div>
     </section>
     
-    
-    {% comment %} <section class="download-section">
-        <!-- Section Title -->
-        <h2 class="section-heading">Other Resources</h2>
-    
-        <!-- Card Row -->
-        <div class="download-row">
-            <!-- Card 1 -->
-            <div class="download-container">
-                <h3 class="download-title">Google Analytics & SEO</h3>
-                <div class="download-image">
-                    <img src="{% static 'resources/google_analytics_seo.gif' %}" alt="resources1">
-                </div>
-                <div class="download-button-wrapper">
-                    <a href="{% static 'resources/google_seo.pdf' %}" class="download-btn" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Card 2 -->
-            <div class="download-container">
-                <h3 class="download-title">Designing with Canva</h3>
-                <div class="download-image">
-                    <img src="{% static 'resources/Canva.gif' %}" alt="Workflow Management Banner">
-                </div>
-                <div class="download-button-wrapper">
-                    <a href="{% static 'resources/canva.pdf' %}" class="download-btn" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-    
-            <!-- Card 3 -->
-            <div class="download-container">
-                <h3 class="download-title">Complete Data Management with Value-Added Features</h3>
-                <div class="download-image">
-                    <img src="{% static 'resources/data.gif' %}" alt="Workflow Management Banner">
-                </div>
-                <div class="download-button-wrapper">
-                    <a href="{% static 'blog/workflow/case_study.pdf' %}" class="download-btn" download>
-                        <i class="fas fa-download"></i> Download PDF
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> {% endcomment %}
-    
-    
+<section style="padding: 30px; background-color: #f9fafb; font-family: 'Segoe UI', sans-serif;" id="event_attended">
+  <h2 style="text-align: center; color: #1f2937; font-size: 38px; margin-bottom: 30px;">
+    <i class="fa-solid fa-bolt" style="color: #facc15; margin-right: 10px;"></i>
+    Featured Event Highlights
+  </h2>
+
+  <ul style="display: flex; flex-wrap: wrap; gap: 24px; padding-left: 0; list-style: none; justify-content: center;">
+
+    <!-- Event 1 -->
+    <li style="flex: 1 1 300px; max-width: 480px; padding: 20px; background-color: #e0f2fe; border-left: 5px solid #38bdf8; border-radius: 12px; color: #0c4a6e; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 700;">
+        <i class="fa-solid fa-video" style="margin-right: 8px;"></i> 🎥 ICAI MSME & Startup Conclave 2025
+      </div>
+
+      <div style="font-size: 14px; color: #1e3a8a;">
+        We were honored to participate in the ICAI MSME & Startup Conclave 2025 on 26–27 June at Hotel Sahara Star, Mumbai, organized by ICAI with support from the Ministry of MSME. Our team showcased Technowin’s digital solutions for MSMEs, focusing on ERP, compliance automation, and business growth tech. It was a great opportunity to connect with policymakers, startups, and industry leaders. We thank ICAI for this impactful platform and remain committed to empowering MSMEs through innovation.
+      </div>
+
+      <video controls style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0);">
+        <source src="{% static 'Events/event1.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <a href="https://youtu.be/KL8GFLeweck" target="_blank"
+         style="align-self: flex-start; padding: 10px 16px; background-color: #1e3a8a; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i> Know More
+      </a>
+    </li>
+
+    <!-- Event 2 -->
+    <li style="flex: 1 1 300px; max-width: 480px; padding: 20px; background-color: #f3e8ff; border-left: 5px solid #c084fc; border-radius: 12px; color: #4b0082; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 700;">
+        <i class="fa-solid fa-video" style="margin-right: 8px;"></i> 🌟 Founder & Investor Event
+      </div>
+
+      <div style="font-size: 14px; color: #4b0082;">
+        Technowin I.T. Infra Pvt. Ltd. proudly participated in the Founder & Investor Event, bringing together dynamic entrepreneurs, strategic investors, and tech innovators under one roof. We showcased our cutting-edge software solutions in HRMS, Audit, DMS, Workflow Automation, and more — built to drive digital transformation across government and enterprise sectors. This platform gave us a valuable opportunity to connect, collaborate, and explore synergies that will fuel future growth and innovation.
+      </div>
+
+      <video controls style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0);">
+        <source src="{% static 'Events/event2.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <a href="https://youtu.be/XU-T4JJZ1ek" target="_blank"
+         style="align-self: flex-start; padding: 10px 16px; background-color: #4b0082; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i> Know More
+      </a>
+    </li>
+
+  </ul>
+
+  <!-- Exhibitor Note -->
+  <div style="margin-top: 40px; padding: 20px; background-color: #fff8dc; border-left: 5px solid #f59e0b; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.05); text-align: center; color: #78350f; font-size: 16px; font-weight: 500;">
+    📢 <strong>Exciting News!</strong> Technowin I.T. Infra Pvt. Ltd. will be exhibiting at the <strong>Automation Expo 2025</strong> at <strong>NESCO, Goregaon</strong> from <strong>11th August to 14th August 2025</strong>.
+    Visit us to explore our latest innovations in HRMS, Audit, Workflow Automation, and more!
+  </div>
+</section>
+
+ <section id="other_resources" style="padding: 50px 20px; background-color: #fffafc; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="text-align: center; font-size: 36px; color: #1f2937; margin-bottom: 40px;">
+    <i class="fa-solid fa-folder-open" style="color: #ef4444; margin-right: 12px;"></i>
+    Our Valuable Resources
+  </h2>
+
+  <ul style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; list-style: none; padding-left: 0; margin: 0;">
+
+    <!-- Resource Card 1 -->
+    <li style="flex: 1 1 320px; max-width: 480px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s;">
+      <img src="{% static 'other_resources/google_analytics_seo.png' %}" alt="HRMS Guide"
+           style="width: 100%; height: auto; display: block;">
+      <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="font-size: 20px; font-weight: 700; color: #dc2626;">Google Analytics & SEO Optimization Guide</h3>
+        <p style="font-size: 14px; color: #374151;">
+         Unlock the full potential of your website with our comprehensive guide to Google Analytics and SEO. Learn how to track key user behaviors, optimize your content for search engines, and make data-driven decisions to boost visibility, traffic, and engagement. Ideal for startups, marketers, and web admins aiming to enhance their digital presence.
+        </p>
+        <a href="{% static 'other_resources/google_analytics_seo.pdf' %}" download
+           style="align-self: flex-start; padding: 10px 16px; background-color: #ee0707ff; color: white; font-size: 14px; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+        </a>
+      </div>
+    </li>
+
+    <!-- Resource Card 2 -->
+    <li style="flex: 1 1 320px; max-width: 480px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s;">
+      <img src="{% static 'other_resources/Canva.png' %}" alt="Workflow Automation"
+           style="width: 100%; height: auto; display: block;">
+      <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="font-size: 20px; font-weight: 700; color: #2563eb;">Canva Design Guide for Business Branding</h3>
+        <p style="font-size: 14px; color: #374151;">
+          Master the art of visual communication with our Canva Design Guide. This resource walks you through creating professional, on-brand graphics for social media, presentations, flyers, and more — all without needing a designer. Perfect for startups, marketers, and teams looking to elevate their brand with ease and consistency.
+        </p>
+        <a href="{% static 'other_resources/canva_guideBook.pdf' %}" download
+           style="align-self: flex-start; padding: 10px 16px; background-color: #014ceeff; color: white; font-size: 14px; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+        </a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+   
     
   </body>
 

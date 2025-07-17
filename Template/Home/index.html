@@ -35,7 +35,32 @@
 
         <div id="carouselExampleControlsPC" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" style="position: relative;">
+                <img class="d-block w-100" src="{% static 'slider/event_technowin.png' %}" alt="Second slide">
+
+                <!-- Book Now Button Positioned Bottom Left -->
+                <a href="https://www.automationindiaexpo.com/visitor-registration" target="_blank"
+                style="
+                        position: absolute;
+                        bottom: 230px;
+                        left: 350px;
+                        background-color: #2563eb;
+                        color: #ffffff;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        border-radius: 6px;
+                        text-decoration: none;
+                        box-shadow: 0 4px 10px rgba(0,0,0);
+                        transition: background-color 0.3s ease;
+                    "
+                onmouseover="this.style.backgroundColor='#05248aff';"
+                onmouseout="this.style.backgroundColor='#041741ff';"
+                >
+                    <i class="fa-solid fa-ticket" style="margin-right: 8px;"></i> Book Now
+                </a>
+            </div>
+                <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/1.png' %}" alt="First slide">
                     <div class="overlay-text animate__animated animate__backInLeft">We Provide</div>
                 </div>
@@ -79,6 +104,8 @@
                         AI Based <br> Solutions
                     </div>
                 </div>
+
+
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControlsPC" role="button" data-slide="prev">
                 <i class="fa-solid fa-arrow-left custom-carousel-icon"></i>
@@ -94,7 +121,34 @@
         
         <div id="carouselExampleControlsMobile" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+               <div class="carousel-item active" style="position: relative;">
+    <img class="d-block w-100" src="{% static 'slider/event_slider_mobile.png' %}" alt="First slide">
+
+    <!-- Book Now Button Positioned Bottom Center -->
+    <a href="https://www.automationindiaexpo.com/visitor-registration" target="_blank"
+       style="
+           position: absolute;
+           bottom: 30px;
+           left: 50%;
+           transform: translateX(-50%);
+           background-color: #2563eb;
+           color: #ffffff;
+           padding: 10px 20px;
+           font-size: 16px;
+           font-weight: 600;
+           border-radius: 6px;
+           text-decoration: none;
+           box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+           transition: background-color 0.3s ease;
+       "
+       onmouseover="this.style.backgroundColor='#1e40af';"
+       onmouseout="this.style.backgroundColor='#2563eb';"
+    >
+        <i class="fa-solid fa-ticket" style="margin-right: 8px;"></i> Book Now
+    </a>
+</div>
+
+                <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/M1.png' %}" alt="First slide">
                 </div>
                 <div class="carousel-item">
@@ -128,6 +182,7 @@
         </div>
 
     </section>
+
 
     <!-- why-techno Section --> 
     <section class="why-techno" id-"why-techno_stand">
