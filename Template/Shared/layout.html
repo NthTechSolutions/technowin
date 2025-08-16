@@ -18,6 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/slider.css' %}">
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
     <style>
         /* Hide the "Powered by Google" text and logo */
         .goog-logo-link,
@@ -135,7 +136,7 @@
                 top: 63%; /* Adjust vertical centering */
             }
           }  {% endcomment %}
-      </style>
+    </style>
 
   
 </head>
@@ -202,14 +203,21 @@
                 </a>
             </li>
 
-             <li style="margin-top:2%;">
+            <li style="margin-top:2%;">
                 <a href="{% url 'Blogs' %}" style="position: relative; display: inline-block;">
                     Blogs
                     <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
                 </a>
             </li>
+
+            <li style="margin-top:2%;">
+                <a href="{% url 'AutomationExpo' %}" style="position: relative; display: inline-block; color: #FCAB32 !important;">
+                    Automation Expo 2025
+                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                </a>
+            </li>
         
-              <li>
+            <li>
                 <a href="{% url 'Services' %}#faq-section" id="contactButton" class="contact-btn">
                     <!-- Tooltip container -->
                     <span class="tooltip-text-help">Help Desk</span>
@@ -334,9 +342,6 @@
             </div>
         </div>
     </section>
-    
-
-    
             
     <footer>
         
@@ -402,236 +407,235 @@
 
 </body>
 
-    <script>
-        // Function to animate the counter
-        function animateCounter(counterElement) {
-            const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
-            let currentValue = 0;
-        
-            // Increment the counter
-            const interval = setInterval(() => {
-                counterElement.innerText = currentValue;
-                if (currentValue >= targetValue) {
-                    clearInterval(interval);
-                } else {
-                    currentValue++;
-                }
-            }, 30); // Adjust speed by changing the interval
-        }
-        
-        // Detect when the counters are visible
-        function startCounters() {
-            const counters = document.querySelectorAll('.counter');
-            counters.forEach(counter => {
-                const counterPosition = counter.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-        
-                if (counterPosition < windowHeight) {
-                    animateCounter(counter);
-                }
-            });
-        }
-        
-        // Trigger the counter animation when the page loads or scrolls
-        window.addEventListener('scroll', startCounters);
-        window.addEventListener('load', startCounters);
-        
-    </script>
-        
-    <!-- JavaScript for Chatbot -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-            let typingTimeout;  // To manage the typing indicator timeout for the user
-        
-            // Toggle chat window visibility
-            function toggleChatbot() {
-                const chatContainer = document.getElementById('chatbot');
-                const chatIcon = document.getElementById('chat-icon');
-                
-                if (chatContainer.style.display === 'block') {
-                    chatContainer.style.display = 'none';
-                    chatIcon.style.display = 'block';
-                } else {
-                    chatContainer.style.display = 'block';
-                    chatIcon.style.display = 'none';
-                }
+        <script>
+            // Function to animate the counter
+            function animateCounter(counterElement) {
+                const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+                let currentValue = 0;
+            
+                // Increment the counter
+                const interval = setInterval(() => {
+                    counterElement.innerText = currentValue;
+                    if (currentValue >= targetValue) {
+                        clearInterval(interval);
+                    } else {
+                        currentValue++;
+                    }
+                }, 30); // Adjust speed by changing the interval
             }
-        
-            // Function to send message
-            function sendMessage() {
-                const userMessage = document.getElementById('userInput').value;
-                if (userMessage) {
-                    // Display user message immediately with "You: "
-                    displayMessage('user', userMessage);
-                    document.getElementById('userInput').value = ''; // Clear input field
             
-                    // Simulate bot typing
-                    displayTypingIndicator('bot');
+            // Detect when the counters are visible
+            function startCounters() {
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const counterPosition = counter.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
             
-                    // Simulate bot response after a delay
-                    setTimeout(() => {
-                        removeTypingIndicator('bot');
-                        let botResponse =  getBotResponse(userMessage);
-                        displayMessage('bot',botResponse); // Display bot response
-                    }, 1500);
-                }
-            }
-          
-
-            // Function to get bot response
-            function getBotResponse(userMessage) {
-                const q = userMessage.toLowerCase();
-                let botResponse = "";
-            
-                $.ajax({
-                    url: "{% url 'get_botans' %}",
-                    type: "GET",
-                    data: {
-                        'q': q,
-                        'csrfmiddlewaretoken': '{{ csrf_token }}'
-                    },
-                    async: false, // Deprecated, but forces synchronous execution
-                    success: function(response) {
-                        botResponse = response.data;
-                    },
-                    error: function(error) {
-                        console.log("Error fetching bot response:", error);
+                    if (counterPosition < windowHeight) {
+                        animateCounter(counter);
                     }
                 });
-            
-                return botResponse; // Ensures function waits for AJAX response
             }
             
-        
-            // Function to display messages in the chat window
-            function displayMessage(sender, message) {
-                debugger;
-                const chatMessages = document.getElementById('chatMessages');
+            // Trigger the counter animation when the page loads or scrolls
+            window.addEventListener('scroll', startCounters);
+            window.addEventListener('load', startCounters);
+            
+        </script>
+            
+        <!-- JavaScript for Chatbot -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+                let typingTimeout;  // To manage the typing indicator timeout for the user
+            
+                // Toggle chat window visibility
+                function toggleChatbot() {
+                    const chatContainer = document.getElementById('chatbot');
+                    const chatIcon = document.getElementById('chat-icon');
+                    
+                    if (chatContainer.style.display === 'block') {
+                        chatContainer.style.display = 'none';
+                        chatIcon.style.display = 'block';
+                    } else {
+                        chatContainer.style.display = 'block';
+                        chatIcon.style.display = 'none';
+                    }
+                }
+            
+                // Function to send message
+                function sendMessage() {
+                    const userMessage = document.getElementById('userInput').value;
+                    if (userMessage) {
+                        // Display user message immediately with "You: "
+                        displayMessage('user', userMessage);
+                        document.getElementById('userInput').value = ''; // Clear input field
                 
-                // Create icon and text
-                const iconDiv = document.createElement('div');
-                iconDiv.classList.add(sender + '-icon');
-                const img = document.createElement('img');
-                img.src = sender === 'user' ? '{% static "images/user.png" %}' : '{% static "images/businessman.png" %}';  // Adjust the paths for your images
-                iconDiv.appendChild(img);
+                        // Simulate bot typing
+                        displayTypingIndicator('bot');
                 
-                // Create a new div for the message
-                const messageDiv = document.createElement('div');
-                messageDiv.classList.add('message', sender + '-message');
+                        // Simulate bot response after a delay
+                        setTimeout(() => {
+                            removeTypingIndicator('bot');
+                            let botResponse =  getBotResponse(userMessage);
+                            displayMessage('bot',botResponse); // Display bot response
+                        }, 1500);
+                    }
+                }
+            
+
+                // Function to get bot response
+                function getBotResponse(userMessage) {
+                    const q = userMessage.toLowerCase();
+                    let botResponse = "";
                 
-                const messageTextDiv = document.createElement('div');
-                messageTextDiv.classList.add('message-text');
-                if ((sender === "bot") && (message.includes('<a') && message.includes('</a>') && message.includes('href='))) {
-                    messageTextDiv.innerHTML = message; 
-                } else {
-                    messageTextDiv.textContent = message;
-                }                
-                // Append icon first, then message text to the message div
-                messageDiv.appendChild(iconDiv);
-                messageDiv.appendChild(messageTextDiv);
+                    $.ajax({
+                        url: "{% url 'get_botans' %}",
+                        type: "GET",
+                        data: {
+                            'q': q,
+                            'csrfmiddlewaretoken': '{{ csrf_token }}'
+                        },
+                        async: false, // Deprecated, but forces synchronous execution
+                        success: function(response) {
+                            botResponse = response.data;
+                        },
+                        error: function(error) {
+                            console.log("Error fetching bot response:", error);
+                        }
+                    });
                 
-                // Append the message div to the chat messages container
-                chatMessages.appendChild(messageDiv);
+                    return botResponse; // Ensures function waits for AJAX response
+                }
                 
-                // Scroll to the bottom of the chat
-                scrollToBottom();
-            }
-        
-        
-        
-            // Function to display typing indicator
-            function displayTypingIndicator(sender) {
-                // Only show typing indicator if it's for the bot
-                if (sender === 'bot') {
-                    const typingIndicator = document.createElement('div');
-                    typingIndicator.classList.add('typing-indicator');
-                    typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
-                    document.getElementById('chatMessages').appendChild(typingIndicator);
-                } else if (sender === 'user') {
-                    // Show user icon and the text they are typing while typing
+            
+                // Function to display messages in the chat window
+                function displayMessage(sender, message) {
+                    debugger;
+                    const chatMessages = document.getElementById('chatMessages');
+                    
+                    // Create icon and text
                     const iconDiv = document.createElement('div');
-                    iconDiv.classList.add('user-icon');
+                    iconDiv.classList.add(sender + '-icon');
                     const img = document.createElement('img');
-                    img.src = '{% static "user.png" %}';  // Path for user icon
+                    img.src = sender === 'user' ? '{% static "images/user.png" %}' : '{% static "images/businessman.png" %}';  // Adjust the paths for your images
                     iconDiv.appendChild(img);
                     
-                    const chatMessages = document.getElementById('chatMessages');
-                    const typingMessage = document.createElement('div');
-                    typingMessage.classList.add('message', 'user-message');
-                    
-                    
+                    // Create a new div for the message
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', sender + '-message');
                     
                     const messageTextDiv = document.createElement('div');
                     messageTextDiv.classList.add('message-text');
-                    messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
+                    if ((sender === "bot") && (message.includes('<a') && message.includes('</a>') && message.includes('href='))) {
+                        messageTextDiv.innerHTML = message; 
+                    } else {
+                        messageTextDiv.textContent = message;
+                    }                
+                    // Append icon first, then message text to the message div
+                    messageDiv.appendChild(iconDiv);
+                    messageDiv.appendChild(messageTextDiv);
                     
-                    // Append the icon first and then the message text
-                    typingMessage.appendChild(iconDiv); // User image first
-                    typingMessage.appendChild(messageTextDiv); // Then the message text
+                    // Append the message div to the chat messages container
+                    chatMessages.appendChild(messageDiv);
                     
-                    chatMessages.appendChild(typingMessage);
-                    scrollToBottom(); // Ensure chat scrolls to bottom
+                    // Scroll to the bottom of the chat
+                    scrollToBottom();
                 }
-            }
-        
-        
-            // Function to remove typing indicator
-            function removeTypingIndicator(sender) {
-                if (sender === 'bot') {
-                    const typingIndicator = document.querySelector('.typing-indicator');
-                    if (typingIndicator) {
-                        typingIndicator.remove();
+            
+            
+            
+                // Function to display typing indicator
+                function displayTypingIndicator(sender) {
+                    // Only show typing indicator if it's for the bot
+                    if (sender === 'bot') {
+                        const typingIndicator = document.createElement('div');
+                        typingIndicator.classList.add('typing-indicator');
+                        typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+                        document.getElementById('chatMessages').appendChild(typingIndicator);
+                    } else if (sender === 'user') {
+                        // Show user icon and the text they are typing while typing
+                        const iconDiv = document.createElement('div');
+                        iconDiv.classList.add('user-icon');
+                        const img = document.createElement('img');
+                        img.src = '{% static "user.png" %}';  // Path for user icon
+                        iconDiv.appendChild(img);
+                        
+                        const chatMessages = document.getElementById('chatMessages');
+                        const typingMessage = document.createElement('div');
+                        typingMessage.classList.add('message', 'user-message');
+                        
+                        
+                        
+                        const messageTextDiv = document.createElement('div');
+                        messageTextDiv.classList.add('message-text');
+                        messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
+                        
+                        // Append the icon first and then the message text
+                        typingMessage.appendChild(iconDiv); // User image first
+                        typingMessage.appendChild(messageTextDiv); // Then the message text
+                        
+                        chatMessages.appendChild(typingMessage);
+                        scrollToBottom(); // Ensure chat scrolls to bottom
                     }
-                } else if (sender === 'user') {
-                    const typingMessages = document.querySelectorAll('.user-message');
-                    typingMessages.forEach(msg => msg.remove()); // Remove user typing message
-                }
-            }
-        
-            // Function to handle user typing in the input box
-            function handleTyping(event) {
-                const userMessage = document.getElementById('userInput').value;
-            
-                // Display typing indicator for the user while they are typing
-                if (userMessage && !typingTimeout) {
-                    displayTypingIndicator('user');
                 }
             
-                // Remove the typing indicator after the user stops typing
-                clearTimeout(typingTimeout);
-                typingTimeout = setTimeout(() => {
-                    removeTypingIndicator('user');
-                }, 1000); // After 1 second of inactivity
-            }
             
-            // Function to scroll the chat window to the bottom
-            function scrollToBottom() {
-                const chatboxMessages = document.getElementById('chatMessages');
-                chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+                // Function to remove typing indicator
+                function removeTypingIndicator(sender) {
+                    if (sender === 'bot') {
+                        const typingIndicator = document.querySelector('.typing-indicator');
+                        if (typingIndicator) {
+                            typingIndicator.remove();
+                        }
+                    } else if (sender === 'user') {
+                        const typingMessages = document.querySelectorAll('.user-message');
+                        typingMessages.forEach(msg => msg.remove()); // Remove user typing message
+                    }
+                }
+            
+                // Function to handle user typing in the input box
+                function handleTyping(event) {
+                    const userMessage = document.getElementById('userInput').value;
+                
+                    // Display typing indicator for the user while they are typing
+                    if (userMessage && !typingTimeout) {
+                        displayTypingIndicator('user');
+                    }
+                
+                    // Remove the typing indicator after the user stops typing
+                    clearTimeout(typingTimeout);
+                    typingTimeout = setTimeout(() => {
+                        removeTypingIndicator('user');
+                    }, 1000); // After 1 second of inactivity
+                }
+                
+                // Function to scroll the chat window to the bottom
+                function scrollToBottom() {
+                    const chatboxMessages = document.getElementById('chatMessages');
+                    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+                }
+            
+        </script>
+
+        <script>
+            // Select the Back to Top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            // Show the button when the user scrolls down
+            window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) { // Show button after scrolling 200px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
             }
+            });
+            
+            // Scroll to the top when the button is clicked
+            backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+            });
         
-    </script>
-
-    <script>
-        // Select the Back to Top button
-        const backToTopButton = document.getElementById('back-to-top');
-        
-        // Show the button when the user scrolls down
-        window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) { // Show button after scrolling 200px
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-        });
-        
-        // Scroll to the top when the button is clicked
-        backToTopButton.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
-        });
-        
-            </script>
-
+        </script>
             
         <script>
             document.getElementById('menuToggle').addEventListener('click', function () {
@@ -685,20 +689,20 @@
     </script>
 
     <script>
-    document.getElementById("notificationButton").onclick = function () {
-        document.getElementById("notificationModal").style.display = "block";
-    };
+        document.getElementById("notificationButton").onclick = function () {
+            document.getElementById("notificationModal").style.display = "block";
+        };
 
-    document.getElementById("closeModal").onclick = function () {
-        document.getElementById("notificationModal").style.display = "none";
-    };
-
-    window.onclick = function (event) {
-        if (event.target === document.getElementById("notificationModal")) {
+        document.getElementById("closeModal").onclick = function () {
             document.getElementById("notificationModal").style.display = "none";
-        }
-    };
-</script>
+        };
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById("notificationModal")) {
+                document.getElementById("notificationModal").style.display = "none";
+            }
+        };
+    </script>
 
 
 </html>

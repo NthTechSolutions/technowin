@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+{% extends "Shared/layout.html" %} {% block content %}
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/service_style.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+        />
+        <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+        ></script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-2ZJE06MHVY');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Automation Expo 2025</title>
+
+        <style>
+            .video-wrapper {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 */
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+                background: #000; /* nicer while loading */
+            }
+            .video-wrapper iframe {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+            .video-wrapper-other {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* keeps 16:9 aspect ratio */
+                border-radius: 1rem;
+                overflow: hidden;
+                box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+                background: #000;
+            }
+
+            .video-wrapper-other video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* fill like iframe, keeps ratio */
+                border: 0;
+            }
+
+
+            
+        </style>
+
+    </head>
+
+<body>
+    <!-- <section class="services-section">
+      <div class="go-back">
+        <img
+          src="{% static 'images/back.gif' %}"
+          alt="Go Back"
+          class="go-back-image"
+          onclick="history.back()"
+        />
+      </div>
+
+      <div class="image-card" id="service-background">
+        <video autoplay muted loop class="background-video">
+          <source
+            src="{% static 'images/services_background_video.mp4' %}"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Responsive video helper (drop this once on the page, e.g., near your other styles) -->
+
+
+    <section class="cards-section" id="service-info">
+        <div class="container">
+
+            <!-- Cloud Computing Section (video on left, text on right) -->
+            <div class="service-1" id="cloud-service">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/TjwT3rWLVeI?list=PLGEk_7A6QWPwfkzt-cBBYlcip6amdeyHZ&rel=0&modestbranding=1"
+                        title="Cloud Computing - Case Studies"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                    </div>
+                </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card card-text">
+                        <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
+                        <p class="card-description">
+                        <strong>Description:</strong> PLM &amp; PPC Solutions (Product Lifecycle Management &amp; Project Planning &amp; Control).<br>
+                        Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
+                        </p>
+                        <p class="card-description mb-1"><strong>Modules include:</strong></p>
+                        <ul class="card-description mb-2">
+                        <li>Bill of Materials (BOM)</li>
+                        <li>Material Planning</li>
+                        <li>Machine Planning &amp; Routing</li>
+                        <li>Manpower Planning</li>
+                        <li>Inventory &amp; Warehouse Management</li>
+                        <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
+                        <li><strong>Actionable Dashboards</strong>: Module dashboards + central PPC dashboard, powered by Power BI with interactive, drill-down charts and graphs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <br>
+
+            <!-- PLM & PPC Solutions Section (text left, video right) -->
+            <div class="service-2" id="plm-ppc-service">
+            <div class="row align-items-center">
+                
+                <!-- Text side -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
+                    <p class="card-description">
+                    Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
+                    </p>
+                    <p class="card-description mb-1"><strong>Modules include:</strong></p>
+                    <ul class="card-description mb-2">
+                    <li>Bill of Materials (BOM)</li>
+                    <li>Material Planning</li>
+                    <li>Machine Planning &amp; Routing</li>
+                    <li>Manpower Planning</li>
+                    <li>Inventory &amp; Warehouse Management</li>
+                    <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
+                    <li><strong>Actionable Dashboards</strong>: Each module has its own dashboard plus a central PPC dashboard—powered by Power BI with interactive, drill-down charts and graphs.</li>
+                    </ul>
+                </div>
+                </div>
+
+                <!-- Video side -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="{% static 'images/PPC.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            <!-- PLM & PPC Solutions Section (text left, video right) -->
+            <div class="service-2" id="plm-ppc-service">
+            <div class="row align-items-center">
+                
+                <!-- Text side -->
+
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                        <video controls autoplay muted loop playsinline>
+                            <source src="{% static 'images/PLM.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
+                    <p class="card-description">
+                    Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
+                    </p>
+                    <p class="card-description mb-1"><strong>Modules include:</strong></p>
+                    <ul class="card-description mb-2">
+                    <li>Bill of Materials (BOM)</li>
+                    <li>Material Planning</li>
+                    <li>Machine Planning &amp; Routing</li>
+                    <li>Manpower Planning</li>
+                    <li>Inventory &amp; Warehouse Management</li>
+                    <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
+                    <li><strong>Actionable Dashboards</strong>: Each module has its own dashboard plus a central PPC dashboard—powered by Power BI with interactive, drill-down charts and graphs.</li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            <!-- Process Automation Suite - DMS -->
+            <div class="service-2" id="pas-dms">
+            <div class="row align-items-center">
+                
+                <!-- Text Left -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>Document Management System (DMS)</u></h3>
+                    <p class="card-description">
+                    Our Process Automation solutions combine BPA (Business Process Automation), 
+                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
+                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
+                    </p>
+                    <ul class="card-description">
+                    <li><strong>AI-Powered Data Capture</strong>: Intelligent OCR processes scanned or digital files and extracts all required metadata.</li>
+                    <li><strong>Dynamic Form Builder</strong>: Auto-create forms tailored to client-specific requirements and populate them automatically.</li>
+                    <li><strong>Workflow Engine</strong>: Manage document verification, approvals, and quality checks via dynamic, mappable workflows.</li>
+                    <li><strong>Advanced Search</strong>: Find documents instantly with OCR-powered full-text search.</li>
+                    </ul>
+                </div>
+                </div>
+
+
+                <!-- Video Right -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/PAS2.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            <!-- Process Automation Suite - BPA -->
+            <div class="service-2" id="pas-bpa">
+            <div class="row align-items-center">
+
+                <!-- Video Left -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/PAS3.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>Business Process Automation (BPA)</u></h3>
+                    <p class="card-description">
+                    Our Process Automation solutions combine BPA (Business Process Automation), 
+                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
+                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
+                    </p>
+                    <ul class="card-description">
+                    <li>Streamlines and automates complex business workflows.</li>
+                    <li>Reduces manual intervention while ensuring accuracy and compliance.</li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            <!-- Process Automation Suite - RPA -->
+            <div class="service-2" id="pas-rpa">
+            <div class="row align-items-center">
+
+                <!-- Text Left -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>Robotic Process Automation (RPA)</u></h3>
+                    <p class="card-description">
+                    Our Process Automation solutions combine BPA (Business Process Automation), 
+                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
+                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
+                    </p>
+                    <ul class="card-description">
+                    <li><strong>File Retrieval Anywhere</strong>: Automatically scan local drives, network paths, or mailboxes.</li>
+                    <li><strong>Smart Email Parsing</strong>: Identify and extract attachments based on keywords (e.g., invoice number).</li>
+                    <li><strong>Automated Metadata Extraction</strong>: Using AI + OCR, extract structured data from any document—handwritten, printed, or in any language—and convert it into English.</li>
+                    </ul>
+                </div>
+                </div>
+
+
+                <!-- Video Right -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/PAS1.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            
+
+            <!-- AI Chatbots & Helpdesk Section -->
+            <div class="service-2" id="ai-chatbot">
+            <div class="row align-items-center">
+
+                <!-- Video Left -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/AIChatbot.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>AI Chatbots &amp; Helpdesk</u></h3>
+                    <ul class="card-description">
+                    <li>Provide instant customer support and knowledge retrieval.</li>
+                    <li>Enable 24/7 availability with automated query handling.</li>
+                    <li>Reduce workload on support teams by handling repetitive queries.</li>
+                    <li>Seamless integration with websites, apps, and social platforms.</li>
+                    <li>Supports multiple languages for global customers.</li>
+                    </ul>
+                </div>
+                </div>
+
+            </div>
+            </div>
+
+            <br>
+
+            <!-- Audit & Compliance Automation Section -->
+            <div class="service-2" id="audit-compliance">
+            <div class="row align-items-center">
+
+                <!-- Text Left -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>Audit &amp; Compliance Automation</u></h3>
+                    <ul class="card-description">
+                    <li><strong>Generative AI Bot</strong>: Reviews audit and compliance data, identifies risks, and generates recommendations.</li>
+                    <li><strong>Automated Checklists &amp; Task Lists</strong>: Maps audit requirements into action plans.</li>
+                    <li><strong>BPA Integration</strong>: Automates follow-up actions, approvals, and reporting.</li>
+                    </ul>
+                </div>
+                </div>
+
+                <!-- Video Right -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/compliance.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+            </div>
+            </div>
+            
+            <br>
+
+            <!-- HR & Workforce Management Section -->
+            <div class="service-2" id="hr-workforce">
+            <div class="row align-items-center">
+
+                
+                <!-- Video Left -->
+                <div class="col-md-6">
+                <div class="card card-image">
+                    <div class="video-wrapper-other">
+                    <video controls autoplay muted loop playsinline>
+                        <source src="{% static 'images/HR.mp4' %}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="col-md-6">
+                <div class="card card-text">
+                    <h3 class="card-title"><u>HR &amp; Workforce Management</u></h3>
+                    <ul class="card-description">
+                    <li>HRMS &amp; Payroll</li>
+                    <li>Employee Self-Service Portals</li>
+                    <li>Attendance Capturing via:</li>
+                    <ul>
+                        <li>Face Recognition</li>
+                        <li>Geo-Tagging &amp; Geo-Fencing</li>
+                        <li>Biometric Integration</li>
+                        <li>Excel Bulk Upload</li>
+                        <li>API Integration</li>
+                    </ul>
+                    </ul>
+                </div>
+                </div>
+
+
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+</body>
+
+<script>
+    // Select all FAQ items
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    // Loop through each FAQ item and add a click event listener
+    faqItems.forEach((item) => {
+      const question = item.querySelector(".faq-question");
+
+      question.addEventListener("click", () => {
+        // Toggle the 'open' class on the FAQ item to reveal/hide the answer
+        item.classList.toggle("open");
+      });
+    });
+</script>
+
+<script>
+    // Function to animate the counter
+    function animateCounter(counterElement) {
+      const targetValue = parseInt(
+        counterElement.getAttribute("data-count"),
+        10
+      );
+      let currentValue = 0;
+
+      // Increment the counter
+      const interval = setInterval(() => {
+        counterElement.innerText = currentValue;
+        if (currentValue >= targetValue) {
+          clearInterval(interval);
+        } else {
+          currentValue++;
+        }
+      }, 30); // Adjust speed by changing the interval
+    }
+
+    // Detect when the counters are visible
+    function startCounters() {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        const counterPosition = counter.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (counterPosition < windowHeight) {
+          animateCounter(counter);
+        }
+      });
+    }
+
+    // Trigger the counter animation when the page loads or scrolls
+    window.addEventListener("scroll", startCounters);
+    window.addEventListener("load", startCounters);
+</script>
+  
+</html>
+
+{% endblock %}

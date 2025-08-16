@@ -45,6 +45,7 @@ urlpatterns = [
     path('Product', Product, name='Product'),
     path('product', Product, name='Product'),
     path('Blogs', Blogs, name='Blogs'),
+    path('AutomationExpo', AutomationExpo, name='AutomationExpo'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap'),
     path('get_botans', get_botans, name='get_botans'),
     path('website_counter/', website_counter, name='website_counter'),

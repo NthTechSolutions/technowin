@@ -53,6 +53,9 @@ def siteMap(request):
 def Blogs(request):
     return render(request,'Home/blogs_index.html') 
 
+def AutomationExpo(request):
+    return render(request,'Home/AutomationExpo.html') 
+
 def Product(request):
     return render(request,'Home/product.html') 
 
@@ -122,7 +125,6 @@ def website_counter(request):
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=500)
 
-
 # Function to validate name (only alphabets and spaces, no longer than 30 characters)
 def validate_name(name):
     if not re.match(r'^[A-Za-z\s]+$', name):  # Allow alphabets and spaces only
@@ -164,7 +166,6 @@ def validate_email(email):
     except ValidationError:
         raise ValidationError("Please enter a valid email address.")
 
-
 def contactUsFormPost(request):
     if request.method == "POST":
         try:
@@ -196,8 +197,6 @@ def contactUsFormPost(request):
     else:
         return HttpResponseBadRequest("Invalid request method.")
 
-    
-
 # Function to validate full name (only alphabets, spaces, and a character limit)
 def validate_full_name(name):
     # Check if the name contains only alphabets and spaces
@@ -207,7 +206,6 @@ def validate_full_name(name):
     # Check if the name length is less than or equal to 30 characters
     if len(name) > 30:
         raise ValidationError("Full name must not exceed 30 characters.")
-
 
 # Function to validate the requirement field
 def validate_requirement(requirement):
