@@ -39,428 +39,1308 @@
         <title>Automation Expo 2025</title>
 
         <style>
-            .video-wrapper {
-                position: relative;
-                width: 100%;
-                padding-top: 56.25%; /* 16:9 */
-                border-radius: 1rem;
-                overflow: hidden;
-                box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-                background: #000; /* nicer while loading */
-            }
-            .video-wrapper iframe {
-                position: absolute;
-                inset: 0;
-                width: 100%;
-                height: 100%;
-                border: 0;
-            }
+.process-suite {
+  background: #f9fbff;
+  padding: 60px 20px;
+  margin: 50px auto;
+  border-radius: 12px;
+  max-width: 1200px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0);
+}
 
-            .video-wrapper-other {
-                position: relative;
-                width: 100%;
-                padding-top: 56.25%; /* keeps 16:9 aspect ratio */
-                border-radius: 1rem;
-                overflow: hidden;
-                box-shadow: 0 10px 24px rgba(0,0,0,0.08);
-                background: #000;
-            }
+.process-suite-container {
+  max-width: 1100px;
+  margin: auto;
+}
 
-            .video-wrapper-other video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover; /* fill like iframe, keeps ratio */
-                border: 0;
-            }
+/* Main Section Title */
+.process-suite-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #002b5c;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+/* Decorative underline effect */
+.process-suite-heading::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff0000ff, #002b5c);
+  border-radius: 2px;
+  animation: underlineExpand 1s ease-in-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Subtle shadow + glow */
+.process-suite-heading:hover {
+  color: #ff0000ff;
+  text-shadow: 0 4px 10px rgba(0, 43, 92,);
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Underline grow animation */
+@keyframes underlineExpand {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 80px;
+    opacity: 1;
+  }
+}
+
+.process-suite-desc {
+  text-align: center;
+  font-size: 1.2rem;
+  color: Black;
+  line-height: 1.8;
+  margin: 0 auto 50px auto;
+  max-width: 900px; /* Keeps text neatly aligned in center */
+  padding: 0 20px;  /* Adds breathing space for smaller screens */
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards 0.5s;
+  letter-spacing: 0.3px;
+}
+
+/* Subtle highlight on hover */
+.process-suite-desc:hover {
+  color: #002b5c;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Fade in with upward motion */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
-            
+/* Card */
+.process-suite-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0);
+}
+
+.process-suite-card-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff0505ff;
+  background: linear-gradient(90deg, #e6f0ff, #f9f9f9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0 auto 20px auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  letter-spacing: 0.6px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeSlideIn 0.8s ease both;
+}
+
+/* Subtle animated shine effect */
+.process-suite-card-title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 40%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-25deg);
+  animation: shine 3s infinite;
+}
+
+/* Entrance animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shine animation */
+@keyframes shine {
+  0% { left: -50%; }
+  50% { left: 120%; }
+  100% { left: 120%; }
+}
+
+.process-suite-card-desc {
+  font-size: 1rem;
+  text-align: center;
+  color: BLACK;
+  font-weight:bold;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Grid Layout for Sub-items */
+.process-suite-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  gap: 25px;
+}
+
+/* Sub-item Card */
+.process-suite-item {
+  background: #fdfdfd;
+  padding: 20px;
+  border-left: 5px solid #002b5c;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.process-suite-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0);
+}
+
+/* Sub-item Title */
+/* Subtitles (Section Headings) */
+.process-suite-subtitle {
+  font-size: 1.25rem;             /* slightly larger for emphasis */
+  font-weight: Bold;               /* make it stand out */
+  margin-bottom: 10px;            
+  color: #002b5c;                 /* deep blue */
+  letter-spacing: 0.5px;          /* adds elegance */
+  position: relative;             
+}
+
+/* Decorative underline */
+.process-suite-subtitle::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #f3b50aff;            /* golden accent */
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Sub-item Text (Body content) */
+.process-suite-text {
+  font-size: 1rem;                /* slightly larger for readability */
+  line-height: 1.8;               /* more breathing space */
+  color: black;
+  font-weight: Bold;                    
+  margin-bottom: 20px;
+  text-align: justify;            /* neat alignment */
+  transition: color 0.3s ease;    /* smooth hover transition */
+}
+
+/* Optional hover effect for interactive feel */
+.process-suite-text:hover {
+  color: #ff0505ff;   
+  font-weight: Bold;              /* highlight when hovered */
+}
+
+
+/* Video Container */
+.process-suite-video {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  background: #000; /* keeps background clean if aspect ratio differs */
+}
+
+/* Video Player */
+.process-suite-video video {
+  width: 100%;
+  height: auto;      /* allow natural scaling */
+  max-height: 400px; /* prevent it from being too tall */
+  display: block;
+  object-fit: contain; /* show full video without cropping */
+  border-radius: 10px;
+}
+
+.process-suite-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* Contact Section */
+.process-suite-contact {
+  margin-top: 40px;
+  padding: 30px 20px;
+  border-top: 2px solid #ddd;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  animation: fadeInUp 1s ease;
+}
+
+/* Contact Heading */
+.process-suite-contact h4 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #002b5c;
+  font-weight:bold;
+  letter-spacing: 0.5px;
+  animation: pulseText 2s infinite;
+}
+
+/* Contact Links Wrapper */
+.contact-links-event {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-weight:bold;
+  flex-wrap: wrap;
+}
+
+/* Contact Items */
+.contact-item-event {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: white;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight:bold;
+  color: #002b5c;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0);
+}
+
+.contact-item-event i {
+  margin-right: 10px;
+  color: #ff0000ff; /* gold accent */
+  font-size: 1.2rem;
+  font-weight:bold;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.contact-item-event:hover {
+  background: #002b5c;
+  color: #fff;
+  font-weight:bold;
+  transform: translateY(-4px);
+  box-shadow: 0 5px 12px rgba(0,0,0);
+}
+
+.contact-item-event:hover i {
+  color: #fff;
+  font-weight:bold;
+  transform: rotate(20deg) scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseText {
+  0%, 100% { color: #002b5c; }
+  50% { color: #ff0808ff; }
+}
+
+.core-strengths {
+    font-family: 'Merriweather', Georgia, serif;
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    color: #1a1a1a;
+  }
+
+  .core-strengths .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .core-strengths h2 {
+    font-size: 28px;
+    color: #003366;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+  }
+
+  .strengths-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 40px;
+  }
+
+  .strengths-list li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .why-choose h2 {
+    font-size: 24px;
+    color: #003366;
+    margin-bottom: 15px;
+  }
+
+  .why-choose p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .strengths-list strong,
+  .why-choose strong {
+    color: #000;
+  }
+
+ 
+  .gallery-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  font-family: 'Merriweather', Georgia, serif;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.gallery-section h2 {
+  margin-bottom: 25px;
+  font-size: 36px;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.gallery-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #1e40af;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.gallery-tabs {
+  margin-bottom: 35px;
+}
+
+.tab-button {
+  padding: 12px 25px;
+  margin: 0 8px;
+  border: none;
+  background: #e0e0e0;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background: #1e40af;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-day {
+  display: none;
+  width: 100%;
+}
+
+.gallery-day.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-day img {
+  width: 280px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  filter: brightness(0.95);
+}
+
+.gallery-day img:hover {
+  transform: scale(1.08);
+  filter: brightness(1);
+}
+
+.gallery-day img::after {
+  content: attr(alt);
+}
+
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.lightbox-img {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.close:hover {
+  background:#1e40af;
+  color: #ffdddd;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0);
+}
+
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  user-select: none;
+  transition: 0.3s;
+  border-radius: 0 3px 3px 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.4);
+}
+       
+
+/* =========================
+   MOBILE RESPONSIVE (FULL)
+   ========================= */
+@media (max-width: 768px) {
+
+  /* -------------------------
+     General Padding & Font
+  ------------------------- */
+  body, .gallery-section, .process-suite, .core-strengths, .why-choose {
+    padding: 0 15px;
+  }
+
+  /* -------------------------
+     Gallery Section
+  ------------------------- */
+  .gallery-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .gallery-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .tab-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 3px;
+  }
+
+  .gallery-day img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  /* -------------------------
+     Lightbox
+  ------------------------- */
+  .lightbox-img {
+    max-width: 95%;
+    max-height: 65%;
+  }
+
+  .close {
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 28px;
+  }
+
+  .prev, .next {
+    font-size: 30px;
+    padding: 12px;
+    top:200px;
+    color: #ff0808ff;
+  }
+
+  /* -------------------------
+     Videos
+  ------------------------- */
+  .video-wrapper,
+  .video-wrapper-other,
+  .process-suite-video {
+    border-radius: 8px;
+  }
+
+  .process-suite-video video,
+  .video-wrapper-other video {
+    max-height: 250px;
+  }
+
+  /* -------------------------
+     Process Suite Section
+  ------------------------- */
+  .process-suite {
+    padding: 25px 10px;
+    border-radius: 10px;
+  }
+
+  .process-suite-heading {
+    font-size: 2rem;
+  }
+
+  .process-suite-desc {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .process-suite-card {
+    padding: 20px;
+  }
+
+  .process-suite-card-title {
+    font-size: 1.2rem;
+    padding: 8px 15px;
+  }
+
+  .process-suite-card-desc {
+    font-size: 0.95rem;
+  }
+
+  .process-suite-grid {
+    grid-template-columns: 1fr; /* single column */
+    gap: 15px;
+  }
+
+  .process-suite-item {
+    padding: 15px;
+  }
+
+  .process-suite-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* -------------------------
+     Images in Process Suite
+  ------------------------- */
+  .process-suite-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* -------------------------
+     Contact Section
+  ------------------------- */
+  .process-suite-contact {
+    padding: 20px 10px;
+  }
+
+  .process-suite-contact h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .contact-links-event {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .contact-item-event {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .contact-item-event i {
+    font-size: 1rem;
+  }
+
+  /* -------------------------
+     Core Strengths & Why Choose
+  ------------------------- */
+  .core-strengths h2,
+  .why-choose h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .strengths-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .why-choose p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* -------------------------
+     Misc Adjustments
+  ------------------------- */
+  .tab-button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+
+  .gallery-section h2::after {
+    width: 50px;
+    height: 3px;
+  }
+
+  .gallery-day img {
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  }
+
+  .process-suite-card-title::before {
+    width: 30%;
+  }
+
+  /* Ensure smooth scaling */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
         </style>
 
     </head>
 
 <body>
-    <!-- <section class="services-section">
-      <div class="go-back">
-        <img
-          src="{% static 'images/back.gif' %}"
-          alt="Go Back"
-          class="go-back-image"
-          onclick="history.back()"
-        />
-      </div>
+   
+   <section class="process-suite">
+  <div class="process-suite-container">
+    
+    <!-- Main Section Title -->
+    <h2 class="process-suite-heading">Transforming Businesses with Intelligent, Future-Ready Software Solutions</h2>
+    <p class="process-suite-desc">
+    We are a next-generation software solutions company specializing in automation, AIpowered intelligence, and dynamic digital systems that streamline business processes, cut
+operational costs, and unlock new growth opportunities.
+Our product portfolio is built with scalable architecture, AI integration, and dynamic
+configuration—ensuring our clients get future-proof solutions that evolve with their needs.
+    </p>
 
-      <div class="image-card" id="service-background">
-        <video autoplay muted loop class="background-video">
-          <source
-            src="{% static 'images/services_background_video.mp4' %}"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-        <div class="card-content">
+    <!-- Card Container -->
+    <div class="process-suite-card" id="plm_products">
+      <h3 class="process-suite-card-title">Product Lifecycle Management & Project Planning & Control</h3>
+      <p class="process-suite-card-desc">
+        Streamline product development and execution with integrated PLM and project planning tools that ensure efficient resource allocation, real-time tracking, and on-time delivery across the entire product lifecycle.
+      </p>
+
+      <!-- Grid Layout for Sub-items -->
+      <div class="process-suite-grid">
+
+        <!-- Sub-item 1 -->
+       <div class="process-suite-item">
+  <h4 class="process-suite-subtitle">Bill of Materials (BOM)</h4>
+  <p class="process-suite-text">
+   A detailed list of all parts, materials, and assemblies with quantities and specifications, ensuring accurate planning, cost control, inventory management, and efficient production.
+  </p>
+  <div class="process-suite-video">
+    <video controls>
+      <source src="{% static 'plm_videos/bom.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+        <!-- Sub-item 2 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Material Planning</h4>
+          <p class="process-suite-text">
+           Ensures timely availability of raw materials and components, reducing shortages, minimizing excess inventory, and enabling smooth, cost-efficient production.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'plm_videos/material_planning.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
         </div>
-      </div>
-    </section> -->
 
-    <!-- Responsive video helper (drop this once on the page, e.g., near your other styles) -->
-
-
-    <section class="cards-section" id="service-info">
-        <div class="container">
-
-            <!-- Cloud Computing Section (video on left, text on right) -->
-            <div class="service-1" id="cloud-service">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper">
-                    <iframe
-                        src="https://www.youtube.com/embed/TjwT3rWLVeI?list=PLGEk_7A6QWPwfkzt-cBBYlcip6amdeyHZ&rel=0&modestbranding=1"
-                        title="Cloud Computing - Case Studies"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                        referrerpolicy="strict-origin-when-cross-origin">
-                    </iframe>
-                    </div>
-                </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card card-text">
-                        <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
-                        <p class="card-description">
-                        <strong>Description:</strong> PLM &amp; PPC Solutions (Product Lifecycle Management &amp; Project Planning &amp; Control).<br>
-                        Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
-                        </p>
-                        <p class="card-description mb-1"><strong>Modules include:</strong></p>
-                        <ul class="card-description mb-2">
-                        <li>Bill of Materials (BOM)</li>
-                        <li>Material Planning</li>
-                        <li>Machine Planning &amp; Routing</li>
-                        <li>Manpower Planning</li>
-                        <li>Inventory &amp; Warehouse Management</li>
-                        <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
-                        <li><strong>Actionable Dashboards</strong>: Module dashboards + central PPC dashboard, powered by Power BI with interactive, drill-down charts and graphs.</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- Sub-item 3 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Machine Planning</h4>
+          <p class="process-suite-text">
+           Strategically allocates workforce based on skills and demand to ensure optimal productivity, balanced workloads, and timely project execution.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'plm_videos/machine_planning.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             </div>
-            </div>
-
-            <br>
-
-            <!-- PLM & PPC Solutions Section (text left, video right) -->
-            <div class="service-2" id="plm-ppc-service">
-            <div class="row align-items-center">
-                
-                <!-- Text side -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
-                    <p class="card-description">
-                    Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
-                    </p>
-                    <p class="card-description mb-1"><strong>Modules include:</strong></p>
-                    <ul class="card-description mb-2">
-                    <li>Bill of Materials (BOM)</li>
-                    <li>Material Planning</li>
-                    <li>Machine Planning &amp; Routing</li>
-                    <li>Manpower Planning</li>
-                    <li>Inventory &amp; Warehouse Management</li>
-                    <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
-                    <li><strong>Actionable Dashboards</strong>: Each module has its own dashboard plus a central PPC dashboard—powered by Power BI with interactive, drill-down charts and graphs.</li>
-                    </ul>
-                </div>
-                </div>
-
-                <!-- Video side -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                        <video controls autoplay muted loop playsinline>
-                            <source src="{% static 'images/PPC.mp4' %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            <!-- PLM & PPC Solutions Section (text left, video right) -->
-            <div class="service-2" id="plm-ppc-service">
-            <div class="row align-items-center">
-                
-                <!-- Text side -->
-
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                        <video controls autoplay muted loop playsinline>
-                            <source src="{% static 'images/PLM.mp4' %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-                </div>
-
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>PLM & PPC Solutions</u></h3>
-                    <p class="card-description">
-                    Our PLM/PPC software helps organizations plan, execute, and monitor projects with precision.
-                    </p>
-                    <p class="card-description mb-1"><strong>Modules include:</strong></p>
-                    <ul class="card-description mb-2">
-                    <li>Bill of Materials (BOM)</li>
-                    <li>Material Planning</li>
-                    <li>Machine Planning &amp; Routing</li>
-                    <li>Manpower Planning</li>
-                    <li>Inventory &amp; Warehouse Management</li>
-                    <li><strong>AI-Powered Forecasting</strong>: Predict demand, resource requirements, and risks.</li>
-                    <li><strong>Actionable Dashboards</strong>: Each module has its own dashboard plus a central PPC dashboard—powered by Power BI with interactive, drill-down charts and graphs.</li>
-                    </ul>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            <!-- Process Automation Suite - DMS -->
-            <div class="service-2" id="pas-dms">
-            <div class="row align-items-center">
-                
-                <!-- Text Left -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>Document Management System (DMS)</u></h3>
-                    <p class="card-description">
-                    Our Process Automation solutions combine BPA (Business Process Automation), 
-                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
-                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
-                    </p>
-                    <ul class="card-description">
-                    <li><strong>AI-Powered Data Capture</strong>: Intelligent OCR processes scanned or digital files and extracts all required metadata.</li>
-                    <li><strong>Dynamic Form Builder</strong>: Auto-create forms tailored to client-specific requirements and populate them automatically.</li>
-                    <li><strong>Workflow Engine</strong>: Manage document verification, approvals, and quality checks via dynamic, mappable workflows.</li>
-                    <li><strong>Advanced Search</strong>: Find documents instantly with OCR-powered full-text search.</li>
-                    </ul>
-                </div>
-                </div>
-
-
-                <!-- Video Right -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/PAS2.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            <!-- Process Automation Suite - BPA -->
-            <div class="service-2" id="pas-bpa">
-            <div class="row align-items-center">
-
-                <!-- Video Left -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/PAS3.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Text Right -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>Business Process Automation (BPA)</u></h3>
-                    <p class="card-description">
-                    Our Process Automation solutions combine BPA (Business Process Automation), 
-                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
-                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
-                    </p>
-                    <ul class="card-description">
-                    <li>Streamlines and automates complex business workflows.</li>
-                    <li>Reduces manual intervention while ensuring accuracy and compliance.</li>
-                    </ul>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            <!-- Process Automation Suite - RPA -->
-            <div class="service-2" id="pas-rpa">
-            <div class="row align-items-center">
-
-                <!-- Text Left -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>Robotic Process Automation (RPA)</u></h3>
-                    <p class="card-description">
-                    Our Process Automation solutions combine BPA (Business Process Automation), 
-                    RPA (Robotic Process Automation), and DMS (Document Management Systems) 
-                    to eliminate repetitive tasks, reduce errors, and accelerate workflows.
-                    </p>
-                    <ul class="card-description">
-                    <li><strong>File Retrieval Anywhere</strong>: Automatically scan local drives, network paths, or mailboxes.</li>
-                    <li><strong>Smart Email Parsing</strong>: Identify and extract attachments based on keywords (e.g., invoice number).</li>
-                    <li><strong>Automated Metadata Extraction</strong>: Using AI + OCR, extract structured data from any document—handwritten, printed, or in any language—and convert it into English.</li>
-                    </ul>
-                </div>
-                </div>
-
-
-                <!-- Video Right -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/PAS1.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            
-
-            <!-- AI Chatbots & Helpdesk Section -->
-            <div class="service-2" id="ai-chatbot">
-            <div class="row align-items-center">
-
-                <!-- Video Left -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/AIChatbot.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>AI Chatbots &amp; Helpdesk</u></h3>
-                    <ul class="card-description">
-                    <li>Provide instant customer support and knowledge retrieval.</li>
-                    <li>Enable 24/7 availability with automated query handling.</li>
-                    <li>Reduce workload on support teams by handling repetitive queries.</li>
-                    <li>Seamless integration with websites, apps, and social platforms.</li>
-                    <li>Supports multiple languages for global customers.</li>
-                    </ul>
-                </div>
-                </div>
-
-            </div>
-            </div>
-
-            <br>
-
-            <!-- Audit & Compliance Automation Section -->
-            <div class="service-2" id="audit-compliance">
-            <div class="row align-items-center">
-
-                <!-- Text Left -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>Audit &amp; Compliance Automation</u></h3>
-                    <ul class="card-description">
-                    <li><strong>Generative AI Bot</strong>: Reviews audit and compliance data, identifies risks, and generates recommendations.</li>
-                    <li><strong>Automated Checklists &amp; Task Lists</strong>: Maps audit requirements into action plans.</li>
-                    <li><strong>BPA Integration</strong>: Automates follow-up actions, approvals, and reporting.</li>
-                    </ul>
-                </div>
-                </div>
-
-                <!-- Video Right -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/compliance.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-            </div>
-            </div>
-            
-            <br>
-
-            <!-- HR & Workforce Management Section -->
-            <div class="service-2" id="hr-workforce">
-            <div class="row align-items-center">
-
-                
-                <!-- Video Left -->
-                <div class="col-md-6">
-                <div class="card card-image">
-                    <div class="video-wrapper-other">
-                    <video controls autoplay muted loop playsinline>
-                        <source src="{% static 'images/HR.mp4' %}" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                    </div>
-                </div>
-                </div>
-
-                <!-- Text Right -->
-                <div class="col-md-6">
-                <div class="card card-text">
-                    <h3 class="card-title"><u>HR &amp; Workforce Management</u></h3>
-                    <ul class="card-description">
-                    <li>HRMS &amp; Payroll</li>
-                    <li>Employee Self-Service Portals</li>
-                    <li>Attendance Capturing via:</li>
-                    <ul>
-                        <li>Face Recognition</li>
-                        <li>Geo-Tagging &amp; Geo-Fencing</li>
-                        <li>Biometric Integration</li>
-                        <li>Excel Bulk Upload</li>
-                        <li>API Integration</li>
-                    </ul>
-                    </ul>
-                </div>
-                </div>
-
-
-            </div>
-            </div>
-
         </div>
-    </section>
+
+        <!-- Sub-item 4 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Manpower Planning</h4>
+          <p class="process-suite-text">
+            Strategically allocates workforce based on skills and demand to ensure optimal productivity, balanced workloads, and timely project execution.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'plm_videos/manpower_planning.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 5 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Inventory & Warehouse Management</h4>
+          <p class="process-suite-text">
+            AI-powered support assistants to handle customer queries and internal helpdesk automation.
+          </p>
+           <div class="process-suite-video">
+           <img src="{% static 'plm_videos/inventory_management.jpg' %}" 
+            alt="Inventory Management" 
+            class="process-suite-image">
+
+            </div>
+        </div>
+
+         <!-- Sub-item 6 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">AI-Powered Forecasting</h4>
+          <p class="process-suite-text">
+          Uses advanced algorithms to predict demand, optimize resources, and reduce uncertainties, enabling smarter and data-driven business decisions.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'plm_videos/forecasting_ai.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 7 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Actionable Dashboards</h4>
+          <p class="process-suite-text">
+            Interactive dashboards that transform complex data into clear insights, enabling real-time monitoring and informed decision-making.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'plm_videos/dashboards.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+      
+      </div><!-- End Grid -->
+       <!-- Contact Section -->
+  <div class="process-suite-contact text-center">
+    <h4>📩 For more details, contact us</h4>
+    <div class="contact-links-event">
+      <a href="mailto:support@technowin.co.in" class="contact-item-event">
+        <i class="fa fa-envelope"></i> support@technowin.co.in
+      </a>
+      <a href="tel:+917738019120" class="contact-item-event">
+        <i class="fa fa-phone"></i> +91 7738019120
+      </a>
+    </div>
+  </div>
+    </div><!-- End Card -->
+    <br>
+    <br>
+
+  <!-- Card Container -->
+    <div class="process-suite-card" id="process_automation">
+      <h3 class="process-suite-card-title"> Process Automation Suite</h3>
+      <p class="process-suite-card-desc">
+        A comprehensive solution that streamlines repetitive business tasks, integrates workflows, and improves efficiency through automation. It reduces errors, saves time, and enables smarter decision-making across operations.
+      </p>
+
+      <!-- Grid Layout for Sub-items -->
+      <div class="process-suite-grid">
+
+        <!-- Sub-item 1 -->
+       <div class="process-suite-item">
+  <h4 class="process-suite-subtitle">Business Process Automation (BPA)</h4>
+  <p class="process-suite-text">
+  Automates routine business workflows to reduce manual effort, improve accuracy, enhance productivity, and ensure seamless end-to-end process efficiency.
+  </p>
+  <div class="process-suite-video">
+    <video controls>
+      <source src="{% static 'process_automation_videos/bpa_video.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+        <!-- Sub-item 2 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Robotic Process Automation (RPA)</h4>
+          <p class="process-suite-text">
+          Leverages software bots to automate repetitive, rule-based tasks across applications, increasing speed, accuracy, and efficiency while reducing operational costs.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'process_automation_videos/rpa_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 3 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Dynamic Metadata Extraction</h4>
+          <p class="process-suite-text">
+          Automatically identifies, extracts, and classifies key metadata from documents, images, and digital files in real time—enhancing searchability, compliance, and efficient content management.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'process_automation_videos/document_metadata.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 4 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Document Management System (DMS)</h4>
+          <p class="process-suite-text">
+            A centralized platform to securely store, organize, track, and manage documents digitally—improving accessibility, collaboration, compliance, and reducing paper-based inefficiencies.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'process_automation_videos/dms_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+
+         <!-- Sub-item 5 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">AI Chatbots & Helpdesk</h4>
+          <p class="process-suite-text">
+          Uses advanced algorithms to predict demand, optimize resources, and reduce uncertainties, enabling smarter and data-driven business decisions.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'process_automation_videos/ai_chatbot.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+      
+      </div><!-- End Grid -->
+       <!-- Contact Section -->
+  <div class="process-suite-contact text-center">
+    <h4>📩 For more details, contact us</h4>
+    <div class="contact-links-event">
+      <a href="mailto:support@technowin.co.in" class="contact-item-event">
+        <i class="fa fa-envelope"></i> support@technowin.co.in
+      </a>
+      <a href="tel:+917738019120" class="contact-item-event">
+        <i class="fa fa-phone"></i> +91 7738019120
+      </a>
+    </div>
+  </div>
+    </div><!-- End Card --> 
+
+     <br>
+    <br>
+
+  <!-- Card Container -->
+    <div class="process-suite-card"  id="hr_event">
+      <h3 class="process-suite-card-title"> HR & Workforce Management</h3>
+      <p class="process-suite-card-desc">
+        A comprehensive solution to streamline employee lifecycle processes—from recruitment, onboarding, and payroll to attendance, performance, and compliance—ensuring efficient workforce planning, higher productivity, and improved employee engagement.
+      </p>
+
+      <!-- Grid Layout for Sub-items -->
+      <div class="process-suite-grid">
+
+        <!-- Sub-item 1 -->
+       <div class="process-suite-item">
+  <h4 class="process-suite-subtitle">Onsite Team Management and Manpower Management </h4>
+  <p class="process-suite-text">
+  Automates routine business workflows to reduce manual effort, improve accuracy, enhance productivity, and ensure seamless end-to-end process efficiency.
+  </p>
+  <div class="process-suite-video">
+    <video controls>
+      <source src="{% static 'hr_event_videos/onsite_team.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+      
+      </div><!-- End Grid -->
+       <!-- Contact Section -->
+  <div class="process-suite-contact text-center">
+    <h4>📩 For more details, contact us</h4>
+    <div class="contact-links-event">
+      <a href="mailto:support@technowin.co.in" class="contact-item-event">
+        <i class="fa fa-envelope"></i> support@technowin.co.in
+      </a>
+      <a href="tel:+917738019120" class="contact-item-event">
+        <i class="fa fa-phone"></i> +91 7738019120
+      </a>
+    </div>
+  </div>
+    </div><!-- End Card --> 
+
+    <br>
+    <br>
+ <!-- Card Container -->
+    <div class="process-suite-card" id="other_event">
+      <h3 class="process-suite-card-title">Enterprise-Grade Applications (Office Automation)</h3>
+      <p class="process-suite-card-desc">
+        Comprehensive digital solutions designed to automate routine office tasks, improve collaboration, enhance productivity, and ensure seamless workflow across departments.
+      </p>
+
+      <!-- Grid Layout for Sub-items -->
+      <div class="process-suite-grid">
+
+        <!-- Sub-item 1 -->
+       <div class="process-suite-item">
+  <h4 class="process-suite-subtitle">Learning Management System (LMS)</h4>
+  <p class="process-suite-text">
+  A centralized platform to deliver, track, and manage training programs, enabling seamless learning, performance monitoring, and skill development for students and employees.
+  </p>
+  <div class="process-suite-video">
+     <img src="{% static 'other_videos/lms.jpg' %}" 
+            alt="Inventory Management" 
+            class="process-suite-image">
+  </div>
+</div>
+
+
+        <!-- Sub-item 2 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Website Builder & E-Commerce Platforms</h4>
+          <p class="process-suite-text">
+           Tools to design, launch, and manage professional websites and online stores with ease—offering customization, secure transactions, and scalable growth.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'other_videos/webcrate.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 3 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Advanced Analytics & Dynamic Data-Driven Reports</h4>
+          <p class="process-suite-text">
+          Deliver real-time insights with interactive, data-driven reports that support smarter decisions and continuous business improvement.
+          </p>
+           <div class="process-suite-video">
+             <img src="{% static 'other_videos/advanced_reports.jpg' %}" 
+            alt="Inventory Management" 
+            class="process-suite-image">
+            </div>
+        </div>
+
+        <!-- Sub-item 4 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Library Management System</h4>
+          <p class="process-suite-text">
+           A smart solution to manage books, digital resources, member records, and transactions efficiently, ensuring smooth library operations and easy access for users.
+          </p>
+           <div class="process-suite-video">
+            <img src="{% static 'other_videos/library_management.jpg' %}" 
+            alt="Inventory Management" 
+            class="process-suite-image">
+            </div>
+        </div>
+
+        <!-- Sub-item 5 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Customer Relationship Management (CRM)</h4>
+          <p class="process-suite-text">
+           A centralized system to manage customer interactions, track leads, streamline sales, and enhance client relationships for improved business growth.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'other_videos/crm.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            </div>
+        </div>
+
+         <!-- Sub-item 6 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Audit & Compliance Automation</h4>
+          <p class="process-suite-text">
+        Automates audit trails, risk assessments, and compliance checks to ensure accuracy, transparency, and adherence to regulatory standards with minimal manual effort.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'other_videos/compliance.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+        <!-- Sub-item 7 -->
+        <div class="process-suite-item">
+          <h4 class="process-suite-subtitle">Utility Solutions</h4>
+          <p class="process-suite-text">
+            Streamline your digital operations with E-Wallet solutions, Kanban boards for task management, and integrated Email & File Manager for seamless communication and document handling.
+          </p>
+           <div class="process-suite-video">
+            <video controls>
+                <source src="{% static 'other_videos/utility.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+
+      
+      </div><!-- End Grid -->
+       <!-- Contact Section -->
+  <div class="process-suite-contact text-center">
+    <h4>📩 For more details, contact us</h4>
+    <div class="contact-links-event">
+      <a href="mailto:support@technowin.co.in" class="contact-item-event">
+        <i class="fa fa-envelope"></i> support@technowin.co.in
+      </a>
+      <a href="tel:+917738019120" class="contact-item-event">
+        <i class="fa fa-phone"></i> +91 7738019120
+      </a>
+    </div>
+  </div>
+    </div><!-- End Card -->
+    <br>
+    <br>
+
+    <!-- Card Container -->
+    <div class="process-suite-card" id="government_projects">
+      <h3 class="process-suite-card-title"> Government Projects</h3>
+      <p class="process-suite-card-desc">
+       Technowin IT Infra Pvt. Ltd. delivers robust, secure, and scalable solutions for government and public sector organizations, streamlining operations, enhancing service delivery, and ensuring compliance with regulations.
+      </p>
+
+      <!-- Grid Layout for Sub-items -->
+      <div class="process-suite-grid">
+
+        <!-- Sub-item 1 -->
+       <div class="process-suite-item">
+  <h4 class="process-suite-subtitle">Our Projects </h4>
+  <p class="process-suite-text">
+  Technowin IT Infra Pvt. Ltd. develops innovative and customized solutions across industries, enhancing efficiency, automation, and digital transformation for our clients.
+  </p>
+  <div class="process-suite-video">
+    <video controls>
+      <source src="{% static 'government_projects/projects.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+      
+      </div><!-- End Grid -->
+       <!-- Contact Section -->
+  <div class="process-suite-contact text-center">
+    <h4>📩 For more details, contact us</h4>
+    <div class="contact-links-event">
+      <a href="mailto:support@technowin.co.in" class="contact-item-event">
+        <i class="fa fa-envelope"></i> support@technowin.co.in
+      </a>
+      <a href="tel:+917738019120" class="contact-item-event">
+        <i class="fa fa-phone"></i> +91 7738019120
+      </a>
+    </div>
+  </div>
+    </div><!-- End Card --> 
+    <br>
+    <br>
+
+    <section class="core-strengths" id="strengths">
+  <div class="container">
+    <h2>Our Core Strengths</h2>
+    <ul class="strengths-list">
+      <li><strong>Dynamic & Reusable Systems:</strong> Form builders, workflow engines, and reporting tools that adapt to changing business needs.</li>
+      <li><strong>AI Integration at Every Level:</strong> From document capture to predictive analytics.</li>
+      <li><strong>End-to-End Automation:</strong> Minimize human effort while maximizing accuracy and speed.</li>
+      <li><strong>Scalable, Secure, and Future-Ready:</strong> Designed for businesses that aim for growth.</li>
+    </ul>
+
+    <div class="why-choose" id="why_choose">
+      <h2>Why Choose Us?</h2>
+      <p>Because we don’t just build software—we <strong>build intelligent ecosystems</strong> that transform businesses. Whether it’s automating repetitive tasks, managing enterprise workflows, or generating deep AI insights, our solutions are designed to <strong>scale, adapt, and deliver measurable value</strong> from day one.</p>
+    </div>
+  </div>
+</section>
+  </div><!-- End Container -->
+</section>
+
+
+<section class="gallery-section" id="event_gallery">
+  <h2>Event Gallery</h2>
+
+  <!-- Day Tabs -->
+  <div class="gallery-tabs">
+    <button class="tab-button active" data-day="day1">Day 1</button>
+    <button class="tab-button" data-day="day2">Day 2</button>
+    <button class="tab-button" data-day="day3">Day 3</button>
+    <button class="tab-button" data-day="day4">Day 4</button>
+  </div>
+
+  <!-- Gallery Content -->
+  <div class="gallery-content">
+    <div class="gallery-day active" id="day1">
+    <img src="{% static 'event_gallery_day1/1.jpeg' %}" alt="Day 1 Image 1">
+    <img src="{% static 'event_gallery_day1/2.jpeg' %}" alt="Day 1 Image 2">
+    <img src="{% static 'event_gallery_day1/3.jpeg' %}" alt="Day 1 Image 3">
+    <img src="{% static 'event_gallery_day1/4.jpeg' %}" alt="Day 1 Image 4">
+    <img src="{% static 'event_gallery_day1/5.jpeg' %}" alt="Day 1 Image 5">
+    <img src="{% static 'event_gallery_day1/6.jpeg' %}" alt="Day 1 Image 6">
+    </div>
+    <div class="gallery-day" id="day2">
+        <img src="{% static 'event_gallery_day2/1.jpeg' %}" alt="Day 2 Image 1">
+        <img src="{% static 'event_gallery_day2/2.jpeg' %}" alt="Day 2 Image 2">
+        <img src="{% static 'event_gallery_day2/3.jpeg' %}" alt="Day 2 Image 3">
+        <img src="{% static 'event_gallery_day2/4.jpeg' %}" alt="Day 2 Image 4">
+        <img src="{% static 'event_gallery_day2/5.jpeg' %}" alt="Day 2 Image 5">
+
+    </div>
+    <div class="gallery-day" id="day3">
+        <img src="{% static 'event_gallery_day3/1.jpeg' %}" alt="Day 3 Image 1">
+        <img src="{% static 'event_gallery_day3/2.jpeg' %}" alt="Day 3 Image 1">
+        <img src="{% static 'event_gallery_day3/3.jpeg' %}" alt="Day 3 Image 1"> 
+    </div>
+    <div class="gallery-day" id="day4">
+        <img src="{% static 'event_gallery_day4/1.jpeg' %}" alt="Day 4 Image 1">
+        <img src="{% static 'event_gallery_day4/2.jpeg' %}" alt="Day 4 Image 2">
+        <img src="{% static 'event_gallery_day4/3.jpeg' %}" alt="Day 4 Image 3">
+        <img src="{% static 'event_gallery_day4/4.jpeg' %}" alt="Day 4 Image 4">
+        <img src="{% static 'event_gallery_day4/5.jpeg' %}" alt="Day 4 Image 5">
+      
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="">
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
 
     
 </body>
@@ -517,7 +1397,93 @@
     window.addEventListener("scroll", startCounters);
     window.addEventListener("load", startCounters);
 </script>
-  
+
+<script>
+ // -----------------------------
+// TAB SWITCHING
+// -----------------------------
+const tabButtons = document.querySelectorAll('.tab-button');
+const galleryDays = document.querySelectorAll('.gallery-day');
+
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const day = button.getAttribute('data-day');
+
+    // Activate selected tab
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Show selected day gallery
+    galleryDays.forEach(gallery => {
+      gallery.id === day ? gallery.classList.add('active') : gallery.classList.remove('active');
+    });
+  });
+});
+
+// -----------------------------
+// LIGHTBOX FUNCTIONALITY
+// -----------------------------
+let currentImages = [];
+let currentIndex = 0;
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+// Open lightbox on image click
+document.querySelectorAll('.gallery-day img').forEach(img => {
+  img.addEventListener('click', () => {
+    const parentDay = img.closest('.gallery-day');
+    currentImages = Array.from(parentDay.querySelectorAll('img'));
+    currentIndex = currentImages.indexOf(img);
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  lightbox.style.display = 'block';
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+// Event listeners
+closeBtn.addEventListener('click', closeLightbox);
+prevBtn.addEventListener('click', prevImage);
+nextBtn.addEventListener('click', nextImage);
+
+// Close on outside click
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// -----------------------------
+// KEYBOARD NAVIGATION
+// -----------------------------
+document.addEventListener('keydown', (e) => {
+  if (lightbox.style.display === 'block') {
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') closeLightbox();
+  }
+});
+
+</script>
+
 </html>
 
 {% endblock %}

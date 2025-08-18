@@ -37,51 +37,6 @@
    
         <div class="content">
             <h2>Site Map</h2>
-            {% comment %} <ul class="sitemap">
-                <li>Home
-                    <ul>
-                        <li>Skills</li>
-                        <li>Service We Provide</li>
-                        <li>Innovation by Us</li>
-                        <li>Technology Stack</li>
-                        <li>Achievements</li>
-                        <li>Our Clients</li>
-                        <li>Testimonial</li>
-                        <li>Contact Form</li>
-                        <li>Footer</li>
-                    </ul>
-                </li>
-                <li>About Us
-                    <ul>
-                        <li>History Of Technowin</li>
-                        <li>Meet The Team Section</li>
-                        <li>Vision, Mission Section</li>
-                        <li>Footer</li>
-                    </ul>
-                </li>
-                <li>Software
-                    <ul>
-                        <li>APP Developed Project Information</li>
-                        <li>Web Developed Project Information</li>
-                        <li>Footer</li>
-                    </ul>
-                </li>
-                <li>Services
-                    <ul>
-                        <li>Service Information</li>
-                        <li>FAQ</li>
-                        <li>Footer</li>
-                    </ul>
-                </li>
-                <li>Contact Us
-                    <ul>
-                        <li>Customer Feedback</li>
-                        <li>Get In Touch Form</li>
-                        <li>Our Gallery</li>
-                        <li>Footer</li>
-                    </ul>
-                </li>
-            </ul> {% endcomment %}
             <ul class="sitemap">
                 <li><a href="{% url 'Home' %}">Home</a>
                     <ul>
@@ -102,7 +57,6 @@
                         <li><a href="{% url 'AboutUs' %}#history-technowin">History Of Technowin</a></li>
                         <li><a href="{% url 'AboutUs' %}#testimonials">Meet The Team Section</a></li>
                         <li><a href="{% url 'AboutUs' %}#mvo-video-background">Vision, Mission Section</a></li>
-                        {% comment %} <li><a href="{% url 'AboutUs' %}#blog-section">Latest Blogs</a></li> {% endcomment %}
                     </ul>
                 </li>
                 <li><a href="{% url 'Software' %}">Software</a>
@@ -183,6 +137,20 @@
                         <li><a href="{% url 'Blogs' %}#other_resources"> Our Valuable Resources</a></li>
                     </ul>
                 </li>
+
+                 <li><a href="{% url 'AutomationExpo' %}">AI & Process Automation</a>
+                    <ul>
+                        <li><a href="{% url 'AutomationExpo' %}#plm_products">Product Lifecycle Management & Project Planning & Control</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#process_automation">Process Automation Suite</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#hr_event">HR & Workforce Management</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#other_event">Enterprise-Grade Applications (Office Automation)</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#government_projects">Government Projects</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#strengths">Our Core Strengths</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#why_choose">Why Choose Us?</a></li>
+                         <li><a href="{% url 'AutomationExpo' %}#event_gallery">Event Gallery</a></li>
+                    </ul>
+                </li>
+
             </ul>
             
         </div>
