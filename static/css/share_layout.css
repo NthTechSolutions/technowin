@@ -1686,3 +1686,70 @@ footer {
     }
   }
 
+
+  /* Notification Item */
+.notify-item {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+/* Date styling */
+.notify-date {
+    font-size: 13px;
+    color: #555;
+    font-style: italic;
+}
+
+/* Buttons */
+.notify-btn {
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Product notification */
+.notify-item.product {
+    background-color: #fef9c3;
+    border-left: 5px solid #e0b60b;
+    color: #4b5563;
+}
+.product-btn {
+    background-color: #e0b60b;
+    color: #1f2937;
+}
+
+/* Event notification */
+.notify-item.event {
+    background-color: #f3e8ff;
+    border-left: 5px solid #6f11ce;
+    color: #4b0082;
+}
+.event-btn {
+    background-color: #6f11ce;
+    color: #fff;
+}
+
+/* Resource notification */
+.notify-item.resource {
+    background-color: #e0f2fe;
+    border-left: 5px solid #111ece;
+    color: #1e3a8a;
+}
+.resource-btn {
+    background-color: #111ece;
+    color: #fff;
+}
+
+

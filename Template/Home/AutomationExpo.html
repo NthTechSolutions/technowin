@@ -693,16 +693,18 @@
      Process Suite Section
   ------------------------- */
   .process-suite {
-    padding: 25px 10px;
+    padding: 10px 10px;
     border-radius: 10px;
   }
 
   .process-suite-heading {
-    font-size: 2rem;
+    top:50px;
+    font-size: 1rem;
   }
 
   .process-suite-desc {
-    font-size: 1rem;
+    margin-top:50px!important;
+    font-size: 0.8rem;
     line-height: 1.5;
   }
 
@@ -908,9 +910,13 @@ configuration—ensuring our clients get future-proof solutions that evolve with
             AI-powered support assistants to handle customer queries and internal helpdesk automation.
           </p>
            <div class="process-suite-video">
-           <img src="{% static 'plm_videos/inventory_management.jpg' %}" 
+            <video controls>
+                <source src="{% static 'plm_videos/inventory_management.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+           {% comment %} <img src="{% static 'plm_videos/inventory_management.jpg' %}" 
             alt="Inventory Management" 
-            class="process-suite-image">
+            class="process-suite-image"> {% endcomment %}
 
             </div>
         </div>

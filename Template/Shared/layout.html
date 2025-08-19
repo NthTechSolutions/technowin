@@ -121,6 +121,84 @@
               top: 60%; /* Adjust vertical centering */
             }
           }
+
+
+          /* Notification Item */
+.notify-item {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+/* Date styling */
+.notify-date {
+    font-size: 13px;
+    color: #000000ff;
+    font-style: italic;
+}
+
+/* Buttons */
+.notify-btn {
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Product notification */
+.notify-item.product {
+    background-color: #fef9c3;
+    border-left: 5px solid #e0b60b;
+    color: #4b5563;
+}
+.product-btn {
+    background-color: #e0b60b;
+    color: #1f2937;
+}
+
+/* Event notification */
+.notify-item.event {
+    background-color: #f3e8ff;
+    border-left: 5px solid #6f11ce;
+    color: #4b0082;
+}
+.event-btn {
+    background-color: #6f11ce;
+    color: #fff;
+}
+
+/* Resource notification */
+.notify-item.resource {
+    background-color: #e0f2fe;
+    border-left: 5px solid #111ece;
+    color: #1e3a8a;
+}
+.resource-btn {
+    background-color: #111ece;
+    color: #fff;
+}
+
+/* AI & Process Automation notification */
+.notify-item.ai {
+    background-color: #e8f9f1;
+    border-left: 5px solid #059669;
+    color: #064e3b;
+}
+.ai-btn {
+    background-color: #059669;
+    color: #fff;
+}
+
           
           {% comment %} @media (max-width: 480px) {
             .search-bar {
@@ -199,14 +277,14 @@
             <li style="margin-top:2%;">
                 <a href="{% url 'Product' %}" style="position: relative; display: inline-block;">
                     Product
-                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                    {% comment %} <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;"> {% endcomment %}
                 </a>
             </li>
 
             <li style="margin-top:2%;">
                 <a href="{% url 'Blogs' %}" style="position: relative; display: inline-block;">
                     Blogs
-                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                    {% comment %} <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;"> {% endcomment %}
                 </a>
             </li>
 
@@ -245,7 +323,7 @@
 
     </nav>
 
-    <div id="notificationModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); font-family:'Segoe UI', sans-serif;">
+  <div id="notificationModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); font-family:'Segoe UI', sans-serif;">
     <div style="background: linear-gradient(135deg, #ffffff, #f1f5f9); margin:8% auto; padding:20px; border-radius:12px; width:90%; max-width:500px; position:relative; box-shadow:0 8px 20px rgba(0,0,0,0.4); border:1px solid #e0e0e0;">
         
         <!-- Close Button -->
@@ -258,39 +336,56 @@
         
         <!-- Notification List -->
         <ul id="notificationList" style="list-style:none; padding:0; margin-top:15px; max-height:300px; overflow-y:auto;">
-        
-        <!-- Product Notification -->
-        <li style="margin-bottom:12px; padding:12px; background-color:#fef9c3; border-left:5px solid #e0b60b; border-radius:6px; color:#4b5563; font-size:15px; display:flex; flex-direction:column; gap:10px;">
-            <span>
-                <i class="fa-solid fa-box-open" style="margin-right:8px;"></i>
-                🆕 <b>New Products are Launched —</b> <strong>check them out!</strong>
-            </span>
-            <a href="{% url 'Product' %}" style="align-self:flex-start; padding:6px 12px; background-color:#e0b60b; color:#1f2937; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
-                Products <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
-            </a>
-        </li>
 
-        <!-- Event Notification -->
-        <li style="margin-bottom:12px; padding:12px; background-color:#f3e8ff; border-left:5px solid #6f11ce; border-radius:6px; color:#4b0082; font-size:15px; display:flex; flex-direction:column; gap:10px;">
-            <span>
-                <i class="fa-solid fa-calendar-check" style="margin-right:8px;"></i>
-                📣 <b>New Events are Launched —</b> <strong>check them out now!</strong>
-            </span>
-            <a href="{% url 'Blogs' %}#event_attended" style="align-self:flex-start; padding:6px 12px; background-color:#6f11ce; color:#fff; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
-                Events <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
-            </a>
-        </li>
+             <!-- AI & Process Automation Notification -->
+            <li class="notify-item ai">
+                <span>
+                    <i class="fa-solid fa-robot"></i>
+                    🤖 <b>AI & Process Automation Updates —</b> <strong>explore the latest innovations!</strong>
+                </span>
+                <small class="notify-date">📅 Posted on: 01st Aug 2025</small>
+                <a href="{% url 'AutomationExpo' %}" class="notify-btn ai-btn">
+                    AI & Automation <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </li>
 
-        <!-- Resources Notification -->
-        <li style="margin-bottom:12px; padding:12px; background-color:#e0f2fe; border-left:5px solid #111ece; border-radius:6px; color:#1e3a8a; font-size:15px; display:flex; flex-direction:column; gap:10px;">
-            <span>
-                <i class="fa-solid fa-book" style="margin-right:8px;"></i>
-                📘 <b>New Valuable Resources are provided</b>
-            </span>
-            <a href="{% url 'Blogs' %}#other_resources" style="align-self:flex-start; padding:6px 12px; background-color:#111ece; color:#fff; text-decoration:none; border-radius:5px; font-weight:500; font-size:14px;">
-                Resources <i class="fa-solid fa-arrow-right" style="margin-left:6px;"></i>
-            </a>
-        </li>
+            <!-- Product Notification -->
+            <li class="notify-item product">
+                <span>
+                    <i class="fa-solid fa-box-open"></i>
+                    🆕 <b>New Products are Launched —</b> <strong>check them out!</strong>
+                </span>
+                <small class="notify-date">📅 Posted on: 10th Aug 2024</small>
+                <a href="{% url 'Product' %}" class="notify-btn product-btn">
+                    Products <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </li>
+
+            <!-- Event Notification -->
+            <li class="notify-item event">
+                <span>
+                    <i class="fa-solid fa-calendar-check"></i>
+                    📣 <b>New Events are Launched —</b> <strong>check them out now!</strong>
+                </span>
+                <small class="notify-date">📅 Posted on: 12th Aug 2024</small>
+                <a href="{% url 'Blogs' %}#event_attended" class="notify-btn event-btn">
+                    Events <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </li>
+
+            <!-- Resources Notification -->
+            <li class="notify-item resource">
+                <span>
+                    <i class="fa-solid fa-book"></i>
+                    📘 <b>New Valuable Resources are provided</b>
+                </span>
+                <small class="notify-date">📅 Posted on: 14th Aug 2024</small>
+                <a href="{% url 'Blogs' %}#other_resources" class="notify-btn resource-btn">
+                    Resources <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </li>
+
+           
 
         </ul>
     </div>
