@@ -62,48 +62,48 @@
                     </div>
                 <div class="carousel-item"> {% endcomment %}
                     <img class="d-block w-100" src="{% static 'slider/1.png' %}" alt="First slide">
-                    <div class="overlay-text animate__animated animate__backInLeft">We Provide</div>
+                    <div class="overlay-text animate__animated animate__backInLeft"></div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/2.png' %}" alt="Second slide">
                     <div class="overlay-text-slide2 animate__animated animate__bounce">
-                        Web Development with features powered by AI
+                        
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/3.png' %}" alt="Second slide">
                     <div class="overlay-text-slide5 animate__animated animate__bounce">
-                        E- Office-DMS<br>Workflow Management
+                       
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/4.png' %}" alt="Third slide">
                     <div class="overlay-text-slide4 animate__animated animate__rubberBand">
-                        Cloud Computing
+                       
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'slider/5.png' %}" alt="Fourth slide">
-                    <div class="overlay-text animate__animated animate__fadeInDown">App Development</div>
+                    <img class="d-block w-100" src="{% static 'slider/9.png' %}" alt="Fourth slide">
+                    <div class="overlay-text animate__animated animate__fadeInDown"></div>
                 </div>
-                <div class="carousel-item">
+                {% comment %} <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/6.png' %}" alt="Fifth slide">
                     <div class="overlay-text-slide3 animate__animated animate__fadeInUp">
-                        Hardware
+                        
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/7.png' %}" alt="Sixth slide">
                     <div class="overlay-text-slide3 animate__animated animate__lightSpeedInRight">
-                        ManPower
+                        
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/8.png' %}" alt="Second slide">
                     <div class="overlay-text-slide6 animate__animated animate__bounce">
-                        AI Based <br> Solutions
-                    </div>
-                </div>
+
+                    </div> {% endcomment %}
+                {% comment %} </div> {% endcomment %}
 
 
             </div>
@@ -149,25 +149,25 @@
 </div>
 
                 <div class="carousel-item"> {% endcomment %}
-                    <img class="d-block w-100" src="{% static 'slider/M1.png' %}" alt="First slide">
+                    <img class="d-block w-100" src="{% static 'slider/s_m_1.png' %}" alt="First slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'slider/M2.png' %}" alt="Second slide">
+                    <img class="d-block w-100" src="{% static 'slider/s_m_2.png' %}" alt="Second slide">
                     
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'slider/M3.png' %}" alt="Second slide">
+                    <img class="d-block w-100" src="{% static 'slider/s_m_3.png' %}" alt="Second slide">
                     
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'slider/M4.png' %}" alt="Third slide">
+                    <img class="d-block w-100" src="{% static 'slider/s_m_4.png' %}" alt="Third slide">
                 </div>
                 <div class="carousel-item">
-                    <img class="d-block w-100" src="{% static 'slider/M5.png' %}" alt="Fourth slide">
+                    <img class="d-block w-100" src="{% static 'slider/s_m_5.png' %}" alt="Fourth slide">
                 </div>
-                <div class="carousel-item">
+                {% comment %} <div class="carousel-item">
                     <img class="d-block w-100" src="{% static 'slider/M6.png' %}" alt="Fourth slide">
-                </div>
+                </div> {% endcomment %}
             </div>
             <a class="carousel-control-prev" href="#carouselExampleControlsMobile" role="button" data-slide="prev">
                 <i class="fa-solid fa-arrow-left custom-carousel-icon"></i>
@@ -848,7 +848,6 @@
         
         .wrapper {
             background-color:rgb(8, 55, 116);
-            {% comment %} height: 60%; {% endcomment %}
             height: 80%;
             width: 100%;
             display: flex;
@@ -1228,45 +1227,7 @@
     document.addEventListener("DOMContentLoaded", function() {
         showSlide(slideIndex);
     });
-    {% comment %} // Initialize the slide index
-    let slideIndex = 0;
-    // Function to show the current slide
-    function showSlide(index) {
-        const slides = document.querySelectorAll('.slide');
-        const dots = document.querySelectorAll('.dot');
-        // Ensure the slideIndex is within bounds
-        if (index >= slides.length) slideIndex = 0;
-        if (index < 0) slideIndex = slides.length - 1;
-        // Hide all slides and reset dots
-        slides.forEach((slide, i) => {
-            slide.classList.remove('active');
-            dots[i].classList.remove('active');
-        });
-        // Show the active slide and corresponding dot
-        slides[slideIndex].classList.add('active');
-        dots[slideIndex].classList.add('active');
-    }
-    // Function to change the slide manually (previous or next)
-    function changeSlide(n) {
-        slideIndex += n;
-        showSlide(slideIndex);
-    }
-    // Function to change to a specific slide by clicking on a dot
-    function currentSlide(n) {
-        slideIndex = n;
-        showSlide(slideIndex);
-    }
-    // Automatic slide change every 5 seconds
-    function autoSlide() {
-        slideIndex++;
-        showSlide(slideIndex);
-        setTimeout(autoSlide, 5000); // 5000ms = 5 seconds
-    }
-    // Initialize the slider and start the automatic sliding
-    window.onload = function() {
-        showSlide(slideIndex); // Show the first slide initially
-        autoSlide(); // Start the automatic slide transition
-    }; {% endcomment %}
+    
 </script>
 
 <!-- JavaScript to update slider value based on percentage -->
