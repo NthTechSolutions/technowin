@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+{% extends "NewShared/layout.html" %} {% block content %}
+<html lang="en">
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/blogs.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css"
+    />
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"
+    ></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blogs</title>
+  </head>
+  <body>
+
+
+    <section class="blog-section" id="blog-1">
+        
+        <!-- Blog Post 1 -->
+        <div id="current-blog" class="heading-blog">
+            <h2><u>Creation of a Workflow Management System: A Case Study</u></h2>
+            
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_1.png' %}" alt="Client's Requirement" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Client's Requirement:</i></h3>
+                        <p>
+                            Our client recently approached us with the need for a web application that could handle multiple services, each requiring a unique application form and document upload process. These services had to go through a custom workflow system involving various roles, each with specific actions. The challenge was that each service had its own requirements, and the process needed to adhere to a strict timeline. If any step was delayed, the system should trigger an alert. The project was given an extremely tight deadline, with a budget initially designed for a single service application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Blog Post 2 (Reversed Layout) -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Our Creative Approach:</i></h3>
+                        <p>
+                            Given the unclear data and document requirements for the services, and the fact that the workflow was documented, we decided to take a unique approach. Rather than building separate applications for each service, we developed a single web application capable of managing multiple services. This solution was not only flexible but also scalable, allowing the addition of more services in the future.
+                        </p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_2.png' %}" alt="Our Creative Approach" />
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_3.png' %}" alt="The Solution We Delivered" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>The Solution We Delivered:</i></h3>
+                        <p>
+                            We created a form generator that could dynamically create forms with varying field types, data types, and document upload options, tailored to each service's needs. To manage the workflow, we introduced a new concept called the 'Service Matrix.' This data structure defined the responsibilities, actions, and timelines for each stage in the workflow. By using this matrix, we could control who does what, when, and within what timeframe for each service. We also designed a single multipurpose screen for managing all actions—except the one action that differed at each level within the Service Matrix. The entire program was developed with simplicity, flexibility, and scalability in mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Blog Post 4 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Key Achievements:</i></h3>
+                        <ul>
+                            <li>First service: Took 1 month to develop.</li>
+                            <li>Second service: Developed in just 1 day.</li>
+                            <li>Third, fourth, and fifth services: Developed in just 1 day each.</li>
+                            <li>The application worked as intended with low maintenance, minimal training, and was easy to understand, resulting in a happy client.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_4.png' %}" alt="Key Achievements" />
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Blog Post 5 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_5.png' %}" alt="What's Next?" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>What's Next?</i></h3>
+                        <p>
+                            Our innovative solution has set the stage for faster and more efficient development of form-based systems and workflow management applications. Moving forward, we are focused on further optimizing this application to make it even more robust and scalable. Stay tuned for future updates and integrations to enhance the system’s capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+        <!-- Hidden Previous Blog Section -->
+        <div id="previous-blog" style="display: none;" class="heading-blog">
+            <h2><u>Idea Generation for workflow Management System :  A Case Study</u><br></h2>
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_1.png' %}" alt="Client's Requirement" />
+                    </div>
+                </div>
+        
+                <!-- Blog Text Section -->
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Client's Requirement:</i></h3>
+                        <p>
+                            Our client recently approached us with the need for a web application that could handle multiple services, each requiring a unique application form and document upload process. These services had to go through a custom workflow system involving various roles, each with specific actions. The challenge was that each service had its own requirements, and the process needed to adhere to a strict timeline. If any step was delayed, the system should trigger an alert. The project was given an extremely tight deadline, with a budget initially designed for a single service application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+    
+        
+            
+            <!-- Blog Post 2 (Reversed Layout) -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Our Creative Approach:</i></h3>
+                        <p>
+                            Given the unclear data and document requirements for the services, and the fact that the workflow was documented, we decided to take a unique approach. Rather than building separate applications for each service, we developed a single web application capable of managing multiple services. This solution was not only flexible but also scalable, allowing the addition of more services in the future.
+                        </p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_2.png' %}" alt="Our Creative Approach" />
+                    </div>
+                </div>
+            </div>
+            
+                
+                <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_3.png' %}" alt="The Solution We Delivered" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>The Solution We Delivered:</i></h3>
+                        <p>
+                            We created a form generator that could dynamically create forms with varying field types, data types, and document upload options, tailored to each service's needs. To manage the workflow, we introduced a new concept called the 'Service Matrix.' This data structure defined the responsibilities, actions, and timelines for each stage in the workflow. By using this matrix, we could control who does what, when, and within what timeframe for each service. We also designed a single multipurpose screen for managing all actions—except the one action that differed at each level within the Service Matrix. The entire program was developed with simplicity, flexibility, and scalability in mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+                
+                <!-- Blog Post 4 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Key Achievements:</i></h3>
+                        <ul>
+                            <li>First service: Took 1 month to develop.</li>
+                            <li>Second service: Developed in just 1 day.</li>
+                            <li>Third, fourth, and fifth services: Developed in just 1 day each.</li>
+                            <li>The application worked as intended with low maintenance, minimal training, and was easy to understand, resulting in a happy client.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_4.png' %}" alt="Key Achievements" />
+                    </div>
+                </div>
+            </div>
+            
+                
+                <!-- Blog Post 5 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_5.png' %}" alt="What's Next?" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>What's Next?</i></h3>
+                        <p>
+                            Our innovative solution has set the stage for faster and more efficient development of form-based systems and workflow management applications. Moving forward, we are focused on further optimizing this application to make it even more robust and scalable. Stay tuned for future updates and integrations to enhance the system’s capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hidden Previous Blog Section -->
+        <!-- Next Blog Section (Initially Hidden) -->
+        <div id="next-blog" class="heading-blog" style="display: none;">
+            <h2><u>Future Scope for Workflow Management System: A Case Study</u><br></h2>
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_1.png' %}" alt="Client's Requirement" />
+                    </div>
+                </div>
+
+                <!-- Blog Text Section -->
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Client's Requirement:</i></h3>
+                        <p>
+                            Our client recently approached us with the need for a web application that could handle multiple services, each requiring a unique application form and document upload process. These services had to go through a custom workflow system involving various roles, each with specific actions. The challenge was that each service had its own requirements, and the process needed to adhere to a strict timeline. If any step was delayed, the system should trigger an alert. The project was given an extremely tight deadline, with a budget initially designed for a single service application.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Blog Post 2 (Reversed Layout) -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Our Creative Approach:</i></h3>
+                        <p>
+                            Given the unclear data and document requirements for the services, and the fact that the workflow was documented, we decided to take a unique approach. Rather than building separate applications for each service, we developed a single web application capable of managing multiple services. This solution was not only flexible but also scalable, allowing the addition of more services in the future.
+                        </p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_2.png' %}" alt="Our Creative Approach" />
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- Blog Post 3 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_3.png' %}" alt="The Solution We Delivered" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>The Solution We Delivered:</i></h3>
+                        <p>
+                            We created a form generator that could dynamically create forms with varying field types, data types, and document upload options, tailored to each service's needs. To manage the workflow, we introduced a new concept called the 'Service Matrix.' This data structure defined the responsibilities, actions, and timelines for each stage in the workflow. By using this matrix, we could control who does what, when, and within what timeframe for each service. We also designed a single multipurpose screen for managing all actions—except the one action that differed at each level within the Service Matrix. The entire program was developed with simplicity, flexibility, and scalability in mind.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        
+                <!-- Blog Post 4 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>Key Achievements:</i></h3>
+                        <ul>
+                            <li>First service: Took 1 month to develop.</li>
+                            <li>Second service: Developed in just 1 day.</li>
+                            <li>Third, fourth, and fifth services: Developed in just 1 day each.</li>
+                            <li>The application worked as intended with low maintenance, minimal training, and was easy to understand, resulting in a happy client.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_4.png' %}" alt="Key Achievements" />
+                    </div>
+                </div>
+            </div>
+
+        
+                <!-- Blog Post 5 -->
+            <div class="blog-post">
+                <div class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="{% static 'blog/workflow/workflow_blog_5.png' %}" alt="What's Next?" />
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-card-text">
+                        <h3><i>What's Next?</i></h3>
+                        <p>
+                            Our innovative solution has set the stage for faster and more efficient development of form-based systems and workflow management applications. Moving forward, we are focused on further optimizing this application to make it even more robust and scalable. Stay tuned for future updates and integrations to enhance the system’s capabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="blog-navigation">
+            {% comment %} <a href="previous-blog-url.html" class="blog-nav-btn previous-btn" id="previous-btn">
+                <i class="fas fa-arrow-left"></i> Previous Blog
+            </a>
+            <!-- Next Blog Button -->
+            <a href="next-blog-url.html" class="blog-nav-btn next-btn" id="next-btn">
+                Next Blog <i class="fas fa-arrow-right"></i>
+            </a> {% endcomment %}
+
+            {% comment %} <button id="previous-btn">Previous</button>
+            <button id="next-btn">Next</button> {% endcomment %}
+
+            <a href="javascript:void(0);" class="blog-nav-btn previous-btn" id="previous-btn">
+                <i class="fas fa-arrow-left"></i> Previous Blog
+            </a>
+            <!-- Next Blog Button -->
+            <a href="javascript:void(0);" class="blog-nav-btn next-btn" id="next-btn">
+                Next Blog <i class="fas fa-arrow-right"></i>
+            </a>
+            
+
+        </div>
+    </section>
+    
+<section style="padding: 30px; background-color: #f9fafb; font-family: 'Segoe UI', sans-serif;" id="event_attended">
+  <h2 style="text-align: center; color: #1f2937; font-size: 38px; margin-bottom: 30px;">
+    <i class="fa-solid fa-bolt" style="color: #facc15; margin-right: 10px;"></i>
+    Featured Event Highlights
+  </h2>
+
+  <ul style="display: flex; flex-wrap: wrap; gap: 24px; padding-left: 0; list-style: none; justify-content: center;">
+
+    <!-- Event 1 -->
+    <li style="flex: 1 1 300px; max-width: 380px; padding: 20px; background-color: #e0f2fe; border-left: 5px solid #38bdf8; border-radius: 12px; color: #0c4a6e; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 700;">
+        <i class="fa-solid fa-video" style="margin-right: 8px;"></i> 🎥 ICAI MSME & Startup Conclave 2025
+      </div>
+
+      <div style="font-size: 14px; color: #1e3a8a;">
+        We were honored to participate in the ICAI MSME & Startup Conclave 2025 on 26–27 June at Hotel Sahara Star, Mumbai, organized by ICAI with support from the Ministry of MSME. Our team showcased Technowin’s digital solutions for MSMEs, focusing on ERP, compliance automation, and business growth tech.
+      </div>
+
+      <video controls style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0);">
+        <source src="{% static 'Events/event1.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <a href="https://youtu.be/KL8GFLeweck" target="_blank"
+         style="align-self: flex-start; padding: 10px 16px; background-color: #1e3a8a; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i> Know More
+      </a>
+    </li>
+
+    <!-- Event 2 -->
+    <li style="flex: 1 1 300px; max-width: 380px; padding: 20px; background-color: #f3e8ff; border-left: 5px solid #c084fc; border-radius: 12px; color: #4b0082; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 700;">
+        <i class="fa-solid fa-video" style="margin-right: 8px;"></i> 🌟 Founder & Investor Event
+      </div>
+
+      <div style="font-size: 14px; color: #4b0082;">
+        Technowin I.T. Infra Pvt. Ltd. proudly participated in the Founder & Investor Event, bringing together dynamic entrepreneurs, strategic investors, and tech innovators under one roof. We showcased our cutting-edge software solutions in HRMS, Audit, DMS, Workflow Automation, and more.
+      </div>
+      <br>
+      <video controls style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0);">
+        <source src="{% static 'Events/event2.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <a href="https://youtu.be/XU-T4JJZ1ek" target="_blank"
+         style="align-self: flex-start; padding: 10px 16px; background-color: #4b0082; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i> Know More
+      </a>
+    </li>
+
+    <!-- Event 3 (Automation Expo 2025 Completed) -->
+    <li style="flex: 1 1 300px; max-width: 380px; padding: 20px; background-color: #fff0f0; border-left: 5px solid #ef4444; border-radius: 12px; color: #7f1d1d; font-size: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); display: flex; flex-direction: column; gap: 14px;">
+      <div style="font-size: 18px; font-weight: 700;">
+        <i class="fa-solid fa-video" style="margin-right: 8px;"></i> 🚀 Automation Expo 2025
+      </div>
+
+      <div style="font-size: 14px; color: #7f1d1d;">
+        Technowin I.T. Infra Pvt. Ltd. proudly exhibited at <strong>Automation Expo 2025</strong> from 11th to 14th August at NESCO, Goregaon, Mumbai.  
+        We showcased our latest innovations in HRMS, Audit, Workflow Automation, ERP, and Smart Digital Solutions.  
+        It was an incredible experience to connect with industry leaders, innovators, and enterprises shaping the future of automation.
+      </div>
+
+      <video controls style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0);">
+        <source src="{% static 'Events/event3.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <a href="https://youtu.be/N8_rh8v5mRs?si=CF42nvjeArodTOKE" target="_blank"
+         style="align-self: flex-start; padding: 10px 16px; background-color: #b91c1c; color: #ffffff; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">
+        <i class="fa-solid fa-circle-play" style="margin-right: 6px;"></i> Know More
+      </a>
+    </li>
+
+  </ul>
+</section>
+
+
+ <section id="other_resources" style="padding: 50px 20px; background-color: #fffafc; font-family: 'Segoe UI', sans-serif;">
+  <h2 style="text-align: center; font-size: 36px; color: #1f2937; margin-bottom: 40px;">
+    <i class="fa-solid fa-folder-open" style="color: #ef4444; margin-right: 12px;"></i>
+    Our Valuable Resources
+  </h2>
+
+  <ul style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; list-style: none; padding-left: 0; margin: 0;">
+
+    <!-- Resource Card 1 -->
+    <li style="flex: 1 1 320px; max-width: 480px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s;">
+      <img src="{% static 'other_resources/google_analytics_seo.png' %}" alt="HRMS Guide"
+           style="width: 100%; height: auto; display: block;">
+      <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="font-size: 20px; font-weight: 700; color: #dc2626;">Google Analytics & SEO Optimization Guide</h3>
+        <p style="font-size: 14px; color: #374151;">
+         Unlock the full potential of your website with our comprehensive guide to Google Analytics and SEO. Learn how to track key user behaviors, optimize your content for search engines, and make data-driven decisions to boost visibility, traffic, and engagement. Ideal for startups, marketers, and web admins aiming to enhance their digital presence.
+        </p>
+        <a href="{% static 'other_resources/google_analytics_seo.pdf' %}" download
+           style="align-self: flex-start; padding: 10px 16px; background-color: #ee0707ff; color: white; font-size: 14px; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+        </a>
+      </div>
+    </li>
+
+    <!-- Resource Card 2 -->
+    <li style="flex: 1 1 320px; max-width: 480px; background-color: #ffffff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s;">
+      <img src="{% static 'other_resources/Canva.png' %}" alt="Workflow Automation"
+           style="width: 100%; height: auto; display: block;">
+      <div style="padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+        <h3 style="font-size: 20px; font-weight: 700; color: #2563eb;">Canva Design Guide for Business Branding</h3>
+        <p style="font-size: 14px; color: #374151;">
+          Master the art of visual communication with our Canva Design Guide. This resource walks you through creating professional, on-brand graphics for social media, presentations, flyers, and more — all without needing a designer. Perfect for startups, marketers, and teams looking to elevate their brand with ease and consistency.
+        </p>
+        <a href="{% static 'other_resources/canva_guideBook.pdf' %}" download
+           style="align-self: flex-start; padding: 10px 16px; background-color: #014ceeff; color: white; font-size: 14px; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+        </a>
+      </div>
+    </li>
+
+  </ul>
+</section>
+   
+    
+  </body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+        debugger;
+        const previousBtn = document.getElementById("previous-btn");
+        const nextBtn = document.getElementById("next-btn");
+    
+        const blogs = document.querySelectorAll(".heading-blog");
+        let currentIndex = 0; // Start with the first blog
+    
+        function updateVisibility() {
+            blogs.forEach((blog, index) => {
+                blog.style.display = index === currentIndex ? "block" : "none";
+            });
+    
+            // Disable links if at the first or last div
+            previousBtn.style.pointerEvents = currentIndex === 0 ? "none" : "auto";
+            nextBtn.style.pointerEvents = currentIndex === blogs.length - 1 ? "none" : "auto";
+    
+            previousBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+            nextBtn.style.opacity = currentIndex === blogs.length - 1 ? "0.5" : "1";
+        }
+    
+        nextBtn.addEventListener("click", function () {
+            debugger;
+            if (currentIndex < blogs.length - 1) {
+                currentIndex++;
+                updateVisibility();
+            }
+        });
+    
+        previousBtn.addEventListener("click", function () {
+            debugger;
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateVisibility();
+            }
+        });
+    
+        // Initialize visibility
+        updateVisibility();
+    });
+    
+</script>  
+  
+
+
+
+  
+</html>
+
+{% endblock %}

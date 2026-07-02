@@ -52,5 +52,10 @@ urlpatterns = [
     path('contactUsFormPost/', contactUsFormPost, name='contactUsFormPost'),
     path('aboutUsFormPost/', aboutUsFormPost, name='aboutUsFormPost'),
     re_path(r'^googleff696756859250e5\.html$', serve, {'document_root': settings.BASE_DIR, 'path': 'googleff696756859250e5.html'}),
+    
+    # new website
+    
+    path("HomeNew", HomeNew,name='HomeNew'),
+    path("AboutUsNew", AboutUsNew,name='AboutUsNew'),
 
 ]

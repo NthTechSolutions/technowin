@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+{% extends "NewShared/layout.html" %} {% block content %} 
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/software_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Software</title>  
+</head>
+<body>
+  
+  
+        <section class="background-section" id="background-section">
+            <!-- Video background -->
+            <video autoplay loop muted class="background-video">
+                <source src="{% static 'images/software_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        
+            <!-- Content -->
+            <div class="software-content">
+                <div class="content-card">
+                    <h1>Technowin IT Infra</h1>
+                    <p>Technowin IT Infra offers cutting-edge technology solutions for seamless connectivity, reliable networks, and secure data management. We specialize in cloud services ☁️, network infrastructure 🌐, and cybersecurity 🔒, ensuring your business runs smoothly and safely. 🚀 #TechInnovation #ITInfrastructure #Security</p>
+                </div>
+            </div>
+        </section>        
+          
+        
+        <section id="app-project" class="app-project">
+        <h3>App Development Projects</h3>
+        <div class="app-dev-container">
+        
+            <div class="video-card fadeInLeft" id="project-1">
+                <video controls>
+                    <source src="{% static 'project_data/psn_headon_technowin.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video><br>
+                <h2>Head-On App - Slot Booking Software</h2>
+                <h4>PSN Supply Chain Pvt Ltd</h4>
+                <p>Mobile App and Web Development, Deployment, Implementation, Training, Maintenance and Support. 
+                    <br>
+                   Server setup for development and testing.
+                   <br> 
+                   Technology: Flutter, Dart, Django Python, MySQL, Cloud: AWS EC2
+                </p>
+            </div>
+          <!-- Text Card -->
+          <div class="text-card fadeInRight">
+              <p>PSN’s Pool Employee Management System is designed to streamline workforce allocation for top clients like Amazon and Flipkart. Our system offers seamless shift management, allowing employees to choose shifts based on their preferences while clients set available slots.</p>
+
+                <p><u>Key features include</u>:</p>
+                
+                <p>1. <u><i>Automated Attendance & Salary Calculation</i></u>:<br> Attendance is tracked using advanced technology, with automatic salary calculations based on employee designation and location.</p>
+                <p>2. <u><i>Instant Salary Payout & Payslips</i></u>:<br> Approved salaries are instantly transferred to employees’ bank accounts, with pay slips and UTR numbers available via the app for transparency.</p>
+                <p>3. <u><i>Employee Profile Management</i></u>: <br>Employees can manage and update their profiles and account details, ensuring data integrity and security.</p>
+                <p>4. <u><i>Performance & Pool Hygiene</i></u>:<br> Employee performance is continuously monitored, ensuring an optimized workforce by adding or removing individuals based on performance.</p>
+                <p>PSN’s system enhances efficiency and flexibility, providing reliable workforce management for businesses.</p>
+                <a href="http://13.202.30.119/" class="text-card-read-more read-more" target="_blank">
+                    <span>View</span>
+                    <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+                </a>
+          </div>
+        
+     
+      <!-- Text Card -->
+      <div class="text-card fadeInRight"  id="project-2">
+              <p>PSN’s Mobile App-based attendance system enables outsourced employees to confirm their availability for shifts, helping the agency assess workforce strength for the next day. The system generates automated attendance trend reports to identify patterns, such as employees who fail to confirm or attend shifts. Reminder notices are sent to regular defaulters to improve compliance. The app also tracks employee engagement with notifications, ensuring accountability and high levels of interaction. This automated system optimizes workforce management, boosts operational efficiency, and ensures compliance.
+                </p>
+          </div>
+          <div class="video-card fadeInLeft">
+            <video controls>
+                <source src="{% static 'project_data/psn_ontime_project.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video><br> 
+            <h2>On-Time App - Attendance Confirmation Software</h2>
+            <h4>PSN Supply Chain Pvt Ltd</h4>
+            <p>Mobile App and Web Development, Deployment, Implementation, Training, Maintenance and Support. 
+                Server setup for development and testing            
+                <br>
+                Technology: Flutter, Dart, Django Python, MySQL, Cloud: AWS EC2
+            </p>
+        </div>
+   
+
+        <div class="video-card fadeInLeft" id="project-3">
+            <video controls>
+                <source src="{% static 'project_data/ess_app_product.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video><br>
+            <h2>Employee Self Service App</h2>
+            <h4>Technowin I.T. Infra Pvt Ltd</h4>
+            <p>Mobile App and Web Development
+               <br> 
+               Technology: Flutter, Dart, C#, MSSQL, Cloud: AWS Lightsail
+            </p>
+        </div>
+        
+
+      <!-- Text Card -->
+      <div class="text-card fadeInRight">
+          <p>The GIS-based attendance system allows employees to mark attendance from their exact location, ensuring accurate tracking through geographic data. The user-friendly platform enables employees to request leave, report early departures, or adjust attendance records. Employees can also view their leave and attendance history, providing transparency and easy access to important documents like payslips and appointment letters. This system streamlines attendance management, enhances employee self-service, and improves overall workflow efficiency, ensuring accurate records and accountability for both employees and employers.
+            </p>
+      </div>
+  
+
+      <!-- Text Card -->
+      <div class="text-card fadeInRight" id="project-4">
+        <p>The Attendance Management App is designed for teachers to easily mark and track daily attendance directly from their mobile devices. Teachers can record attendance, make real-time edits, and access detailed reports to monitor student attendance trends and communicate with school administration. With its user-friendly interface and advanced features, the app enhances accuracy, efficiency, and accountability, streamlining the attendance process and improving overall school management.
+          </p>
+    </div>
+    <div class="video-card fadeInLeft">
+      <video controls>
+          <source src="{% static 'project_data/attendance_capture_app.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+      </video><br> 
+      <h2>Attendance Management System App</h2>
+      <h4>Our Lady Of Remedy High  School</h4>
+      <p>Mobile App and Web Development
+          <br>
+          Technology: Android Studio, C#, MSSQL, Cloud: Azure
+      </p>
+  </div>
+
+      </section>
+
+
+      <section class="web-project" id="web-project">
+        <h3>Web Development Projects</h3>
+        <div class="web-dev-container">
+            
+            <div class="web-video-card slideInLeft" id="web-project-1">
+                <video controls>
+                    <source src="{% static 'project_data/water_connection_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2><u>Water Connection Software</u></h2>
+                <h4><i>CIDCO – Water Department, Engineering Department, and Horticulture Department</i></h4>
+            </div>
+            
+            <!-- Text Card -->
+            <div class="web-text-card slideInRight">
+                <p>The CIDCO Water Connection Web Application simplifies the process for citizens under CIDCO administration to apply for and manage water connections for their societies, buildings, or plots. Integrated with Aaple Sarkar, the platform ensures seamless access to water services and accurate billing by syncing with the CIDCO water charges application. The system supports efficient data flow through a custom API, enhancing interoperability with CIDCO Middleware. Built with ASP.Net, VB.Net, and MSSQL, the application ensures high availability, timely updates, and reliable performance, offering a comprehensive solution for water connection management.</p>
+                <p><strong>Technology:</strong> ASP.Net, VB.Net, MSSQL</p>
+                
+                <!-- View Button with FontAwesome icon -->
+                <a href="https://drs.cidcoindia.com/" class="web-text-card-read-more read-more" target="_blank">
+                    <span>View</span>
+                    <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+                </a>
+            </div>
+            
+        
+
+            <!-- Text Card -->
+            <div class="web-text-card slideInRight" id="web-project-2">
+               
+                <p>The CIDCO Services Web Application enables citizens under CIDCO administration to easily access services like drainage connections, tree cutting permissions, product approvals, and vendor registrations. Integrated with Aaple Sarkar, the platform offers a centralized hub for multiple government services. Features include a dynamic workflow, document management system, and seamless integration with CIDCO Middleware through a custom API. Built with Django, Python, and MySQL, and hosted on AWS Cloud, the application ensures high availability, security, and performance. It provides efficient, secure, and user-friendly access to essential government services, improving service delivery and streamlining operations.</p>
+                    <p><strong>Technology: </strong>Django Python, MySQL, Cloud: AWS EC2, S3, RDS</p>
+                    <!-- View Button with FontAwesome icon -->
+                <a href="http://rtsengser.cidcoindia.com/" class="web-text-card-read-more read-more" target="_blank">
+                    <span>View</span>
+                    <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+                </a>
+            </div>
+    
+            <div class="web-video-card slideInLeft">
+                <video controls>
+                    <source src="{% static 'project_data/cidco_services_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2><u>CIDCO Services on Website and Integration with Aaple Sarkar <br>Services: Drainage Connection, Tree Trimming and Tree Cutting, Product Approval, Vendor Registration </u></h2>
+                <h4><i>CIDCO – Water Department, Engineering Department and Horticulture Department</i></h4>
+            </div>
+    
+            <div class="web-video-card slideInLeft" id="web-project-3">
+                <video controls>
+                    <source src="{% static 'project_data/deonar_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br><br>
+                <h2><u>Database Management System</u></h2>
+                <h4><i>MCGM, SWM, Deonar Dumping Ground</i></h4>
+            </div>
+    
+            <!-- Text Card -->
+            <div class="web-text-card slideInRight">
+              
+                <p>The Deonar Dumping Ground (DDG) has enhanced security and firefighting measures to address recent incidents. A new digital system will streamline operations by digitizing staff, equipment records, daily surveillance, fire drill plans, and Standard Operating Procedures (SOPs). The system includes a standalone application for site management and a web-based application for easy access to reports, SOPs, and fire drill records. Features include SOP version control, incident tracking, and activity dashboards for improved incident management. This digital platform will improve operational efficiency, reduce manual processes, and ensure better accountability, transparency, and incident management at DDG.</p>
+                       <!-- View Button with FontAwesome icon -->
+                <a href="https://dmsnmmc.com/" class="web-text-card-read-more read-more" target="_blank">
+                    <span>View</span>
+                    <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+                </a>
+            </div>
+
+               <!-- Text Card -->
+               <div class="web-text-card slideInRight" id="web-project-4">
+                
+                <p>The GPDP and MPR System, developed by the Maharashtra Village Social Transformation Foundation (MVSTF), is a comprehensive solution for driving rural development in Maharashtra. This custom-built application automates key functions such as Gram Panchayat Development Plan (GPDP) creation, Monthly Progress Reporting (MPR), fund management, and utilization certificates. It also supports district self-assessment, impact data collection, and approval cycles for efficient decision-making. The system includes powerful dashboards, MIS, and analytical reports to ensure transparency and informed decision-making. Built with MVC Dot Net, C#, MSSQL, and hosted on AWS EC2 Cloud, the system ensures reliable performance with full development, deployment, training, and ongoing support.</p>
+                    <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: AWS EC2
+                    
+                    </p>
+            </div>
+    
+            <div class="web-video-card slideInLeft">
+                <video controls>
+                    <source src="{% static 'project_data/gpdp_mvst.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br><br>
+                <h2><u>GPDP and MPR System</u></h2>
+                <h4><i>Maharashtra Village Software Transformation Foundation</i></h4>
+            </div>
+
+            <div class="web-video-card slideInLeft" id="web-project-5">
+                <video controls>
+                    <source src="{% static 'project_data/ace_school_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video><br><br>
+                <h2><u>School Management System</u></h2>
+                <h4><i>Adept Computer Systems, Atharva Systec</i></h4>
+            </div>
+    
+            <!-- Text Card -->
+            <div class="web-text-card slideInRight">
+            
+                <p>The School Management System streamlines student and academic processes, including admission, fee management, class division, exams, attendance, and more. Key features include marks generation, analytical reports, a robust checklist, and audit trail. The Administrator Panel offers tools for form management, scheduling, communication, document uploads, and offline admissions. Designed to manage 13 suburban schools with 700-1500 students each, the system is scalable and built with MVC Dot Net, C#, MSSQL, and hosted on Azure Cloud, ensuring high performance and security. We provide full development, maintenance, and support services.</p>  
+                   <p> <strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure
+                    </p>
+            </div>
+
+              <!-- Text Card -->
+              <div class="web-text-card slideInRight" id="web-project-6">
+               
+                <p>The CM Apprentice Management System (AMS) efficiently manages apprenticeship data for employers, apprentices, and the Goa Human Resource Development Corporation (GHRDC). Employers can input apprenticeship details, while apprentices can verify and update their KYC information, view salaries, attendance, and quarterly payments. The system includes modules for GHRDC staff, such as Maker, Checker, Approver, Administrator, Bank Disbursal, and Reports. Built with MVC Dot Net, C#, MSSQL, and hosted on Azure Cloud, the system ensures scalability, security, and efficiency. We provide complete development, data migration, deployment, training, and ongoing support.</p>
+                    <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure
+                    </p>
+            </div>
+    
+            <div class="web-video-card slideInLeft">
+                <video controls>
+                    <source src="{% static 'project_data/cm_apprentice_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2><u>CM Apprentice Management System</u></h2>
+                <h4><i>GHRDC, Goa</i></h4>
+            </div>
+    
+
+            <div class="web-video-card slideInLeft" id="web-project-7">
+                <video controls>
+                    <source src="{% static 'project_data/divyang_survey_system_project.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <h2><u>Divyang Survey System</u></h2>
+                <h4><i>Kulgaon Badlapur Municipal Corporation</i></h4>
+            </div>
+    
+            <!-- Text Card -->
+            <div class="web-text-card slideInRight">
+                
+                <p>The Divyang Survey and Data Capture System is a comprehensive solution for collecting survey data, including biometric capture, using handheld or stationed devices. Designed for surveying individuals with disabilities (Divyang), it enables accurate data entry and storage in Marathi, ensuring local accessibility. The system offers efficient data collection, analysis, and reporting. Built with MVC Dot Net, C#, MSSQL, and hosted on Azure Cloud, it ensures high performance, security, and scalability. We provide full development, data migration, deployment, training, and ongoing support to ensure smooth operation.</p> 
+                   <p><strong> Technology: </strong>MVC Dot Net, C#, MSSQL, Cloud: Azure
+                    </p>
+            </div>
+
+ <!-- Text Card -->
+ <div class="web-text-card slideInRight" id="web-project-8">
+    
+    <p>The HRMS for Panvel Municipal Corporation (PMC) is a comprehensive solution for managing employee and pensioner payroll. It automates payroll processing for over 1500 employees and 700+ pensioners, ensuring accurate calculations for taxes, allowances, retiral benefits, and more. The system handles supplementary bills, festival advances, promotions, and loan management. It also manages pensioner data, generates monthly payroll, and processes DA increases and backdated payments. With an integrated Employee Creation Portal and tailored solutions for PMC school employees, the HRMS ensures seamless updates and efficient management. Built with React JS, Laravel PHP, MVC Dot Net, C#, MySQL, and hosted on Web Werks Cloud, the system ensures scalability, security, and reliable performance. We provide full deployment, training, and ongoing support.</p>
+        <p><strong>Technology:</strong> React Js, Laravel PHP, MVC Dot Net, C#, MySQL, Cloud: Tird Party Cloud – Web Werks
+    
+        </p>
+</div>
+
+<div class="web-video-card slideInLeft">
+    <video controls>
+        <source src="{% static 'project_data/hrms_payroll_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>HRMS and Payroll</u></h2>
+    <h4><i>Panvel Municipal Corporation</i></h4>
+</div>
+
+<div class="web-video-card slideInLeft" id="web-project-9">
+    <video controls>
+        <source src="{% static 'project_data/knowledge_resource_center_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Knowledge Resource Center/ Library Software</u></h2>
+    <h4><i>Sir Vithaldas Thackersey College of Home Science 
+    </i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+   
+    <p>The Knowledge Resource Center (KRC) system is an advanced online library management solution that enhances the academic experience by providing students easy access to resources. Students can view catalogs, reserve books, and access video lectures, while the system integrates seamlessly with the student database for efficient resource circulation. It allows stakeholders to propose and approve books, place purchase orders, and manage book cataloging and circulation. With features for stock checking, the system supports over 27,000 catalog entries and handles a large number of daily visitors. Built with MVC Dot Net, C#, MSSQL, and hosted on Azure Cloud, the KRC system ensures reliability, security, and scalability. We provide full development, migration, deployment, training, and ongoing support services.</p>
+        
+        <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure</p>
+           <!-- View Button with FontAwesome icon -->
+           <a href="https://krc.svt.edu.in/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight" id="web-project-a">
+    
+    <p>The Citizen Scheme Management Portal streamlines the processing of government schemes with flexible templates for quick deployment of new schemes. The system supports up to 40 new schemes monthly and features an efficient approval and disbursal workflow, with SMS alerts to notify beneficiaries at each stage. Handling up to 75,000 forms in its first year and processing 35,000 forms annually thereafter, the portal is widely used across Cyber Cafes, Seva Kendras, and service centers. Built with MVC Dot Net, C#, MSSQL, and hosted on Azure Cloud, the system ensures scalability, security, and high availability. We provide full development, data migration, deployment, training, and ongoing support to ensure smooth operations.</p>
+        
+        <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure
+        </p>
+           <!-- View Button with FontAwesome icon -->
+           <a href="https://schemenmmc.com/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+<div class="web-video-card slideInLeft">
+    <video controls>
+        <source src="{% static 'project_data/citizen_scheme_management_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Citizen Scheme Management Portal</u></h2>
+    <h4><i>Navi Mumbai Municipal Corporation - Social Welfare Department</i></h4>
+</div>
+
+<div class="web-video-card slideInLeft" id="web-project-b"> 
+    <video controls>
+        <source src="{% static 'project_data/tax_software_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>PT, LWF and Other Tax Software</u></h2>
+    <h4><i>LK Nakashe Consultants Pvt. Ltd</i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+    
+    <p>The PT, LWF, and Tax Software automates tax calculation and reconciliation for multiple companies, ensuring compliance with state and city-specific tax slabs for PT (Professional Tax) and LWF (Labour Welfare Fund). The system validates deductions, reconciles tax components, and generates Challan forms for online or offline payments. It features an error logging system for easy data validation and rectification. The software includes a secure access control system for self-use by clients. Built with Django Python, MySQL, and hosted on AWS Cloud (EC2, S3, RDS), the system offers robust performance, security, and scalability. We provide full development, data migration, deployment, training, and ongoing support.</p>
+        
+        <p><strong>Technology:</strong> Django Python, MySQL, Cloud: AWS EC2, S3, RDS </p>
+           <!-- View Button with FontAwesome icon -->
+           <a href="https://lknconsultants.net/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight" id="web-project-c">
+    
+    <p>The License and Registration Software streamlines the entire process of obtaining, renewing, amending, and closing licenses for businesses. It efficiently manages workflows from enquiry to certificate issuance, with dynamic forms for various states, cities, and license types (e.g., S&E, CLRA, Trade License, Factory License). The system supports multiple operation types, such as registration, amendment, renewal, and closure, and is adaptable to changing regulations for continued compliance.
+
+        With secure access control, the software can be used by end customers for self-management if licensed. We offer complete services, including development, data migration, deployment, training, ongoing support, and server management. Built with Django, MySQL, and hosted on AWS Cloud (EC2, S3, RDS), it ensures optimal performance, scalability, and security.</p>
+        
+        <p><strong>Technology:</strong> Django Python, MySQL, Cloud: AWS EC2, S3, RDS</p>
+         <!-- View Button with FontAwesome icon -->
+         <a href="https://lknconsultants.net/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+<div class="web-video-card slideInLeft">
+    <video controls>
+        <source src="{% static 'project_data/license_registration_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>License and Registration  Software</u></h2>
+    <h4><i>LK Nakashe Consultants Pvt. Ltd</i></h4>
+</div>
+
+<div class="web-video-card slideInLeft" id="web-project-d">
+    <video controls>
+        <source src="{% static 'project_data/audit_utility_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Audit Utility</u></h2>
+    <h4><i>CGST, Thane Commissionerate</i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+   
+    <p>The Audit Management Portal is a comprehensive solution for planning, assigning, and managing audits efficiently. It helps audit teams organize and track audits, from agenda creation to decision marking and generating Minutes of Meeting (MOM). The system also handles post-meeting processes, such as recovery actions and notice issuance, ensuring audit closure.</p>
+
+        <p>75 Auditors, 500 plus audits per month</p>
+        
+        <p>Development, Data Migration, Deployment, Implementation, Training, Maintenance and Support. 
+        Servers provided by us. Setup, Maintenance and Application Management is also done by us.</p>
+        
+        <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: AWS LightSail</p>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight" id="web-project-e">
+    
+    <p>The Audit Software streamlines monthly compliance audits for Principal Employers, Contractors, and Sub-Contractors across multiple locations. It uses state/UT-specific task templates and formats for evidence upload, ensuring compliance with local regulations. With AI-enabled features, the software enhances audit accuracy and automates processes, adding significant value.
+
+        Trusted by 200+ customers and contractors, handling 800+ audits per month, this high-volume solution is ideal for large-scale operations.
+        
+        Services: Development, data migration, deployment, implementation, training, maintenance, and support. We also handle server setup, maintenance, and application management.</p>
+        
+        <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure</p>
+         <!-- View Button with FontAwesome icon -->
+         <a href="https://complianceaudit.lknconsultants.net/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+<div class="web-video-card slideInLeft">
+    <video controls>
+        <source src="{% static 'project_data/compliance_audit_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Compliance Audit</u></h2>
+    <h4><i>LK Nakashe Consultants Pvt. Ltd</i></h4>
+</div>
+
+
+<div class="web-video-card slideInLeft" id="web-project-f">
+    <video controls>
+        <source src="{% static 'project_data/compliance_operations_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Compliance Operations</u></h2>
+    <h4><i>LK Nakashe Consultants Pvt. Ltd</i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+   
+    <p>The Compliance Operation Software helps organizations efficiently manage compliance tasks using state and UT-specific templates. It covers a wide range of tasks, including Registration/License, Remittance, Display Rules, Salary Register, and Remittance Types. With real-time dashboards, detailed reports, and AI-powered features, the software enhances decision-making and improves task accuracy.
+
+        Serving 200+ customers, the scalable solution integrates with other systems like Salary Register and Audit Compliance through APIs for seamless data flow. Built with Django Python and MySQL, hosted on AWS EC2, S3, and RDS, it offers robust performance, security, and reliability.
+        
+        Services: Full lifecycle support including development, data migration, deployment, training, maintenance, and support for efficient compliance management.</p>
+        
+        <p><strong>Technology:</strong> Django Python, MySQL, Cloud: AWS EC2, S3, RDS</p>
+         <!-- View Button with FontAwesome icon -->
+         <a href="https://complianceoperation.lknconsultants.net/" class="web-text-card-read-more read-more" target="_blank">
+            <span>View</span>
+            <i class="fas fa-eye"></i> <!-- FontAwesome eye icon -->
+        </a>
+</div>
+
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight" id="web-project-g">
+    
+    <p>The Student Admission Portal efficiently handles student admission applications for both 5-year and 3-year programs, catering to regular students, ex-students, and transfer students, including in-house admissions. The portal also supports exam forms, fees payment, examination processes, certificate issuance, and MIS reports. A custom-built Content Management System (CMS) was developed to allow college staff to update data and manage information on a daily basis, ensuring smooth operations. With over 1500+ students managed on the platform, the portal ensures ease of use and quick access to all relevant academic and administrative details. Our services include development, data migration, deployment, implementation, training, maintenance, and support, with Azure servers provided for hosting, and complete setup, maintenance, and application management also handled by us. The portal is built using PHP, MVC Dot Net, C#, MySQL, MSSQL, and hosted on Azure Cloud with GoDaddy-Plesk for domain management.</p>
+        
+        <p><strong>Technology:</strong> PHP, MVC Dot Net, C#, MySQL, MSSQL, Cloud: Azure, GoDaddy - Plesk</p>
+        
+</div>
+
+<div class="web-video-card slideInLeft">
+    <video controls>
+        <source src="{% static 'project_data/college_management_system_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>College Management System, Website</u></h2>
+    <h4><i>Government Law College, Mumbai</i></h4>
+</div>
+
+
+<div class="web-video-card slideInLeft" id="web-project-h">
+    <video controls>
+        <source src="{% static 'project_data/srp_recruitment_management_system.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>SRP Recruitment Management System</u></h2>
+    <h4><i>MSRLM - UMED</i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+    
+    <p>The Web-Enabled Recruitment Software is designed for efficient recruitment of State Resource Personnel across 21 posts, handling large-scale operations with ease. It manages dynamic forms for up to 3000 registrations and 2000 applications, streamlining the entire process from registration to marks calculation and ranking. The software also enables easy data downloads in formats like Excel and provides features for server setup, domain management, and maintenance.
+
+        Offering flexibility, the platform allows users to access and download data, including rankings and marks. Built with MVC Laravel PHP, MySQL, and hosted on AWS LightSail, it ensures smooth, uninterrupted service.</p>
+        
+        <p><strong>Technology:</strong> MVC Laravel PHP, MySQL, Cloud: AWS LightSail 
+        </p>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight" id="web-project-i">
+    
+    <p>The ERP System is a comprehensive platform for managing key functions like student admissions, batch creation, fee payments, exam management, attendance tracking, and result management. Serving over 7000 users and 2500 students, it simplifies administrative tasks and tracks student data, including academic progress and attendance.
+
+        The system includes reporting tools for faculty and administrators to monitor performance and manage resources. It also supports website enhancement and maintenance, ensuring up-to-date online presence. With regular updates, bug fixes, and server maintenance, the platform ensures reliability and security.</p>
+        <p><strong>Technology: </strong> Core PHP, Code Igniter, MySQL, Cloud: AWS EC2, S3, RDS </p>
+        
+    
+</div>
+
+<div class="web-video-card slideInLeft">
+    <img src="{% static 'project_data/TISS.png' %}" alt="TISS" class="web-project-image">
+    <h2><u>ERP, Website and Admission</u></h2>
+    <h4><i>Tata Institute of Social Sciences - School of Vocatioal Education</i></h4>
+</div>
+
+<div class="web-video-card slideInLeft" id="web-project-j">
+    <video controls>
+        <source src="{% static 'project_data/salary_register_project.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <h2><u>Salary Register</u></h2>
+    <h4><i>LK Nakashe Consultants Pvt. Ltd</i></h4>
+</div>
+
+<!-- Text Card -->
+<div class="web-text-card slideInRight">
+    
+    <p>The Payroll Software simplifies payroll management, attendance, leave, and statutory compliance, tailored to the specific requirements of each state or Union Territory (UT). It generates periodic reports and returns, ensuring full compliance with local labor laws and tax regulations.
+
+        Serving 350 customers across 1000+ locations, the system handles 7,000+ reports per month, covering features like attendance tracking, leave management, statutory deductions, and comprehensive payroll reports.
+        
+        We provide full-scale services including development, data migration, deployment, implementation, training, and ongoing support. Server setup, maintenance, and application management ensure high efficiency, reliability, and security.</p>
+        
+        <p><strong>Technology:</strong> MVC Dot Net, C#, MSSQL, Cloud: Azure</p>
+</div>
+
+
+
+
+        </div>
+    </section>
+    
+    </body>
+
+    <script>
+      // Function to animate the counter
+        function animateCounter(counterElement) {
+            const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+            let currentValue = 0;
+        
+            // Increment the counter
+            const interval = setInterval(() => {
+                counterElement.innerText = currentValue;
+                if (currentValue >= targetValue) {
+                    clearInterval(interval);
+                } else {
+                    currentValue++;
+                }
+            }, 30); // Adjust speed by changing the interval
+        }
+        
+        // Detect when the counters are visible
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const counterPosition = counter.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+        
+                if (counterPosition < windowHeight) {
+                    animateCounter(counter);
+                }
+            });
+        }
+        
+        // Trigger the counter animation when the page loads or scrolls
+        window.addEventListener('scroll', startCounters);
+        window.addEventListener('load', startCounters);
+        
+      </script>
+
+
+
+    
+    </html>
+
+    {% endblock %}

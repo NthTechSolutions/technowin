@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+{% extends "NewShared/layout.html" %} {% block content %} {% csrf_token %}
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/contact_us_style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+ 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Contact Us</title>  
+    </head>
+<body>
+
+    <section class="company-section">
+        <div class="go-back">
+        <img src="{% static 'images/back.gif' %}" alt="Go Back" class="go-back-image" onclick="history.back()" />
+        </div> 
+    </section>
+
+    <div id="social-media-section">
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="{% static 'images/contact_background_video.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+        
+    <!-- Social Media Section -->
+     <!-- Social Media Section -->
+     <section>
+        <div class="social-links" id="socialIcons">
+            <a href="https://www.facebook.com/share/rDF8hKbxWMA2MWjF/" class="social-icon facebook" target="_blank">
+                <img src="{% static 'social_media/facebook1.png' %}" alt="Facebook">
+            </a>
+            <a href="https://x.com/technowin_?t=V2S4gtxt8nCJlhB7KRyKAA&s=09" class="social-icon twitter" target="_blank">
+                <img src="{% static 'social_media/twitter.png' %}" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com/in/technowin-it-infra?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon linkedin" target="_blank">
+                <img src="{% static 'social_media/linkedin.png' %}" alt="LinkedIn">
+            </a>
+            <a href="https://www.instagram.com/technowin_infra/profilecard/?igsh=eWdyNWllNTlxaWc4" class="social-icon instagram" target="_blank">
+                <img src="{% static 'social_media/instagram.png' %}" alt="Instagram">
+            </a>
+            <a href="tel:+917738019120" class="social-icon whatsapp" target="_blank">
+                <img src="{% static 'social_media/whatsapp.png' %}" alt="Whatsapp">
+            </a>
+            <!-- YouTube Channel -->
+            <a href="https://youtube.com/@technowini.t.infrapvt?si=rPDCwFVHXipyOETU" class="social-icon youtube" target="_blank">
+                <img src="{% static 'social_media/youtube.png' %}" alt="YouTube">
+            </a>
+            <!-- Brochure Download -->
+            <a href="{% static 'images/technowin.pdf' %}" class="social-icon brochure" download>
+                <img src="{% static 'images/download.png' %}" alt="Download Brochure">
+                <!-- Tooltip text that will be displayed on hover -->
+                <span class="tooltip">Download Brochure</span>
+            </a>
+            
+            <!-- Chatbot Icon -->
+        </div>
+    </section>
+    
+
+    <section class="feedback-section" id="feedback-section">
+        <h2 style="text-align: center; margin-bottom: 30px; font-size: 40px; color: black; text-shadow: 2px 2px 8px rgba(209, 12, 12, 0.4); font-family: 'Arial', sans-serif; letter-spacing: 2px;">Customer Feedback</h2>
+        <div class="feedback-container">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/svl.png' %}" alt="Feedback 1">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"Knowledge Resource Center"</u></i></h4><br><br>
+                    <h3 class="feedback-name">Dr Jagmeet Madan</h3>
+                    <p class="feedback-post"><i>Principal - Sir Vithaldas Thackersey College of Home Science for Women</i>
+                    </p>
+                
+                    <p class="feedback-description">"We were envisaging a Library System that would become an integral part of student curriculum.
+                        Knowledge Resource Center Software (Library Management System) does this exactly and also
+                        covers the entire process of a modern library. The Techno Win team has been responsive to our
+                        requirements and has been supporting us for 3 years."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/lkn.png' %}" alt="Feedback 2">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"Website & Content Management"</u></i></h4><br><br>
+                    <h3 class="feedback-name">Mr. Hemant Nakashe</h3>
+                    <p class="feedback-post"><i>Director - L. K. Nakashe Consultants Pvt. Ltd </i>    
+                    </p>
+                    <p class="feedback-description">"
+                        Technowin Teams’ helpfulness and understanding have played a crucial role in our journey, and we
+                        look forward to continuing this fruitful relationship. Technowin is now revamping our Website and
+                        developing our Knowledge hub adept with a content management Tool. With their expertise and
+                        support, we are confident in achieving even greater milestones together."<br>
+                    </p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/img1.png' %}" alt="Feedback 3">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"MVSTF GPDP Monthly Progress Reporting System"</u></i></h4><br>
+                    <h3 class="feedback-name">Dr. Ramnath Subramaniam</h3>
+                    <p class="feedback-post">
+                    <i> Government of Maharashtra - Chief Executive Officer – MVSTF </i>
+                    </p>
+                    <p class="feedback-description">"
+                        This letter is to certify that all deliverables under project of MVSTF GPDP MONTHLY
+                        PROGRESS REPORTING SYSTEM have been delivered in accordance with the work order. The system
+                        is functional and maintenance services are being provided effectively by Techno Win IT Infra Pvt Ltd.
+                        as per contractual terms and conditions.
+                        We appreciate your service and deliverables, With Best Wishes!"<br></p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 4 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/ace.png'  %}" alt="Feedback 4" > 
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"School Management Software"</u></i></h4><br><br>
+                    <h3 class="feedback-name">Mr. Suresh Salian</h3>
+                    <p class="feedback-post"><i>
+                        Proprietor - ACE Computer Education/ Atharv Systec </i>
+                    </p>
+                    <p class="feedback-description">"
+                        We are pleased with the Technowin School Management Software. We have received excellent
+                        training and support, and our requests for information or assistance are always answered quickly. I
+                        would certainly recommend this Software to any school looking to digitalize their processes.
+                    "</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="feedback-container">
+            <!-- Feedback Card 1 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/lkn.png' %}" alt="Feedback 1">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"Salary Register Software"</u></i></h4><br>
+                    <h3 class="feedback-name">Mr. Hemant Nakashe
+                    </h3>
+                    <p class="feedback-post"><i>Director - L. K. Nakashe Consultants Pvt. Ltd   </i> 
+                    </p>
+                    <p class="feedback-description">"
+                        Since partnering with Techno Win It Infra Pvt Ltd in 2022, our collaboration has been outstanding. It
+                        all began with the development of the Register Software, a decision that has proven crucial to our
+                        success. Thanks to Techno Win's expertise, the software operates flawlessly, and their team is
+                        reliable in addressing any issues.
+                    "</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 2 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/lkn.png' %}" alt="Feedback 2">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"Compliance Operation Software"</u></i></h4><br>
+                    <h3 class="feedback-name">Mr. Hemant Nakashe</h3>
+                    <p class="feedback-post">Director - L. K. Nakashe Consultants Pvt. Ltd</p>
+                    <p class="feedback-description">"Fantastic experience from start to finish. Their attention to detail is unmatched. Looking forward to working again."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Feedback Card 3 -->
+            <div class="feedback-card">
+                <div class="feedback-image">
+                    <img src="{% static 'client_logo/cgst.png' %}" alt="Feedback 3">
+                </div>
+                <div class="feedback-content">
+                    <h4 class="project-feedback-name"><u><i>"Audit Utility Software"</u></i></h4><br>
+                    <h3 class="feedback-name">Alice Johnson</h3>
+                    {% comment %} <p class="feedback-post">CTO at Future Tech</p>  {% endcomment %}
+                    <p class="feedback-description">"While the team of the Directorate of Systems & Data Management at Bengaluru deserves credit for developing the Audit Module – a workflow based solution to GST Audits , it is the team of GST (Audit) Commissionerate , Thane that merits a special mention for developing a very friendly and wholesome web-based tool for monitoring the progress of Audit , end – to – end along with a dashboard and generation of a Management Information System (MIS) and even Audit Paras ."</p>
+                    <div class="feedback-stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">☆</span>
+                    </div>
+                </div>
+            </div>
+         <!-- Feedback Card 2 -->
+         <div class="feedback-card">
+            <div class="feedback-image">
+                <img src="{% static 'client_logo/lkn.png' %}" alt="Feedback 2">
+            </div>
+            <div class="feedback-content">
+                <h4 class="project-feedback-name"><u><i>"LKN Audit Software"</u></i></h4><br>
+                <h3 class="feedback-name">Mr. Hemant Nakashe</h3>
+                <p class="feedback-post"><i>Director - L. K. Nakashe Consultants Pvt. Ltd </i>
+                </p>
+                <p class="feedback-description">"Impressed by their work, we decided to develop the LKN Audit Software, which once again delivered
+                    excellent results. The software operates seamlessly, reflecting the dedication and skill of Techno Win
+                    team."</p><br><br><br>
+                <div class="feedback-stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+           
+            
+        </div>
+    </section>
+
+        {% comment %} <section id="pinned-section">
+            <!-- Home -->
+            <a href="{% url 'Home' %}" class="image-link">
+            <img src="{% static 'images/home.gif' %}"  alt="Home Image">
+            <span class="hover-name">Facebook</span>
+            </a>
+        
+            <!-- Contact -->
+            <a href="{% url 'ContactUs' %}" class="image-link">
+            <img src="{% static 'images/contact_us.gif' %}" alt="Contact Image">
+            <span class="hover-name">Contact</span>
+            </a>
+        
+            <!-- About -->
+            <a href="{% url 'AboutUs' %}" class="image-link">
+            <img src="{% static 'images/info.gif' %}" alt="About Image">
+            <span class="hover-name">About</span>
+            </a>
+        
+            <!-- Software -->
+            <a href="{% url 'Software' %}" class="image-link">
+            <img src="{% static 'images/programmer.gif' %}" alt="Software Image">
+            <span class="hover-name">Software</span>
+            </a>
+        
+            <!-- Services -->
+            <a href="{% url 'Services' %}" class="image-link">
+            <img src="{% static 'images/services.gif' %}" alt="Services Image">
+            <span class="hover-name">Services</span>
+            </a>
+        </section> {% endcomment %}
+
+        <section id="technoWinContactSection">
+            <div class="heading-with-logo">
+                <h2><u>Get in Touch With - Innovators</u></h2>
+            </div>
+        
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <!-- Your HTML Form -->
+                <form method="POST" action="{% url 'contactUsFormPost' %}" class="contact-form" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    
+                    <!-- Full Name Field -->
+                    <div class="form-field">
+                        <label for="name">Full Name: <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            placeholder="Enter your full name" 
+                            required 
+                            maxlength="30" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Full Name must contain only alphabets and spaces, no special characters allowed">
+                    </div>
+                    
+                    <!-- Email Address Field -->
+                    <div class="form-field">
+                        <label for="email">Email Address: <span class="required">*</span></label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="Enter your email address" 
+                            required 
+                            title="Please enter a valid email address (max 2 dots allowed)"
+                            onchange="validateEmail(this)" 
+                            maxlength="50">
+                    </div>
+                    
+                    <!-- Subject Field -->
+                    <div class="form-field">
+                        <label for="subject">Subject: <span class="required">*</span></label>
+                        <input 
+                            type="text" 
+                            id="subject" 
+                            name="subject" 
+                            placeholder="Enter subject" 
+                            required 
+                            maxlength="50" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Subject must contain only alphabets and spaces, no special characters allowed">
+                    </div>
+                    
+                    <!-- Message Field -->
+                    <div class="form-field">
+                        <label for="message">Message: <span class="required">*</span></label>
+                        <textarea 
+                            id="message" 
+                            name="message" 
+                            placeholder="Write your message" 
+                            rows="5" 
+                            required 
+                            maxlength="50" 
+                            pattern="^[A-Za-z\s]+$" 
+                            title="Message must contain only alphabets and spaces, no special characters allowed">
+                        </textarea>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <div class="form-button-container">
+                        <button type="submit" class="submit-btn"> 
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+    <section id="background-video-section">
+        <div class="video-overlay">
+            {% comment %} <h2 class="video-title">💾 Creating Memories | Our Gallery 🌟</h2> {% endcomment %}
+        </div>
+        <video class="background-video" controls>
+            <source src="{% static 'images/life_in_technowin_video.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+</body>
+
+    <script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'sweetalert2/dist/sweetalert2.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        // Function to animate the counter
+        function animateCounter(counterElement) {
+            const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+            let currentValue = 0;
+        
+            // Increment the counter
+            const interval = setInterval(() => {
+                counterElement.innerText = currentValue;
+                if (currentValue >= targetValue) {
+                    clearInterval(interval);
+                } else {
+                    currentValue++;
+                }
+            }, 30); // Adjust speed by changing the interval
+        }
+        
+        // Detect when the counters are visible
+        function startCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const counterPosition = counter.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+        
+                if (counterPosition < windowHeight) {
+                    animateCounter(counter);
+                }
+            });
+        }
+        
+        // Trigger the counter animation when the page loads or scrolls
+        window.addEventListener('scroll', startCounters);
+        window.addEventListener('load', startCounters);
+        
+    </script>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+
+    {% if messages %}
+      {% for message in messages %}
+        <script>
+        Swal.fire({
+          title: "{{ message.tags }}",
+          text: "{{ message }}",
+          icon: "{{ message.tags }}",
+          confirmButtonText: "OK",
+        });
+      </script>
+      {% endfor %}
+    {% endif %}
+    
+    <!-- JavaScript to Validate and Trim Whitespaces -->
+<script>
+   // Validate Full Name - Only alphabets and spaces allowed, max length 30
+function validateName(input) {
+    const namePattern = /^[A-Za-z\s]+$/;  // Allows only alphabets and spaces
+    const nameField = input;
+
+    // Check if the name matches the pattern (only alphabets and spaces)
+    if (!namePattern.test(nameField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Full Name',
+            text: 'Full Name must contain only alphabets and spaces, no special characters allowed.'
+        });
+        nameField.value = "";  // Clear input if invalid
+        nameField.focus();  // Refocus the field
+        return false;  // Prevent form submission
+    } else if (nameField.value.length > 30) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Name Too Long',
+            text: 'Full Name must not exceed 30 characters.'
+        });
+        nameField.value = "";  // Clear input if it exceeds 30 characters
+        nameField.focus();  // Refocus the field
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Validate Email Address - Proper email with domains, 1 '@', 3 '.' (dots)
+function validateEmail(input) {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;  // Valid email pattern
+    const emailField = input;
+
+    if (!emailPattern.test(emailField.value)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Email',
+            text: 'Please enter a valid email address with only 1 "@" symbol and 3 "." symbols.'
+        });
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Validate Subject - Only alphabets, spaces, commas, periods, and question marks allowed, max length 50
+function validateSubject(input) {
+    const subjectPattern = /^[A-Za-z\s,?\.]+$/;  // Allows alphabets, spaces, commas, periods, and question marks
+    const subjectField = input;
+
+    if (!subjectPattern.test(subjectField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Subject',
+            text: 'Subject can only contain alphabets, spaces, commas, periods, and question marks.'
+        });
+        return false;  // Prevent form submission
+    } else if (subjectField.value.length > 50) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Subject Too Long',
+            text: 'Subject must not exceed 50 characters.'
+        });
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Validate Message - Only alphabets, spaces, commas, periods, and question marks allowed, max length 50
+function validateMessage(input) {
+    const messagePattern = /^[A-Za-z0-9\s,?\.]+$/;  // Allows alphabets, spaces, commas, periods, and question marks
+    const messageField = input;
+
+    if (!messagePattern.test(messageField.value.trim())) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Invalid Message',
+            text: 'Message can only contain alphabets, numbers, spaces, commas, periods, and question marks.'
+        });
+        return false;  // Prevent form submission
+    } else if (messageField.value.length > 50) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Message Too Long',
+            text: 'Message must not exceed 50 characters.'
+        });
+        return false;  // Prevent form submission
+    }
+    return true;  // Validation passed
+}
+
+// Form validation before submitting
+function validateForm() {
+    const nameValid = validateName(document.getElementById("name"));
+    const emailValid = validateEmail(document.getElementById("email"));
+    const subjectValid = validateSubject(document.getElementById("subject"));
+    const messageValid = validateMessage(document.getElementById("message"));
+
+    // Return true if all fields are valid, otherwise return false
+    if (nameValid && emailValid && subjectValid && messageValid) {
+        return true;  // All fields are valid, submit form
+    } else {
+        return false;  // At least one field is invalid, prevent form submission
+    }
+}
+
+</script>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+{% csrf_token %}
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/slider.css' %}">
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <style>
+        /* Hide the "Powered by Google" text and logo */
+        .goog-logo-link,
+        .goog-te-gadget span {
+          display: none !important;
+        }
+    
+        /* Hide the top bar */
+        .goog-te-banner-frame {
+          display: none !important;
+        }
+        body {
+          top: 0 !important;
+        }
+    
+        /* Hide the Google Options dropdown (show original, etc.) */
+        .goog-te-menu-value {
+          display: none !important;
+        }
+        #google_translate_element .goog-te-gadget-simple > div {
+            display: none !important;
+          }
+        /* Adjust dropdown style */
+        #google_translate_element select {
+          padding: 5px;
+          font-size: 16px;
+          margin: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+
+        /* Search bar styling */
+        .search-bar {
+            width: 200px;
+            margin-top: 20px;
+            margin-left: 30px;
+            padding: 10px 10px 10px 30px; /* Space for the icon on the left */
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease-in-out; /* Smooth transition */
+          }
+          
+          li {
+            position: relative;
+            {% comment %} display: inline-block; /* Make sure the icon is in the same line */ {% endcomment %}
+          }
+          
+          .fa-search {
+            position: absolute;
+            left: 10px; /* Adjust the icon position */
+            top: 60%;
+            left:80%;
+            transform: translateY(-50%); /* Center the icon vertically */
+            pointer-events: none; /* So it doesn't interfere with input focus */
+          }
+          
+          /* Focus animation for search bar */
+          .search-bar:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green glow */
+            transform: scale(1.05); /* Slightly enlarge */
+          }
+          
+          /* Hover effect for search bar */
+          .search-bar:hover {
+            border-color: #2196F3;
+            box-shadow: 0 0 5px rgba(33, 150, 243, 0.5); /* Blue glow */
+          }
+          
+          /* Optional: Adding a placeholder animation */
+          .search-bar::placeholder {
+            color: #999;
+            animation: fadeInOut 4s infinite; /* Fade-in/fade-out animation */
+          }
+          
+          /* Keyframes for placeholder animation */
+          @keyframes fadeInOut {
+            0% {
+              opacity: 0;
+            }
+            50% {
+              opacity: 1;
+            }
+            100% {
+              opacity: 0;
+            }
+          }
+          /* Responsive adjustments for smaller screens */
+          @media (max-width: 768px) {
+            .search-bar {
+              width: 150px; /* Make search bar a bit smaller on tablets */
+              margin-left: 20px; /* Reduce margin */
+              font-size: 14px; /* Smaller font size */
+            }
+            
+            .fa-search {
+              left: 55%; /* Adjust icon position for smaller screens */
+              top: 60%; /* Adjust vertical centering */
+            }
+          }
+
+
+          /* Notification Item */
+.notify-item {
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+/* Date styling */
+.notify-date {
+    font-size: 13px;
+    color: #000000ff;
+    font-style: italic;
+}
+
+/* Buttons */
+.notify-btn {
+    align-self: flex-start;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Product notification */
+.notify-item.product {
+    background-color: #fef9c3;
+    border-left: 5px solid #e0b60b;
+    color: #4b5563;
+}
+.product-btn {
+    background-color: #e0b60b;
+    color: #1f2937;
+}
+
+/* Event notification */
+.notify-item.event {
+    background-color: #f3e8ff;
+    border-left: 5px solid #6f11ce;
+    color: #4b0082;
+}
+.event-btn {
+    background-color: #6f11ce;
+    color: #fff;
+}
+
+/* Resource notification */
+.notify-item.resource {
+    background-color: #e0f2fe;
+    border-left: 5px solid #111ece;
+    color: #1e3a8a;
+}
+.resource-btn {
+    background-color: #111ece;
+    color: #fff;
+}
+
+/* AI & Process Automation notification */
+.notify-item.ai {
+    background-color: #e8f9f1;
+    border-left: 5px solid #059669;
+    color: #064e3b;
+}
+.ai-btn {
+    background-color: #059669;
+    color: #fff;
+}
+
+          
+          {% comment %} @media (max-width: 480px) {
+            .search-bar {
+              width: 120px; /* Make search bar smaller on mobile devices */
+              margin-top: 10px; /* Further reduce margin */
+              margin-left: 10px; /* Further reduce margin */
+              font-size: 12px; /* Smaller font size */
+              padding: 8px 8px 8px 25px; /* Adjust padding */
+            }
+            
+            .fa-search {
+                left: 80%; /* Adjust icon position for smaller screens */
+                top: 63%; /* Adjust vertical centering */
+            }
+          }  {% endcomment %}
+    </style>
+
+  
+</head>
+
+<body>
+
+    <section class="topView" id="topSection">
+            <div class="row">
+                <div class="col-md-2 text-center">
+                    <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
+                        <img src="{% static 'social_media/location.png' %}" alt="Location">
+                        Head Office
+                    </a>
+                </div>
+                <div class="col-md-3 text-center">
+                    <a href="https://maps.app.goo.gl/2ksSuAw7aFgwZac2A" target="_blank" title="Gala No 5, Udhog Bhavan">
+                      <img src="{% static 'social_media/location.png' %}" alt="Location">
+                      Software Development Center
+                    </a>
+                  </div>
+                  
+                <div class="col-md-3 text-center">
+                    <a href="mailto:support@technowin.co.in" target="_blank">
+                        <img src="{% static 'social_media/gmail.png' %}" alt="Email">
+                        support@technowin.co.in
+                    </a>
+                </div>
+                <div class="col-md-2 text-center">
+                    <a href="tel:+917738019120" target="_blank">
+                        <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
+                        +91 7738019120
+                    </a>
+                </div>
+
+                <div class="col-md-2 text-center">
+                    <a href="{% url 'siteMap' %}">
+                        <img src="{% static 'social_media/site_map.png' %}" alt="Site Map">
+                       Site Map
+                    </a>
+                </div>
+            </div>
+    </section>
+    
+    <nav>
+        
+        <div class="logo-menu">
+            <div class="logo">
+                <img src="{% static 'images/office_logo.png' %}" alt="Company Logo" style="height: 60px; width: 300px;">
+            </div>
+            <button id="menuToggle" class="menu-icon">
+                <img src="{% static 'images/menu.gif' %}" alt="Menu Icon" style="height: 30px; width: 30px;">
+            </button>
+        </div>
+
+        <ul id="navLinks" class="hidden">
+
+            <li style="margin-top:2%"><a href="{% url 'HomeNew' %}">Home</a></li>
+            <li style="margin-top:2%"><a href="{% url 'AboutUsNew' %}">About Us</a>
+
+            <li style="margin-top:2%;">
+                <a href="{% url 'Home' %}" style="position: relative; display: inline-block; color: #ff0202ff !important;">
+                    Live Website
+                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    {% block content %}
+            
+    {% endblock %}
+
+    <section>
+        <div class="chatbot-footer">
+            <a href="javascript:void(0);" id="chatbotIcon" onclick="toggleChatbot()">
+                <img class="chatBot" src="{% static 'images/chatbot1.gif' %}" alt="Chatbot">
+            </a>
+            <!-- Added a box for "May I help you?" -->
+            <div class="chatbot-prompt-box">
+                <div class="chatbot-prompt" id="hideChatBot">May I help you?</div> <!-- Text inside the box -->
+            </div>
+        </div>
+    
+        <div id="chatbot" class="chatbot-container">
+            <div class="chatbot-header">
+                <img src="{% static 'images/robot2.png' %}" alt="Chatbot GIF" class="chatbot-gif">
+                TechnoWin Chatbot
+                <button class="close-btn" onclick="toggleChatbot()">X</button>
+            </div>
+    
+            <div id="chatMessages">
+                <div class="message bot-message">
+                    <div class="bot-icon">
+                        <img src="{% static 'images/businessman.png' %}" alt="Bot Icon" />
+                    </div>
+                    <div class="message-text">Welcome! How can we assist you today?</div>
+                </div>
+            </div>
+    
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="Type your message..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+            
+    <footer>
+        
+        <div class="footer-container">
+            <div class="footer-links">
+                <ul>
+                    <li style="margin-top:2%"><a href="{% url 'Home' %}">Home</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'AboutUs' %}">About Us</a>
+                    <li style="margin-top:2%"><a href="{% url 'Software' %}">Software</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'Services' %}">Services</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'Product' %}">Product</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'Product' %}">Blogs</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'Product' %}">AI & Process Automation</a></li>
+                    <li style="margin-top:2%"><a href="{% url 'siteMap' %}">Site Map</a></li>
+                </ul>
+            </div>
+            <div class="footer-cer">
+                <img src="{% static 'images/technowin_certificate.jpg' %}" alt="Company Certificate">
+            </div>
+            <div class="footer-cer1">
+                <img class="certificateRoundImg" src="{% static 'images/iso1.png' %}" alt="ISO Certification">
+            </div>
+            <div class="footer-cer2">
+                <img class="certificateImg" src="{% static 'images/iso.png' %}" alt="ISO Certification">
+            </div>
+            <div class="footer-cer3">
+                <img class="certificateImg" src="{% static 'images/cmmi.png' %}" alt="CMMI Certification">
+            </div>
+            <div class="footer-contact">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <a href="https://maps.app.goo.gl/UzynwwU276cmS7su5" target="_blank">
+                            <img src="{% static 'social_media/location.png' %}" alt="Location">
+                            Goregaon, Mumbai
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="mailto:technowinitinfra@gmail.com" target="_blank">
+                            <img src="{% static 'social_media/gmail.png' %}" alt="Email">
+                            technowinitinfra@gmail.com
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <a href="tel:+917738019120" target="_blank">
+                            <img src="{% static 'social_media/call_icon.png' %}" alt="Call">
+                            +91 7738019120
+                        </a>
+                    </div>
+                    <div class="contact-item">
+                        <p>You Are Visitor No. &nbsp&nbsp&nbsp<span id="visitor-count"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+            <button id="back-to-top" class="back-to-top">
+            <img src="{% static 'images/up_arrow.gif' %}" alt="Back to Top">
+            </button>
+            
+        <div class="footer-bottom">
+            <p>&copy; 2025 TechnoWin IT Infra Pvt Ltd. All Rights Reserved.</p>
+        </div>
+
+    </footer>
+
+</body>
+
+    <script>
+            // Function to animate the counter
+            function animateCounter(counterElement) {
+                const targetValue = parseInt(counterElement.getAttribute('data-count'), 10);
+                let currentValue = 0;
+            
+                // Increment the counter
+                const interval = setInterval(() => {
+                    counterElement.innerText = currentValue;
+                    if (currentValue >= targetValue) {
+                        clearInterval(interval);
+                    } else {
+                        currentValue++;
+                    }
+                }, 30); // Adjust speed by changing the interval
+            }
+            
+            // Detect when the counters are visible
+            function startCounters() {
+                const counters = document.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    const counterPosition = counter.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+            
+                    if (counterPosition < windowHeight) {
+                        animateCounter(counter);
+                    }
+                });
+            }
+            
+            // Trigger the counter animation when the page loads or scrolls
+            window.addEventListener('scroll', startCounters);
+            window.addEventListener('load', startCounters);
+            
+    </script>
+        
+    <!-- JavaScript for Chatbot -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+                let typingTimeout;  // To manage the typing indicator timeout for the user
+            
+                // Toggle chat window visibility
+                function toggleChatbot() {
+                    const chatContainer = document.getElementById('chatbot');
+                    const chatIcon = document.getElementById('chat-icon');
+                    
+                    if (chatContainer.style.display === 'block') {
+                        chatContainer.style.display = 'none';
+                        chatIcon.style.display = 'block';
+                    } else {
+                        chatContainer.style.display = 'block';
+                        chatIcon.style.display = 'none';
+                    }
+                }
+            
+                // Function to send message
+                function sendMessage() {
+                    const userMessage = document.getElementById('userInput').value;
+                    if (userMessage) {
+                        // Display user message immediately with "You: "
+                        displayMessage('user', userMessage);
+                        document.getElementById('userInput').value = ''; // Clear input field
+                
+                        // Simulate bot typing
+                        displayTypingIndicator('bot');
+                
+                        // Simulate bot response after a delay
+                        setTimeout(() => {
+                            removeTypingIndicator('bot');
+                            let botResponse =  getBotResponse(userMessage);
+                            displayMessage('bot',botResponse); // Display bot response
+                        }, 1500);
+                    }
+                }
+            
+
+                // Function to get bot response
+                function getBotResponse(userMessage) {
+                    const q = userMessage.toLowerCase();
+                    let botResponse = "";
+                
+                    $.ajax({
+                        url: "{% url 'get_botans' %}",
+                        type: "GET",
+                        data: {
+                            'q': q,
+                            'csrfmiddlewaretoken': '{{ csrf_token }}'
+                        },
+                        async: false, // Deprecated, but forces synchronous execution
+                        success: function(response) {
+                            botResponse = response.data;
+                        },
+                        error: function(error) {
+                            console.log("Error fetching bot response:", error);
+                        }
+                    });
+                
+                    return botResponse; // Ensures function waits for AJAX response
+                }
+                
+            
+                // Function to display messages in the chat window
+                function displayMessage(sender, message) {
+                    debugger;
+                    const chatMessages = document.getElementById('chatMessages');
+                    
+                    // Create icon and text
+                    const iconDiv = document.createElement('div');
+                    iconDiv.classList.add(sender + '-icon');
+                    const img = document.createElement('img');
+                    img.src = sender === 'user' ? '{% static "images/user.png" %}' : '{% static "images/businessman.png" %}';  // Adjust the paths for your images
+                    iconDiv.appendChild(img);
+                    
+                    // Create a new div for the message
+                    const messageDiv = document.createElement('div');
+                    messageDiv.classList.add('message', sender + '-message');
+                    
+                    const messageTextDiv = document.createElement('div');
+                    messageTextDiv.classList.add('message-text');
+                    if ((sender === "bot") && (message.includes('<a') && message.includes('</a>') && message.includes('href='))) {
+                        messageTextDiv.innerHTML = message; 
+                    } else {
+                        messageTextDiv.textContent = message;
+                    }                
+                    // Append icon first, then message text to the message div
+                    messageDiv.appendChild(iconDiv);
+                    messageDiv.appendChild(messageTextDiv);
+                    
+                    // Append the message div to the chat messages container
+                    chatMessages.appendChild(messageDiv);
+                    
+                    // Scroll to the bottom of the chat
+                    scrollToBottom();
+                }
+            
+            
+            
+                // Function to display typing indicator
+                function displayTypingIndicator(sender) {
+                    // Only show typing indicator if it's for the bot
+                    if (sender === 'bot') {
+                        const typingIndicator = document.createElement('div');
+                        typingIndicator.classList.add('typing-indicator');
+                        typingIndicator.innerHTML = sender + ' is typing <span class="dot">.</span><span class="dot">.</span><span class="dot">.</span>';
+                        document.getElementById('chatMessages').appendChild(typingIndicator);
+                    } else if (sender === 'user') {
+                        // Show user icon and the text they are typing while typing
+                        const iconDiv = document.createElement('div');
+                        iconDiv.classList.add('user-icon');
+                        const img = document.createElement('img');
+                        img.src = '{% static "user.png" %}';  // Path for user icon
+                        iconDiv.appendChild(img);
+                        
+                        const chatMessages = document.getElementById('chatMessages');
+                        const typingMessage = document.createElement('div');
+                        typingMessage.classList.add('message', 'user-message');
+                        
+                        
+                        
+                        const messageTextDiv = document.createElement('div');
+                        messageTextDiv.classList.add('message-text');
+                        messageTextDiv.textContent = document.getElementById('userInput').value; // Show what the user is typing
+                        
+                        // Append the icon first and then the message text
+                        typingMessage.appendChild(iconDiv); // User image first
+                        typingMessage.appendChild(messageTextDiv); // Then the message text
+                        
+                        chatMessages.appendChild(typingMessage);
+                        scrollToBottom(); // Ensure chat scrolls to bottom
+                    }
+                }
+            
+            
+                // Function to remove typing indicator
+                function removeTypingIndicator(sender) {
+                    if (sender === 'bot') {
+                        const typingIndicator = document.querySelector('.typing-indicator');
+                        if (typingIndicator) {
+                            typingIndicator.remove();
+                        }
+                    } else if (sender === 'user') {
+                        const typingMessages = document.querySelectorAll('.user-message');
+                        typingMessages.forEach(msg => msg.remove()); // Remove user typing message
+                    }
+                }
+            
+                // Function to handle user typing in the input box
+                function handleTyping(event) {
+                    const userMessage = document.getElementById('userInput').value;
+                
+                    // Display typing indicator for the user while they are typing
+                    if (userMessage && !typingTimeout) {
+                        displayTypingIndicator('user');
+                    }
+                
+                    // Remove the typing indicator after the user stops typing
+                    clearTimeout(typingTimeout);
+                    typingTimeout = setTimeout(() => {
+                        removeTypingIndicator('user');
+                    }, 1000); // After 1 second of inactivity
+                }
+                
+                // Function to scroll the chat window to the bottom
+                function scrollToBottom() {
+                    const chatboxMessages = document.getElementById('chatMessages');
+                    chatboxMessages.scrollTop = chatboxMessages.scrollHeight;
+                }
+            
+    </script>
+    
+    <script>
+            // Select the Back to Top button
+            const backToTopButton = document.getElementById('back-to-top');
+            
+            // Show the button when the user scrolls down
+            window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) { // Show button after scrolling 200px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+            });
+            
+            // Scroll to the top when the button is clicked
+            backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+            });
+        
+    </script>
+        
+    <script>
+            document.getElementById('menuToggle').addEventListener('click', function () {
+                const navLinks = document.getElementById('navLinks');
+                if (navLinks.classList.contains('hidden')) {
+                    navLinks.classList.remove('hidden');
+                } else {
+                    navLinks.classList.add('hidden');
+                }
+            });
+    </script> 
+
+    <script>
+            function toggleChatbot() {
+                debugger;
+                const chatbot = document.getElementById("chatbot");
+                const hideMayIText = document.getElementById("hideChatBot");
+            
+                const isActive = chatbot.classList.toggle("active");
+            
+                if (isActive) {
+                    hideMayIText.style.display = 'none';
+                } else {
+                    hideMayIText.style.display = 'block';
+                }
+            }
+            
+    </script>
+        
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            debugger;
+            $.ajax({
+                url: "website_counter",  // Fix: Use proper URL
+                type: "GET",
+                success: function(response) {
+                    $("#visitor-count").text(response.total_visits);
+                },
+                error: function() {
+                    $("#visitor-count").text("Error fetching count");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById("notificationButton").onclick = function () {
+            document.getElementById("notificationModal").style.display = "block";
+        };
+
+        document.getElementById("closeModal").onclick = function () {
+            document.getElementById("notificationModal").style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === document.getElementById("notificationModal")) {
+                document.getElementById("notificationModal").style.display = "none";
+            }
+        };
+    </script>
+
+</html>

@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+{% extends "NewShared/layout.html" %} 
+{% block content %}
+{% csrf_token %}
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | TechnoWin IT Infra</title>
+    
+    <style>
+        :root {
+            --primary: #0B5ED7;
+            --primary-dark: #0847a6;
+            --dark: #081a36;
+            --light: #f6f9ff;
+            --heading: #172033;
+            --text: #5c6578;
+            --white: #ffffff;
+            --shadow-soft: 0 10px 30px rgba(8,26,54,0.07);
+            --max: 1200px;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #fff;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(var(--max), calc(100% - 32px));
+            margin: auto;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--heading);
+            line-height: 1.2;
+        }
+        
+        p {
+            font-size: 16px;
+        }
+
+        .section-top {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 50px;
+        }
+        
+        .section-top h2 {
+            font-size: 42px;
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+        
+        .section-top p {
+            font-size: 17px;
+            color: var(--text);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 12px 24px rgba(11,94,215,0.22);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.30);
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            color: #fff;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.22);
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            position: relative;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 100px 0 80px;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            transform: scale(1.06);
+            animation: heroZoom 18s ease-in-out infinite alternate;
+        }
+        
+        @keyframes heroZoom {
+            from { transform: scale(1.06); }
+            to { transform: scale(1.14); }
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(115deg, rgba(8,26,54,0.75) 0%, rgba(8,26,54,0.38) 100%);
+            z-index: -1;
+        }
+        
+        .hero-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 720px;
+            margin-left: 40px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(11,94,215,0.28);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            animation: fadeSlideDown 0.8s ease both;
+        }
+        
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 22px;
+            letter-spacing: -1.5px;
+            line-height: 1.1;
+            color: #fff;
+            animation: fadeSlideUp 0.9s ease 0.15s both;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 580px;
+            margin-bottom: 36px;
+            color: rgba(255,255,255,0.82);
+            line-height: 1.75;
+            animation: fadeSlideUp 0.9s ease 0.30s both;
+        }
+        
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            animation: fadeSlideUp 0.9s ease 0.45s both;
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 28px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.55);
+            font-size: 24px;
+            animation: bounce 2s ease infinite;
+            z-index: 2;
+        }
+        
+        @keyframes bounce {
+            0%,100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+        
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-18px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== JOURNEY STATS ===== */
+        .journey-section {
+            width: 100%;
+            background: #f8f9fc;
+            padding: 100px 5%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            overflow: hidden;
+        }
+        
+        .journey-left {
+            width: 32%;
+        }
+        
+        .journey-eyebrow {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: #aaa;
+            margin-bottom: 14px;
+        }
+        
+        .big-our {
+            display: block;
+            font-size: 72px;
+            color: #111;
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+        
+        .big-journey {
+            display: block;
+            font-size: 72px;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1;
+        }
+        
+        .decorator {
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 4px;
+            margin: 22px 0 28px;
+        }
+        
+        .journey-left p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #4a4a4a;
+            max-width: 360px;
+        }
+        
+        .divider {
+            width: 2px;
+            min-height: 520px;
+            background: rgba(0,0,0,0.09);
+            flex-shrink: 0;
+        }
+        
+        .journey-right {
+            width: 68%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 45px 30px;
+            border-right: 1px solid #e6e6e6;
+            border-bottom: 1px solid #e6e6e6;
+            transition: 0.4s ease;
+        }
+        
+        .stat-box:nth-child(2), .stat-box:nth-child(4) {
+            border-right: none;
+        }
+        
+        .stat-box:nth-child(3), .stat-box:nth-child(4) {
+            border-bottom: none;
+        }
+        
+        .stat-box:hover {
+            background: #fff;
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(8,26,54,0.08);
+        }
+        
+        .stat-icon-circle {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: rgba(11,94,215,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 36px;
+            transition: 0.4s ease;
+        }
+        
+        .stat-box:hover .stat-icon-circle {
+            background: var(--primary);
+            transform: rotateY(360deg);
+            color: #fff;
+        }
+        
+        .counter {
+            font-size: 60px;
+            line-height: 1;
+            color: var(--primary);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+        }
+        
+        .stat-box h3 {
+            font-size: 17px;
+            color: #111;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .stat-box p {
+            max-width: 250px;
+            margin: auto;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #fff 0%, #f6f9ff 100%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .service-card-wrap {
+            perspective: 1000px;
+            height: 280px;
+        }
+        
+        .service-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+            cursor: pointer;
+            border-radius: 24px;
+        }
+        
+        .service-card-wrap:hover .service-card {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        
+        .card-front {
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(8,26,54,0.12);
+        }
+        
+        .card-front::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.50;
+            z-index: 0;
+            transition: transform 0.6s ease;
+        }
+        
+        .service-card-wrap:hover .card-front::after {
+            transform: scale(1.08);
+        }
+        
+        .card-front::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(160deg, rgba(8,26,54,0.70), rgba(8,26,54,0.50));
+            z-index: 1;
+        }
+
+        .card-front-content {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 28px;
+        }
+        
+        .service-icon-3d {
+            width: 54px;
+            height: 54px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.16);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+        
+        .card-front-content h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .card-front-content p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.80);
+            line-height: 1.6;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: 0 18px 40px rgba(11,94,215,0.30);
+        }
+        
+        .card-back .back-icon {
+            font-size: 44px;
+            margin-bottom: 16px;
+        }
+        
+        .card-back h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .card-back p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.85);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .card-back-link {
+            padding: 10px 22px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.18);
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.30);
+            transition: 0.3s;
+        }
+        
+        .card-back-link:hover {
+            background: rgba(255,255,255,0.30);
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products-strip {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+        
+        .products-strip .section-top h2 {
+            color: #fff;
+        }
+        
+        .products-strip .section-top p {
+            color: rgba(255,255,255,0.60);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+        
+        .product-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-radius: 20px;
+            padding: 28px 26px;
+            transition: 0.4s ease;
+        }
+        
+        .product-card:hover {
+            background: rgba(11,94,215,0.18);
+            border-color: rgba(11,94,215,0.45);
+            transform: translateY(-8px) rotateX(4deg);
+            box-shadow: 0 24px 50px rgba(11,94,215,0.20);
+        }
+        
+        .product-num {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+        
+        .product-card h3 {
+            font-size: 19px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        
+        .product-card p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.58);
+            line-height: 1.7;
+        }
+
+        /* ===== WHY TECHNOWIN ===== */
+        .why-premium-section {
+            padding: 120px 0;
+            background: #fff;
+        }
+
+        .premium-row {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 50px;
+            background: rgba(255,255,255,0.48);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(2,33,155,0.15);
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.08);
+            transition: all .8s ease;
+            opacity: 0;
+            transform: translateY(100px);
+        }
+
+        .premium-row.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .premium-row:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,.12);
+        }
+
+        .premium-content {
+            text-align: center;
+        }
+
+        .premium-number {
+            display: block;
+            color: #0B5ED7;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .premium-badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 50px;
+            background: #0B5ED7;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .premium-content h3 {
+            font-size: 38px;
+            color: #081A36;
+            margin-bottom: 25px;
+        }
+
+        .premium-content p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #667085;
+        }
+
+        /* ===== TESTIMONIALS ===== */
+        .testimonials {
+            padding: 100px 0;
+            background: #fff;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 26px;
+        }
+        
+        .testi-card {
+            background: #fff;
+            border: 1px solid rgba(11,94,215,0.08);
+            border-radius: 24px;
+            padding: 32px 28px;
+            box-shadow: 0 12px 30px rgba(8,26,54,0.06);
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testi-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(11,94,215,0.06) 0%, transparent 60%);
+            opacity: 0;
+            transition: 0.4s;
+        }
+        
+        .testi-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 56px rgba(8,26,54,0.12);
+        }
+        
+        .testi-card:hover::before {
+            opacity: 1;
+        }
+        
+        .testi-stars {
+            color: #f59e0b;
+            font-size: 16px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        
+        .testi-card p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 22px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        
+        .testi-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(11,94,215,0.09);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        
+        .testi-author strong {
+            display: block;
+            color: var(--heading);
+            font-size: 15px;
+        }
+        
+        .testi-author span {
+            font-size: 13px;
+            color: var(--text);
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            padding: 90px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .cta h2 {
+            color: #fff;
+            font-size: 40px;
+            margin-bottom: 14px;
+            position: relative;
+        }
+        
+        .cta p {
+            max-width: 680px;
+            margin: 0 auto 28px;
+            color: rgba(255,255,255,0.82);
+            font-size: 17px;
+            position: relative;
+        }
+        
+        .cta .btn {
+            background: #fff;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .cta .btn:hover {
+            background: #f0f5ff;
+            transform: translateY(-2px);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1000px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+            .hero-content {
+                margin-left: 0;
+            }
+            .journey-section {
+                flex-direction: column;
+                padding: 70px 5%;
+            }
+            .journey-left, .journey-right {
+                width: 100%;
+            }
+            .big-our, .big-journey {
+                font-size: 52px;
+            }
+            .divider {
+                width: 100%;
+                min-height: 2px;
+            }
+            .journey-right {
+                grid-template-columns: 1fr;
+            }
+            .stat-box {
+                border-right: none !important;
+                border-bottom: 1px solid #e6e6e6 !important;
+            }
+            .stat-box:last-child {
+                border-bottom: none !important;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-top h2 {
+                font-size: 28px;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+
+.   </video>
+    <div class="container hero-wrap">
+        <div class="hero-content">
+            <div class="hero-badge">✦ Trusted IT Infrastructure Partner</div>
+            <h1>Reliable IT Infrastructure &amp; Digital Solutions for Modern Business Growth</h1>
+            <p>TechnoWin IT Infra delivers software, hardware, cloud, AI, and project management services designed to help organizations work smarter, scale faster, and operate more securely.</p>
+            <div class="hero-actions">
+                <a href="{% url 'Services' %}" class="btn btn-primary">Explore Services</a>
+                <a href="{% url 'ContactUs' %}" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- ===== JOURNEY ===== -->
+<section class="journey-section">
+    <div class="journey-left reveal">
+        <p class="journey-eyebrow">Est. 2003</p>
+        <span class="big-our">OUR</span>
+        <span class="big-journey">JOURNEY</span>
+        <div class="decorator"></div>
+        <p>For over two decades, TechnoWin IT Infra Pvt. Ltd. has been delivering innovative IT solutions and digital transformation services to Government, Semi-Government and Corporate organizations across India.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="journey-right">
+        <div class="stat-box reveal">
+            <div class="stat-icon-circle">🏆</div>
+            <div class="counter" data-target="25">0</div>
+            <h3>Years of Experience</h3>
+            <p>We bring over 25 years of expertise in providing innovative IT solutions to our clients.</p>
+        </div>
+        <div class="stat-box reveal">
+            <div class="stat-icon-circle">😊</div>
+            <div class="counter" data-target="98" data-suffix="%">0</div>
+            <h3>Customer Satisfaction</h3>
+            <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
+        </div>
+        <div class="stat-box reveal">
+            <div class="stat-icon-circle">👥</div>
+            <div class="counter" data-target="50">0</div>
+            <h3>Clients Served</h3>
+            <p>Over 50 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
+        </div>
+        <div class="stat-box reveal">
+            <div class="stat-icon-circle">🚀</div>
+            <div class="counter" data-target="40">0</div>
+            <h3>Projects Delivered</h3>
+            <p>We've successfully completed over 40 IT infrastructure and support projects.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services">
+    <div class="container">
+        <div class="section-top reveal">
+            <h2>Our Core Services</h2>
+            <p>End-to-end IT services designed to support infrastructure modernization, digital operations, automation, and business performance.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">💻</div>
+                            <h3>Web Development with AI</h3>
+                            <p>AI-powered websites & customized digital solutions</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">💻</div>
+                        <h3>Web Development with AI</h3>
+                        <p>We develop AI-powered websites and web applications, delivering smart, secure, and customized digital experiences.</p>
+                        <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">📱</div>
+                            <h3>App Development</h3>
+                            <p>Android & iOS applications for business</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">📱</div>
+                        <h3>App Development</h3>
+                        <p>We develop high-performance Android and iOS apps tailored to your business goals, ensuring seamless functionality and enhanced user engagement.</p>
+                        <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">📊</div>
+                            <h3>Program Management</h3>
+                            <p>Integrated project execution & coordination</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">📊</div>
+                        <h3>Program Management</h3>
+                        <p>We provide end-to-end program management, integrating hardware, networking, cloud, software, and maintenance for seamless project execution.</p>
+                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">🖥️</div>
+                            <h3>Hardware & Networking</h3>
+                            <p>Quality hardware, networking & AMC services</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">🖥️</div>
+                        <h3>Hardware & Networking</h3>
+                        <p>We supply quality hardware, networking equipment, and AMC services to ensure reliable connectivity, performance, and proactive support.</p>
+                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">☁️</div>
+                            <h3>Cloud Hosting</h3>
+                            <p>Secure, scalable & high-performance cloud</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">☁️</div>
+                        <h3>Cloud Hosting</h3>
+                        <p>We offer secure and scalable cloud hosting solutions with high performance, reliability, and seamless software integration.</p>
+                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-card-wrap reveal">
+                <div class="service-card">
+                    <div class="card-front">
+                        <div class="card-front-content">
+                            <div class="service-icon-3d">👥</div>
+                            <h3>Manpower Services</h3>
+                            <p>Skilled IT professionals for diverse operations</p>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div class="back-icon">👥</div>
+                        <h3>Manpower Services</h3>
+                        <p>We provide skilled IT professionals for software coordination, implementation, data entry, scanning, cataloging, and other IT operations.</p>
+                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products-strip">
+    <div class="container">
+        <div class="section-top reveal">
+            <h2>Our In-House Products</h2>
+            <p>Purpose-built software developed over 25 years for Government, Municipal, and Enterprise organizations.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card reveal">
+                <div class="product-num">Product 01</div>
+                <h3>Workflow Management System</h3>
+                <p>Streamlines service and document management with defined parameters for efficiency, transparency, and audit-ready operations.</p>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-num">Product 02</div>
+                <h3>Form Generation System</h3>
+                <p>Create custom forms with field validations. Easy-to-use builder improves data accuracy and simplifies form management across departments.</p>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-num">Product 03</div>
+                <h3>Audit Utility</h3>
+                <p>Customized for CGST Commissionerate and Labour Law Consultants for comprehensive audit trail management and compliance tracking.</p>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-num">Product 04</div>
+                <h3>Payroll System</h3>
+                <p>Designed for Municipal Corporations and Supply Chain companies — automates daily salary processing to reduce errors and payment delays.</p>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-num">Product 05</div>
+                <h3>AI File Comparison</h3>
+                <p>ML-powered document comparison tool that identifies discrepancies across large file sets with speed and accuracy.</p>
+            </div>
+            <div class="product-card reveal">
+                <div class="product-num">Product 06</div>
+                <h3>Labour Law Software</h3>
+                <p>Compliance management software for Labour Law Consultants — tracks filings, deadlines, and statutory obligations seamlessly.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY TECHNOWIN ===== -->
+<section class="why-premium-section">
+    <div class="container">
+        <div class="section-top reveal">
+            <h2>Why TechnoWin IT Infra Stands Out</h2>
+            <p>We combine innovation, expertise, and customer-focused strategies to deliver reliable, secure, and future-ready technology solutions.</p>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">01</span>
+                <div class="premium-badge">AI • Automation • Digital Transformation</div>
+                <h3>Innovative Solutions</h3>
+                <p>Advanced workflow systems, AI-powered automation, custom software development, and digital transformation solutions designed to improve efficiency and productivity.</p>
+            </div>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">02</span>
+                <div class="premium-badge">Skilled Experts • Certified Professionals</div>
+                <h3>Expert Team</h3>
+                <p>Highly skilled developers, analysts, project managers, infrastructure experts, and consultants delivering world-class technology solutions.</p>
+            </div>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">03</span>
+                <div class="premium-badge">Client First • Customized Solutions</div>
+                <h3>Customer-Centric Approach</h3>
+                <p>Every solution is carefully tailored to meet the unique operational requirements and long-term business goals of our clients.</p>
+            </div>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">04</span>
+                <div class="premium-badge">Government • Enterprise • Public Sector</div>
+                <h3>Government Project Expertise</h3>
+                <p>Extensive experience in executing large-scale Government, Semi-Government, and Enterprise digital transformation initiatives.</p>
+            </div>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">05</span>
+                <div class="premium-badge">Software • Hardware • Cloud • AI</div>
+                <h3>End-to-End IT Services</h3>
+                <p>From software development and infrastructure deployment to cloud solutions and AI automation, we provide complete technology services under one roof.</p>
+            </div>
+        </div>
+
+        <div class="premium-row reveal">
+            <div class="premium-content">
+                <span class="premium-number">06</span>
+                <div class="premium-badge">24×7 Support • AMC • Maintenance</div>
+                <h3>24×7 Support & Maintenance</h3>
+                <p>Our dedicated support team ensures uninterrupted business operations through proactive monitoring, maintenance, and round-the-clock technical assistance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-top reveal">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by Government departments, Municipal Corporations, and Enterprise organizations across Maharashtra and beyond.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"TechnoWin delivered our workflow automation system on time and within budget. Their team understood our government processes and built exactly what we needed."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">🏛️</div>
+                    <div><strong>Government Department</strong><span>Maharashtra, India</span></div>
+                </div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"The payroll system TechnoWin built processes daily wages seamlessly. We've eliminated manual errors entirely — our staff gets paid on time, every time."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">🏙️</div>
+                    <div><strong>Municipal Corporation</strong><span>Mumbai, India</span></div>
+                </div>
+            </div>
+            <div class="testi-card reveal">
+                <div class="testi-stars">★★★★★</div>
+                <p>"Exceptional IT infrastructure support. TechnoWin migrated our entire system to the cloud with zero downtime. Their post-deployment support is outstanding."</p>
+                <div class="testi-author">
+                    <div class="testi-avatar">💼</div>
+                    <div><strong>Corporate Enterprise</strong><span>Pune, India</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta">
+    <div class="container reveal">
+        <h2>Ready to Digitally Transform Your Organization?</h2>
+        <p>Let's build secure, scalable, and future-ready IT solutions for your business or government operations.</p>
+        <a href="{% url 'ContactUs' %}" class="btn">Schedule a Free Consultation</a>
+    </div>
+</section>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    // ===== SCROLL REVEAL =====
+    const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.10 });
+    
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ===== COUNTER ANIMATION =====
+    const counterObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting || entry.target.dataset.done) return;
+            entry.target.dataset.done = true;
+            const target = +entry.target.getAttribute('data-target');
+            const suffix = entry.target.getAttribute('data-suffix') || '+';
+            let count = 0;
+            const step = target / 80;
+            const update = () => {
+                count += step;
+                if (count < target) {
+                    entry.target.innerText = Math.ceil(count);
+                    requestAnimationFrame(update);
+                } else {
+                    entry.target.innerText = target + suffix;
+                }
+            };
+            update();
+        });
+    }, { threshold: 0.4 });
+    
+    document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
+
+    // ===== PREMIUM ROW SCROLL REVEAL =====
+    const revealBoxes = document.querySelectorAll('.premium-row');
+    function revealPremiumRows() {
+        revealBoxes.forEach(box => {
+            const windowHeight = window.innerHeight;
+            const boxTop = box.getBoundingClientRect().top;
+            if (boxTop < windowHeight - 100) {
+                box.classList.add('show');
+            }
+        });
+    }
+    window.addEventListener('scroll', revealPremiumRows);
+    window.addEventListener('load', revealPremiumRows);
+
+    // ===== GOOGLE ANALYTICS =====
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2ZJE06MHVY');
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+
+</body>
+</html>
+{% endblock %}

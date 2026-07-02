@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+{% extends "NewShared/layout.html" %} {% block content %} 
+<html lang="en">
+    <head>
+        
+        {% load static %}
+        {% comment %} <link rel="stylesheet" href="{% static 'css/main_style.css' %}"> {% endcomment %}
+        <link rel="stylesheet" href="{% static 'css/siteMap.css' %}">
+        <link rel="stylesheet" href="{% static 'css/share_layout.css' %}">
+        {% comment %} <link rel="stylesheet" href="{% static 'css/share_layout.css' %}"> {% endcomment %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'G-2ZJE06MHVY');
+ </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Technowin Website</title>
+        {% comment %} <link rel="stylesheet" href="{% static 'css/slider.css' %}"> {% endcomment %}
+    </head>
+    
+<body>
+
+    <section>
+   
+        <div class="content">
+            <h2>Site Map</h2>
+            <ul class="sitemap">
+                <li><a href="{% url 'Home' %}">Home</a>
+                    <ul>
+                        <li><a href="{% url 'Home' %}#slider-video-section">Slider</a></li>
+                        <li><a href="{% url 'Home' %}#why-techno_stand">Service We Provide</a></li>
+                        <li><a href="{% url 'Home' %}#project-videos">Innovation by Us</a></li>
+                        <li><a href="{% url 'Home' %}#tech-section">Technology Stack</a></li>
+                        <li><a href="{% url 'Home' %}#achievements-section">Achievements</a></li>
+                        <li><a href="{% url 'Home' %}#socialIcons">Socail Media</a></li>
+                        <li><a href="{% url 'Home' %}#client-carousel-section">Our Clients</a></li>
+                        <li><a href="{% url 'Home' %}#short_feedback">Testimonial</a></li>
+                        <li><a href="{% url 'Home' %}#short_feedback">Enquiry Form</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'AboutUs' %}">About Us</a>
+                    <ul>
+                        <li><a href="{% url 'AboutUs' %}#social-media-section">About Us Slider</a></li>
+                        <li><a href="{% url 'AboutUs' %}#history-technowin">History Of Technowin</a></li>
+                        <li><a href="{% url 'AboutUs' %}#testimonials">Meet The Team Section</a></li>
+                        <li><a href="{% url 'AboutUs' %}#mvo-video-background">Vision, Mission Section</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'Software' %}">Software</a>
+                    <ul>
+                        <li><a href="{% url 'Software' %}#background-section">Software Slider</a></li>
+                        <li><a href="{% url 'Software' %}#app-project">APP Developed Project Information</a></li>
+                        <ol>
+                            <li><a href="{% url 'Software' %}#project-1">PSN Head-On App</a></li>
+                            <li><a href="{% url 'Software' %}#project-2">PSN On-Time App</a></li>
+                            <li><a href="{% url 'Software' %}#project-3">Employee Self Service App</a></li>
+                            <li><a href="{% url 'Software' %}#project-4">Attendance Management System App</a></li>
+                        </ol>
+                        <li><a href="{% url 'Software' %}#web-project">Web Developed Project Information</a></li>
+                        <ol>
+                            <li><a href="{% url 'Software' %}#web-project-1">Water Connection Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-2">CIDCO Services Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-3">Database Management System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-4">GPDP and MPR System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-5">School Management System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-6">CM Apprentice Management System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-7">Divyang Survey System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-8">HRMS and Payroll Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-9">Knowledge Resource Center/ Library Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-a">Citizen Scheme Management Portal Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-b">PT, LWF and Other Tax Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-c">License and Registration Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-d">CGST Thane Audit Utility Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-e">Compliance Audit Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-f">Compliance Operations Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-g">College Management System, Website Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-h">SRP Recruitment Management System Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-i">ERP, Website and Admission Software</a></li>
+                            <li><a href="{% url 'Software' %}#web-project-j">Salary Register Software</a></li>
+                        </ol>
+                    </ul>
+                </li>
+                <li><a href="{% url 'Services' %}">Services</a>
+                    <ul>
+                        <li><a href="{% url 'Services' %}#service-background">Services Slider</a></li>
+                        <li><a href="{% url 'Services' %}#service-info">Service Information</a></li>
+                        <ol>
+                            <li><a href="{% url 'Services' %}#cloud-service">Cloud Computing</a></li>
+                            <li><a href="{% url 'Services' %}#manpower-service">Supply of Manpower</a></li>
+                            <li><a href="{% url 'Services' %}#hardware-service">Hardware Supply</a></li>
+                            <li><a href="{% url 'Services' %}#digitalization-service">Digitalization of Documents</a></li>
+                            <li><a href="{% url 'Services' %}#hardware-amc-service">Hardware AMC</a></li>
+                            <li><a href="{% url 'Services' %}#ai-service">A.I. Based Solutions & Features</a></li>
+                        </ol>
+                        <li><a href="{% url 'Services' %}#faq-section">FAQ</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'Product' %}">Product</a>
+                    <ul>
+                        <li><a href="{% url 'Product' %}#product-1">Attendance Leave and Payroll</a></li>
+                        <li><a href="{% url 'Product' %}#product-2">Employee Self Service Website</a></li>
+                        <li><a href="{% url 'Product' %}#product-3">Student Attendance Capture for College</a></li>
+                        <li><a href="{% url 'Product' %}#product-4">Chatbot Desktop App</a></li>
+                        <li><a href="{% url 'Product' %}#product-5">Employee Self Service App</a></li>
+                        <li><a href="{% url 'Product' %}#product-6">Document Managment System (DMS)</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'ContactUs' %}">Contact Us</a>
+                    <ul>
+                        <li><a href="{% url 'ContactUs' %}#social-media-section">Contact Us Slider</a></li>
+                        <li><a href="{% url 'ContactUs' %}#socialIcons">Social Media</a></li>
+                        <li><a href="{% url 'ContactUs' %}#feedback-section">Customer Feedback</a></li>
+                        <li><a href="{% url 'ContactUs' %}#technoWinContactSection">Get In Touch Form</a></li>
+                        <li><a href="{% url 'ContactUs' %}#background-video-section">Our Gallery</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{% url 'Blogs' %}">Blogs</a>
+                    <ul>
+                        <li><a href="{% url 'Blogs' %}#blog-1">Creation of a Workflow Management System: A Case Study</a></li>
+                        <li><a href="{% url 'Blogs' %}#event_attended">Featured Event Highlights</a></li>
+                        <li><a href="{% url 'Blogs' %}#other_resources"> Our Valuable Resources</a></li>
+                    </ul>
+                </li>
+
+                 <li><a href="{% url 'AutomationExpo' %}">AI & Process Automation</a>
+                    <ul>
+                        <li><a href="{% url 'AutomationExpo' %}#plm_products">Product Lifecycle Management (PLM) & Project Planning & Control(PPC)</a></li>
+                        <ol>
+                            <li><a href="{% url 'AutomationExpo' %}#bom_product">Bill Of Materils (BOM)</a></li>
+                            <li><a href="{% url 'AutomationExpo' %}#material_planning">Material Planning</a></li>
+                            <li><a href="{% url 'AutomationExpo' %}#machine_planning">Machine Planning</a></li>
+                            <li><a href="{% url 'AutomationExpo' %}#manpower_planning">Manpower Planning</a></li>
+                            <li><a href="{% url 'AutomationExpo' %}#ai_forecasting">Forecasting AI</a></li>
+                            <li><a href="{% url 'AutomationExpo' %}#dashboards">Actionable Dashboards</a></li>
+                        </ol>
+                        <li><a href="{% url 'AutomationExpo' %}#process_automation">Process Automation Suite</a></li>
+                        <ol>
+                        <li><a href="{% url 'AutomationExpo' %}#bpa_product">Business Process Automation (BPA)</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#rpa_product">Robotic Process Automation (RPA)</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#metadata_extraction">Dynamic Metadata Extraction</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#dms_product">Document Management System (DMS)</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#chatbot_ai">AI Chatbots & Helpdesk</a></li>
+                        </ol>
+                        <li><a href="{% url 'AutomationExpo' %}#hr_event">HR & Workforce Management</a></li>
+                        <ol>
+                        <li><a href="{% url 'AutomationExpo' %}#onsite_team">HRMS & Onsite Team Management</a></li>
+                        </ol>
+                        <li><a href="{% url 'AutomationExpo' %}#other_event">Enterprise-Grade Applications (Office Automation)</a></li>
+                        <ol>
+                        <li><a href="{% url 'AutomationExpo' %}#lms_product">Learning Management System (LMS)</a></li>  
+                        <li><a href="{% url 'AutomationExpo' %}#webcrate">Website Builder & E-Commerce Platforms</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#dynamic_reports">Advanced Analytics & Dynamic Data-Driven Reports</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#library_management">Library Management System</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#crm_product">Customer Relationship Management (CRM)</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#audit_compliance">Audit & Compliance Automation</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#utility_solutions">Utility Solutions</a></li>
+                        </ol>
+                        <li><a href="{% url 'AutomationExpo' %}#government_projects">Government Projects</a></li>
+                        <ol>
+                        <li><a href="{% url 'AutomationExpo' %}#gov_projects">Our Projects</a></li>
+                        </ol>
+                        <li><a href="{% url 'AutomationExpo' %}#strengths">Our Core Strengths</a></li>
+                        <li><a href="{% url 'AutomationExpo' %}#why_choose">Why Choose Us?</a></li>
+                         <li><a href="{% url 'AutomationExpo' %}#event_gallery">Event Gallery</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+            
+        </div>
+
+    </section>
+
+</body>
+
+
+</html>
+
+{% endblock %}

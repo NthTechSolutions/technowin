@@ -124,80 +124,80 @@
 
 
           /* Notification Item */
-.notify-item {
-    margin-bottom: 12px;
-    padding: 12px;
-    border-radius: 6px;
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    position: relative;
-}
+            .notify-item {
+                margin-bottom: 12px;
+                padding: 12px;
+                border-radius: 6px;
+                font-size: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                position: relative;
+            }
 
-/* Date styling */
-.notify-date {
-    font-size: 13px;
-    color: #000000ff;
-    font-style: italic;
-}
+            /* Date styling */
+            .notify-date {
+                font-size: 13px;
+                color: #000000ff;
+                font-style: italic;
+            }
 
-/* Buttons */
-.notify-btn {
-    align-self: flex-start;
-    padding: 6px 12px;
-    border-radius: 5px;
-    font-weight: 500;
-    font-size: 14px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
+            /* Buttons */
+            .notify-btn {
+                align-self: flex-start;
+                padding: 6px 12px;
+                border-radius: 5px;
+                font-weight: 500;
+                font-size: 14px;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+            }
 
-/* Product notification */
-.notify-item.product {
-    background-color: #fef9c3;
-    border-left: 5px solid #e0b60b;
-    color: #4b5563;
-}
-.product-btn {
-    background-color: #e0b60b;
-    color: #1f2937;
-}
+            /* Product notification */
+            .notify-item.product {
+                background-color: #fef9c3;
+                border-left: 5px solid #e0b60b;
+                color: #4b5563;
+            }
+            .product-btn {
+                background-color: #e0b60b;
+                color: #1f2937;
+            }
 
-/* Event notification */
-.notify-item.event {
-    background-color: #f3e8ff;
-    border-left: 5px solid #6f11ce;
-    color: #4b0082;
-}
-.event-btn {
-    background-color: #6f11ce;
-    color: #fff;
-}
+            /* Event notification */
+            .notify-item.event {
+                background-color: #f3e8ff;
+                border-left: 5px solid #6f11ce;
+                color: #4b0082;
+            }
+            .event-btn {
+                background-color: #6f11ce;
+                color: #fff;
+            }
 
-/* Resource notification */
-.notify-item.resource {
-    background-color: #e0f2fe;
-    border-left: 5px solid #111ece;
-    color: #1e3a8a;
-}
-.resource-btn {
-    background-color: #111ece;
-    color: #fff;
-}
+            /* Resource notification */
+            .notify-item.resource {
+                background-color: #e0f2fe;
+                border-left: 5px solid #111ece;
+                color: #1e3a8a;
+            }
+            .resource-btn {
+                background-color: #111ece;
+                color: #fff;
+            }
 
-/* AI & Process Automation notification */
-.notify-item.ai {
-    background-color: #e8f9f1;
-    border-left: 5px solid #059669;
-    color: #064e3b;
-}
-.ai-btn {
-    background-color: #059669;
-    color: #fff;
-}
+            /* AI & Process Automation notification */
+            .notify-item.ai {
+                background-color: #e8f9f1;
+                border-left: 5px solid #059669;
+                color: #064e3b;
+            }
+            .ai-btn {
+                background-color: #059669;
+                color: #fff;
+            }
 
           
           {% comment %} @media (max-width: 480px) {
@@ -215,7 +215,6 @@
             }
           }  {% endcomment %}
     </style>
-
   
 </head>
 
@@ -299,6 +298,13 @@
             <li style="margin-top:2%;">
                 <a href="{% url 'AutomationExpo' %}" style="position: relative; display: inline-block;">
                     AI & Process Automation
+                </a>
+            </li>
+
+            <li style="margin-top:2%;">
+                <a href="{% url 'HomeNew' %}" style="position: relative; display: inline-block; color: #ff0202ff !important;">
+                    New Website (Coming Soon)
+                    <img src="{% static 'images/new.png' %}" alt="New" style="height: 30px; width: 30px; position: absolute; top: -10px; right: -40px;">
                 </a>
             </li>
         

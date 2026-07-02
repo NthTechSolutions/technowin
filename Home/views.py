@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from flask import request
 import google.generativeai as genai
 from django.db.models import Q
 from Home.models import *
@@ -280,3 +281,24 @@ def aboutUsFormPost(request):
             return redirect('Home')
     else:
         return HttpResponseBadRequest("Invalid request method.")
+
+# New Website
+
+def HomeNew(request):
+    try:
+        today = datetime.today().strftime('%d-%m-%Y')  # Get today's date in DD-MM-YYYY format
+        event = events_notification.objects.filter(event_date=today).first()
+        return render(request,'HomeNew/index.html', {'event': event}) 
+    except Exception as e:
+        # Handle any exceptions that might occur during rendering
+        messages.error(request, "An error occurred while loading the new website.")
+        return redirect('HomeNew')
+    
+def AboutUsNew(request):
+    try:
+        return render(request,'HomeNew/about_us.html') 
+    except Exception as e:
+        # Handle any exceptions that might occur during rendering
+        messages.error(request, "An error occurred while loading the new website.")
+        return redirect('HomeNew')
+    
