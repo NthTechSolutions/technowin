@@ -844,394 +844,399 @@
 <body>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
-
-.   </video>
-    <div class="container hero-wrap">
-        <div class="hero-content">
-            <div class="hero-badge">✦ Trusted IT Infrastructure Partner</div>
-            <h1>Reliable IT Infrastructure &amp; Digital Solutions for Modern Business Growth</h1>
-            <p>TechnoWin IT Infra delivers software, hardware, cloud, AI, and project management services designed to help organizations work smarter, scale faster, and operate more securely.</p>
-            <div class="hero-actions">
-                <a href="{% url 'Services' %}" class="btn btn-primary">Explore Services</a>
-                <a href="{% url 'ContactUs' %}" class="btn btn-outline">Contact Us</a>
+    <section class="hero" id="home">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="{% static 'images/Home_page.mp4' %}" type="video/mp4">
+        </video>
+        <div class="container hero-wrap">
+            <div class="hero-content">
+                <div class="hero-badge">✦ Trusted IT Infrastructure Partner</div>
+                <h1>Reliable IT Infrastructure &amp; Digital Solutions for Modern Business Growth</h1>
+                <p>TechnoWin IT Infra delivers software, hardware, cloud, AI, and project management services designed to help organizations work smarter, scale faster, and operate more securely.</p>
+                <div class="hero-actions">
+                    <a href="{% url 'Services' %}" class="btn btn-primary">Explore Services</a>
+                    <a href="{% url 'ContactUs' %}" class="btn btn-outline">Contact Us</a>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="scroll-hint"><i class="fas fa-chevron-down"></i></div>
-</section>
+    </section>
 
-<!-- ===== JOURNEY ===== -->
-<section class="journey-section">
-    <div class="journey-left reveal">
-        <p class="journey-eyebrow">Est. 2003</p>
-        <span class="big-our">OUR</span>
-        <span class="big-journey">JOURNEY</span>
-        <div class="decorator"></div>
-        <p>For over two decades, TechnoWin IT Infra Pvt. Ltd. has been delivering innovative IT solutions and digital transformation services to Government, Semi-Government and Corporate organizations across India.</p>
-    </div>
-    <div class="divider"></div>
-    <div class="journey-right">
-        <div class="stat-box reveal">
-            <div class="stat-icon-circle">🏆</div>
-            <div class="counter" data-target="25">0</div>
-            <h3>Years of Experience</h3>
-            <p>We bring over 25 years of expertise in providing innovative IT solutions to our clients.</p>
+    <!-- ===== JOURNEY ===== -->
+    <section class="journey-section">
+        <div class="journey-left reveal">
+            <p class="journey-eyebrow">Est. 2003</p>
+            <span class="big-our">OUR</span>
+            <span class="big-journey">JOURNEY</span>
+            <div class="decorator"></div>
+            <p>For over two decades, TechnoWin IT Infra Pvt. Ltd. has been delivering innovative IT solutions and digital transformation services to Government, Semi-Government and Corporate organizations across India.</p>
         </div>
-        <div class="stat-box reveal">
-            <div class="stat-icon-circle">😊</div>
-            <div class="counter" data-target="98" data-suffix="%">0</div>
-            <h3>Customer Satisfaction</h3>
-            <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
+        <div class="divider"></div>
+        <div class="journey-right">
+            <div class="stat-box reveal">
+                <div class="stat-icon-circle">🏆</div>
+                <div class="counter" data-target="25">0</div>
+                <h3>Years of Experience</h3>
+                <p>We bring over 25 years of expertise in providing innovative IT solutions to our clients.</p>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-icon-circle">😊</div>
+                <div class="counter" data-target="98" data-suffix="%">0</div>
+                <h3>Customer Satisfaction</h3>
+                <p>98% customer satisfaction rate, thanks to our dedicated support and tailored solutions.</p>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-icon-circle">👥</div>
+                <div class="counter" data-target="50">0</div>
+                <h3>Clients Served</h3>
+                <p>Over 50 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
+            </div>
+            <div class="stat-box reveal">
+                <div class="stat-icon-circle">🚀</div>
+                <div class="counter" data-target="40">0</div>
+                <h3>Projects Delivered</h3>
+                <p>We've successfully completed over 40 IT infrastructure and support projects.</p>
+            </div>
         </div>
-        <div class="stat-box reveal">
-            <div class="stat-icon-circle">👥</div>
-            <div class="counter" data-target="50">0</div>
-            <h3>Clients Served</h3>
-            <p>Over 50 satisfied clients trust TechnoWin IT Infra Pvt Ltd with their IT needs.</p>
-        </div>
-        <div class="stat-box reveal">
-            <div class="stat-icon-circle">🚀</div>
-            <div class="counter" data-target="40">0</div>
-            <h3>Projects Delivered</h3>
-            <p>We've successfully completed over 40 IT infrastructure and support projects.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="services">
-    <div class="container">
-        <div class="section-top reveal">
-            <h2>Our Core Services</h2>
-            <p>End-to-end IT services designed to support infrastructure modernization, digital operations, automation, and business performance.</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">💻</div>
+    <!-- ===== SERVICES ===== -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-top reveal">
+                <h2>Our Core Services</h2>
+                <p>End-to-end IT services designed to support infrastructure modernization, digital operations, automation, and business performance.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1: Web Development with AI -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/software.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">💻</div>
+                                <h3>Web Development with AI</h3>
+                                <p>AI-powered websites &amp; customized digital solutions</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">💻</div>
                             <h3>Web Development with AI</h3>
-                            <p>AI-powered websites & customized digital solutions</p>
+                            <p>We develop AI-powered websites and web applications, delivering smart, secure, and customized digital experiences.</p>
+                            <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">💻</div>
-                        <h3>Web Development with AI</h3>
-                        <p>We develop AI-powered websites and web applications, delivering smart, secure, and customized digital experiences.</p>
-                        <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
-                    </div>
                 </div>
-            </div>
 
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">📱</div>
+                <!-- Service 2: App Development -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/app-development.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">📱</div>
+                                <h3>App Development</h3>
+                                <p>Android &amp; iOS applications for business</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">📱</div>
                             <h3>App Development</h3>
-                            <p>Android & iOS applications for business</p>
+                            <p>We develop high-performance Android and iOS apps tailored to your business goals, ensuring seamless functionality and enhanced user engagement.</p>
+                            <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">📱</div>
-                        <h3>App Development</h3>
-                        <p>We develop high-performance Android and iOS apps tailored to your business goals, ensuring seamless functionality and enhanced user engagement.</p>
-                        <a href="{% url 'Software' %}" class="card-back-link">Learn More →</a>
-                    </div>
                 </div>
-            </div>
 
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">📊</div>
+                <!-- Service 3: Program Management -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/program-management.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">📊</div>
+                                <h3>Program Management</h3>
+                                <p>Integrated project execution &amp; coordination</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">📊</div>
                             <h3>Program Management</h3>
-                            <p>Integrated project execution & coordination</p>
+                            <p>We provide end-to-end program management, integrating hardware, networking, cloud, software, and maintenance for seamless project execution.</p>
+                            <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">📊</div>
-                        <h3>Program Management</h3>
-                        <p>We provide end-to-end program management, integrating hardware, networking, cloud, software, and maintenance for seamless project execution.</p>
-                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
-                    </div>
                 </div>
-            </div>
 
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">🖥️</div>
-                            <h3>Hardware & Networking</h3>
-                            <p>Quality hardware, networking & AMC services</p>
+                <!-- Service 4: Hardware & Networking -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/hardware.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">🖥️</div>
+                                <h3>Hardware &amp; Networking</h3>
+                                <p>Quality hardware, networking &amp; AMC services</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">🖥️</div>
+                            <h3>Hardware &amp; Networking</h3>
+                            <p>We supply quality hardware, networking equipment, and AMC services to ensure reliable connectivity, performance, and proactive support.</p>
+                            <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">🖥️</div>
-                        <h3>Hardware & Networking</h3>
-                        <p>We supply quality hardware, networking equipment, and AMC services to ensure reliable connectivity, performance, and proactive support.</p>
-                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
-                    </div>
                 </div>
-            </div>
 
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">☁️</div>
+                <!-- Service 5: Cloud Hosting -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/cloud.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">☁️</div>
+                                <h3>Cloud Hosting</h3>
+                                <p>Secure, scalable &amp; high-performance cloud</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">☁️</div>
                             <h3>Cloud Hosting</h3>
-                            <p>Secure, scalable & high-performance cloud</p>
+                            <p>We offer secure and scalable cloud hosting solutions with high performance, reliability, and seamless software integration.</p>
+                            <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">☁️</div>
-                        <h3>Cloud Hosting</h3>
-                        <p>We offer secure and scalable cloud hosting solutions with high performance, reliability, and seamless software integration.</p>
-                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
-                    </div>
                 </div>
-            </div>
 
-            <div class="service-card-wrap reveal">
-                <div class="service-card">
-                    <div class="card-front">
-                        <div class="card-front-content">
-                            <div class="service-icon-3d">👥</div>
+                <!-- Service 6: Manpower Services -->
+                <div class="service-card-wrap reveal">
+                    <div class="service-card">
+                        <div class="card-front" style="background-image: url('{% static 'images/support.jpeg' %}'); background-size: cover; background-position: center;">
+                            <div class="card-front-content">
+                                <div class="service-icon-3d">👥</div>
+                                <h3>Manpower Services</h3>
+                                <p>Skilled IT professionals for diverse operations</p>
+                            </div>
+                        </div>
+                        <div class="card-back">
+                            <div class="back-icon">👥</div>
                             <h3>Manpower Services</h3>
-                            <p>Skilled IT professionals for diverse operations</p>
+                            <p>We provide skilled IT professionals for software coordination, implementation, data entry, scanning, cataloging, and other IT operations.</p>
+                            <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
                         </div>
                     </div>
-                    <div class="card-back">
-                        <div class="back-icon">👥</div>
-                        <h3>Manpower Services</h3>
-                        <p>We provide skilled IT professionals for software coordination, implementation, data entry, scanning, cataloging, and other IT operations.</p>
-                        <a href="{% url 'Services' %}" class="card-back-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products-strip">
+        <div class="container">
+            <div class="section-top reveal">
+                <h2>Our In-House Products</h2>
+                <p>Purpose-built software developed over 25 years for Government, Municipal, and Enterprise organizations.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-num">Product 01</div>
+                    <h3>Workflow Management System</h3>
+                    <p>Streamlines service and document management with defined parameters for efficiency, transparency, and audit-ready operations.</p>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-num">Product 02</div>
+                    <h3>Form Generation System</h3>
+                    <p>Create custom forms with field validations. Easy-to-use builder improves data accuracy and simplifies form management across departments.</p>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-num">Product 03</div>
+                    <h3>Audit Utility</h3>
+                    <p>Customized for CGST Commissionerate and Labour Law Consultants for comprehensive audit trail management and compliance tracking.</p>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-num">Product 04</div>
+                    <h3>Payroll System</h3>
+                    <p>Designed for Municipal Corporations and Supply Chain companies — automates daily salary processing to reduce errors and payment delays.</p>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-num">Product 05</div>
+                    <h3>AI File Comparison</h3>
+                    <p>ML-powered document comparison tool that identifies discrepancies across large file sets with speed and accuracy.</p>
+                </div>
+                <div class="product-card reveal">
+                    <div class="product-num">Product 06</div>
+                    <h3>Labour Law Software</h3>
+                    <p>Compliance management software for Labour Law Consultants — tracks filings, deadlines, and statutory obligations seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHY TECHNOWIN ===== -->
+    <section class="why-premium-section">
+        <div class="container">
+            <div class="section-top reveal">
+                <h2>Why TechnoWin IT Infra Stands Out</h2>
+                <p>We combine innovation, expertise, and customer-focused strategies to deliver reliable, secure, and future-ready technology solutions.</p>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">01</span>
+                    <div class="premium-badge">AI • Automation • Digital Transformation</div>
+                    <h3>Innovative Solutions</h3>
+                    <p>Advanced workflow systems, AI-powered automation, custom software development, and digital transformation solutions designed to improve efficiency and productivity.</p>
+                </div>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">02</span>
+                    <div class="premium-badge">Skilled Experts • Certified Professionals</div>
+                    <h3>Expert Team</h3>
+                    <p>Highly skilled developers, analysts, project managers, infrastructure experts, and consultants delivering world-class technology solutions.</p>
+                </div>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">03</span>
+                    <div class="premium-badge">Client First • Customized Solutions</div>
+                    <h3>Customer-Centric Approach</h3>
+                    <p>Every solution is carefully tailored to meet the unique operational requirements and long-term business goals of our clients.</p>
+                </div>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">04</span>
+                    <div class="premium-badge">Government • Enterprise • Public Sector</div>
+                    <h3>Government Project Expertise</h3>
+                    <p>Extensive experience in executing large-scale Government, Semi-Government, and Enterprise digital transformation initiatives.</p>
+                </div>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">05</span>
+                    <div class="premium-badge">Software • Hardware • Cloud • AI</div>
+                    <h3>End-to-End IT Services</h3>
+                    <p>From software development and infrastructure deployment to cloud solutions and AI automation, we provide complete technology services under one roof.</p>
+                </div>
+            </div>
+
+            <div class="premium-row reveal">
+                <div class="premium-content">
+                    <span class="premium-number">06</span>
+                    <div class="premium-badge">24×7 Support • AMC • Maintenance</div>
+                    <h3>24×7 Support & Maintenance</h3>
+                    <p>Our dedicated support team ensures uninterrupted business operations through proactive monitoring, maintenance, and round-the-clock technical assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-top reveal">
+                <h2>What Our Clients Say</h2>
+                <p>Trusted by Government departments, Municipal Corporations, and Enterprise organizations across Maharashtra and beyond.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"TechnoWin delivered our workflow automation system on time and within budget. Their team understood our government processes and built exactly what we needed."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">🏛️</div>
+                        <div><strong>Government Department</strong><span>Maharashtra, India</span></div>
+                    </div>
+                </div>
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"The payroll system TechnoWin built processes daily wages seamlessly. We've eliminated manual errors entirely — our staff gets paid on time, every time."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">🏙️</div>
+                        <div><strong>Municipal Corporation</strong><span>Mumbai, India</span></div>
+                    </div>
+                </div>
+                <div class="testi-card reveal">
+                    <div class="testi-stars">★★★★★</div>
+                    <p>"Exceptional IT infrastructure support. TechnoWin migrated our entire system to the cloud with zero downtime. Their post-deployment support is outstanding."</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">💼</div>
+                        <div><strong>Corporate Enterprise</strong><span>Pune, India</span></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== PRODUCTS ===== -->
-<section class="products-strip">
-    <div class="container">
-        <div class="section-top reveal">
-            <h2>Our In-House Products</h2>
-            <p>Purpose-built software developed over 25 years for Government, Municipal, and Enterprise organizations.</p>
+    <!-- ===== CTA ===== -->
+    <section class="cta">
+        <div class="container reveal">
+            <h2>Ready to Digitally Transform Your Organization?</h2>
+            <p>Let's build secure, scalable, and future-ready IT solutions for your business or government operations.</p>
+            <a href="{% url 'ContactUs' %}" class="btn">Schedule a Free Consultation</a>
         </div>
-        <div class="products-grid">
-            <div class="product-card reveal">
-                <div class="product-num">Product 01</div>
-                <h3>Workflow Management System</h3>
-                <p>Streamlines service and document management with defined parameters for efficiency, transparency, and audit-ready operations.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-num">Product 02</div>
-                <h3>Form Generation System</h3>
-                <p>Create custom forms with field validations. Easy-to-use builder improves data accuracy and simplifies form management across departments.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-num">Product 03</div>
-                <h3>Audit Utility</h3>
-                <p>Customized for CGST Commissionerate and Labour Law Consultants for comprehensive audit trail management and compliance tracking.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-num">Product 04</div>
-                <h3>Payroll System</h3>
-                <p>Designed for Municipal Corporations and Supply Chain companies — automates daily salary processing to reduce errors and payment delays.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-num">Product 05</div>
-                <h3>AI File Comparison</h3>
-                <p>ML-powered document comparison tool that identifies discrepancies across large file sets with speed and accuracy.</p>
-            </div>
-            <div class="product-card reveal">
-                <div class="product-num">Product 06</div>
-                <h3>Labour Law Software</h3>
-                <p>Compliance management software for Labour Law Consultants — tracks filings, deadlines, and statutory obligations seamlessly.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== WHY TECHNOWIN ===== -->
-<section class="why-premium-section">
-    <div class="container">
-        <div class="section-top reveal">
-            <h2>Why TechnoWin IT Infra Stands Out</h2>
-            <p>We combine innovation, expertise, and customer-focused strategies to deliver reliable, secure, and future-ready technology solutions.</p>
-        </div>
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">01</span>
-                <div class="premium-badge">AI • Automation • Digital Transformation</div>
-                <h3>Innovative Solutions</h3>
-                <p>Advanced workflow systems, AI-powered automation, custom software development, and digital transformation solutions designed to improve efficiency and productivity.</p>
-            </div>
-        </div>
-
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">02</span>
-                <div class="premium-badge">Skilled Experts • Certified Professionals</div>
-                <h3>Expert Team</h3>
-                <p>Highly skilled developers, analysts, project managers, infrastructure experts, and consultants delivering world-class technology solutions.</p>
-            </div>
-        </div>
-
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">03</span>
-                <div class="premium-badge">Client First • Customized Solutions</div>
-                <h3>Customer-Centric Approach</h3>
-                <p>Every solution is carefully tailored to meet the unique operational requirements and long-term business goals of our clients.</p>
-            </div>
-        </div>
-
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">04</span>
-                <div class="premium-badge">Government • Enterprise • Public Sector</div>
-                <h3>Government Project Expertise</h3>
-                <p>Extensive experience in executing large-scale Government, Semi-Government, and Enterprise digital transformation initiatives.</p>
-            </div>
-        </div>
-
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">05</span>
-                <div class="premium-badge">Software • Hardware • Cloud • AI</div>
-                <h3>End-to-End IT Services</h3>
-                <p>From software development and infrastructure deployment to cloud solutions and AI automation, we provide complete technology services under one roof.</p>
-            </div>
-        </div>
-
-        <div class="premium-row reveal">
-            <div class="premium-content">
-                <span class="premium-number">06</span>
-                <div class="premium-badge">24×7 Support • AMC • Maintenance</div>
-                <h3>24×7 Support & Maintenance</h3>
-                <p>Our dedicated support team ensures uninterrupted business operations through proactive monitoring, maintenance, and round-the-clock technical assistance.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials">
-    <div class="container">
-        <div class="section-top reveal">
-            <h2>What Our Clients Say</h2>
-            <p>Trusted by Government departments, Municipal Corporations, and Enterprise organizations across Maharashtra and beyond.</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testi-card reveal">
-                <div class="testi-stars">★★★★★</div>
-                <p>"TechnoWin delivered our workflow automation system on time and within budget. Their team understood our government processes and built exactly what we needed."</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">🏛️</div>
-                    <div><strong>Government Department</strong><span>Maharashtra, India</span></div>
-                </div>
-            </div>
-            <div class="testi-card reveal">
-                <div class="testi-stars">★★★★★</div>
-                <p>"The payroll system TechnoWin built processes daily wages seamlessly. We've eliminated manual errors entirely — our staff gets paid on time, every time."</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">🏙️</div>
-                    <div><strong>Municipal Corporation</strong><span>Mumbai, India</span></div>
-                </div>
-            </div>
-            <div class="testi-card reveal">
-                <div class="testi-stars">★★★★★</div>
-                <p>"Exceptional IT infrastructure support. TechnoWin migrated our entire system to the cloud with zero downtime. Their post-deployment support is outstanding."</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">💼</div>
-                    <div><strong>Corporate Enterprise</strong><span>Pune, India</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="cta">
-    <div class="container reveal">
-        <h2>Ready to Digitally Transform Your Organization?</h2>
-        <p>Let's build secure, scalable, and future-ready IT solutions for your business or government operations.</p>
-        <a href="{% url 'ContactUs' %}" class="btn">Schedule a Free Consultation</a>
-    </div>
-</section>
-
-<!-- ===== SCRIPTS ===== -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-    // ===== SCROLL REVEAL =====
-    const revealObs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.10 });
-    
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-    // ===== COUNTER ANIMATION =====
-    const counterObs = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting || entry.target.dataset.done) return;
-            entry.target.dataset.done = true;
-            const target = +entry.target.getAttribute('data-target');
-            const suffix = entry.target.getAttribute('data-suffix') || '+';
-            let count = 0;
-            const step = target / 80;
-            const update = () => {
-                count += step;
-                if (count < target) {
-                    entry.target.innerText = Math.ceil(count);
-                    requestAnimationFrame(update);
-                } else {
-                    entry.target.innerText = target + suffix;
+    <script>
+        // ===== SCROLL REVEAL =====
+        const revealObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('active');
                 }
-            };
-            update();
-        });
-    }, { threshold: 0.4 });
-    
-    document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
+            });
+        }, { threshold: 0.10 });
+        
+        document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    // ===== PREMIUM ROW SCROLL REVEAL =====
-    const revealBoxes = document.querySelectorAll('.premium-row');
-    function revealPremiumRows() {
-        revealBoxes.forEach(box => {
-            const windowHeight = window.innerHeight;
-            const boxTop = box.getBoundingClientRect().top;
-            if (boxTop < windowHeight - 100) {
-                box.classList.add('show');
-            }
-        });
-    }
-    window.addEventListener('scroll', revealPremiumRows);
-    window.addEventListener('load', revealPremiumRows);
+        // ===== COUNTER ANIMATION =====
+        const counterObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting || entry.target.dataset.done) return;
+                entry.target.dataset.done = true;
+                const target = +entry.target.getAttribute('data-target');
+                const suffix = entry.target.getAttribute('data-suffix') || '+';
+                let count = 0;
+                const step = target / 80;
+                const update = () => {
+                    count += step;
+                    if (count < target) {
+                        entry.target.innerText = Math.ceil(count);
+                        requestAnimationFrame(update);
+                    } else {
+                        entry.target.innerText = target + suffix;
+                    }
+                };
+                update();
+            });
+        }, { threshold: 0.4 });
+        
+        document.querySelectorAll('.counter').forEach(c => counterObs.observe(c));
 
-    // ===== GOOGLE ANALYTICS =====
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2ZJE06MHVY');
-</script>
+        // ===== PREMIUM ROW SCROLL REVEAL =====
+        const revealBoxes = document.querySelectorAll('.premium-row');
+        function revealPremiumRows() {
+            revealBoxes.forEach(box => {
+                const windowHeight = window.innerHeight;
+                const boxTop = box.getBoundingClientRect().top;
+                if (boxTop < windowHeight - 100) {
+                    box.classList.add('show');
+                }
+            });
+        }
+        window.addEventListener('scroll', revealPremiumRows);
+        window.addEventListener('load', revealPremiumRows);
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
+        // ===== GOOGLE ANALYTICS =====
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2ZJE06MHVY');
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZJE06MHVY"></script>
 
 </body>
 </html>
